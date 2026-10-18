@@ -1,0 +1,291 @@
+{
+  "appId": "pocketstocks-staging-3nv7e2",
+  "sourceVersion": "1792055310478",
+  "exportedAt": "2026-10-15",
+  "sourceFileCount": 49,
+  "sourceFiles": [
+    "appdeploy.auth-login.json",
+    "backend/admin-session-security.ts",
+    "backend/etf-data-query.ts",
+    "backend/etf-data-snapshots.ts",
+    "backend/etf-data-store.ts",
+    "backend/etf-data.ts",
+    "backend/etf-industry-history.ts",
+    "backend/etf-reports.ts",
+    "backend/index.ts",
+    "backend/public-book.ts",
+    "backend/reader-collection-index.ts",
+    "backend/reader-forms.ts",
+    "backend/tests/etf-data-loader.test.mjs",
+    "backend/tests/etf-data-mock.test.mjs",
+    "backend/tests/etf-data.test.mjs",
+    "backend/tests/etf-history-fixture.mjs",
+    "backend/tests/etf-industry-history.test.mjs",
+    "index.html",
+    "package.json",
+    "postcss.config.js",
+    "shared/etf-contract.ts",
+    "shared/etf-data-contract.ts",
+    "shared/etf-seed.ts",
+    "src/App.tsx",
+    "src/active-etf.css",
+    "src/active-etf.tsx",
+    "src/admin-article-data.ts",
+    "src/assets/library-hero-v6.jpg",
+    "src/author-feedback.css",
+    "src/author-feedback.tsx",
+    "src/etf-data-author.css",
+    "src/etf-data-author.tsx",
+    "src/etf-history.css",
+    "src/etf-history.tsx",
+    "src/index.css",
+    "src/library-filter-focus.d.ts",
+    "src/library-filter-focus.js",
+    "src/main.tsx",
+    "src/private-preview-routes.ts",
+    "src/public-routes.ts",
+    "src/reader-forms.css",
+    "src/reader-forms.tsx",
+    "src/reader-sign-in.ts",
+    "tailwind.config.js",
+    "tests/backend-index.test.mjs",
+    "tests/etf-reports.test.mjs",
+    "tests/tests.json",
+    "tsconfig.json",
+    "vite.config.ts"
+  ],
+  "localDevelopment": {
+    "reviewedAt": "2026-10-17",
+    "environment": "localhost; no cloud deployment",
+    "purpose": "Local staging; JSON 5.0/analysis 1.0 Author ETL with optional versioned 480x360 JPEG cover; same-version publication and reader. Legacy Markdown compatibility; origin export unchanged.",
+    "files": [
+      {
+        "path": "README.md",
+        "sha256": "f15be24fab7eecad2b43421ac4a204f5a8eae22ebae2a6cbb7cd1cf8f4f2afb2"
+      },
+      {
+        "path": "backend/etf-data-snapshots.ts",
+        "sha256": "a540520b0b88b02b1c9c56f03221e5035da8dbdecefb24778ca1cc6d687ad6ca"
+      },
+      {
+        "path": "backend/etf-markdown.ts",
+        "sha256": "0e7dde66c33d34067f0d7aa343b14905262ea75847d21d45e94333e2c1319483"
+      },
+      {
+        "path": "backend/etf-reports.ts",
+        "sha256": "79030e28cdd0a761cea226ad775c85ef262d9d19b80ad3d74c380b63ff238595"
+      },
+      {
+        "path": "backend/index.ts",
+        "sha256": "e596cc69000049eb1bc551bcb8a9415187325ecc5c93a0742ae7119ed5ed5023"
+      },
+      {
+        "path": "local/client.ts",
+        "sha256": "cb359b85f204262dcf80dce2c957d6cb1e602a920678db89e0d0ec5884ef2e84"
+      },
+      {
+        "path": "local/seed-demo.mjs",
+        "sha256": "6f1422101143bac8dd879c7777fe20881d00e362bf48a8a97e055d6cff3b7bf6"
+      },
+      {
+        "path": "local/tests/etf-author-cover-ui.mjs",
+        "sha256": "6a38163eaa58c6d014f2614fef42c89a64323864156ff0a7b7ba14339bf14484"
+      },
+      {
+        "path": "local/tests/etf-catalog-cover-ui.mjs",
+        "sha256": "817766c49605dca8d6c5bf70a8093ff15b4a1fe5676f87727304b0576848fbe9"
+      },
+      {
+        "path": "local/tests/etf-markdown-http.test.ts",
+        "sha256": "2257856212c7f10951936a186744189edfd4305f0f501c64a152f0e2d0afaa60"
+      },
+      {
+        "path": "local/tests/etf-markdown-reader.test.ts",
+        "sha256": "ef3397d432747e68de3c942802128c84fdeec8a9ca30874fb79e2b05305fb6f7"
+      },
+      {
+        "path": "local/tests/etf-markdown-ui.mjs",
+        "sha256": "429893ea451f278071d39b92b438e41af8985a7277abcf8833abfcaf7e9dc742"
+      },
+      {
+        "path": "local/tests/etf-presentation.test.ts",
+        "sha256": "d538c1ca99972ac6214b487a30faea5881f71899e577782b2fa4bbfc7d461015"
+      },
+      {
+        "path": "local/tests/etf-report-catalog.test.ts",
+        "sha256": "5bd7918edfbd6725456ab4a0bee0704ddd4d38780b9557f6c95dfd384941d479"
+      },
+      {
+        "path": "local/tests/reader-return.test.ts",
+        "sha256": "3379a92e19fcbc57fddd58181b2db3d4a1ea5408044d2f23d647037e54329c81"
+      },
+      {
+        "path": "local/tests/ui-smoke.mjs",
+        "sha256": "4e530635b817bb005461c0d9c58ba6d437bd4f35912c0e4849798e571aad9e11"
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "a8a388166a6dd0fb24b647485fbad7835d37a0177b4ed7dbbdb4b122bc601812"
+      },
+      {
+        "path": "package.json",
+        "sha256": "e04e6cb123d3bdba6fab61fc3dca451bd326e843c74ba8ed461b64ff9ef95470"
+      },
+      {
+        "path": "shared/etf-analysis.ts",
+        "sha256": "3d33d63c7cf42386082aa604d0a3c896bbed29382e0a98c77e775b6e08cafb74"
+      },
+      {
+        "path": "shared/etf-contract.ts",
+        "sha256": "7132695449ebe2f4e36ede34e4960272da51c219fd81465d68477a22e3fd7ea6"
+      },
+      {
+        "path": "shared/etf-cover.ts",
+        "sha256": "87b65304ede5153b0bb2c571f3131961fd7ce2f74a189e369e323d67d3fd7847"
+      },
+      {
+        "path": "shared/etf-markdown.ts",
+        "sha256": "b3bb83f2447c8e8cd8b350edd870629bee895ec5674fc43c7473a859b27993d3"
+      },
+      {
+        "path": "shared/etf-research.ts",
+        "sha256": "c4d857b0912260316e59848a6748f527f2ca9221ac72f10be36eee6545ce5907"
+      },
+      {
+        "path": "src/App.tsx",
+        "sha256": "18eba163884e80999ef403d0b6e997536d4bcb2e550c67dd6f58381d555da73f"
+      },
+      {
+        "path": "src/active-etf.css",
+        "sha256": "0c6f1d2f98228c23e11fb082bc13f5224cbbacb28ca753218c7a495b0db03bb2"
+      },
+      {
+        "path": "src/active-etf.tsx",
+        "sha256": "5f9011d60a27be40c85b076ff95d70cb3dc60f7c4b71e72e714aa58c75f6cf76"
+      },
+      {
+        "path": "src/confirm-discard.ts",
+        "sha256": "5575b498702b08d0bd0b9c0aef526ab286356a581d9074e8ad4f181bcd1bb8b2"
+      },
+      {
+        "path": "src/etf-data-author.css",
+        "sha256": "73da47452198465bf4d9eb076d97ec8053518589031f66b12cf759e1e081873c"
+      },
+      {
+        "path": "src/etf-data-author.tsx",
+        "sha256": "473b059d0f98ab5a434d5951df91ed030c5b847582ecae4e4d88c4a5bc33b973"
+      },
+      {
+        "path": "src/etf-json-analysis.tsx",
+        "sha256": "1b31a5d51339bfcbcf809ee93a32c3dbb832a8da1a662ca910c5bdf124f3b73b"
+      },
+      {
+        "path": "src/etf-markdown-author.css",
+        "sha256": "1c3b00464bb21765645b88e712be8805d4ec1227bc5d9aa13c7e6be16a5f39e7"
+      },
+      {
+        "path": "src/etf-markdown-author.tsx",
+        "sha256": "e646a7096be574cdf03a3bdfea7eb0d50e0d3a773db17e0cc936390c575b36f0"
+      },
+      {
+        "path": "src/etf-markdown-prose.ts",
+        "sha256": "6726ea5525e97561fbf30e3fbe58559701889b2313f9f40388858a3a74a1cf6d"
+      },
+      {
+        "path": "src/etf-markdown-reader.css",
+        "sha256": "22d44ac619b032f0131a387d89e8484a0658223d98a484992528e6df315ff2c4"
+      },
+      {
+        "path": "src/etf-markdown-reader.tsx",
+        "sha256": "f18ab034819bc6cf1b4926b3b14e45430dcf6c27da4ccf4289699ef801c9c94a"
+      },
+      {
+        "path": "src/etf-report-catalog.css",
+        "sha256": "c8ca246ec94b68316a13c62139bc0450f1a864971dad8d17fb8a07e799b2acb5"
+      },
+      {
+        "path": "src/etf-report-catalog.tsx",
+        "sha256": "f8d885f75d29b429d3aec5daca81fc7c5de558be4ebbf8028feb5eb06a9f7a51"
+      },
+      {
+        "path": "src/index.css",
+        "sha256": "8bcc1dcec822a9f1f25fae8b04a5e1fd3129cc622f723566d9c5a2a2c18a21db"
+      },
+      {
+        "path": "src/library-layout.tsx",
+        "sha256": "7be78a5eb07eb486034dd73d1e335c03c59dea2ff6c3387c1a5273a61aeb962f"
+      },
+      {
+        "path": "src/main.tsx",
+        "sha256": "e7b2027389db8abb0e29212960ef259321441f8931557c43c3ebe5555d9ed0bf"
+      },
+      {
+        "path": "src/reader-return-routes.ts",
+        "sha256": "f2ae9f17bcf0f672c15e8c094119df6fd537eac4d28dd7e703446df4c7f2f164"
+      },
+      {
+        "path": "src/reader-sign-in.ts",
+        "sha256": "ded9c40eb2db56f773bb24883da67e91d48136a5f5cc729e4f0606d960fa2757"
+      },
+      {
+        "path": "tests/backend-index.test.mjs",
+        "sha256": "06c77fc3efde0a49a2ee235edc485ae038d51009c26877da72988bf63b689dee"
+      },
+      {
+        "path": "tests/etf-cover.test.ts",
+        "sha256": "76ef1919f436ca0219a9e1506710177fd349923bee20075594a911ebd2faf246"
+      },
+      {
+        "path": "tests/etf-markdown.test.ts",
+        "sha256": "cee29b8d588f9b1d8712c5ee8b772611c4aa7773b9c5a8dd5eee484abe05b06f"
+      },
+      {
+        "path": "tests/etf-reports.test.mjs",
+        "sha256": "e47c2c5b285f0e7947bc6f8f6bbc22733cd70dbf2eba46d89781f46851b8ec90"
+      },
+      {
+        "path": "tests/etf-research.test.ts",
+        "sha256": "c6ce91743795f433ef51951465d44090a427774a0e2a7c906cac144111e18f4c"
+      },
+      {
+        "path": "tests/fixtures/etf-json-fixture.ts",
+        "sha256": "ae04e7a850e0a0c6a90a65e024764d0b09166733ae57193ca10932793de1a9eb"
+      },
+      {
+        "path": "tests/fixtures/etf-markdown-fixture.ts",
+        "sha256": "872e1df054ad5306de87b4d3f81ad871f4316c0364baca0e73a30831c6f6f3de"
+      },
+      {
+        "path": "src/catalog-select.tsx",
+        "sha256": "abd1cffbdd06f7cc4e1573e36de53fbcf1d2cdd73df1c96dea837d76d5a06ee9"
+      },
+      {
+        "path": "src/research-footer.tsx",
+        "sha256": "50acd9ca61522abc1bf9df5f0a1f3e8c9d6c2a72dd4c9884c09e15bc10beea8a"
+      },
+      {
+        "path": "src/catalog-search.tsx",
+        "sha256": "7bc655dbccdd7f045c9340b260b49a5d0c31bb928906f5ca3a16ad83244ceecc"
+      },
+      {
+        "path": "src/catalog-controls.css",
+        "sha256": "84c56297366e34ace9c5c877133563ab806f545476e2c976a2fc5c4edb47fefc"
+      },
+      {
+        "path": "src/application-navigation.tsx",
+        "sha256": "3a8ee99cfa87453f78b8baf5a95a4faeead301dbc58850fd034601df46aaf394"
+      }
+    ],
+    "productionVisibilitySync": {
+      "appId": "pocketstocks-xuwadi",
+      "snapshot": "1792247369483",
+      "files": [
+        "backend/etf-markdown.ts",
+        "shared/etf-markdown.ts",
+        "src/etf-markdown-author.tsx"
+      ],
+      "localAdaptation": "Keep staging-master-secret-author; no Production data, settings or credentials copied",
+      "issue": "PS-308"
+    }
+  }
+}

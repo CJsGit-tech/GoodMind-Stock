@@ -1,0 +1,37 @@
+# macOS
+.DS_Store
+
+# Editor and temporary files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.tmp
+
+# App build output
+node_modules/
+dist/
+
+# Locally generated working files
+tmp/
+
+# Local credentials and application state (also on machines without global ignores)
+.env
+.env.*
+!.env.example
+.local/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.pem
+*.key
+
+# Generated diagnostics and browser evidence
+*.log
+.playwright-cli/
+playwright-report/
+test-results/
+coverage/
+pocket-stock-staging/premium-audit.json
