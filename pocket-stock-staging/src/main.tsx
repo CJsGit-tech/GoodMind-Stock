@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import App from './App';
 import { ResearchFooterLayout } from './research-footer';
 import './index.css';
+import './loading.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

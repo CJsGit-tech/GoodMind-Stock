@@ -13,6 +13,7 @@ import {
 } from 'react';
 import { createPortal } from 'react-dom';
 import { ApplicationNavigation } from './application-navigation';
+import { LoadingBlock, LoadingSkeleton, PendingIndicator } from './loading';
 import { CatalogSelect } from './catalog-select';
 import { CatalogSearch } from './catalog-search';
 import { api, auth, type AuthUser } from '@appdeploy/client';
@@ -2641,7 +2642,7 @@ function App() {
                   disabled={
                     readerAuthHydrating || readerLogoutStatus === 'pending'
                   }
-                  aria-busy={readerLogoutStatus === 'pending'}
+                  aria-busy={readerAuthHydrating || readerLogoutStatus === 'pending'}
                   onClick={openReaderSignInFromChooser}
                 >
                   <BookOpen size={15} aria-hidden="true" />
@@ -2734,7 +2735,7 @@ function App() {
             </strong>
             <span>
               {readerLogoutStatus === 'pending'
-                ? '正在登出讀者帳號…'
+                ? <PendingIndicator>正在登出讀者帳號…</PendingIndicator>
                 : '登出尚未完成，請再試一次。'}
             </span>
           </div>
@@ -3034,8 +3035,7 @@ function App() {
                 role="status"
                 aria-live="polite"
               >
-                {signInPendingNotice ||
-                  '請完成原本的登入視窗。返回閱讀不會取消登入視窗。'}
+                <PendingIndicator>{signInPendingNotice || '請完成原本的登入視窗。返回閱讀不會取消登入視窗。'}</PendingIndicator>
               </p>
             )}
             {signInError && (
@@ -3048,7 +3048,7 @@ function App() {
               ref={signInActionRef}
               className="reader-auth-signup"
               type="button"
-              disabled={signingIn}
+              disabled={signingIn} aria-busy={signingIn}
               onClick={() => void signInReader('a')}
             >
               {signingIn ? '正在完成登入…' : '使用測試讀者 A'}
@@ -3056,7 +3056,7 @@ function App() {
             <button
               className="reader-auth-signup"
               type="button"
-              disabled={signingIn}
+              disabled={signingIn} aria-busy={signingIn}
               onClick={() => void signInReader('b')}
             >
               使用測試讀者 B
@@ -4084,7 +4084,7 @@ function CoverArtwork({
   const [source, setSource] = useState(initialSource);
   const [attempt, setAttempt] = useState(0);
   const [failed, setFailed] = useState(false);
-  const [recovering, setRecovering] = useState(false);
+  const [recovering, setRecovering] = useState(Boolean(initialSource));
   const recoveryStepRef = useRef(0);
   const recoveryGenerationRef = useRef(0);
   const retryTimerRef = useRef<ReturnType<typeof window.setTimeout> | null>(
@@ -4103,7 +4103,7 @@ function CoverArtwork({
     setSource(initialSource);
     setAttempt(0);
     setFailed(false);
-    setRecovering(false);
+    setRecovering(Boolean(initialSource));
     return () => {
       recoveryGenerationRef.current += 1;
       if (retryTimerRef.current !== null)
@@ -4167,7 +4167,7 @@ function CoverArtwork({
           onError={handleError}
         />
         {recovering && (
-          <PlaceholderArtwork label={article.sector} message="正在載入封面…" />
+<LoadingBlock className='cover-artwork-loading' />
         )}
       </>
     );
@@ -4204,6 +4204,7 @@ function PageArtworkImage({
   onReturn?: () => void;
 }) {
   const [failed, setFailed] = useState(false);
+  const [readySource, setReadySource] = useState<string>();
   useEffect(() => setFailed(false), [page.imageUrl]);
   const recoverable = page.imageUrl?.includes('/seed/');
   const source =
@@ -4229,10 +4230,12 @@ function PageArtworkImage({
   return (
     <img
       src={source}
+      className={readySource !== source ? 'image-shimmer' : undefined}
+      onLoad={() => setReadySource(source)}
       alt={decorative ? '' : readerPageImageAltText(article, page, index)}
       loading={decorative ? 'lazy' : 'eager'}
       decoding="async"
-      onError={failed ? undefined : () => setFailed(true)}
+      onError={() => { if (failed) setReadySource(source); else setFailed(true); }}
       data-recovered-seed-image={failed && recoverable ? 'true' : undefined}
     />
   );
@@ -4465,10 +4468,6 @@ function PlaceholderArtwork({
       <i />
     </span>
   );
-}
-
-function LoadingBlock({ className = '' }: { className?: string }) {
-  return <span className={`loading-block ${className}`} aria-hidden="true" />;
 }
 
 function ReaderLibrarySkeleton({ favoritesView }: { favoritesView: boolean }) {
@@ -4843,7 +4842,7 @@ function DiscussionView({
             <CatalogSearch label="搜尋公開研究書" placeholder="搜尋書名或標籤…" value={selectorQuery}
               clearLabel="清除研究書搜尋" onChange={updateSelectorQuery} />
             {catalogLoading ? (
-              <p role="status">正在載入研究書…</p>
+              <LoadingSkeleton media={false} label='正在載入研究書…' rows={3} />
             ) : catalogError ? (
               <div role="alert">
                 <p>研究書暫時無法載入。</p>
@@ -4906,8 +4905,7 @@ function DiscussionView({
           >
             {requestedId && status === 'loading' ? (
               <>
-                <span className="loader" />
-                <h1>正在載入研究…</h1>
+                <LoadingSkeleton kind='comments' label='正在載入研究…' rows={2} />
               </>
             ) : status === 'error' ? (
               <>
@@ -5124,7 +5122,7 @@ function DiscussionThread({
             </h2>
           </header>
           {loading ? (
-            <p role="status">正在載入留言…</p>
+            <LoadingSkeleton kind='comments' label='正在載入留言…' />
           ) : loadError ? (
             <div role="alert">
               <p>留言暫時無法載入。</p>
@@ -6477,14 +6475,7 @@ function ArticleView({
                 </button>
               </div>
             ) : reviewLoading || !reviewSessionReady ? (
-              <div
-                className="private-review-loading"
-                role="status"
-                aria-live="polite"
-              >
-                <span className="loader" />
-                <span>正在載入評論…</span>
-              </div>
+              <LoadingSkeleton kind='form' label='正在載入評論…' rows={1} />
             ) : reviewLoadError ? (
               <div
                 className="private-review-recovery"
@@ -6554,6 +6545,7 @@ function ArticleView({
               <form
                 className="private-review-form"
                 onSubmit={savePrivateReview}
+                aria-busy={reviewSavePending}
                 noValidate
               >
                 {privateReview && (
@@ -8003,7 +7995,7 @@ function AdminView({
           >
             <LogOut size={18} aria-hidden="true" />
             <div>
-              <strong>登出中…</strong>
+              <strong><PendingIndicator>登出中…</PendingIndicator></strong>
               <span>正在登出作者工作區，請稍候。</span>
             </div>
           </div>
@@ -9195,7 +9187,7 @@ function AdminView({
             <h1>作者工作區</h1>
             {sessionRestoreStatus === 'checking' ? (
               <p className="admin-unlock-lead" role="status">
-                正在恢復作者工作階段…
+                <PendingIndicator>正在恢復作者工作階段…</PendingIndicator>
               </p>
             ) : (
               <>
@@ -9282,6 +9274,7 @@ function AdminView({
             <button
               className="primary-action admin-unlock-submit"
               disabled={busy || logoutStatus !== 'idle'}
+              aria-busy={busy}
             >
               {busy ? (
                 '驗證中…'
@@ -9297,7 +9290,7 @@ function AdminView({
                 role="status"
                 aria-live="polite"
               >
-                正在驗證作者密鑰…
+                <PendingIndicator>正在驗證作者密鑰…</PendingIndicator>
               </div>
             )}
             {notice && (
@@ -9327,9 +9320,8 @@ function AdminView({
     return (
       <>
         {renderAdminSessionStatus()}
-        <section className="admin-loading">
-          <span className="loader" />
-          <p>正在載入私人預覽…</p>
+        <section className='admin-loading'>
+          <LoadingSkeleton kind='preview' label='正在載入私人預覽…' />
         </section>
       </>
     );
@@ -9712,10 +9704,7 @@ function AdminView({
               aria-live="polite"
               aria-busy="true"
             >
-              <span className="loader" />
-              <span>載入書目</span>
-              <h2>正在載入書目…</h2>
-              <p>正在確認草稿與公開狀態。</p>
+              <LoadingSkeleton label='正在載入書目並確認草稿與公開狀態…' rows={4} />
             </section>
           ) : adminListStatus === 'error' ? (
             <section className="admin-list-state is-error" role="alert">
@@ -10023,7 +10012,7 @@ function AdminView({
             ))
           )}
         </aside>
-        <form
+        {editorLoadPending ? <LoadingSkeleton kind='form' label='正在載入研究草稿…' rows={5} /> : <form
           className="editor-form"
           onSubmit={saveDraft}
           noValidate
@@ -10380,9 +10369,9 @@ function AdminView({
               >
                 {uploadRecoveryState.state === 'pending' ? (
                   <>
-                    <strong>
+                    <strong><PendingIndicator>
                       正在處理 {uploadRecoveryState.files.length} 張圖片…
-                    </strong>
+                    </PendingIndicator></strong>
                     <span>請保持編輯器開啟，待圖片處理完成後再繼續編輯。</span>
                   </>
                 ) : uploadRecoveryState.state === 'partial' ? (
@@ -10419,7 +10408,7 @@ function AdminView({
             )}
             {fileActivity && (
               <p className="file-activity" role="status">
-                {fileActivity}
+                {editorBusy || uploadPending ? <PendingIndicator>{fileActivity}</PendingIndicator> : fileActivity}
               </p>
             )}
             {validationRequested && pageIssues.length > 0 && (
@@ -10625,7 +10614,7 @@ function AdminView({
               {pagePositionMessage}
             </p>
           </section>
-        </form>
+        </form>}
       </div>
       {renderConfirmationDialog()}
       {renderPageRemovalDialog()}

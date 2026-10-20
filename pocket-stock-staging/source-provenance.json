@@ -286,6 +286,84 @@
       ],
       "localAdaptation": "Keep staging-master-secret-author; no Production data, settings or credentials copied",
       "issue": "PS-308"
+    },
+    "shimmerSync": {
+      "date": "2026-10-20",
+      "issue": "PS-320",
+      "productionApp": "pocketstocks-xuwadi",
+      "productionSnapshot": "1792496622494",
+      "scope": "Shared shimmer component/CSS and all loading callers; preserve local auth, API transport, navigation, data and valuation features",
+      "files": [
+        {
+          "path": "src/loading.tsx",
+          "sha256": "efb19dbd08823fcd395fc9a1224ddc00d419cf992f3dcaa5e86cb864a87f05cb"
+        },
+        {
+          "path": "src/loading.css",
+          "sha256": "e6bb4c2c6562d9fcf70cbc8e119ec3e878f23bfadc2b5ea23c688c7a39e06f5a"
+        },
+        {
+          "path": "src/App.tsx",
+          "sha256": "bacc050ce70e396665f1baaa7fb11d02bbd6e1c836b50b3106204af8bbbf673e"
+        },
+        {
+          "path": "src/active-etf.tsx",
+          "sha256": "606a4bb0079249562108bd02c01d345b6388579c7c16b3cf2a89a02cf9183163"
+        },
+        {
+          "path": "src/institutional-public.tsx",
+          "sha256": "eb5b61f48e73c56ca16925f5c40d8da6b115d430f2db6d14f4f247b4fef95ab9"
+        },
+        {
+          "path": "src/etf-report-catalog.tsx",
+          "sha256": "29a1b582a2333e32d906d249404d4061c39db420aeaf81cade62ee0fd267a2de"
+        },
+        {
+          "path": "src/author-feedback.tsx",
+          "sha256": "a61650ad500ec475679c72eec7ae4e10ea8368ace0c2ecaa743810eb7e8f72a9"
+        },
+        {
+          "path": "src/reader-forms.tsx",
+          "sha256": "f1bb248668ec31c229b36d4d7dacea5b4ebf85299e35ac1b615400a1ae55dfb4"
+        },
+        {
+          "path": "src/etf-markdown-author.tsx",
+          "sha256": "453b8ecfcb9ff43053cd27d092451cc6bb6210080dcd9092d0f458c4a02b2d97"
+        },
+        {
+          "path": "src/institutional-author.tsx",
+          "sha256": "11dd1b3628c93dfb0e4126d6a3cc988546ff51de14c2b87c8d79c3b20ab717a1"
+        },
+        {
+          "path": "src/etf-data-author.tsx",
+          "sha256": "511c99809420630003e82f40417b62332dd40c64fd68fb37f572d63161136261"
+        },
+        {
+          "path": "src/research-article-heading.tsx",
+          "sha256": "2a0d902a18dad92e8ea48f5f72b67a12f5696748bdf372cffecb4bcd761550c5"
+        },
+        {
+          "path": "src/research-article-heading.css",
+          "sha256": "5ce50ec8a6314eaa95e24e04fd88d38462ba6f0379db2104cfb0b38eec4476ed"
+        },
+        {
+          "path": "src/index.css",
+          "sha256": "1893a8ed47d7d9c7e004e9c8500d60ee80bcbca6497b4213c7abcd5d74c558b6"
+        },
+        {
+          "path": "src/main.tsx",
+          "sha256": "c00d6a8bcc3edf1bfc3abafe7dca96d77b9e5486df295be1f3f3824f47779c7c"
+        },
+        {
+          "path": "src/etf-report-catalog.css",
+          "sha256": "28dc4ac918693530e8e147ad89a249f522e471377167834e15c85587995e7d71"
+        },
+        {
+          "path": "tests/loading-contract.test.mjs",
+          "sha256": "b577fc1e2b0e34f5c4c19f018a18d7e3fd3cead19fc62d1ec4838bc5c47b80b6"
+        }
+      ],
+      "productionDeployment": false
     }
   }
 }

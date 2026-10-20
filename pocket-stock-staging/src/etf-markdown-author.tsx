@@ -1,4 +1,5 @@
 import { useFooterVersion } from './research-footer';
+import { LoadingSkeleton, PendingIndicator, ShimmerImage } from './loading';
 import { useEffect, useRef, useState } from 'react';
 import { BarChart3, Check, CircleAlert, FileText, FolderOpen, Image as ImageIcon, Link, Plus, RefreshCw, Upload } from 'lucide-react';
 import { MAX_MARKDOWN_SOURCE_BYTES, type MarkdownEntry, type MarkdownIssue, type MarkdownListItem, type MarkdownValidation } from '../shared/etf-markdown';
@@ -387,12 +388,14 @@ export function MarkdownEtfAuthor({ sessionToken, request, onDirtyChange, onExit
       {pending && <div className='etf-pending' role='status'><h2>操作結果尚未確認</h2><p>先查詢上次 {pending.action === 'save' ? '保存' : pending.action === 'review' ? '審閱' : pending.action === 'visibility' ? '公開狀態變更' : '發布'} 結果，再進行其他操作。重新整理仍會保留查詢識別碼。</p><button type='button' disabled={!!busy} onClick={() => void checkStatus()}><RefreshCw size={16} />查詢操作狀態</button></div>}
       <div className={'md-author-layout' + (tab === 'preview' ? ' md-author-preview-layout' : '')}>
         <aside className='md-author-list' aria-label='已保存研究'><div className='md-author-list-heading'><h2>已保存研究</h2><button type='button' disabled={!!busy || !!pending} onClick={newResearch}><Plus size={17} />新增研究</button></div>
-          {listState === 'loading' && <p role='status'>載入研究中…</p>}
+          {listState === 'loading' && <LoadingSkeleton media={false} label='載入研究中…' rows={3} />}
           {listState === 'error' && <button type='button' disabled={!!busy || !!pending} onClick={() => setListRetry(n => n + 1)}>重新載入清單</button>}
           {listState === 'ready' && !items.length && <p>尚未保存研究。選擇 data.json 開始。</p>}
           <ul>{items.map(item => <li key={item.id}><button type='button' aria-pressed={entry?.id === item.id} disabled={!!busy || !!pending} onClick={() => void loadEntry(item.id)}><strong>{item.title}</strong><span>{item.researchDate} · 草稿 r{item.revision}</span><small>{item.publishedVersion ? `${item.archived ? '已下架' : '公開'} · ${item.hasUnpublishedChanges ? '有未發布修訂' : '與草稿一致'}` : '私有草稿 · 尚未公開'}</small></button></li>)}</ul>
         </aside>
         <main className='md-author-main'>
+          {busy === 'load' && <LoadingSkeleton kind='article' label='正在載入草稿…' />}
+          <div hidden={busy === 'load'}>
           <div className='md-author-source-state'><span>{dirty ? '尚未保存的變更' : entry ? `草稿 r${entry.revision}${entry.hasUnpublishedChanges ? ' · 尚未發布的修訂' : ' · 與公開版一致'}` : '新增研究'}</span><span>來源檔 {filename || '尚未選擇'}</span></div>
           <EtfTabs idPrefix='md-author' label='ETF 研究作者任務' tabs={tabs} value={tab} onChange={selectTab} />
           <EtfTabPanel idPrefix='md-author' id='import' active={tab === 'import'}>
@@ -430,13 +433,15 @@ export function MarkdownEtfAuthor({ sessionToken, request, onDirtyChange, onExit
             <h2>{entry?.publishedVersion ? (entry.archived ? '已下架' : '已發布') : '尚無發布紀錄'}</h2>
             {entry ? <><dl className='md-author-metadata'><dt>報告標題</dt><dd>{entry.draft.title}</dd><dt>來源檔</dt><dd>{researchFilename(entry.draft)}</dd><dt>草稿修訂</dt><dd>r{entry.revision}{entry.hasUnpublishedChanges ? ' · 有尚未公開的修訂' : ' · 與公開版一致'}</dd><dt>發布時間（台北）</dt><dd>{readableTime(entry.publishedAt)}</dd><dt>發布內容</dt><dd>完整文章、三組圖表資料、來源與缺口；若附封面，會同篇同版發布。</dd></dl>{entry.publishedVersion > 0 && <div className='etf-author-actions'><button type='button' disabled={!saved || !!busy || !!pending} onClick={event => { returnFocus.current = event.currentTarget; setVisibilityDialog(true); }}>{entry.archived ? '恢復公開文章…' : '下架公開文章…'}</button>{entry.archived && <p className='etf-note'>草稿、封面與歷史版本均保留；恢復會使用原已發布版本。</p>}</div>}{entry.publishedVersion > 0 && !entry.archived && <a href={'#/active-etf/' + encodeURIComponent(entry.id) + '?v=' + entry.publishedVersion + (entry.id === 'history' ? '&report=1' : '')} onClick={event => { if (dirty || pending) { event.preventDefault(); requireReplacement(() => { location.hash = '#/active-etf/' + encodeURIComponent(entry.id) + '?v=' + entry.publishedVersion + (entry.id === 'history' ? '&report=1' : ''); }); } }}>查看公開文章 →</a>}<ResearchFormat report={entry.draft} /><details className='md-author-source'><summary>來源與版本識別</summary><p>文章 ID：{entry.id}</p><p>來源 SHA-256：<code className='md-author-hash'>{entry.draft.sourceHash}</code></p><p>已審閱修訂：{entry.reviewedRevision ? 'r' + entry.reviewedRevision : '尚未審閱'}</p></details></> : <p>選擇一篇已保存研究，查看草稿及最新發布版本。</p>}
           </EtfTabPanel>
-          {busy && <p className='md-author-busy' role='status' aria-live='polite'>{busy === 'read' ? '正在讀取檔案…' : busy === 'validate' ? '正在解析與驗證…' : busy === 'cover' ? '正在驗證封面…' : busy === 'load' ? '正在載入草稿…' : busy === 'status' ? '正在查詢操作結果…' : busy === 'publish' ? '正在確認發布…' : busy === 'visibility' ? '正在更新公開狀態…' : busy === 'review' ? '正在記錄審閱…' : '正在保存草稿…'}</p>}
+          {busy && <PendingIndicator className='md-author-busy'>{busy === 'read' ? '正在讀取檔案…' : busy === 'validate' ? '正在解析與驗證…' : busy === 'cover' ? '正在驗證封面…' : busy === 'load' ? '正在載入草稿…' : busy === 'status' ? '正在查詢操作結果…' : busy === 'publish' ? '正在確認發布…' : busy === 'visibility' ? '正在更新公開狀態…' : busy === 'review' ? '正在記錄審閱…' : '正在保存草稿…'}</PendingIndicator>}
+          </div>
         </main>
         <aside className='md-author-scope'><h2>發布範圍</h2><ul><li><FileText size={22} />完整文章</li><li><BarChart3 size={22} />三組圖表資料</li><li><Link size={22} />來源與缺口</li>{currentCover && <li><ImageIcon size={22} aria-hidden='true' />研究封面</li>}</ul><p>文章、內嵌資料及所選封面同版發布。</p><p className='etf-note'>AI 可協助解析與整理，公開發布仍由 Author 管理。</p></aside>
       </div>
     </div>
     {modal && <div className='etf-confirm-backdrop'><div ref={dialog} className='etf-confirm-dialog' role='dialog' aria-modal='true' aria-labelledby='md-author-dialog-title'>
       <h2 id='md-author-dialog-title'>{replaceAction ? '有尚未保存的變更' : visibilityDialog ? entry?.archived ? '恢復公開文章？' : '下架公開文章？' : '確認發布這篇研究？'}</h2>
+      {busy && <PendingIndicator>正在確認操作…</PendingIndicator>}
       {replaceAction ? <><p>繼續會放棄目前未保存的研究與封面變更。已保存草稿與公開版本不受影響。</p><div><button type='button' onClick={() => setReplaceAction(null)}>繼續編輯</button><button type='button' onClick={() => { const action = replaceAction; setReplaceAction(null); action(); }}>放棄變更並繼續</button></div></> : visibilityDialog ? <><p>{entry?.draft.title}</p><p>{entry?.archived ? '將恢復原已發布內容，不會發布目前尚未公開的草稿。' : '下架後會從公開列表移除，原公開網址也將無法閱讀。草稿、封面與所有歷史版本均保留，可隨時恢復原公開版本。'}</p><p role='status'>{busy === 'visibility' ? '正在更新公開狀態…' : pending ? '結果尚未確認，請先查詢操作狀態。' : notice?.tone === 'error' ? notice.message : ''}</p><div><button type='button' disabled={!!busy} onClick={() => setVisibilityDialog(false)}>取消</button><button type='button' disabled={!!busy || !!pending || !saved} onClick={() => void changeVisibility()}>{entry?.archived ? '恢復公開文章' : '下架公開文章'}</button>{pending && <button type='button' disabled={!!busy} onClick={() => void checkStatus()}>查詢操作狀態</button>}</div></> : <><p>{entry?.draft.title}</p><dl className='md-author-metadata'><dt>研究日</dt><dd>{entry?.draft.period.end}</dd><dt>發布內容</dt><dd>已保存且審閱的草稿；舊公開內容保留。</dd></dl>{entry?.cover && <CoverPreview cover={entry.cover} report={entry.draft} status={'將發布 · 草稿 r' + entry.revision} />}<p>將一起發布完整文章、三組圖表資料、來源與缺口{entry?.cover ? '及封面' : ''}。{entry?.publishedVersion ? '讀者將看到新版本，舊公開版本仍保留。' : '發布後讀者即可閱讀這篇研究。'}</p><div><button type='button' onClick={() => setPublishDialog(false)}>取消</button><button type='button' disabled={!canPublish} onClick={() => void mutate('publish')}>確認發布</button></div></>}
     </div></div>}
   </div>;

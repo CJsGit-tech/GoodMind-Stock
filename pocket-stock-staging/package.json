@@ -15,7 +15,8 @@
     "import:content": "node --import tsx local/import-content.ts",
     "seed:demo": "node --import tsx local/seed-demo.mjs",
     "test:ui": "node --import tsx local/tests/ui-smoke.mjs",
-    "test:ui:markdown": "node --import tsx local/tests/etf-markdown-ui.mjs"
+    "test:ui:markdown": "node --import tsx local/tests/etf-markdown-ui.mjs",
+    "test:loading": "node tests/loading-contract.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.469.0",

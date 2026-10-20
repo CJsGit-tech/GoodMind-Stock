@@ -125,3 +125,8 @@ git diff local-app-baseline-2026-10-18 -- pocket-stock-staging/src
 完成一項修改並驗證後，僅加入該項檔案，再以含 Linear 工單編號的訊息提交。共用元件與功能修正應分開提交，方便審查與回溯。PM 決策與驗收證據仍以 Linear 為準。
 
 `.env`、`.local/`、SQLite、上傳檔、套件、建置與測試輸出不納入版本控制。Git 只保存程式碼，不能代替本機資料備份。儲存庫目前僅供本機使用；設定遠端或推送需另外授權。
+
+
+### 載入效果同步
+
+2026-10-20 依 PS-320 同步 Production snapshot `1792496622494` 的共用 shimmer 元件與載入狀態，涵蓋書庫、閱讀圖片、ETF／法人文章、Author 及表單。`src/loading.tsx`／`src/loading.css` 為共用來源；減少動態偏好改用靜態骨架。執行 `npm run test:loading` 檢查元件契約。保留本機測試讀者、API 介面、資料、憑證與估值功能；此同步未重新部署 Production。

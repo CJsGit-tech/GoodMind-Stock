@@ -1,3 +1,4 @@
+import { LoadingSkeleton } from './loading';
 import { useEffect, useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './author-feedback.css';
@@ -170,9 +171,7 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
         >
           <div className="author-feedback-list-scroll">
             {status === 'loading' ? (
-              <p className="author-feedback-state" role="status">
-                正在載入讀者回饋…
-              </p>
+              <LoadingSkeleton media={false} label='正在載入讀者回饋…' rows={4} />
             ) : status === 'error' ? (
               <div className="author-feedback-state" role="alert">
                 <p>{message}</p>

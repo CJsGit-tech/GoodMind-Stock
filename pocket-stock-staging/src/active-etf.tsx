@@ -3,8 +3,9 @@ import { CatalogSearch } from './catalog-search';
 import { useFooterVersion } from './research-footer';
 import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties, type ReactNode } from 'react';
 import { MAX_SNAPSHOT_PAGES, MAX_SNAPSHOT_BYTES, MAX_SNAPSHOT_PAGE_BYTES } from '../shared/etf-data-contract';
+import { LoadingSkeleton, PendingIndicator } from './loading';
 import { api } from '@appdeploy/client';
-import { ArrowLeft, ArrowRight, Check, ChevronDown, CircleAlert, FileSearch, RotateCcw, Upload, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Check, ChevronDown, CircleAlert, RotateCcw, Upload, X } from 'lucide-react';
 import type { EtfReport, FlowRow } from '../shared/etf-contract';
 import type { EtfCoverDescriptor } from '../shared/etf-cover';
 import { seedReport } from '../shared/etf-seed';
@@ -245,8 +246,9 @@ function State({ status, onRetry, onBack }: { status: Status | 'empty'; onRetry?
     : status === 'empty' ? ['目前沒有已發布的 ETF 報告', '作者完成審閱並發布後，報告會出現在這裡。']
     : status === 'unavailable' ? ['找不到這篇公開報告', '連結可能已失效，或這篇研究尚未發布。']
     : ['ETF 報告暫時無法載入', '請再試一次；我們不會用其他日期的研究補上缺口。'];
-  return <section className="etf-state" role={status === 'error' ? 'alert' : 'status'} aria-busy={status === 'loading'}>
-    {status === 'loading' ? <FileSearch size={28} aria-hidden="true" /> : <CircleAlert size={28} aria-hidden="true" />}
+  if (status === 'loading') return <LoadingSkeleton kind='article' label={text[0]} />;
+  return <section className="etf-state" role={status === 'error' ? 'alert' : 'status'}>
+    <CircleAlert size={28} aria-hidden="true" />
     <h2>{text[0]}</h2><p>{text[1]}</p>
     {status === 'error' && onRetry && <button type="button" onClick={onRetry}><RotateCcw size={16} />重新嘗試</button>}
     {onBack && <button type="button" onClick={onBack}>返回報告列表</button>}
@@ -1018,11 +1020,12 @@ export function ActiveEtfAuthorView({ sessionToken, request, onDirtyChange, onSc
   return <div className="etf-author">
     <div inert={confirmOpen || !!replacementAction}>
     <div className="etf-author-heading"><div><span className="etf-kicker">作者工作區 · 私有研究</span><h1>ETF 報告</h1><p>匯入結構化研究，先保存草稿，再審閱與發布。</p></div><button type="button" disabled={!!busy || !!pending} onClick={() => requestReplacement(() => { replaceInput('', true); setSavedRaw(''); })}>新增研究</button></div>
+    {busy && <PendingIndicator>{busy === 'status' ? '正在查詢操作結果…' : '正在處理研究…'}</PendingIndicator>}
     {notice && <div className={'etf-notice ' + notice.tone} role={notice.tone === 'error' ? 'alert' : 'status'}>{notice.tone === 'success' ? <Check size={18} aria-hidden="true" /> : <CircleAlert size={18} aria-hidden="true" />}<span>{notice.message}</span></div>}
     {pending && <section className="etf-pending" role="status"><strong>{busy === 'save' || busy === 'publish' ? '正在確認操作…' : '上次操作尚未確認'}</strong><p>保留同一請求，先讀取狀態；未確認時不重新提交。</p><button type="button" disabled={!!busy} onClick={() => void checkStatus()}>{busy === 'status' ? '查詢中…' : '查詢操作狀態'}</button></section>}
     <div className={'etf-author-layout' + (mode === 'preview' && valid ? ' is-preview' : '')}>
       <aside className="etf-author-list" aria-label="已保存 ETF 報告"><div className="etf-expanded-heading"><h2>已保存研究</h2><button type="button" aria-label="重新載入已保存研究列表" disabled={!!busy} onClick={() => setListRetry(value => value + 1)}><RotateCcw size={16} /></button></div>
-        {listStatus === 'loading' ? <p role="status">正在載入保存研究…</p> : listStatus === 'error' ? <div role="alert"><p>研究列表暫時無法載入。</p><button type="button" onClick={() => setListRetry(value => value + 1)}>重新載入</button></div> : !items.length ? <p>尚未保存研究。匯入或載入範例可開始。</p> : <ul>{items.map(item => <li key={item.id}><button type="button" disabled={!!busy || !!pending} aria-pressed={entry?.id === item.id} onClick={() => void loadEntry(item.id)}><strong>{item.draft?.title || '完整研究快照 · ' + item.id}</strong><small>{day(item.updatedAt)} · r{item.revision}</small><span>{item.publishedVersion ? (item.archived ? '已取消公開' : '公開') + (item.hasUnpublishedChanges ? ' · 有未發布修訂' : '') : '未發布草稿'}</span></button></li>)}</ul>}
+        {listStatus === 'loading' ? <LoadingSkeleton media={false} label='正在載入保存研究…' rows={3} /> : listStatus === 'error' ? <div role="alert"><p>研究列表暫時無法載入。</p><button type="button" onClick={() => setListRetry(value => value + 1)}>重新載入</button></div> : !items.length ? <p>尚未保存研究。匯入或載入範例可開始。</p> : <ul>{items.map(item => <li key={item.id}><button type="button" disabled={!!busy || !!pending} aria-pressed={entry?.id === item.id} onClick={() => void loadEntry(item.id)}><strong>{item.draft?.title || '完整研究快照 · ' + item.id}</strong><small>{day(item.updatedAt)} · r{item.revision}</small><span>{item.publishedVersion ? (item.archived ? '已取消公開' : '公開') + (item.hasUnpublishedChanges ? ' · 有未發布修訂' : '') : '未發布草稿'}</span></button></li>)}</ul>}
       </aside>
       <section className="etf-author-editor" aria-label="ETF 研究編輯與審閱"><div className="etf-author-toolbar"><span>{entry ? '已保存 r' + entry.revision + ' · ' + (dirty ? '有未保存變更' : '與保存版一致') : raw ? '未保存的新研究' : '尚未匯入研究'}</span><button type="button" disabled={!!busy || !!pending} onClick={() => { if (mode === 'preview') setMode('edit'); else void previewDraft(); }}>{mode === 'preview' ? '返回編輯' : '預覽完整報告'}</button></div>
         <EtfTabs idPrefix='etf-author-report' label='研究任務內容' tabs={authorTabs} value={authorTab} onChange={tab => selectAuthorTab(tab, true)} />

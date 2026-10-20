@@ -1,4 +1,5 @@
 import { useFooterVersion } from './research-footer';
+import { LoadingSkeleton, PendingIndicator } from './loading';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { ArrowLeft, CircleAlert, RotateCcw, Upload } from 'lucide-react';
 import {
@@ -204,11 +205,11 @@ function useTaskIO(request: Endpoint, name: string) {
 }
 type IO = ReturnType<typeof useTaskIO>;
 function Feedback({ io, recover }: { io: IO; recover: (receipt: ReceiptResult) => void }) {
-  return <>{io.notice && <div className={'etf-notice ' + io.notice.tone} role={io.notice.tone === 'error' ? 'alert' : 'status'}><CircleAlert size={18} aria-hidden='true' /><span>{io.notice.message}</span></div>}
+  return <>{io.busy && <PendingIndicator>{io.busy}…</PendingIndicator>}{io.notice && <div className={'etf-notice ' + io.notice.tone} role={io.notice.tone === 'error' ? 'alert' : 'status'}><CircleAlert size={18} aria-hidden='true' /><span>{io.notice.message}</span></div>}
     {io.pending && <section className='etf-pending' role='status'><strong>{io.busy && io.busy !== '查詢操作狀態' ? '正在處理，請等候結果' : '上次操作尚未確認'}</strong><p>先查詢相同請求的結果，再繼續匯入或發布。請求識別：<code style={{ overflowWrap: 'anywhere' }}>{io.pending.requestId}</code></p><button type='button' disabled={!!io.busy} onClick={() => void io.check().then(value => { if (value?.state === 'committed') recover(value); })}>查詢操作狀態</button>{io.retryReady && io.pending.retry && <button type='button' disabled={!!io.busy} onClick={() => void io.retryValidation().then(value => { if (value?.state === 'committed') recover(value); })}>以原請求重新確認驗證</button>}</section>}</>;
 }
-function Confirm({ title, children, label, onCancel, onConfirm }: {
-  title: string; children: ReactNode; label: string; onCancel: () => void; onConfirm: () => void;
+function Confirm({ title, children, label, onCancel, onConfirm, busy = '' }: {
+  title: string; children: ReactNode; label: string; onCancel: () => void; onConfirm: () => void; busy?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -225,7 +226,7 @@ function Confirm({ title, children, label, onCancel, onConfirm }: {
     return () => { document.removeEventListener('keydown', key); if (previous?.isConnected) previous.focus(); };
   }, []);
   return <div className='etf-confirm-backdrop'><div ref={ref} className='etf-confirm-dialog' role='dialog' aria-modal='true' aria-labelledby='etf-task-confirm-title'>
-    <h2 id='etf-task-confirm-title'>{title}</h2>{children}<div><button type='button' onClick={onCancel}>返回檢查</button><button type='button' onClick={onConfirm}>{label}</button></div>
+    <h2 id='etf-task-confirm-title'>{title}</h2>{busy && <PendingIndicator>{busy}…</PendingIndicator>}{children}<div><button type='button' onClick={onCancel}>返回檢查</button><button type='button' onClick={onConfirm}>{label}</button></div>
   </div></div>;
 }
 export function EtfAuthorWorkspace(props: WorkspaceProps) {
@@ -303,6 +304,7 @@ function DailyAuthor({ request, requestReport, onDirtyChange, onSnapshot }: {
   const [head, setHead] = useState<Head | null>(null);
   useFooterVersion(head?.version, '每日資料版本');
   const [month, setMonth] = useState(() => routeParams().get('month') || today().slice(0, 7));
+  const [jobsState, setJobsState] = useState<'loading' | 'ready' | 'error'>('loading');
   const [jobs, setJobs] = useState<BatchSummary[]>([]); const [nextJobs, setNextJobs] = useState<string | null>(null);
   const [tab, setTab] = useState(() => tabValue('dataTab'));
   const [preview, setPreview] = useState<PrivatePreview | null>(null);
@@ -372,8 +374,10 @@ function DailyAuthor({ request, requestReport, onDirtyChange, onSnapshot }: {
     sessionWrite('pocketstocks:etf:lastBatch', value.id);
   }
   async function loadJobs(cursor?: string) {
+    setJobsState('loading');
     const value = await io.run<{ items: BatchSummary[]; nextToken: string | null }>('載入任務', '/api/admin/etf-data/batches/list', { month, ...(cursor ? { nextToken: cursor } : {}) });
-    if (!value) return; setJobs(current => cursor ? [...current, ...value.items] : value.items); setNextJobs(value.nextToken);
+    if (!value) { setJobsState('error'); return; }
+    setJobs(current => cursor ? [...current, ...value.items] : value.items); setNextJobs(value.nextToken); setJobsState('ready');
   }
   async function loadBatch(id: string, preserveInput = false) {
     const value = await io.run<{ batch: Batch; currentHead: Head | null }>('載入保存任務', '/api/admin/etf-data/batches/' + encodeURIComponent(id) + '/get', {});
@@ -506,10 +510,12 @@ function DailyAuthor({ request, requestReport, onDirtyChange, onSnapshot }: {
     <div inert={!!confirm}>
       <header className='etf-author-heading'><div><span className='etf-kicker'>作者工作區 · 私有每日資料</span><h1>ETF 每日資料</h1><p>每個任務處理一個資料日。保存、驗證與預覽都不會公開。</p></div></header>
       <Feedback io={io} recover={value => { const id = value.batchId || batch?.id; if (id) void loadBatch(id); }} />
+      {uploading && <PendingIndicator>正在匯入並保存資料批次…</PendingIndicator>}
+      {pairLoading && <PendingIndicator>正在載入指定報告…</PendingIndicator>}
       <div className='etf-author-layout'>
         <aside className='etf-author-list' aria-label='每日資料任務'>
           <div className='eda-month'><label>任務月份<input type='month' value={month} disabled={locked} onChange={event => setMonth(event.target.value)} /></label><button type='button' disabled={locked} onClick={() => void loadJobs()}><RotateCcw size={15} />載入</button></div>
-          {!jobs.length && <p>此月份尚未列出保存任務。</p>}
+          {jobsState === 'loading' ? <LoadingSkeleton media={false} label='正在載入每日資料任務…' rows={3} /> : jobsState === 'error' ? <p role='alert'>任務清單暫時無法載入，請使用上方載入按鈕重試。</p> : !jobs.length && <p>此月份尚未列出保存任務。</p>}
           <ul>{jobs.map(job => <li key={job.id}><button type='button' disabled={locked} aria-pressed={batch?.id === job.id} onClick={() => { if (dirty) { setReplaceId(job.id); setConfirm('replace'); } else void loadBatch(job.id); }}><strong>{job.scopeId === QA_DATA_SCOPE ? '測試 · ' : ''}{job.requestedDate}</strong><span>{labels[job.status] || job.status} · r{job.revision}</span><small>{job.receivedChunks}／{job.chunkCount} 批已保存</small></button></li>)}</ul>
           {nextJobs && <button type='button' disabled={locked} onClick={() => void loadJobs(nextJobs)}>載入更多任務</button>}
         </aside>
@@ -580,9 +586,9 @@ function DailyAuthor({ request, requestReport, onDirtyChange, onSnapshot }: {
       </div>
     </div>
     {confirm === 'replace' && <Confirm title='開啟其他資料任務？' label='放棄未保存輸入並開啟' onCancel={() => setConfirm(null)} onConfirm={() => { setConfirm(null); void loadBatch(replaceId); }}><p>目前輸入尚未保存；伺服器已保存的資料與公開版本仍保留。</p></Confirm>}
-    {confirm === 'publish' && <Confirm title='發布這份每日資料？' label='確認發布至 STAGING' onCancel={() => setConfirm(null)} onConfirm={() => void publish()}><p>{batch?.manifest.requestedDate}，將更新目前公開資料。{pairMode === 'none' ? '只發布每日資料，不需要研究報告。' : '每日資料與指定報告必須全部成功才切換。'}來源缺口會保留。</p>{pairSummary && <p>{pairSummary}</p>}</Confirm>}
-    {confirm === 'cancel' && <Confirm title='取消未發布任務？' label='確認取消任務' onCancel={() => setConfirm(null)} onConfirm={() => void cancel()}><p>任務將停止發布，已保存來源與操作紀錄會保留。</p></Confirm>}
-    {confirm === 'restore' && <Confirm title='將舊資料回復為新版本？' label='確認建立回復版本' onCancel={() => setConfirm(null)} onConfirm={() => void restore()}><p>資料日 {restoreTarget?.publication.tradeDate}，將以回復來源建立新公開版本；既有完整報告不會改變。理由：{restoreReason}</p></Confirm>}
+    {confirm === 'publish' && <Confirm busy={io.busy} title='發布這份每日資料？' label='確認發布至 STAGING' onCancel={() => setConfirm(null)} onConfirm={() => void publish()}><p>{batch?.manifest.requestedDate}，將更新目前公開資料。{pairMode === 'none' ? '只發布每日資料，不需要研究報告。' : '每日資料與指定報告必須全部成功才切換。'}來源缺口會保留。</p>{pairSummary && <p>{pairSummary}</p>}</Confirm>}
+    {confirm === 'cancel' && <Confirm busy={io.busy} title='取消未發布任務？' label='確認取消任務' onCancel={() => setConfirm(null)} onConfirm={() => void cancel()}><p>任務將停止發布，已保存來源與操作紀錄會保留。</p></Confirm>}
+    {confirm === 'restore' && <Confirm busy={io.busy} title='將舊資料回復為新版本？' label='確認建立回復版本' onCancel={() => setConfirm(null)} onConfirm={() => void restore()}><p>資料日 {restoreTarget?.publication.tradeDate}，將以回復來源建立新公開版本；既有完整報告不會改變。理由：{restoreReason}</p></Confirm>}
   </div>;
 }
 
@@ -761,7 +767,7 @@ function SnapshotAuthor({ request, initialRaw, onDirtyChange, onBack }: {
       <button className='etf-back' type='button' disabled={locked} onClick={onBack}><ArrowLeft size={16} />返回原任務</button>
       <header className='etf-author-heading'><div><span className='etf-kicker'>作者工作區 · 私有完整研究</span><h1>完整研究快照</h1><p>完整內容會分批保存並核對；全部驗證成功後才可預覽或發布。</p></div></header>
       <Feedback io={io} recover={value => { const id = value.batchId || body?.id; if (id) void loadBody(id); }} />
-      {working && <p role='status' className='etf-note'>{working}</p>}
+      {working && <PendingIndicator className='etf-note'>{working}</PendingIndicator>}
       <EtfTabs idPrefix='etf-snapshot-task' label='完整快照任務內容' tabs={taskTabs} value={tab} onChange={selectTab} />
       <EtfTabPanel idPrefix='etf-snapshot-task' id='import' active={tab === 'import'}>
         <h2>資料匯入</h2>
@@ -793,6 +799,6 @@ function SnapshotAuthor({ request, initialRaw, onDirtyChange, onBack }: {
         {!enabled && <p className='etf-note' role='status'>完整快照格式尚待讀者與作者介面完成相容驗證，目前不能發布；私有保存、驗證與預覽仍可使用。</p>}
       </EtfTabPanel>
     </div>
-    {confirm && <Confirm title='發布這份完整研究快照？' label='確認發布至 STAGING' onCancel={() => setConfirm(false)} onConfirm={() => void publish()}><p>{body?.reportSummary?.title}，將更新目前公開內容。原始舊報告與來源版本保留。</p></Confirm>}
+    {confirm && <Confirm busy={io.busy} title='發布這份完整研究快照？' label='確認發布至 STAGING' onCancel={() => setConfirm(false)} onConfirm={() => void publish()}><p>{body?.reportSummary?.title}，將更新目前公開內容。原始舊報告與來源版本保留。</p></Confirm>}
   </div>;
 }

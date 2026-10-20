@@ -1,3 +1,4 @@
+import { LoadingSkeleton, PendingIndicator } from './loading';
 import { useEffect, useRef, useState, type FormEvent } from 'react';
 import { api, type AuthUser } from '@appdeploy/client';
 import {
@@ -274,10 +275,9 @@ export function ReaderFormView({
           </p>
         </header>
         <div className="reader-form-workspace">
+          {pending && <PendingIndicator>正在確認資料處理結果…</PendingIndicator>}
           {hydrating ? (
-            <div role="status" aria-busy="true">
-              正在確認讀者登入…
-            </div>
+            <LoadingSkeleton kind="form" label="正在確認讀者登入…" />
           ) : !user ? (
             <div className="reader-form-gate">
               <LockKeyhole size={28} aria-hidden="true" />

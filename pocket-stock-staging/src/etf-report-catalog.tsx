@@ -1,3 +1,4 @@
+import { LoadingBlock, LoadingSkeleton } from './loading';
 import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { FileSearch, X } from 'lucide-react';
 import { CatalogPagination, ResearchHero } from './library-layout';
@@ -83,7 +84,7 @@ function EtfCatalogCover({ item }: { item: ReportItem }) {
   return <span className='article-thumb etf-report-cover etf-report-cover--image' aria-busy={!ready}>
     <img key={source + ':' + attempt} src={source} alt={'《' + item.title + '》封面'} width={480} height={360} loading={attempt ? 'eager' : 'lazy'} decoding='async'
       data-loading={!ready} onLoad={() => { if (alive.current) setReady(true); }} onError={handleError} />
-    {!ready && <span className='etf-cover-loading' aria-hidden='true'><FileSearch size={28} /><span>正在載入封面…</span></span>}
+    {!ready && <LoadingBlock className='etf-cover-loading' />}
   </span>;
 }
 
@@ -137,7 +138,7 @@ export function EtfReportCatalog({ items, ready, loading, fallback, onOpen }: {
       <span className='sr-only' role='status' aria-live='polite'>{ready ? `找到 ${results.length} 篇分析` : loading ? '正在載入…' : ''}</span>
       {filtered && <div className='active-filter-line'><span>{[query.q, selectedMonth].filter(Boolean).join(' · ')}</span><button type='button' className='clear-filters' onClick={clear}><X size={15} />清除篩選</button></div>}
       <div className='library-shelf-composition' aria-busy={loading}>
-        {fallback || (!results.length ? <div className='library-search-state empty' role='status'><FileSearch aria-hidden='true' /><div><h3>找不到相關分析</h3><p>請調整關鍵字或研究月份，再試一次。</p><button type='button' onClick={clear}>清除搜尋條件</button></div></div> :
+        {(loading ? <LoadingSkeleton kind='catalog' label={'正在載入 ETF 報告…'} /> : fallback) || (!results.length ? <div className='library-search-state empty' role='status'><FileSearch aria-hidden='true' /><div><h3>找不到相關分析</h3><p>請調整關鍵字或研究月份，再試一次。</p><button type='button' onClick={clear}>清除搜尋條件</button></div></div> :
           <div className='book-grid published-book-grid'>
             {results.slice(page * pageSize, (page + 1) * pageSize).map(item => <a key={item.id}
               className='article-card article-card--landscape etf-analysis-card'
