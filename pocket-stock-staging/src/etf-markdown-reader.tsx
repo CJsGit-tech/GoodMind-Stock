@@ -1,3 +1,4 @@
+import { ResearchArticleHeading } from './research-article-heading';
 import { CatalogSelect } from './catalog-select';
 import { useFooterVersion } from './research-footer';
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
@@ -137,13 +138,13 @@ function Sources({ report, ids }: { report: MarkdownReport; ids: string[] }) {
       {source.request_method && <small>公開查詢方式 {text(source.request_method)}{source.request_params ? ' · 條件 ' + JSON.stringify(source.request_params) : ''}</small>}<ReferenceMetadata label='完整來源紀錄' values={source} /></li>;
   })}</ul>;
 }
-function ReferenceCitations({ report }: { report: MarkdownReport }) {
+export function ReferenceCitations({ report }: { report: MarkdownReport }) {
   const sources = report.shared.source_registry || {}, ids = Object.keys(sources);
   if (!ids.length) return <p className='md-caption'>尚無可列出的參考來源。</p>;
   return <ol className='md-citation-list' role='list'>{ids.map((id, index) => {
     const source = sources[id];
     const href = safeHref(source?.url), title = text(source?.title) || '來源未提供標題';
-    const period = text(source?.data_period), published = text(source?.published_date);
+    const period = text(source?.data_period) || text(source?.data_date), published = text(source?.published_date);
     return <li key={id}><span className='md-citation-number'>[{index + 1}]</span><span>{href && !href.startsWith('#')
       ? <a href={href} target='_blank' rel='noopener noreferrer'>{title}<span className='sr-only'>（開啟新分頁）</span></a> : title}
       {period ? !title.includes(period) && <span className='md-citation-date'>。資料期間：{period}</span> : published ? <span className='md-citation-date'>。發布：{day(published)}</span> : null}
@@ -299,8 +300,8 @@ function EvidencePanel({ report, evidence, onClose }: { report: MarkdownReport; 
   </section>;
 }
 
-export function MarkdownEtfReader({ report, version, publishedAt, preview = false }: {
-  report: MarkdownReport; version?: number; publishedAt?: string | null; preview?: boolean;
+export function MarkdownEtfReader({ report, version, publishedAt, coverUrl, preview = false }: {
+  report: MarkdownReport; version?: number; publishedAt?: string | null; coverUrl?: string; preview?: boolean;
 }) {
   useFooterVersion(version, '文章版本', !preview);
   const prefix = 'markdown-etf-' + useId().replaceAll(':', '');
@@ -412,9 +413,7 @@ export function MarkdownEtfReader({ report, version, publishedAt, preview = fals
     showReferences();
   };
   return <article ref={article} aria-label={report.title} className={'md-etf-reader' + (preview ? ' md-preview' : '')} data-markdown-report={report.id}>
-    {preview && <header className='etf-article-heading md-heading'><h1>{report.title}</h1><div className='md-report-meta'><span>研究日 {day(report.period.end)}</span><span>比較日 {day(report.period.start)}</span><span>補查日 {day(report.evidenceDate)}</span><span className='md-status'>{metadata.data_status === 'complete' ? '資料完整' : metadata.data_status === 'unavailable' ? '資料未取得' : '資料部分覆蓋'}</span><span>私有預覽</span></div>
-      {publishedAt && <p className='md-caption'>發布時間 {new Date(publishedAt).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei', hour12: false })}（台北）</p>}
-    </header>}
+    <ResearchArticleHeading report={report} label='主動式 ETF 研究' coverUrl={coverUrl} publishedAt={publishedAt} preview={preview} />
     <EtfTabs idPrefix={prefix} label='研究報告內容' tabs={TABS} value={state.tab} onChange={tab => { referenceTarget.current = false; setEvidence(null); update({ tab }); }} />
     <EtfTabPanel idPrefix={prefix} id='analysis' active={state.tab === 'analysis'}>{report.format === 'etf-json' && report.analysis ? <JsonAnalysis analysis={report.analysis} sourceJump={sourceJump} /> : <div className='md-analysis'><KeyMetrics report={report} open={open} layout='summary' /><div className='md-prose md-analysis-prose'><Markdown remarkPlugins={[remarkAnalysisReading]} skipHtml urlTransform={url => safeHref(url) || ''} components={{
       a: ({ href, children }) => {

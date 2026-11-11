@@ -140,6 +140,8 @@ try {
   await check('US-06–09 author sign-in, create, upload, save, preview, publish', async () => {
     await goto('/admin'); await visible(page.getByLabel('作者密鑰')); await page.getByLabel('作者密鑰').fill(secret); await role('登入').click();
     await visible(role('建立新書')); await page.reload(); await visible(role('建立新書'));
+    assert.ok(await role('依書名搜尋', 'searchbox').evaluate(el => el.getBoundingClientRect().width >= 200), 'Author search must retain a usable width');
+    assert.ok(await role('依公開狀態篩選', 'combobox').evaluate(el => el.getBoundingClientRect().width < 300), 'Status filter must not consume the entire search row');
     await role('建立新書').click();
     await page.getByLabel('書名 *', { exact: false }).fill('可拋棄本機功能測試研究');
     await role('公開書庫').click(); await visible(page.getByRole('alertdialog'));

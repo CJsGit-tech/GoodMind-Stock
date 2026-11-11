@@ -163,7 +163,7 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
           </button>
         ))}
       </div>
-      <div className="author-feedback-split">
+      <div className={"author-feedback-split" + (!data.items.length ? " is-empty" : "")}>
         <section
           className="author-feedback-list-panel"
           aria-label="讀者回饋清單"
@@ -189,13 +189,11 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
                     ? '這一頁沒有符合的回饋'
                     : '尚無' + (kind === 'all' ? '讀者回饋' : kindLabel(kind))}
                 </h2>
-                <p>
+                {(hasMore || page > 0) && <p>
                   {hasMore
                     ? '還有其他資料頁，可繼續查看下一頁。'
-                    : page > 0
-                      ? '可返回上一頁查看其他回饋。'
-                      : '收到讀者提交的內容後，會顯示在這裡。'}
-                </p>
+                    : '可返回上一頁查看其他回饋。'}
+                </p>}
               </div>
             ) : (
               <ul className="author-feedback-list">
@@ -224,7 +222,7 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
               </ul>
             )}
           </div>
-          <nav className="author-feedback-pagination" aria-label="讀者回饋分頁">
+          {(page > 0 || hasMore) && <nav className="author-feedback-pagination" aria-label="讀者回饋分頁">
             <button
               type="button"
               disabled={page === 0 || status === 'loading'}
@@ -242,9 +240,9 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
             >
               下一頁 <ChevronRight size={16} />
             </button>
-          </nav>
+          </nav>}
         </section>
-        <section
+        {data.items.length > 0 && <section
           className="author-feedback-detail"
           aria-label="回饋內容"
           aria-live="polite"
@@ -295,7 +293,7 @@ export function AuthorFeedbackView({ sessionToken, requestPage }: Props) {
                 : '回饋內容會顯示在這裡。'}
             </p>
           )}
-        </section>
+        </section>}
       </div>
     </main>
   );

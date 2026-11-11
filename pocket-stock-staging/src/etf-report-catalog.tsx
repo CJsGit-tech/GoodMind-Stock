@@ -20,16 +20,16 @@ export function readEtfCatalogQuery(hash = window.location.hash): CatalogQuery {
     page: Math.max(0, Math.min(100000, Number(params.get('page')) || 1) - 1),
   };
 }
-export function etfCatalogHash(query: CatalogQuery) {
+export function etfCatalogHash(query: CatalogQuery, base = '#/active-etf') {
   const params = new URLSearchParams();
   if (query.q) params.set('q', query.q);
   if (query.month) params.set('month', query.month);
   if (query.sort !== 'research-newest') params.set('sort', query.sort);
   if (query.page) params.set('page', String(query.page + 1));
-  return '#/active-etf' + (params.size ? '?' + params.toString() : '');
+  return base + (params.size ? '?' + params.toString() : '');
 }
-function writeQuery(query: CatalogQuery) {
-  window.history.replaceState(window.history.state, '', etfCatalogHash(query));
+function writeQuery(query: CatalogQuery, base = '#/active-etf') {
+  window.history.replaceState(window.history.state, '', etfCatalogHash(query, base));
 }
 export function compareEtfCatalogReports(a: ReportItem, b: ReportItem, sort: CatalogSort) {
   if (sort === 'research-newest') return b.period.end.localeCompare(a.period.end)
@@ -43,7 +43,7 @@ function safeCoverUrl(value: unknown): value is string {
   if (value.startsWith('/') && !value.startsWith('//')) return true;
   try { const url = new URL(value); return ['https:', 'http:'].includes(url.protocol) && !url.username && !url.password; } catch { return false; }
 }
-function EtfCatalogCover({ item }: { item: ReportItem }) {
+function EtfCatalogCover({ item, domain = 'etf' }: { item: ReportItem; domain?: 'etf' | 'institutional' }) {
   const cover = item.cover;
   const [source, setSource] = useState(cover && safeCoverUrl(cover.url) ? cover.url : '');
   const [attempt, setAttempt] = useState(0), [ready, setReady] = useState(false), [failed, setFailed] = useState(false);
@@ -70,7 +70,7 @@ function EtfCatalogCover({ item }: { item: ReportItem }) {
     const controller = new AbortController(); request.current = controller;
     deadline.current = window.setTimeout(() => controller.abort(), 15000);
     const params = new URLSearchParams({ version: String(item.version), sha256: cover.sha256 });
-    void fetch('/api/etf/reports/' + encodeURIComponent(item.id) + '/cover?' + params, { credentials: 'same-origin', signal: controller.signal })
+    void fetch('/api/' + domain + '/reports/' + encodeURIComponent(item.id) + '/cover?' + params, { credentials: 'same-origin', signal: controller.signal })
       .then(async response => {
         if (!response.ok) throw new Error('Cover refresh unavailable');
         const next = (await response.json()).cover;
@@ -80,7 +80,7 @@ function EtfCatalogCover({ item }: { item: ReportItem }) {
       }).catch(() => { if (alive.current) setFailed(true); })
       .finally(() => { if (deadline.current !== null) window.clearTimeout(deadline.current); });
   }
-  if (!source || failed) return <span className='article-thumb etf-report-cover' aria-hidden='true'><FileSearch size={38} strokeWidth={1.2} /><strong>主動式 ETF</strong><span>{failed ? '封面暫時無法顯示' : '研究分析'}</span><time>{dateLabel(item.period.end)}</time></span>;
+  if (!source || failed) return <span className='article-thumb etf-report-cover' aria-hidden='true'><FileSearch size={38} strokeWidth={1.2} /><strong>{domain === 'institutional' ? '三大法人' : '主動式 ETF'}</strong><span>{failed ? '封面暫時無法顯示' : '研究分析'}</span><time>{dateLabel(item.period.end)}</time></span>;
   return <span className='article-thumb etf-report-cover etf-report-cover--image' aria-busy={!ready}>
     <img key={source + ':' + attempt} src={source} alt={'《' + item.title + '》封面'} width={480} height={360} loading={attempt ? 'eager' : 'lazy'} decoding='async'
       data-loading={!ready} onLoad={() => { if (alive.current) setReady(true); }} onError={handleError} />
@@ -88,10 +88,14 @@ function EtfCatalogCover({ item }: { item: ReportItem }) {
   </span>;
 }
 
-export function EtfReportCatalog({ items, ready, loading, fallback, onOpen }: {
+export function EtfReportCatalog({ items, ready, loading, fallback, onOpen, domain = 'etf' }: {
+  domain?: 'etf' | 'institutional';
   items: ReportItem[]; ready: boolean; loading: boolean; fallback: ReactNode;
   onOpen: (item: ReportItem) => void;
 }) {
+  const institutional = domain === 'institutional';
+  const base = institutional ? '#/institutional-flows' : '#/active-etf';
+  const subject = institutional ? '三大法人' : 'ETF';
   const [query, setQuery] = useState(() => readEtfCatalogQuery());
   const [draft, setDraft] = useState(query.q);
   const input = useRef<HTMLInputElement>(null);
@@ -113,47 +117,48 @@ export function EtfReportCatalog({ items, ready, loading, fallback, onOpen }: {
   }, []);
   useEffect(() => {
     if (ready && (query.page !== page || query.month !== selectedMonth)) {
-      const next = { ...query, page, month: selectedMonth }; setQuery(next); writeQuery(next);
+      const next = { ...query, page, month: selectedMonth }; setQuery(next); writeQuery(next, base);
     }
   }, [ready, page, selectedMonth, query]);
   function change(patch: Partial<CatalogQuery>) {
-    const next = { ...query, page: 0, ...patch }; setQuery(next); writeQuery(next);
+    const next = { ...query, page: 0, ...patch }; setQuery(next); writeQuery(next, base);
   }
   function clear() { setDraft(''); change({ q: '', month: '' }); input.current?.focus(); }
-  return <section className='etf-catalog' aria-label='主動式 ETF 分析書庫'>
-    <ResearchHero title='主動式 ETF 研究' titleId='etf-catalog-title'
-      deck={<>產業操作 × 基金共識 × 營運證據<br />從完整分析，理解主動式 ETF 的投資選擇。</>}
-      aphorism={<>看見配置<br />理解<br />投資選擇</>} />
-    <section className='library-tools library-query-rail' aria-label='搜尋與 ETF 研究篩選'>
-      <CatalogSearch label='搜尋 ETF 分析' placeholder='搜尋報告標題、產業或日期' value={draft}
-        inputRef={input} clearLabel='清除 ETF 搜尋文字' onChange={setDraft} onSearch={q => change({ q: q.trim() })} />
+  return <section className='etf-catalog' aria-label={institutional ? '三大法人分析書庫' : '主動式 ETF 分析書庫'}>
+    <ResearchHero title={institutional ? '三大法人研究' : '主動式 ETF 研究'} titleId='etf-catalog-title' />
+    <section className='library-tools library-query-rail' aria-label={institutional ? '搜尋與法人研究篩選' : '搜尋與 ETF 研究篩選'}>
+      <CatalogSearch label={institutional ? '搜尋法人報告' : '搜尋 ETF 分析'} placeholder='搜尋報告標題、產業或日期' value={draft}
+        inputRef={input} clearLabel={institutional ? '清除法人搜尋文字' : '清除 ETF 搜尋文字'} onChange={setDraft} onSearch={q => change({ q: q.trim() })} />
       <CatalogSelect label='研究月份篩選' value={selectedMonth}
         options={[{ value: '', label: '所有月份' }, ...months.map(month => ({ value: month, label: month.replace('-', ' / ') }))]}
         onChange={month => change({ month })} />
-      <CatalogSelect label='ETF 報告排序' value={query.sort}
+      <CatalogSelect label={institutional ? '法人報告排序' : 'ETF 報告排序'} value={query.sort}
         options={[{ value: 'research-newest', label: '研究日' }, { value: 'newest', label: '最新發布' }, { value: 'oldest', label: '最早發布' }]}
         onChange={sort => change({ sort: catalogSort(sort) })} />
     </section>
-    <section className='market-shelves public-library-normal' aria-label='已發布 ETF 分析'>
+    <section className='market-shelves public-library-normal' aria-label={institutional ? '已發布法人報告' : '已發布 ETF 分析'}>
       <span className='sr-only' role='status' aria-live='polite'>{ready ? `找到 ${results.length} 篇分析` : loading ? '正在載入…' : ''}</span>
       {filtered && <div className='active-filter-line'><span>{[query.q, selectedMonth].filter(Boolean).join(' · ')}</span><button type='button' className='clear-filters' onClick={clear}><X size={15} />清除篩選</button></div>}
       <div className='library-shelf-composition' aria-busy={loading}>
-        {(loading ? <LoadingSkeleton kind='catalog' label={'正在載入 ETF 報告…'} /> : fallback) || (!results.length ? <div className='library-search-state empty' role='status'><FileSearch aria-hidden='true' /><div><h3>找不到相關分析</h3><p>請調整關鍵字或研究月份，再試一次。</p><button type='button' onClick={clear}>清除搜尋條件</button></div></div> :
+        {(loading ? <LoadingSkeleton kind='catalog' label={institutional ? '正在載入三大法人報告…' : '正在載入 ETF 報告…'} /> : fallback) || (!results.length ? <div className='library-search-state empty' role='status'><FileSearch aria-hidden='true' /><div><h3>找不到相關分析</h3><p>請調整關鍵字或研究月份，再試一次。</p><button type='button' onClick={clear}>清除搜尋條件</button></div></div> :
           <div className='book-grid published-book-grid'>
             {results.slice(page * pageSize, (page + 1) * pageSize).map(item => <a key={item.id}
               className='article-card article-card--landscape etf-analysis-card'
-              href={'#/active-etf/' + encodeURIComponent(item.id) + '?v=' + item.version + (item.id === 'history' ? '&report=1' : '')}
-              aria-label={'開啟 ETF 分析：' + item.title}
+              href={base + '/' + encodeURIComponent(item.id) + '?v=' + item.version + (item.id === 'history' ? '&report=1' : '')}
+              aria-label={'開啟 ' + subject + ' 分析：' + item.title}
               onClick={event => { if (event.button || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return; event.preventDefault(); onOpen(item); }}>
-              <EtfCatalogCover key={[item.id, item.version, item.cover?.sha256, item.cover?.url].join(':')} item={item} />
-              <span className='article-meta'><span>主動式 ETF</span><time dateTime={item.publishedAt}>發布 {dateLabel(item.publishedAt)}</time></span>
+              <EtfCatalogCover domain={domain} key={[item.id, item.version, item.cover?.sha256, item.cover?.url].join(':')} item={item} />
+              <span className='article-meta' aria-label={institutional ? '研究日期' : '持股比較日期'}>
+                <span className='sr-only'>{institutional ? '研究日 ' : '持股 '}</span><time dateTime={item.period.start}>{dateLabel(item.period.start)}</time>
+                {!institutional && <><span aria-hidden='true'> → </span><time dateTime={item.period.end}>{dateLabel(item.period.end)}</time></>}
+                {query.sort !== 'research-newest' && <time dateTime={item.publishedAt}>發布 {dateLabel(item.publishedAt)}</time>}
+              </span>
               <h3 title={item.title}>{item.title}</h3><p>{item.excerpt}</p>
-              <span className='card-foot etf-report-period'>持股 {dateLabel(item.period.start)} → {dateLabel(item.period.end)}</span>
             </a>)}
           </div>)}
       </div>
       {ready && results.length > 0 && <CatalogPagination page={page} count={count} total={results.length} size={pageSize}
-        label='ETF 分析分頁' noun='篇' collection='分析' onChange={page => change({ page })} />}
+        label={institutional ? '法人報告分頁' : 'ETF 分析分頁'} centered noun='篇' collection='分析' onChange={page => change({ page })} />}
     </section>
   </section>;
 }

@@ -8,12 +8,16 @@ import { MAX_ETF_COVER_BYTES, MAX_ETF_COVER_BASE64_CHARS, validateEtfCover } fro
 import type { EtfCoverMetadata, EtfCoverDescriptor, ValidatedEtfCover } from '../shared/etf-cover.ts';
 import { isPublicAssetUrl } from './public-book.ts';
 
-const DRAFTS = 'etf_reports_v1', PUBLIC = 'etf_public_reports_v1', SNAPSHOTS = 'etf_report_snapshots_v1';
-const RECEIPTS = 'etf_request_receipts_v1', PAGES = 'etf_markdown_pages_v3';
+export function createResearchWorkflow(options: { prefix?: string; parse?: typeof parseEtfResearchSource; maxSourceBytes?: number; requireTemplate?: boolean } = {}) {
+const parseSource = options.parse || parseEtfResearchSource;
+const sourceLimit = options.maxSourceBytes || MAX_MARKDOWN_SOURCE_BYTES;
+const prefix = options.prefix || 'etf';
+const DRAFTS = prefix+'_reports_v1', PUBLIC = prefix+'_public_reports_v1', SNAPSHOTS = prefix+'_report_snapshots_v1';
+const RECEIPTS = prefix+'_request_receipts_v1', PAGES = prefix+'_markdown_pages_v3';
 const OWNER = 'staging-master-secret-author';
-const PAGE_CHARS = 16 * 1024;
+const PAGE_CHARS = options.prefix ? 64 * 1024 : 16 * 1024;
 type PageRef = { id: string; hash: string };
-type Manifest = { sourceHash: string; parserVersion: string; sourceBytes: number; pages: PageRef[] };
+type Manifest = { sourceHash: string; parserVersion: string; sourceBytes: number; pages: PageRef[]; template?: { content: string; hash: string } };
 type Summary = { id: string; title: string; excerpt: string; period: { start: string; end: string }; evidenceDate: string };
 type StoredCover = EtfCoverMetadata & { storagePath: string };
 type Draft = Summary & { archived?: boolean; storageSchemaVersion: 3; ownerKey: string; manifest: Manifest; cover?: StoredCover | null; revision: number; updatedAt: string; publishedVersion: number; publishedAt: string | null; publishedDraftRevision: number; reviewedRevision: number | null; reviewHash: string | null; dataStatus: string };
@@ -35,7 +39,7 @@ function respond(caught: unknown): RouterResponse {
   return error('研究資料暫時無法處理。',500);
 }
 function summary(report: MarkdownReport): Summary { return {id:report.id,title:report.title,excerpt:report.excerpt,period:report.period,evidenceDate:report.evidenceDate}; }
-export async function etfCoverDescriptor(value: unknown): Promise<EtfCoverDescriptor | null> {
+async function etfCoverDescriptor(value: unknown): Promise<EtfCoverDescriptor | null> {
   if (value === undefined || value === null) return null;
   const cover = value as StoredCover;
   if (!cover || typeof cover !== 'object' || typeof cover.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(cover.sha256) || cover.storagePath !== 'etf-covers/' + cover.sha256 + '.jpg' || cover.width !== 480 || cover.height !== 360 || cover.contentType !== 'image/jpeg' || !Number.isSafeInteger(cover.bytes) || cover.bytes <= 0 || cover.bytes > MAX_ETF_COVER_BYTES) fail('封面記錄完整性檢查失敗。',503,'cover_integrity');
@@ -51,9 +55,9 @@ async function checkedCover(value: unknown): Promise<ValidatedEtfCover> {
   if (!result.cover) fail('封面驗證未通過。',result.errors.some(e=>e.code==='cover_too_large')?413:400,'invalid_cover',{errors:result.errors});
   return result.cover!;
 }
-export function isMarkdownStorage(value: unknown): value is Draft | Snapshot { return !!value && typeof value==='object' && (value as Draft).storageSchemaVersion===3; }
+function isMarkdownStorage(value: unknown): value is Draft | Snapshot { return !!value && typeof value==='object' && (value as Draft).storageSchemaVersion===3; }
 async function loadReport(manifest: Manifest): Promise<MarkdownReport> {
-  if(!manifest || !Array.isArray(manifest.pages) || !manifest.pages.length || manifest.pages.length>40 || manifest.sourceBytes>MAX_MARKDOWN_SOURCE_BYTES) fail('完整來源頁目錄無效。',503,'source_integrity');
+  if(!manifest || !Array.isArray(manifest.pages) || !manifest.pages.length || manifest.pages.length>Math.ceil(sourceLimit/PAGE_CHARS) || manifest.sourceBytes>sourceLimit) fail('完整來源頁目錄無效。',503,'source_integrity');
   const pages=await db.get<{id:string;content:string;hash:string;ownerKey:string}>(PAGES,manifest.pages.map(p=>p.id),{consistent:true});
   let raw='';
   for(const [i,p] of pages.entries()) {
@@ -61,9 +65,14 @@ async function loadReport(manifest: Manifest): Promise<MarkdownReport> {
     raw+=p!.content;
   }
   if(await markdownHash(raw)!==manifest.sourceHash || new TextEncoder().encode(raw).byteLength!==manifest.sourceBytes) fail('來源完整性檢查失敗。',503,'source_integrity');
-  const checked=await parseEtfResearchSource(raw);
+  const checked=await parseSource(raw);
   if(!checked.report) fail('來源重新驗證失敗。',503,'source_integrity',{errors:checked.errors});
   if(checked.report!.parserVersion!==manifest.parserVersion) fail('此來源的解析版本尚未載入，不能默默改用新版解析器。',503,'parser_version_unavailable');
+  if (options.requireTemplate && !manifest.template) fail('缺少同版HTML來源。',503,'source_integrity');
+  if (manifest.template) {
+    if (await markdownHash(manifest.template.content) !== manifest.template.hash) fail('HTML來源完整性檢查失敗。',503,'source_integrity');
+    checked.report!.companionHtml = manifest.template.content;
+  }
   return checked.report!;
 }
 async function entry(record: Draft): Promise<MarkdownEntry> { return {id:record.id,archived:record.archived===true,draft:await loadReport(record.manifest),cover:await etfCoverDescriptor(record.cover),revision:record.revision,updatedAt:record.updatedAt,publishedVersion:record.publishedVersion,publishedAt:record.publishedAt,hasUnpublishedChanges:record.revision!==record.publishedDraftRevision,reviewedRevision:record.reviewedRevision,reviewHash:record.reviewHash}; }
@@ -83,7 +92,7 @@ async function receiptEntry(saved: Receipt): Promise<MarkdownEntry> {
   return entry(current);
 }
 async function checkedReport(raw: unknown): Promise<MarkdownReport> {
-  const checked=await parseEtfResearchSource(raw);
+  const checked=await parseSource(raw);
   if(!checked.report) fail('Markdown 驗證未通過。',checked.errors.some(e=>e.code==='source_too_large'||e.code==='expanded_too_large')?413:400,'invalid_markdown',{errors:checked.errors,warnings:checked.warnings});
   return checked.report!;
 }
@@ -99,18 +108,24 @@ async function commit(saved: Receipt, operations: Parameters<typeof db.transact>
   return receiptEntry(saved);
 }
 const timestamp = (previous?:string|null) => new Date(Math.max(Date.now(),previous?Date.parse(previous)+1:0)).toISOString();
+async function checkedTemplate(value: unknown) {
+  if (typeof value !== 'string' || !value.trim() || new TextEncoder().encode(value).byteLength > 64 * 1024 || !/fetch\(\s*['"](?:\.\/)?data\.json['"]/.test(value)) fail('請提供讀取同目錄 data.json 的 report.html（最多64 KiB）。',400,'invalid_template');
+  return { content: value as string, hash: await markdownHash(value as string) };
+}
 async function save(input: Record<string,any>): Promise<MarkdownEntry> {
   const base=revision(input.baseRevision),rid=requestId(input.requestId),report=await checkedReport(input.rawSource ?? input.rawMarkdown);
+  const template = options.requireTemplate ? await checkedTemplate(input.reportHtml) : undefined;
+  if (options.requireTemplate && !input.cover) fail('請同時提供 cover.jpg。',400,'missing_cover');
   const supplied=Object.hasOwn(input,'cover'),validated=supplied&&input.cover!==null?await checkedCover(input.cover):null;
   const coverIntent = !supplied ? undefined : input.cover===null ? { mode:'remove' } : { mode:'replace',sha256:validated!.sha256 };
   // Keep the original fingerprint for old clients that omit the optional companion.
-  const fp=await markdownHash(JSON.stringify({action:'markdown_save',sourceHash:report.sourceHash,base,...(coverIntent?{cover:coverIntent}:{})}));
+  const fp=await markdownHash(JSON.stringify({action:'markdown_save',sourceHash:report.sourceHash,base,...(template?{templateHash:template.hash}:{}),...(coverIntent?{cover:coverIntent}:{})}));
   const prior=await receipt(rid,fp); if(prior) return receiptEntry(prior);
   const current=await read<Draft>(DRAFTS,report.id);
   if(current && (!isMarkdownStorage(current)||current.ownerKey!==OWNER)) fail('此報告 ID 已屬其他格式或沒有權限，請保留原篇並確認 ID。',409,'format_conflict');
   if((current?.revision??0)!==base) fail('草稿版本已變更，請重新載入。',409,'revision_conflict');
   const cover=supplied?(validated?coverRef(validated):null):current?.cover??null;
-  if(current && current.manifest.sourceHash===report.sourceHash && (current.cover?.sha256??null)===(cover?.sha256??null)) {
+  if(current && current.manifest.sourceHash===report.sourceHash && (current.manifest.template?.hash??null)===(template?.hash??null) && (current.cover?.sha256??null)===(cover?.sha256??null)) {
     // This CAS fence records the no-op receipt without overwriting concurrent review or publication fields.
     return commit({ownerKey:OWNER,requestId:rid,action:'markdown_save',fingerprint:fp,reportId:report.id,revision:base,publishedVersion:current.publishedVersion},[
       db.tx.update(DRAFTS,[{id:report.id,if:{revision:base,publishedVersion:current.publishedVersion},record:{id:report.id}}],{patch:true}),
@@ -127,9 +142,16 @@ async function save(input: Record<string,any>): Promise<MarkdownEntry> {
     const content=researchSource(report).slice(i,i+PAGE_CHARS),hash=await markdownHash(content),id='md-'+report.sourceHash+'-'+refs.length;
     refs.push({id,hash}); const old=await read<{content:string;hash:string;ownerKey:string}>(PAGES,id);
     if(old) { if(old.hash!==hash||old.content!==content||old.ownerKey!==OWNER) fail('不可變來源頁衝突。',409,'source_integrity'); }
-    else operations.push(db.tx.add(PAGES,[{id,content,hash,ownerKey:OWNER}]));
+    else if (options.prefix) {
+      // Stage immutable source pages before the small CAS transaction. Unreferenced pages stay private.
+      try { await db.transact([db.tx.add(PAGES,[{id,content,hash,ownerKey:OWNER}])]); }
+      catch (caught) {
+        const raced = await read<{content:string;hash:string;ownerKey:string}>(PAGES,id);
+        if (!raced || raced.content !== content || raced.hash !== hash || raced.ownerKey !== OWNER) throw caught;
+      }
+    } else operations.push(db.tx.add(PAGES,[{id,content,hash,ownerKey:OWNER}]));
   }
-  const manifest:Manifest={sourceHash:report.sourceHash,sourceBytes:report.sourceBytes,parserVersion:report.parserVersion,pages:refs};
+  const manifest:Manifest={sourceHash:report.sourceHash,sourceBytes:report.sourceBytes,parserVersion:report.parserVersion,pages:refs,...(template?{template}:{})};
   const next:Draft={...summary(report),archived:current?.archived===true,storageSchemaVersion:3,ownerKey:OWNER,manifest,cover,revision:base+1,updatedAt:timestamp(current?.updatedAt),publishedVersion:current?.publishedVersion??0,publishedAt:current?.publishedAt??null,publishedDraftRevision:current?.publishedDraftRevision??0,reviewedRevision:null,reviewHash:null,dataStatus:report.frontmatter.data_status};
   operations.push(current?db.tx.update(DRAFTS,[{id:report.id,record:next,if:{revision:base,publishedVersion:current.publishedVersion,updatedAt:current.updatedAt}}]):db.tx.add(DRAFTS,[next]));
   return commit({ownerKey:OWNER,requestId:rid,action:'markdown_save',fingerprint:fp,reportId:report.id,revision:next.revision,publishedVersion:next.publishedVersion},operations);
@@ -142,7 +164,7 @@ async function review(input: Record<string,any>): Promise<MarkdownEntry> {
   const current=await authorDraft(id);
   if(current.revision!==base||current.manifest.sourceHash!==input.sourceHash) fail('來源或版本已變更，請重新預覽。',409,'revision_conflict');
   await loadReport(current.manifest);
-  const reviewHash=await markdownHash(JSON.stringify({id,revision:base,sourceHash:current.manifest.sourceHash,parserVersion:current.manifest.parserVersion,...(current.cover?{coverSha256:current.cover.sha256}:{})}));
+  const reviewHash=await markdownHash(JSON.stringify({id,revision:base,sourceHash:current.manifest.sourceHash,parserVersion:current.manifest.parserVersion,...(current.manifest.template?{templateHash:current.manifest.template.hash}:{}),...(current.cover?{coverSha256:current.cover.sha256}:{})}));
   return commit({ownerKey:OWNER,requestId:rid,action:'markdown_review',fingerprint:fp,reportId:id,revision:base,publishedVersion:current.publishedVersion},[db.tx.update(DRAFTS,[{id,if:{revision:base,publishedVersion:current.publishedVersion},record:{reviewedRevision:base,reviewHash}}],{patch:true})]);
 }
 async function publish(input: Record<string,any>): Promise<MarkdownEntry> {
@@ -203,7 +225,7 @@ async function visibility(input: Record<string, any>): Promise<MarkdownEntry> {
   ]);
 }
 // Return null only for another report format. Visibility is always resolved through the shared public pointer.
-export async function readPublishedMarkdown(id:string,versionInput?:string):Promise<RouterResponse|null> {
+async function readPublishedMarkdown(id:string,versionInput?:string):Promise<RouterResponse|null> {
   if(!isReportId(id)) return null;
   const published=await read<{version:number;snapshotId:string;archived?:boolean}>(PUBLIC,id); if(!published||published.archived) return null;
   const version=versionInput===undefined||versionInput===''?published.version:Number(versionInput);
@@ -217,7 +239,7 @@ export async function readPublishedMarkdown(id:string,versionInput?:string):Prom
     return json({report,cover:await etfCoverDescriptor(snapshot.cover),version,publishedAt:snapshot.publishedAt,snapshotId:id+'.v'+version,storageSchemaVersion:3});
   } catch(caught) { return respond(caught); }
 }
-export async function readPublishedEtfCover(id: string, versionInput?: string, hashInput?: string): Promise<RouterResponse> {
+async function readPublishedEtfCover(id: string, versionInput?: string, hashInput?: string): Promise<RouterResponse> {
   try {
     if(!isReportId(id)) return error('找不到已發布封面。',404);
     const published=await read<{version:number;archived?:boolean}>(PUBLIC,id);
@@ -231,7 +253,7 @@ export async function readPublishedEtfCover(id: string, versionInput?: string, h
     return json({cover:await etfCoverDescriptor(snapshot.cover)});
   }catch(caught){return respond(caught);}
 }
-export function makeEtfMarkdownRoutes(helpers:Helpers):RouterRoutes {
+function makeEtfMarkdownRoutes(helpers:Helpers):RouterRoutes {
   const privateRoute=(action:(input:Record<string,any>)=>Promise<RouterResponse>)=>[async(ctx:RouterContext)=> {
     try {
       if(!helpers.isSameOriginMutation(ctx.event)) return error('此請求來源不受允許。',403);
@@ -239,13 +261,14 @@ export function makeEtfMarkdownRoutes(helpers:Helpers):RouterRoutes {
       const input=object(ctx.body);
       // JSON quoting and UTF-8 can expand the source; use the source byte limit as the actual author-facing limit.
       if(typeof input.cover?.contentBase64==='string'&&input.cover.contentBase64.length>MAX_ETF_COVER_BASE64_CHARS) fail('封面不得超過 1 MiB。',413,'invalid_cover',{errors:[{path:'cover',code:'cover_too_large',message:'封面不得超過 1 MiB。'}]});
-      if(new TextEncoder().encode(JSON.stringify(input)).byteLength>2*MAX_MARKDOWN_SOURCE_BYTES+MAX_ETF_COVER_BASE64_CHARS+8192) return error('請求內容超過上限。',413);
+      if(new TextEncoder().encode(JSON.stringify(input)).byteLength>2*sourceLimit+MAX_ETF_COVER_BASE64_CHARS+8192) return error('請求內容超過上限。',413);
       return await action(input);
     }catch(caught){return respond(caught);}
   }];
   const routes: RouterRoutes = {
     'POST /api/admin/etf-markdown/validate':privateRoute(async input=>{
-      const result=await parseEtfResearchSource(input.rawSource ?? input.rawMarkdown);
+      const result=await parseSource(input.rawSource ?? input.rawMarkdown);
+      if (options.requireTemplate) { await checkedTemplate(input.reportHtml); if (!input.cover) fail('請同時提供 cover.jpg。',400,'missing_cover'); }
       const checked=Object.hasOwn(input,'cover')&&input.cover!==null?await validateEtfCover(input.cover):{cover:null,errors:[]};
       const cover=checked.cover?coverRef(checked.cover):null;
       const metadata=cover?{sha256:cover.sha256,bytes:cover.bytes,width:cover.width,height:cover.height,contentType:cover.contentType}:null;
@@ -266,6 +289,26 @@ export function makeEtfMarkdownRoutes(helpers:Helpers):RouterRoutes {
     'POST /api/admin/etf-markdown/status':privateRoute(async input=>{const id=requestId(input.requestId),saved=await receipt(id);return json({requestId:id,state:saved?'applied':'unresolved',...(saved?{entry:await receiptEntry(saved)}:{})});}),
     'GET /api/etf/reports/:id/cover':[async ctx=>readPublishedEtfCover(ctx.params.id,ctx.query.version,ctx.query.sha256)],
   };
+  if (options.prefix) {
+    const isolated: RouterRoutes = {};
+    for (const [key, handler] of Object.entries(routes)) if (key.includes('/etf-markdown/')) isolated[key.replace('/etf-markdown/','/institutional-research/')] = handler;
+    isolated['GET /api/institutional/reports'] = [async ctx => {
+      try {
+        const cursor = ctx.query.nextToken;
+        if (cursor !== undefined && (typeof cursor !== 'string' || cursor.length > 4096)) return error('分頁游標格式錯誤。',400);
+        const page = await db.list<Summary & {version:number;publishedAt:string;archived?:boolean;cover?:StoredCover}>(PUBLIC,{limit:50,nextToken:cursor});
+        const items = await Promise.all(page.items.filter(r => !r.archived && r.version > 0).map(async r => ({id:r.id,title:r.title,excerpt:r.excerpt,period:r.period,evidenceDate:r.evidenceDate,version:r.version,publishedAt:r.publishedAt,cover:await etfCoverDescriptor(r.cover)})));
+        return json({items,nextToken:page.nextToken??null});
+      } catch(caught) { return respond(caught); }
+    }];
+    isolated['GET /api/institutional/reports/:id/cover'] = [async ctx=>readPublishedEtfCover(ctx.params.id,ctx.query.version,ctx.query.sha256)];
+    isolated['GET /api/institutional/reports/:id'] = [async ctx => (await readPublishedMarkdown(ctx.params.id,ctx.query.version)) || error('找不到已發布法人研究。',404)];
+    return isolated;
+  }
   for (const [key, handler] of Object.entries(routes)) if(key.includes('/etf-markdown/')) routes[key.replace('/etf-markdown/', '/etf-research/')] = handler;
   return routes;
 }
+
+return { makeEtfMarkdownRoutes, readPublishedMarkdown, readPublishedEtfCover, etfCoverDescriptor, isMarkdownStorage };
+}
+export const { makeEtfMarkdownRoutes, readPublishedMarkdown, readPublishedEtfCover, etfCoverDescriptor, isMarkdownStorage } = createResearchWorkflow();

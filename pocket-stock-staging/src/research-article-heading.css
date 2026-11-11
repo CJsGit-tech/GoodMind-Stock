@@ -1,0 +1,9 @@
+.md-etf-reader .research-article-heading{display:grid;align-items:center;gap:32px;padding:8px 0 28px}
+.md-etf-reader .research-article-heading.has-cover{grid-template-columns:minmax(0,1fr) 240px}
+.research-article-heading h1{font:600 clamp(28px,3vw,40px)/1.5 'Newsreader','Noto Serif TC',serif;margin:12px 0 16px;letter-spacing:.015em;overflow-wrap:anywhere}
+.research-article-heading .research-heading-cover{display:block;width:240px;height:180px}
+.research-article-heading img{display:block;width:100%;height:100%;object-fit:contain}
+.research-article-heading .research-article-excerpt{font-size:16px;line-height:1.85;max-width:72ch;margin:0 0 16px;color:var(--etf-text)}
+.research-article-heading .research-article-meta{font-size:14px;line-height:1.8;color:var(--etf-muted);margin:0}
+@media(max-width:1050px){.md-etf-reader .research-article-heading.has-cover{grid-template-columns:minmax(0,1fr) 192px;gap:24px}.research-article-heading .research-heading-cover{width:192px;height:144px}}
+@media(max-width:700px){.md-etf-reader .research-article-heading.has-cover{grid-template-columns:1fr}.research-article-heading .research-heading-cover{width:192px;height:144px}}

@@ -100,6 +100,8 @@ const backend = evaluate(
     // These suites own collection logic; ETF suites exercise the separate routes.
     makeEtfRoutes: () => ({}),
     makeEtfMarkdownRoutes: () => ({}),
+    makeInstitutionalRoutes: () => ({}),
+    makeInvestmentCalendarRoutes: () => ({}),
     makeEtfDataRoutes: () => ({}),
     makeEtfSnapshotRoutes: () => ({}),
     prepareEtfReportCommit: () => { throw new Error('ETF commit is outside this fixture.'); },

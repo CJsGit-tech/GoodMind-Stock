@@ -13,6 +13,7 @@
     "local/database.ts",
     "backend",
     "shared",
-    "local/import-content.ts"
+    "local/import-content.ts",
+    "local/calendar-sync.ts"
   ]
 }

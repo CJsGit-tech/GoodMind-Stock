@@ -255,7 +255,7 @@ function State({ status, onRetry, onBack }: { status: Status | 'empty'; onRetry?
   </section>;
 }
 
-type ReportDetail = { report: ReaderEtfReport | MarkdownReport; version: number; publishedAt: string };
+type ReportDetail = { cover?: EtfCoverDescriptor | null; report: ReaderEtfReport | MarkdownReport; version: number; publishedAt: string };
 type SnapshotEnvelope = {
   schemaVersion: 2; version: number; publishedAt: string; snapshotId: string; report: null;
   manifest: { pages: { pageNo: number; pageId: string; pageHash: string; byteLength: number }[]; bodyHash: string; bodyBytes: number };
@@ -299,7 +299,7 @@ async function loadReport(id: string, requestedVersion: number | null, current: 
       const parsed = await parseEtfResearchSource(researchSource(value.report));
       if (!current()) throw new Error('superseded');
       if (!parsed.report || parsed.report.id !== id || parsed.report.sourceHash !== value.report.sourceHash) throw new Error('Malformed Markdown snapshot');
-      return { report: parsed.report, version: value.version, publishedAt: value.publishedAt };
+      return { report: parsed.report, cover: value.cover, version: value.version, publishedAt: value.publishedAt };
     }
     if (!isReaderReport(value.report, id) || value.report.schemaVersion !== 1) throw new Error('Malformed report');
     return { report: value.report, version: value.version, publishedAt: value.publishedAt };
@@ -422,7 +422,7 @@ export function ActiveEtfView() {
   return <section className='etf-workspace'>
     <button className='etf-back' type='button' onClick={back}><ArrowLeft size={16} />返回報告列表</button>
     {status === 'ready' && detail ? isMarkdownReport(detail.report)
-      ? <MarkdownEtfReader key={detail.report.id + ':' + detail.version} report={detail.report} version={detail.version} publishedAt={detail.publishedAt} />
+      ? <MarkdownEtfReader key={detail.report.id + ':' + detail.version} report={detail.report} version={detail.version} publishedAt={detail.publishedAt} coverUrl={detail.cover?.url} />
       : <ReportBody key={detail.report.id + ':' + detail.version} report={detail.report} version={detail.version} publishedAt={detail.publishedAt} />
       : <State status={status} onRetry={() => setRetry(value => value + 1)} onBack={back} />}
   </section>;

@@ -22,6 +22,10 @@ import { confirmDiscard } from './confirm-discard';
 import { isReaderAccountDestination } from './reader-return-routes';
 import { ReaderFormView } from './reader-forms';
 import { ActiveEtfView } from './active-etf';
+import { InstitutionalAuthor } from './institutional-author';
+import { InstitutionalPublic } from './institutional-public';
+import { InvestmentCalendar } from './investment-calendar';
+import { InvestmentCalendarAuthor } from './investment-calendar-author';
 import { EtfAuthorWorkspace } from './etf-data-author';
 import { ResearchHero as LibraryHero, CatalogPagination } from './library-layout';
 import {
@@ -354,6 +358,8 @@ type View =
   | 'my-library'
   | 'suggestions'
   | 'research-interest'
+  | 'institutional-flows'
+  | 'calendar'
   | 'active-etf'
   | 'admin';
 type ReaderReadingSnapshot = { railOpen: boolean; draft: CommentDraft };
@@ -956,10 +962,10 @@ function App() {
   }, [selectedArticle]);
 
   useEffect(() => {
-    if (view === 'active-etf') return;
+    if (view === 'active-etf' || view === 'institutional-flows') return;
     const labels: Partial<Record<View, string>> = {
       library: '研究書庫', discussion: '討論吧', 'my-library': '我的書庫',
-      suggestions: '意見箱', 'research-interest': '研究需求', admin: '作者工作區',
+      suggestions: '意見箱', 'research-interest': '研究需求', calendar: '投資行事曆', admin: '作者工作區',
     };
     const title = view === 'article' ? selectedArticle?.title || '研究內容' : labels[view];
     document.title = `${title} — PocketStocks · 本機 Staging`;
@@ -1640,6 +1646,8 @@ function App() {
         route === '/admin' ||
         route === '/admin/reader-feedback' ||
         route === '/admin/active-etf' ||
+        route === '/admin/institutional-flows' ||
+        route === '/admin/calendar' ||
         adminEditorArticleId(`#${route}`) ||
         route === '/preview' ||
         route.startsWith('/preview/')
@@ -1765,6 +1773,8 @@ function App() {
         }
         return;
       }
+      if (route === '/calendar') { setSelectedArticle(null); setView('calendar'); return; }
+      if (route === '/institutional-flows' || route.startsWith('/institutional-flows/')) { setSelectedArticle(null); setView('institutional-flows'); return; }
       if (route === '/active-etf' || route.startsWith('/active-etf/')) {
         setSelectedArticle(null);
         setView('active-etf');
@@ -2673,7 +2683,7 @@ function App() {
 
   return (
     <div
-      className={`app-shell ${view === 'active-etf' ? 'active-etf-composition' : ''} ${view === 'library' || view === 'active-etf' ? 'public-library' : ''} ${view === 'discussion' ? 'discussion-composition' : ''} ${view === 'my-library' || view === 'suggestions' || view === 'research-interest' ? 'favorites-composition' : ''}`}
+      className={`app-shell ${view === 'active-etf' || view === 'institutional-flows' ? 'active-etf-composition' : ''} ${view === 'library' || view === 'active-etf' || view === 'institutional-flows' || view === 'calendar' ? 'public-library' : ''} ${view === 'discussion' ? 'discussion-composition' : ''} ${view === 'my-library' || view === 'suggestions' || view === 'research-interest' ? 'favorites-composition' : ''}`}
     >
       <header
         className={`masthead application-banner ${view === 'library' ? 'public-library-masthead' : ''}`}
@@ -2690,11 +2700,13 @@ function App() {
         </button>
         <ApplicationNavigation
           open={menuOpen}
-          active={view === 'library' || view === 'article' ? 'library' : view === 'discussion' || view === 'active-etf' ? view : null}
-          showDiscussion={['library', 'article', 'discussion', 'active-etf'].includes(view)}
+          active={view === 'library' || view === 'article' ? 'library' : view === 'discussion' || view === 'active-etf' || view === 'institutional-flows' || view === 'calendar' ? view : null}
+          showDiscussion={['library', 'article', 'discussion', 'active-etf', 'institutional-flows', 'calendar'].includes(view)}
           onLibrary={() => navigate('library')}
           onDiscussion={() => { if (view !== 'discussion') openDiscussion(view === 'article' ? selectedArticle : null); }}
           onEtf={() => navigate('active-etf')}
+          onInstitutional={() => navigate('institutional-flows')}
+          onCalendar={() => navigate('calendar')}
         >
           {!(view === 'article' && readerRoute.reader) && readerAccountControl}
         </ApplicationNavigation>
@@ -2749,6 +2761,8 @@ function App() {
 
       <main inert={signInOpen}>
         {view === 'active-etf' && <ActiveEtfView />}
+        {view === 'institutional-flows' && <InstitutionalPublic />}
+        {view === 'calendar' && <InvestmentCalendar />}
         {view === 'discussion' && (
           <DiscussionView
             article={selectedArticle}
@@ -3299,7 +3313,6 @@ function ReaderLibraryView(props: ReaderLibraryProps) {
     >
       <header className="reader-library-header">
         <h1 id="reader-library-title">我的書庫</h1>
-        <p>收藏重要的研究，隨時回顧與延伸思考。</p>
       </header>
       <div
         className="reader-library-tabs"
@@ -3452,7 +3465,6 @@ function ReaderLibraryView(props: ReaderLibraryProps) {
             <div className="reader-library-state reader-library-private-state is-empty">
               <Heart />
               <h2>還沒有收藏</h2>
-              <p>收藏的研究會顯示在這裡。</p>
               <button type="button" onClick={props.onBack}>
                 瀏覽研究書庫
               </button>
@@ -3530,7 +3542,7 @@ function ReaderLibraryView(props: ReaderLibraryProps) {
             <div className="reader-library-state reader-library-private-state is-empty">
               <MessageSquare />
               <h2>還沒有評論</h2>
-              <p>你撰寫的公開留言與私人評論會顯示在這裡，與收藏分開保存。</p>
+              <p>公開留言與私人評論分開保存。</p>
               <button type="button" onClick={props.onBack}>
                 探索研究
               </button>
@@ -3814,6 +3826,7 @@ function LibraryView(props: LibraryProps) {
               total={props.articles.length}
               size={catalogSize}
               label="公開書庫分頁"
+              centered
               onChange={setCatalogPage}
             />
           )}
@@ -4924,10 +4937,6 @@ function DiscussionView({
               <>
                 <BookOpen size={42} />
                 <h1>選一本研究，開始討論</h1>
-                <p>分享研究觀察，與其他讀者交流。</p>
-                <button type="button" onClick={() => setSelectorOpen(true)}>
-                  選擇研究書
-                </button>
               </>
             )}
           </div>
@@ -7054,6 +7063,8 @@ function AdminView({
   const [etfRoute, setEtfRoute] = useState(
     () => window.location.hash.split('?')[0] === '#/admin/active-etf'
   );
+  const [calendarRoute, setCalendarRoute] = useState(() => location.hash.split('?')[0] === '#/admin/calendar');
+  const [institutionalRoute,setInstitutionalRoute] = useState(() => location.hash.split('?')[0] === '#/admin/institutional-flows');
   const [etfDirty, setEtfDirty] = useState(false);
   const [editorRouteArticleId, setEditorRouteArticleId] = useState(() =>
     adminEditorArticleId()
@@ -7206,10 +7217,14 @@ function AdminView({
       setEditorRouteArticleId(adminEditorArticleId());
       setFeedbackRoute(window.location.hash === '#/admin/reader-feedback');
       setEtfRoute(window.location.hash.split('?')[0] === '#/admin/active-etf');
+      setInstitutionalRoute(window.location.hash.split('?')[0] === '#/admin/institutional-flows');
+      setCalendarRoute(window.location.hash.split('?')[0] === '#/admin/calendar');
       if (
         window.location.hash === '#/admin' ||
         window.location.hash === '#/admin/reader-feedback' ||
-        window.location.hash.split('?')[0] === '#/admin/active-etf'
+        window.location.hash.split('?')[0] === '#/admin/active-etf' ||
+        window.location.hash.split('?')[0] === '#/admin/institutional-flows' ||
+        window.location.hash.split('?')[0] === '#/admin/calendar'
       ) {
         editorRevisionRef.current += 1;
         setEditorLoadPending(false);
@@ -7899,7 +7914,7 @@ function AdminView({
         if (!isCurrentAdminSessionGeneration(generation)) return;
         setNotice(
           loaded
-            ? { tone: 'success', message: '已登入作者工作區。' }
+            ? null
             : {
                 tone: 'error',
                 message: '已登入作者工作區，但書目暫時無法載入，請重試。',
@@ -9238,11 +9253,6 @@ function AdminView({
             aria-busy={busy}
           >
             <h1>作者工作區</h1>
-            <p className="admin-unlock-lead">
-              這裡是內容創作者的專屬空間。
-              <br />
-              請輸入作者密鑰以繼續。
-            </p>
             <label className="admin-unlock-label" htmlFor="admin-master-secret">
               作者密鑰
             </label>
@@ -9463,7 +9473,7 @@ function AdminView({
     path: string,
     payload: Record<string, unknown>
   ): Promise<unknown> {
-    if (!path.startsWith('/api/admin/etf-data/') && !path.startsWith('/api/admin/etf-reports/bodies') && !path.startsWith('/api/admin/etf-markdown/') && !path.startsWith('/api/admin/etf-research/')) {
+    if (!path.startsWith('/api/admin/calendar/') && !path.startsWith('/api/admin/institutional-research/') && !path.startsWith('/api/admin/etf-data/') && !path.startsWith('/api/admin/etf-reports/bodies') && !path.startsWith('/api/admin/etf-markdown/') && !path.startsWith('/api/admin/etf-research/')) {
       throw new Error('這個ETF操作不在作者工作區的範圍。');
     }
     const generation = adminSessionGenerationRef.current;
@@ -9480,14 +9490,16 @@ function AdminView({
   function renderUploadTypes(etf = false) {
     return <section className="author-upload-types" aria-labelledby="author-upload-title">
       <h2 id="author-upload-title">選擇上傳內容</h2>
-      <a href="#/admin" aria-current={!etf ? 'page' : undefined}>
+      <a href="#/admin" aria-current={!etf && !institutionalRoute && !calendarRoute ? 'page' : undefined}>
         <BookOpen size={24} aria-hidden="true" /><strong>研究書籍</strong>
         <small>JPG、PNG、WebP 頁面圖片</small>
       </a>
-      <a href="#/admin/active-etf?workflow=markdown" aria-current={etf ? 'page' : undefined}>
+      <a href="#/admin/active-etf?workflow=markdown" aria-current={etf && !institutionalRoute ? 'page' : undefined}>
         <FileSearch size={24} aria-hidden="true" /><strong>ETF 分析報告</strong>
         <small>JSON 研究文章、歷史 Markdown 與資料包</small>
       </a>
+      <a href="#/admin/institutional-flows" aria-current={institutionalRoute ? 'page' : undefined}><FileSearch size={24} aria-hidden="true" /><strong>三大法人研究</strong><small>獨立草稿、四組圖表與文章發布</small></a>
+      <a href="#/admin/calendar" aria-current={calendarRoute ? 'page' : undefined}><FileSearch size={24} aria-hidden="true" /><strong>投資行事曆</strong><small>手動匯入事件 JSON，保存本機</small></a>
     </section>;
   }
 
@@ -9503,7 +9515,7 @@ function AdminView({
         <nav className="author-workspace-nav" aria-label="作者工作區導覽">
           <button
             type="button"
-            aria-current={!feedback && !etf ? 'page' : undefined}
+            aria-current={!feedback && !etf && !institutionalRoute && !calendarRoute ? 'page' : undefined}
             onClick={() => {
               window.location.hash = '/admin';
             }}
@@ -9521,11 +9533,13 @@ function AdminView({
           </button>
           <button
             type="button"
-            aria-current={etf ? 'page' : undefined}
+            aria-current={etf && !institutionalRoute ? 'page' : undefined}
             onClick={() => { window.location.hash = '/admin/active-etf?workflow=markdown'; }}
           >
             ETF報告
           </button>
+          <button type="button" aria-current={institutionalRoute ? 'page' : undefined} onClick={() => { window.location.hash = '/admin/institutional-flows'; }}>三大法人</button>
+          <button type="button" aria-current={calendarRoute ? 'page' : undefined} onClick={() => { window.location.hash = '/admin/calendar'; }}>投資日曆</button>
         </nav>
         <div className="admin-session-actions">
           <button
@@ -9548,6 +9562,10 @@ function AdminView({
       </header>
     );
   }
+
+  if (calendarRoute) return <section className="admin-view admin-book-list-view active-etf-author-view">{renderAuthorHeader(false)}{renderAdminSessionStatus()}{renderUploadTypes()}<InvestmentCalendarAuthor key={sessionToken} onDirtyChange={setEtfDirty} request={(action,payload)=>requestEtfEndpoint('/api/admin/calendar/'+action,payload)}/></section>;
+
+  if (institutionalRoute) return <section className="admin-view admin-book-list-view active-etf-author-view">{renderAuthorHeader(false,true)}{renderAdminSessionStatus()}{renderUploadTypes()}<InstitutionalAuthor key={sessionToken} sessionToken={sessionToken} onDirtyChange={setEtfDirty} request={(action,payload)=>requestEtfEndpoint('/api/admin/institutional-research/'+action,payload)}/></section>;
 
   if (etfRoute)
     return (
@@ -9586,9 +9604,7 @@ function AdminView({
         <main className="admin-catalog-main">
           <div className="admin-catalog-title">
             <div ref={adminListHeadingRef} tabIndex={-1}>
-              <span>作者工作區 · 私人書目</span>
               <h1>研究書目</h1>
-              <p>管理尚未公開與已發布的 PocketStocks 研究內容。</p>
             </div>
           </div>
           {notice && (
@@ -9719,7 +9735,6 @@ function AdminView({
           ) : adminArticles.length === 0 ? (
             <section className="admin-list-state" role="status">
               <BookOpen />
-              <span>尚無書目</span>
               <h2>還沒有研究書</h2>
               <p>建立第一本 PocketStocks 研究書；發布前只有作者可以查看。</p>
               <button type="button" onClick={startNewDraft}>
@@ -9729,7 +9744,6 @@ function AdminView({
           ) : listedAdminArticles.length === 0 ? (
             <section className="admin-list-state" role="status">
               <Search />
-              <span>沒有符合項目</span>
               <h2>找不到相符書目</h2>
               <p>
                 找不到符合

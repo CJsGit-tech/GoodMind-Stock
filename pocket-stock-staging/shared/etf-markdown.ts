@@ -12,7 +12,7 @@ export type MarkdownVisualization = {
   metadata: MarkdownRecord; records: MarkdownRecord[];
 };
 export type MarkdownReport = {
-  format: 'etf-markdown' | 'etf-json'; analysis?: import('./etf-analysis.ts').EtfAnalysis; rawJson?: string; storageSchemaVersion: 3; parserVersion: string;
+  format: 'etf-markdown' | 'etf-json' | 'institutional-json'; institutionalData?: MarkdownRecord; companionHtml?: string; analysis?: import('./etf-analysis.ts').EtfAnalysis; rawJson?: string; storageSchemaVersion: 3; parserVersion: string;
   sourceHash: string; rawMarkdown: string; sourceBytes: number; expandedBytes: number;
   id: string; title: string; excerpt: string; period: { start: string; end: string };
   evidenceDate: string; frontmatter: MarkdownRecord; articleMarkdown: string;

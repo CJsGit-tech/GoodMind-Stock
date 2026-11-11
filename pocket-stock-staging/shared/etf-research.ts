@@ -3,8 +3,8 @@ import type { MarkdownReport, MarkdownValidation, MarkdownIssue, MarkdownVisuali
 import { validateAnalysis, analysisText } from './etf-analysis.ts';
 
 export const JSON_PARSER_VERSION = 'json-5.0.0/analysis-1.0.0';
-export const researchSource = (report: MarkdownReport) => report.format === 'etf-json' ? report.rawJson || '' : report.rawMarkdown;
-export const researchFilename = (report?: MarkdownReport | null) => report?.format === 'etf-json' ? 'data.json' : 'report.md';
+export const researchSource = (report: MarkdownReport) => report.format !== 'etf-markdown' ? report.rawJson || '' : report.rawMarkdown;
+export const researchFilename = (report?: MarkdownReport | null) => report && report.format !== 'etf-markdown' ? 'data.json' : 'report.md';
 export async function parseEtfResearchSource(raw: unknown): Promise<MarkdownValidation> {
   return typeof raw === 'string' && raw.trimStart().startsWith('{') ? parseEtfJson(raw) : parseEtfMarkdown(raw);
 }

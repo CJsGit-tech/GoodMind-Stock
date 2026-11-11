@@ -29,12 +29,12 @@ const fourDays = [
   item('day15', '2026-10-15', '2026-10-16T10:00:00Z'),
   item('day13', '2026-10-13', '2026-10-17T11:00:00Z'),
 ];
-function markup(items: ReportItem[], hash = '#/active-etf') {
+function markup(items: ReportItem[], hash = '#/active-etf', domain: 'etf' | 'institutional' = 'etf') {
   const previous = Object.getOwnPropertyDescriptor(globalThis, 'window');
   Object.defineProperty(globalThis, 'window', { configurable: true, value: { location: { hash } } });
   try {
     return renderToStaticMarkup(React.createElement(catalog.EtfReportCatalog,
-      { items, ready: true, loading: false, fallback: null, onOpen: () => {} }));
+      { items, domain, ready: true, loading: false, fallback: null, onOpen: () => {} }));
   } finally {
     if (previous) Object.defineProperty(globalThis, 'window', previous);
     else Reflect.deleteProperty(globalThis, 'window');
@@ -59,7 +59,7 @@ test('late backfill cannot move an older research day ahead of a newer research 
   const html = markup(fourDays);
   assert.deepEqual(cardIds(html), ['day15', 'day14', 'day13', 'day12']);
   assert.match(html, /role="option"[^>]* aria-selected="true"[^>]*><span>研究日<\/span>/);
-  assert.match(html, /第 1–4 篇，共 4 篇/);
+  assert.match(html, /共 4 篇/);
   assert.deepEqual(fourDays.map(row => row.id), ['day12', 'day14', 'day15', 'day13']);
 });
 
@@ -122,7 +122,7 @@ test('optional companion covers use the supplied image without changing card ide
   assert.match(html, /<img[^>]*src="\/storage\/test-cover.jpg\?signature=fixture"[^>]*width="480" height="360"/);
   assert.match(html, /alt="《day12》封面"/);
   assert.match(html, /href="#\/active-etf\/day12\?v=2"/);
-  assert.match(html, /持股 2026\/10\/12 → 2026\/10\/12/);
+  assert.match(html, /aria-label="持股比較日期"[\s\S]*dateTime="2026-10-12"/);
   assert.deepEqual(cardIds(html), ['day12']);
 });
 
@@ -135,4 +135,13 @@ test('historical absent covers and invalid image URLs preserve the dated placeho
     assert.match(html, /2026\/10\/12/);
   }
   assert.doesNotMatch(markup(fourDays), /<img/);
+});
+
+
+test('institutional catalog uses its own links, labels and single research date with shared filters', () => {
+  const html=markup([item('flow19','2026-10-19','2026-10-20T09:00:00Z','法人產業方向')], '#/institutional-flows', 'institutional');
+  assert.match(html,/三大法人研究/);assert.match(html,/href="#\/institutional-flows\/flow19\?v=2"/);
+  assert.match(html,/aria-label="研究日期"/);assert.doesNotMatch(html,/持股比較日期|開啟 ETF 分析|主動式 ETF/);
+  const query={q:'半導體',month:'2026-10',sort:'oldest',page:1};
+  const hash=catalog.etfCatalogHash(query,'#/institutional-flows');assert.ok(hash.startsWith('#/institutional-flows?'));assert.deepEqual(catalog.readEtfCatalogQuery(hash),query);
 });

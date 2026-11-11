@@ -229,3 +229,7 @@
     padding-left: 0;
   }
 }
+
+.author-feedback-split.is-empty { grid-template-columns: minmax(0, 1fr); }
+.author-feedback-split.is-empty .author-feedback-list-panel { border-right: 0; }
+.author-feedback-split.is-empty .author-feedback-list-scroll { min-height: 0; }

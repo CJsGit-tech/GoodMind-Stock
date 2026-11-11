@@ -66,6 +66,47 @@ JSON 接受 `tw-active-etf` 5.0.0，分析採 1.0.0 typed token AST，明確的�
 
 封面沿用既有圖片儲存的 15 分鐘簽章連結，私有預覽須先驗證作者；圖像 URL 本身是短效 bearer 能力，不是逐張圖片的 cookie 驗權。服務端檢查 JPEG 結構、尺寸、通道及雜湊，Author 再確認瀏覽器可解碼；不以結構驗證宣稱已查證封面數據。
 
+## 投資行事曆（Local MVP）
+
+入口為 `http://localhost:5173/#/calendar`，提供月曆／清單、月份、台北／美東時區、分類、機構與搜尋。網址保存檢視條件。日期已定但時間未公布的事件獨立列出，不猜測午夜。資料初始為空，從 Author 的「投資日曆」選擇 JSON、驗證預覽、確認使用依據後，才保存至本機 SQLite。
+
+`samples/investment-calendar.json` 附九筆人工整理的 BLS、BEA、Fed 公開日程，包含來源網址、核對時間、使用依據與時區；這是有限樣本，不是完整市場日程。CSP／AI 資本支出分類可接受人工資料，但樣本未填入尚未完成使用權確認的公司事件。瀏覽及匯入均不抓取來源網址，沒有排程、外站 API、金鑰或雲端更新。外部來源連結只在使用者主動開啟時導向官方網站。
+
+JSON 使用 `schemaVersion: 1`、`sources`、`events`，欄位以樣本與 `shared/investment-calendar.ts` 為準。每次最多 128 KiB／100 筆，來源須填 HTTPS 網址與使用依據；已保存事件總數最多 100 筆。相同 ID 更新、相同內容不重複增加，未包含的舊事件不會刪除；取消請以 `status: "cancelled"` 明確標示。每個事件保留最近五次變更前內容，版本衝突須重新預覽。保存後立即提供本機讀者，不包含獨立草稿／審閱／發布階段。
+
+針對本功能可執行 `node --import tsx --test local/tests/investment-calendar*.test.ts`，涵蓋日期、時區、驗證、權限、重複請求、版本衝突及重啟保存。
+
+### Codex 外部排程配套
+
+`calendar:sync` 是單次操作工具，不自行爬站或建立 cron。Codex 每週一 09:00 Asia/Taipei 預先查核未來 60 天，另回看最近 7 天；財報日可提前公告，但不能由歷年日期推算。四個必要公司為 Microsoft、Amazon、Alphabet、Meta；Oracle、NVIDIA、AMD、Apple、Micron、台積電為擴充觀察。政府來源涵蓋 BLS、BEA、Fed、Census 零售及台灣央行、財政部、主計總處；沒有明確日期時只記錄查核涵蓋狀態，不建立假日期事件。
+
+每輪最多查閱 32 個官方 URL，同 URL 不重複取得、同來源至少間隔 24 小時；這是 Codex 執行限制，CLI 不攔截瀏覽器請求。尊重官方使用條件及存取限制；403／429、CAPTCHA 或禁止使用時停止該來源，不繞過或密集重試。僅整理最少日期事實與出處，不複製公告、簡報、圖片。日期事實的使用依據不代表網站授權大量抓取；讀不到來源也不代表取消。
+
+研究 JSON 使用 `schemaVersion: 1`、`sources` 與 `observations`。每筆 observation 含 `kind`、`period`、`sourceId`、`sourceDate`、可選的 `sourceEndDate`、`startsAt`、`precision`、`confirmation`、`status`、`evidence`，可選 `sourceTimezone`、`note`。`evidence` 最多 300 字，只保存日期事實。種類與來源白名單由 `calendar-sync-policy.ts` 定義；公司 `.earnings` 與 `.call` 分開，不從電話會議推定發布鐘點。月份為 `YYYY-MM`，季度為 `YYYY-Q1`～`YYYY-Q4`；公司會計年度依官方 FY，不強改為曆年。時區使用指定的 IANA 時區；明確鐘點才轉為帶 offset 的 `startsAt`，日期已知但鐘點未確認用 `date_only` 與 null。
+
+正式站排程透過既有作者入口匯入，不需要 localhost。先保存公開 API 狀態至 `.local/calendar-sync/production/public-state.json`，查核結果存 `research.json`，未公告／受阻／超出期間存 `coverage.json`。研究開始前記錄 `research-attempt.json`，未滿 24 小時重用新鮮來源及原請求，不重新抓取。接著離線比對：
+
+```sh
+npm run calendar:sync -- review-file .local/calendar-sync/production/research.json .local/calendar-sync/production/public-state.json
+```
+
+`review-file` 不讀密鑰、不連線、不寫網站，只輸出 `production/review.json` 與可匯入的 `production/import.json`。已確認的新事件可匯入；改期、取消、預估或來源變更先待作者覆核。不得因缺漏或超出期間刪除歷史；100 事件／30 來源上限到達就停止回報。
+
+使用正常 Production 作者登入與 `#/admin/calendar` 的 JSON 匯入、差異預覽與確認更新，之後讀回公開版本及事件。既有 Production 憑證僅在記憶體交給正常登入表單，不複製到本機 staging 或保存 Cookie。結果不明時先讀回並核對原請求，不盲目重送。更新資料不需要重新部署程式。
+
+本機 API 配套仍嚴格只接受 `http://localhost:<PORT>`，PORT 取本機設定，不提供 Production URL 參數。先啟動本機服務後執行：
+
+```sh
+npm run calendar:sync -- status
+npm run calendar:sync -- begin
+npm run calendar:sync -- prepare .local/calendar-sync/research.json
+npm run calendar:sync -- apply
+```
+
+本機 `begin` 在連線成功後記錄開始時間；`apply` 使用本機 `.env` 的本機 Author 憑證，驗證版本、重用收據、提交後讀回，最後登出。若有 `pendingImport`，先核對原請求；不要重建輸入或刪除未確認的請求。意外留下 `.operation-lock` 時，先確認無操作執行並檢查 prepared.json 狀態，再由維護者移除鎖。
+
+`.local/calendar-sync` 僅保存必要執行狀態與可重現的日期輸入，不放 PM 文件或完整公告。Codex 排程需要電腦開機及桌面 App 可執行；手動試跑不等於未來無人值守觸發已驗證。相關測試：`node --import tsx --test local/tests/calendar-sync*.test.ts local/tests/investment-calendar*.test.ts`。
+
 ## 檢查
 
 ### ETF 假資料
@@ -127,6 +168,32 @@ git diff local-app-baseline-2026-10-18 -- pocket-stock-staging/src
 `.env`、`.local/`、SQLite、上傳檔、套件、建置與測試輸出不納入版本控制。Git 只保存程式碼，不能代替本機資料備份。儲存庫目前僅供本機使用；設定遠端或推送需另外授權。
 
 
+### 三大法人專屬 Author（Local Dev）
+
+開啟 `http://localhost:5173/#/admin/institutional-flows`，使用同一份本機 Author 登入。頂部「三大法人」及「三大法人研究」入口提供獨立草稿、驗證、預覽與發布紀錄，不混入 ETF 清單。一次選取同一研究資料夾的 `data.json`、`report.html`、`cover.jpg`；選檔及驗證不保存、不發布。
+
+JSON 接受 `institutional-flows-1.0.0` 與 PocketStocks handoff 1.0.0，最多4 MiB，固定外資／投信 × 上市／上櫃四組；保留自營補充、官方市場金額、估算口徑、來源、完整週與本週截至日。HTML最多64 KiB，保留原文及雜湊作套件核對，不執行上傳HTML；JPEG沿用480×360、RGB、1MiB限制。三檔綁定同一草稿修訂，JSON／HTML／封面改動均使審閱失效。
+
+法人使用 `/api/admin/institutional-research/{validate,save,get,list,review,publish,visibility,status}` 與獨立 `institutional_*` 儲存命名空間，沿用Author登入、同源、CAS及收據機制。`validate`／`save` 接收 `rawSource`、`reportHtml`、`cover`；其餘修訂、審閱與發布參數同研究Author。大來源先分段保存不可變私有頁，再以小型條件交易更新草稿與操作收據。結果未知先查status，重送沿用原requestId；工作區重載會保留未確認操作識別，保存重試需重新選擇完全相同三檔。公開讀取為 `/api/institutional/reports/:id?version=N`，應用頁為 `/#/institutional-flows/:id?v=N`，未發布草稿不公開。
+
+2026-10-19實際研究來自 `~/Downloads/InstitutionalFlows/2026-10-19-market/`，初次PS-316保存私有草稿；PS-317已在本機發布v1並完成讀者流程，未部署Production。測試 `node --import tsx --test tests/institutional-research.test.ts` 使用臨時資料庫及合成文章驗證完整生命週期；其中發布測試不會發布真實研究。
+
+
+### 三大法人讀者入口（Local Dev）
+
+讀者主要導覽的「三大法人」進入 `/#/institutional-flows`，沿用ETF報告列表的封面、搜尋、研究月份、排序與分頁。法人公開清單從 `/api/institutional/reports` 分頁讀取，只回傳已發布且未下架的資料，不讀私有草稿；來源、草稿修訂與操作收據不會出現在列表回應。封面重取走獨立 `/api/institutional/reports/:id/cover`。
+
+點選報告進入 `/#/institutional-flows/:id?v=N` 的不可變發布版本；「返回三大法人報告」保留列表條件與捲動位置。文章提供重點分析、買賣超圖表、參考來源依據；四組官方市場金額、產業收盤價估算與廣度分列。載入失敗可重試，未發布／下架內容不公開。Author發布與下架確認採共用樣式的頁內對話框，避免原生瀏覽器提示阻塞。
+
+相關交付與QA見PS-317；本機發布不代表Production上線。
+
+2026-10-20於Local Dev經Author審閱與API發布10/19研究為v1。原文與封面SHA-256、匿名列表／文章／封面讀取結果保存在忽略的 `.local/imports/ps317-local-publication.json`，不含作者憑證。Production未修改。實際瀏覽器發布按鈕暴露的暫態勾選檢查問題已修正，發布／下架改為頁內確認；實際讀者畫面與隔離資料庫的頁內發布流程已驗證，證據見PS-317。
+
+
 ### 載入效果同步
 
 2026-10-20 依 PS-320 同步 Production snapshot `1792496622494` 的共用 shimmer 元件與載入狀態，涵蓋書庫、閱讀圖片、ETF／法人文章、Author 及表單。`src/loading.tsx`／`src/loading.css` 為共用來源；減少動態偏好改用靜態骨架。執行 `npm run test:loading` 檢查元件契約。保留本機測試讀者、API 介面、資料、憑證與估值功能；此同步未重新部署 Production。
+
+### 已退役功能
+
+股價試算已依 Owner 要求從本機與 Production 移除。舊書籤回到研究書庫；個股行情 API、資料同步 CLI、KD 與估值計算不再提供。既有忽略目錄中的行情資料與備份未清除，應用程式不再讀取或更新；如需清除歷史資料，須另行指定資料範圍。

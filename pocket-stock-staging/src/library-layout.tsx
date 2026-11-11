@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export function CatalogPagination({
@@ -10,6 +9,7 @@ export function CatalogPagination({
   onChange,
   noun = '本',
   collection = '書目',
+  centered = false,
 }: {
   page: number;
   count: number;
@@ -18,14 +18,15 @@ export function CatalogPagination({
   label: string;
   noun?: string;
   collection?: string;
+  centered?: boolean;
   onChange: (page: number) => void;
 }) {
   return (
-    <nav className="catalog-pagination" aria-label={label}>
+    <nav className={'catalog-pagination' + (centered ? ' catalog-pagination--centered' : '')} aria-label={label}>
       <span role="status" aria-live="polite">
-        第 {page * size + 1}–{Math.min((page + 1) * size, total)} {noun}，共 {total} {noun}
+        {count > 1 ? `第 ${page * size + 1}–${Math.min((page + 1) * size, total)} ${noun}，共 ${total} ${noun}` : `共 ${total} ${noun}`}
       </span>
-      <div>
+      {(count > 1 || centered) && <div>
         <button
           type="button"
           disabled={page === 0}
@@ -64,39 +65,18 @@ export function CatalogPagination({
         >
           <ChevronRight size={15} />
         </button>
-      </div>
+      </div>}
     </nav>
   );
 }
 
 export function ResearchHero({
   title = '投資前先看看書',
-  deck = <>產業脈絡 × 供應鏈變化 × 長期競爭力<br />用研究，理解台灣股票與產業的真實輪廓。</>,
-  aphorism = <>閱讀<br />使投資<br />看得更遠</>,
   titleId = 'featured-book-title',
-}: {
-  title?: string; deck?: ReactNode;
-  aphorism?: ReactNode; titleId?: string;
-} = {}) {
-  return (
-    <section
-      className="featured-book library-featured-composition"
-      aria-labelledby={titleId}
-    >
-      <div className="featured-book-layout">
-        <div className="featured-book-premise">
-          <h1 id={titleId} tabIndex={-1}>
-            {title}
-          </h1>
-          <p className="featured-book-deck">
-            {deck}
-          </p>
-        </div>
-        <p className="featured-book-aphorism" aria-hidden="true">
-          {aphorism}
-        </p>
-      </div>
-    </section>
-  );
+}: { title?: string; titleId?: string } = {}) {
+  return <section className='featured-book library-featured-composition research-hero--minimal' aria-labelledby={titleId}>
+    <div className='featured-book-layout'><div className='featured-book-premise'>
+      <h1 id={titleId} tabIndex={-1}>{title}</h1>
+    </div></div>
+  </section>;
 }
-

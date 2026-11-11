@@ -11,7 +11,7 @@ export function CatalogSearch({ label, placeholder, value, onChange, onSearch,
 }) {
   const ownRef = useRef<HTMLInputElement>(null), composing = useRef(false);
   const input = inputRef || ownRef;
-  return <form className='catalog-search library-search-form library-shelf-search' role='search' aria-label={label}
+  return <form noValidate className='catalog-search library-search-form library-shelf-search' role='search' aria-label={label}
     onSubmit={event => { event.preventDefault(); if (!composing.current) (onSearch || onChange)(value); }}>
     <label className='search-field'>
       <Search size={18} aria-hidden='true' /><span className='sr-only'>{label}</span>

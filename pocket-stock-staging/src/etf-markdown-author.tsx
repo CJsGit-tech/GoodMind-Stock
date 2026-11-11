@@ -75,7 +75,7 @@ function CoverPreview({ cover, report, filename = 'cover.jpg', status }: {
   const [failed, setFailed] = useState(false);
   useEffect(() => setFailed(false), [cover.url]);
   return <figure className='md-author-cover-preview'>
-    {failed ? <p role='status'>封面暫時無法載入。已保存研究可重新載入，取得新的預覽連結。</p> : <img src={cover.url} alt={report.title + '，' + report.period.end + ' 研究封面'} width={480} height={360} onError={() => setFailed(true)} />}
+    {failed ? <p role='status'>封面暫時無法載入。已保存研究可重新載入，取得新的預覽連結。</p> : <ShimmerImage src={cover.url} frameClassName='loading-author-cover' alt={report.title + '，' + report.period.end + ' 研究封面'} width={480} height={360} onError={() => setFailed(true)} />}
     <figcaption><strong>{filename}</strong><span>{status} · 480 × 360 · JPEG · {(cover.bytes / 1024).toFixed(1)} KiB</span><span>關聯研究日 {report.period.end} · {report.id}</span><code>SHA-256 {cover.sha256}</code></figcaption>
   </figure>;
 }
@@ -426,7 +426,7 @@ export function MarkdownEtfAuthor({ sessionToken, request, onDirtyChange, onExit
             <div className='etf-author-actions'><button type='button' disabled={!raw.trim() || !!busy || !!pending} onClick={() => void validateSource()}><RefreshCw size={17} />重新驗證目前內容</button><button type='button' disabled={!saved || !valid || !!busy || !!pending} onClick={() => selectTab('preview')}>預覽已保存草稿</button><button type='button' onClick={() => { selectTab('import'); requestAnimationFrame(() => sourceInput.current?.focus()); }}>返回編輯</button></div>
           </EtfTabPanel>
           <EtfTabPanel idPrefix='md-author' id='preview' active={tab === 'preview'}>
-            {saved && entry ? <><div className='md-author-preview-state'><span>私有預覽 · 草稿 r{entry.revision} · 尚未公開的修訂不影響原公開版</span><span>{entry.publishedVersion ? (entry.archived ? '已下架' : '現行公開') : '尚無公開版本'}</span></div>{entry.cover && <CoverPreview cover={entry.cover} report={entry.draft} status={'已保存 · 草稿 r' + entry.revision} />}<MarkdownEtfReader report={entry.draft} version={entry.revision} publishedAt={entry.publishedAt} preview />
+            {saved && entry ? <><div className='md-author-preview-state'><span>私有預覽 · 草稿 r{entry.revision} · 尚未公開的修訂不影響原公開版</span><span>{entry.publishedVersion ? (entry.archived ? '已下架' : '現行公開') : '尚無公開版本'}</span></div><MarkdownEtfReader report={entry.draft} version={entry.revision} publishedAt={entry.publishedAt} coverUrl={entry.cover?.url} preview />
               <label className='etf-review-check'><input type='checkbox' checked={reviewAccepted || !!reviewed} disabled={!!busy || !!pending || !!reviewed} onChange={event => setReviewAccepted(event.target.checked)} /><span>{entry.cover ? '我已閱讀封面、完整文章、三組圖表、來源與缺口，確認本次修訂。' : '我已閱讀完整文章、三組圖表、來源與缺口，確認本次修訂。'}</span></label><div className='etf-author-actions'><button type='button' onClick={() => selectTab('import')}>返回編輯</button><button type='button' disabled={!reviewAccepted || !!reviewed || !!busy || !!pending} onClick={() => void mutate('review')}><Check size={17} />{reviewed ? '已完成審閱' : '記錄本次審閱'}</button><button type='button' className='md-author-primary' disabled={!canPublish} onClick={event => { returnFocus.current = event.currentTarget; setPublishDialog(true); }}>確認發布…</button></div></> : <div className='md-author-empty'><FileText size={30} /><h2>先保存私有草稿</h2><p>預覽與發布會使用同一份已保存修訂。請先驗證並保存目前內容。</p><button type='button' onClick={() => selectTab('import')}>返回資料匯入</button></div>}
           </EtfTabPanel>
           <EtfTabPanel idPrefix='md-author' id='history' active={tab === 'history'}>

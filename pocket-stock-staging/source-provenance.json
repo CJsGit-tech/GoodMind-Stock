@@ -61,7 +61,7 @@
     "files": [
       {
         "path": "README.md",
-        "sha256": "f15be24fab7eecad2b43421ac4a204f5a8eae22ebae2a6cbb7cd1cf8f4f2afb2"
+        "sha256": "3cb680b4158dcecfd7ca89ef616dd61fc426ae8132c493f8fee2f05b68c85edd"
       },
       {
         "path": "backend/etf-data-snapshots.ts",
@@ -69,7 +69,7 @@
       },
       {
         "path": "backend/etf-markdown.ts",
-        "sha256": "0e7dde66c33d34067f0d7aa343b14905262ea75847d21d45e94333e2c1319483"
+        "sha256": "88058b11b76e7ac9b6eb475d789dcc275dc5d1d078e96b2f8b0f5ec7d0e89a76"
       },
       {
         "path": "backend/etf-reports.ts",
@@ -77,7 +77,7 @@
       },
       {
         "path": "backend/index.ts",
-        "sha256": "e596cc69000049eb1bc551bcb8a9415187325ecc5c93a0742ae7119ed5ed5023"
+        "sha256": "30e7ffe89ee53333fc4e9e270c5a7b0d9f821045528193364e8f189edad9cc3e"
       },
       {
         "path": "local/client.ts",
@@ -113,15 +113,15 @@
       },
       {
         "path": "local/tests/etf-report-catalog.test.ts",
-        "sha256": "5bd7918edfbd6725456ab4a0bee0704ddd4d38780b9557f6c95dfd384941d479"
+        "sha256": "6fc624902c818640edbf7fbe32fe941aeebc150333131f3eddd5c0328bae4ec9"
       },
       {
         "path": "local/tests/reader-return.test.ts",
-        "sha256": "3379a92e19fcbc57fddd58181b2db3d4a1ea5408044d2f23d647037e54329c81"
+        "sha256": "1fb983803105a29dacac65ce5bb435e9458645997c63dd93036db4293258f113"
       },
       {
         "path": "local/tests/ui-smoke.mjs",
-        "sha256": "4e530635b817bb005461c0d9c58ba6d437bd4f35912c0e4849798e571aad9e11"
+        "sha256": "e6619c3804c718d76812e44444e1a1cea9d6cf01c6bc1182bad6a1d587ef74ec"
       },
       {
         "path": "package-lock.json",
@@ -129,7 +129,7 @@
       },
       {
         "path": "package.json",
-        "sha256": "e04e6cb123d3bdba6fab61fc3dca451bd326e843c74ba8ed461b64ff9ef95470"
+        "sha256": "dc07243d017749fa5924c594e3974600b9b728e912bf118e19a3a03857c756c3"
       },
       {
         "path": "shared/etf-analysis.ts",
@@ -145,15 +145,15 @@
       },
       {
         "path": "shared/etf-markdown.ts",
-        "sha256": "b3bb83f2447c8e8cd8b350edd870629bee895ec5674fc43c7473a859b27993d3"
+        "sha256": "e195dcf84267b69c5295740c8e5b125e83bde28dcd3946efa47a2e65907fb82a"
       },
       {
         "path": "shared/etf-research.ts",
-        "sha256": "c4d857b0912260316e59848a6748f527f2ca9221ac72f10be36eee6545ce5907"
+        "sha256": "1158f4c8affba2a66c139c79a9dd337c42d2866f30a18cc4a4d72a4d717b689d"
       },
       {
         "path": "src/App.tsx",
-        "sha256": "18eba163884e80999ef403d0b6e997536d4bcb2e550c67dd6f58381d555da73f"
+        "sha256": "8da65fb10f2fc4c26256ccaeb6e9d6725690f6ee907c26066fb76763c9625785"
       },
       {
         "path": "src/active-etf.css",
@@ -161,7 +161,7 @@
       },
       {
         "path": "src/active-etf.tsx",
-        "sha256": "5f9011d60a27be40c85b076ff95d70cb3dc60f7c4b71e72e714aa58c75f6cf76"
+        "sha256": "e719584d5fbb808e81c79825ed960a4988eef78079f8235fb54408d2a12a0d52"
       },
       {
         "path": "src/confirm-discard.ts",
@@ -185,7 +185,7 @@
       },
       {
         "path": "src/etf-markdown-author.tsx",
-        "sha256": "e646a7096be574cdf03a3bdfea7eb0d50e0d3a773db17e0cc936390c575b36f0"
+        "sha256": "f9a123872d0b6fdc63ad4939d8045ee430dcba40e864e72c73d08b15d330c977"
       },
       {
         "path": "src/etf-markdown-prose.ts",
@@ -197,7 +197,7 @@
       },
       {
         "path": "src/etf-markdown-reader.tsx",
-        "sha256": "f18ab034819bc6cf1b4926b3b14e45430dcf6c27da4ccf4289699ef801c9c94a"
+        "sha256": "b11df2f27e6d6478378b843009decc0a2a9504c9b2b1a93bf6cf9ceac6a37525"
       },
       {
         "path": "src/etf-report-catalog.css",
@@ -205,15 +205,15 @@
       },
       {
         "path": "src/etf-report-catalog.tsx",
-        "sha256": "f8d885f75d29b429d3aec5daca81fc7c5de558be4ebbf8028feb5eb06a9f7a51"
+        "sha256": "5da222068b39b6bb77b85ff1abcb7a7bbcff1517683b7df4827f4d877cab79ef"
       },
       {
         "path": "src/index.css",
-        "sha256": "8bcc1dcec822a9f1f25fae8b04a5e1fd3129cc622f723566d9c5a2a2c18a21db"
+        "sha256": "7fa38192fbd9a2cb96f134572bef88fe7512423be543b30df6f0b3b24799512b"
       },
       {
         "path": "src/library-layout.tsx",
-        "sha256": "7be78a5eb07eb486034dd73d1e335c03c59dea2ff6c3387c1a5273a61aeb962f"
+        "sha256": "24ee3c54f49dfce8efa8be231f08c83da527a514591e82b8cb921b3e9839bbbb"
       },
       {
         "path": "src/main.tsx",
@@ -221,7 +221,7 @@
       },
       {
         "path": "src/reader-return-routes.ts",
-        "sha256": "f2ae9f17bcf0f672c15e8c094119df6fd537eac4d28dd7e703446df4c7f2f164"
+        "sha256": "6ec3a0124392847e490329bc5062c319a05f496c43290dffba7f46237bc28286"
       },
       {
         "path": "src/reader-sign-in.ts",
@@ -229,7 +229,7 @@
       },
       {
         "path": "tests/backend-index.test.mjs",
-        "sha256": "06c77fc3efde0a49a2ee235edc485ae038d51009c26877da72988bf63b689dee"
+        "sha256": "ccdd17ea517ad625b108b2948a7b60b0facf24a068702c991238e4987f1e62f3"
       },
       {
         "path": "tests/etf-cover.test.ts",
@@ -265,15 +265,71 @@
       },
       {
         "path": "src/catalog-search.tsx",
-        "sha256": "7bc655dbccdd7f045c9340b260b49a5d0c31bb928906f5ca3a16ad83244ceecc"
+        "sha256": "d8562ede551ef326c09dc54ef8b2fe1885ccac0450a7fcf1bb8a3b90386e3954"
       },
       {
         "path": "src/catalog-controls.css",
-        "sha256": "84c56297366e34ace9c5c877133563ab806f545476e2c976a2fc5c4edb47fefc"
+        "sha256": "6b68cdaf6dda0733da6ccd57ac5424454bd194df689050aaf86ad3d9e5e0cf06"
       },
       {
         "path": "src/application-navigation.tsx",
-        "sha256": "3a8ee99cfa87453f78b8baf5a95a4faeead301dbc58850fd034601df46aaf394"
+        "sha256": "97ded7757fc3077a3c8e99e06244bcbf9d11f2da5a224cddccb93d1518f31142"
+      },
+      {
+        "path": "src/author-feedback.tsx",
+        "sha256": "b7d41cba611a8291d4af14663a080b963972c8aa577d72e58e9affae6c9662b1"
+      },
+      {
+        "path": "src/author-feedback.css",
+        "sha256": "07391d33f5f722c235b836f97d07505d0c9ae41022a6111e2553fd28c2802541"
+      },
+      {
+        "path": "backend/institutional-research.ts",
+        "sha256": "912654149ebdac459cacea2c184488c3bf17a090925ec10035226dc05218584b"
+      },
+      {
+        "path": "shared/institutional-research.ts",
+        "sha256": "4c124a513d1b67b0fee976e45fa606d329b6d21fabaaef75ef151b1ccf6b2b88"
+      },
+      {
+        "path": "src/institutional-author.tsx",
+        "sha256": "68deacce18fb3e2c63e8456e2126a599cf9d5c95666baba879ae5c231e0a3244"
+      },
+      {
+        "path": "src/institutional-reader.tsx",
+        "sha256": "6e24d588106af7e6c6eae9b13f2ae519f5c48f37b2669cc1b9c1de66ed4aa475"
+      },
+      {
+        "path": "src/institutional-public.tsx",
+        "sha256": "b7289d5867cf5188f96a8270d66b81435e59fb7a7e28bd456f349ec9f1f0c42a"
+      },
+      {
+        "path": "src/institutional-research.css",
+        "sha256": "0f1c26b1aa5234acb73e5844778933ea25516a4395ef2594d41b6dba18aa0477"
+      },
+      {
+        "path": "tests/institutional-research.test.ts",
+        "sha256": "6cdaa7b3ae77faef398effaf3615f3ad6090dd975957bb731268bfe652e26240"
+      },
+      {
+        "path": "tests/fixtures/institutional-fixture.json",
+        "sha256": "efbcb81f41528e9a343bc7501b7b5a861ec38c3dc194b73d92ac787251599b25"
+      },
+      {
+        "path": "tests/fixtures/institutional-cover.jpg",
+        "sha256": "19fed84b7e052cde855b79d23061392501f11b1d8b691f82981ba1683a67a910"
+      },
+      {
+        "path": "src/research-article-heading.tsx",
+        "sha256": "999c8bd893c79026535958b40036df1531d98c2eb2558eca08cf0251ac47cb56"
+      },
+      {
+        "path": "src/research-article-heading.css",
+        "sha256": "8ee2bee0ce658e066c248e3a395e2a6a48f68f3aa11b586016d84637395d000a"
+      },
+      {
+        "path": "local/tests/research-article-heading.test.ts",
+        "sha256": "b1c082140426f9b8b28264d889ae79728ac9f727b4431b5fb6cb0aa36ca352f3"
       }
     ],
     "productionVisibilitySync": {
@@ -286,6 +342,35 @@
       ],
       "localAdaptation": "Keep staging-master-secret-author; no Production data, settings or credentials copied",
       "issue": "PS-308"
+    },
+    "institutionalAuthor": {
+      "date": "2026-10-20",
+      "issue": "PS-316",
+      "scope": "Local Dev only; independent institutional three-file author workflow",
+      "sourceReport": "/Users/chuang/Downloads/InstitutionalFlows/2026-10-19-market",
+      "sourceSha256": "69e97a24d535d4ca20445fa91b2aeecbc7be1c3b61457828519cecf8563cdf92",
+      "productionDeployment": false
+    },
+    "institutionalReader": {
+      "date": "2026-10-20",
+      "issue": "PS-317",
+      "environment": "Local Dev only",
+      "publishedId": "2026-10-19-market",
+      "publishedVersion": 1,
+      "publicRoute": "/#/institutional-flows",
+      "productionDeployment": false,
+      "designPolish": {
+        "date": "2026-10-20",
+        "issue": "PS-317",
+        "scope": "Local reading composition, metric geometry, search recovery and Author confirmation",
+        "productionDeployment": false
+      },
+      "sharedArticleHeading": {
+        "date": "2026-10-20",
+        "issue": "PS-317",
+        "scope": "ETF and institutional public readers and Author previews",
+        "productionDeployment": false
+      }
     },
     "shimmerSync": {
       "date": "2026-10-20",

@@ -16,6 +16,8 @@ import {
 } from './reader-forms.ts';
 import type { AuthUser, RouterContext } from '@appdeploy/sdk';
 import { makeEtfRoutes } from './etf-reports.ts';
+import { makeInstitutionalRoutes } from './institutional-research.ts';
+import { makeInvestmentCalendarRoutes } from './investment-calendar.ts';
 import { makeEtfMarkdownRoutes } from './etf-markdown.ts';
 import { makeEtfDataRoutes } from './etf-data.ts';
 import { makeEtfSnapshotRoutes, prepareEtfReportCommit } from './etf-data-snapshots.ts';
@@ -2352,6 +2354,8 @@ const deleteReaderReviewHandlers = [
 export const handler = router({
   ...makeEtfRoutes({ requireAdmin, isSameOriginMutation }),
   ...makeEtfMarkdownRoutes({ requireAdmin, isSameOriginMutation }),
+  ...makeInstitutionalRoutes({ requireAdmin, isSameOriginMutation }),
+  ...makeInvestmentCalendarRoutes({ requireAdmin, isSameOriginMutation }),
   ...makeEtfDataRoutes({ requireAdmin, isSameOriginMutation, prepareReport: prepareEtfReportCommit }),
   ...makeEtfSnapshotRoutes({ requireAdmin, isSameOriginMutation }),
   'GET /api/_healthcheck': [async () => json({ message: 'Success' })],

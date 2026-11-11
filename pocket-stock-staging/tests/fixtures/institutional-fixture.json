@@ -1,0 +1,381 @@
+{
+  "schema_version": "institutional-flows-1.0.0",
+  "metadata": {
+    "report_id": "qa-institutional-report",
+    "article_title": "合成法人測試",
+    "subtitle": "10/19 法人買賣超 · 四組產業方向",
+    "research_date": "2026-10-19",
+    "data_checked_date": "2026-10-20",
+    "timezone": "Asia/Taipei",
+    "skill_version": "1.2.0",
+    "primary_groups": [
+      [
+        "TWSE",
+        "foreign_ex_dealer"
+      ],
+      [
+        "TPEx",
+        "foreign_ex_dealer"
+      ],
+      [
+        "TWSE",
+        "investment_trust"
+      ],
+      [
+        "TPEx",
+        "investment_trust"
+      ]
+    ],
+    "requested_scope": "外資／投信，各分上市與上櫃四組；精簡文字、產業方向優先",
+    "observed_scope": "合成測試兩檔股票",
+    "data_status": "partial_company_universe",
+    "institutions": {
+      "foreign_ex_dealer": "外資",
+      "investment_trust": "投信",
+      "dealer_self": "自營自行",
+      "dealer_hedge": "自營避險",
+      "official_total": "法人合計",
+      "dealer_total": "自營商合計",
+      "foreign_dealer": "外資自營商",
+      "foreign_total": "外資合計"
+    },
+    "methods": [
+      "市場金額與估算分列"
+    ],
+    "content_type": "tw_institutional_flows",
+    "data_format": "external_json",
+    "report_format": "html_reads_json",
+    "article_summary": "此資料僅供測試，不是市場研究。",
+    "publication_handoff": {
+      "contract_version": "1.0.0",
+      "target": "PocketStocks",
+      "files": {
+        "data": "data.json",
+        "report": "report.html",
+        "cover": "cover.jpg"
+      },
+      "cover": {
+        "mime_type": "image/jpeg",
+        "width": 480,
+        "height": 360
+      },
+      "workflow": "author_review_then_publish"
+    }
+  },
+  "sources": [
+    {
+      "id": "official",
+      "url": "https://example.invalid/source",
+      "title": "合成測試來源",
+      "publisher": "QA"
+    }
+  ],
+  "analysis": {
+    "sections": [
+      {
+        "id": "summary",
+        "title": "合成測試",
+        "blocks": [
+          {
+            "type": "paragraph",
+            "runs": [
+              {
+                "text": "零與未知分列。",
+                "source_ids": [
+                  "official"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "data": {
+    "market_totals": [
+      {
+        "market": "TWSE",
+        "institution": "foreign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "buy": 0,
+        "sell": 0,
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "foreign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "buy": 0,
+        "sell": 0,
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TWSE",
+        "institution": "investment_trust",
+        "trade_date": "2026-10-19",
+        "buy": 0,
+        "sell": 0,
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "investment_trust",
+        "trade_date": "2026-10-19",
+        "buy": 0,
+        "sell": 0,
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "source_ids": [
+          "official"
+        ]
+      }
+    ],
+    "stock_trades": [
+      {
+        "market": "TWSE",
+        "stock_code": "0001",
+        "stock_name": "合成股票",
+        "trade_date": "2026-10-19",
+        "unit": "shares",
+        "close": null,
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "price_date": "2026-10-19",
+        "accounts": {
+          "foreign_ex_dealer": {
+            "buy": 0,
+            "sell": 0,
+            "net": 0
+          },
+          "investment_trust": {
+            "buy": 0,
+            "sell": 0,
+            "net": 0
+          }
+        },
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "stock_code": "0001",
+        "stock_name": "合成股票",
+        "trade_date": "2026-10-19",
+        "unit": "shares",
+        "close": null,
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "price_date": "2026-10-19",
+        "accounts": {
+          "foreign_ex_dealer": {
+            "buy": 0,
+            "sell": 0,
+            "net": 0
+          },
+          "investment_trust": {
+            "buy": 0,
+            "sell": 0,
+            "net": 0
+          }
+        },
+        "source_ids": [
+          "official"
+        ]
+      }
+    ],
+    "sector_summaries": [
+      {
+        "market": "TWSE",
+        "institution": "foreign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "estimate_twd": null,
+        "breadth": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "foreign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "estimate_twd": null,
+        "breadth": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TWSE",
+        "institution": "investment_trust",
+        "trade_date": "2026-10-19",
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "estimate_twd": null,
+        "breadth": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "investment_trust",
+        "trade_date": "2026-10-19",
+        "sector_code": "01",
+        "sector_name": "合成產業",
+        "estimate_twd": null,
+        "breadth": 0,
+        "net_buy_count": 0,
+        "net_sell_count": 0,
+        "source_ids": [
+          "official"
+        ]
+      }
+    ],
+    "weekly_trends": [
+      {
+        "market": "TWSE",
+        "institution": "foreign_ex_dealer",
+        "week_start": "2026-10-19",
+        "week_label": "本週至10/19",
+        "observed_dates": [
+          "2026-10-19"
+        ],
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "period_status": "target_week_to_date",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "foreign_ex_dealer",
+        "week_start": "2026-10-19",
+        "week_label": "本週至10/19",
+        "observed_dates": [
+          "2026-10-19"
+        ],
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "period_status": "target_week_to_date",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TWSE",
+        "institution": "investment_trust",
+        "week_start": "2026-10-19",
+        "week_label": "本週至10/19",
+        "observed_dates": [
+          "2026-10-19"
+        ],
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "period_status": "target_week_to_date",
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "investment_trust",
+        "week_start": "2026-10-19",
+        "week_label": "本週至10/19",
+        "observed_dates": [
+          "2026-10-19"
+        ],
+        "net": 0,
+        "unit": "TWD",
+        "metric_basis": "official_market_amount",
+        "period_status": "target_week_to_date",
+        "source_ids": [
+          "official"
+        ]
+      }
+    ],
+    "group_summaries": [
+      {
+        "market": "TWSE",
+        "institution": "foreign_ex_dealer",
+        "title": "TWSEforeign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "official_market_net_twd": 0,
+        "observed_stock_count": 1,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "foreign_ex_dealer",
+        "title": "TPExforeign_ex_dealer",
+        "trade_date": "2026-10-19",
+        "official_market_net_twd": 0,
+        "observed_stock_count": 1,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TWSE",
+        "institution": "investment_trust",
+        "title": "TWSEinvestment_trust",
+        "trade_date": "2026-10-19",
+        "official_market_net_twd": 0,
+        "observed_stock_count": 1,
+        "source_ids": [
+          "official"
+        ]
+      },
+      {
+        "market": "TPEx",
+        "institution": "investment_trust",
+        "title": "TPExinvestment_trust",
+        "trade_date": "2026-10-19",
+        "official_market_net_twd": 0,
+        "observed_stock_count": 1,
+        "source_ids": [
+          "official"
+        ]
+      }
+    ],
+    "source_audit": []
+  },
+  "charts": [
+    {
+      "id": "sector",
+      "data_key": "sector_summaries"
+    }
+  ]
+}
