@@ -8,7 +8,7 @@ export interface Route { screen: Screen; subject: string }
 export interface Filters { q: string; depth: number; colorBy: 'type' | 'none' }
 export interface ApiError { status: number; message: string; data: any }
 
-const fail = (e: any): ApiError => ({ status: e?.status || 0, message: e?.response?.data?.error || (e?.status ? e.message : '無法連線，請再試一次。'), data: e?.response?.data || {} });
+const fail = (e: any): ApiError => ({ status: e?.status || e?.response?.status || 0, message: e?.response?.data?.error || (e?.status || e?.response?.status ? e.message : '無法連線，請再試一次。'), data: e?.response?.data || {} });
 export const get = <T,>(path: string) => api.get(path).then(r => r.data as T, e => { throw fail(e); });
 export const post = <T,>(path: string, body?: unknown) => api.post(path, body).then(r => r.data as T, e => { throw fail(e); });
 
@@ -31,6 +31,8 @@ interface Store {
   owner: boolean; refreshSession(): Promise<void>;
   graph: GraphView | null; graphError: ApiError | null; reloadGraph(): void; dataTick: number;
   filters: Filters; setFilters(f: Partial<Filters>): void;
+  /** Positions the reader dragged nodes to. They last until the page is reloaded or the layout is reset. */
+  moveNodes(positions: Record<string, { x: number; y: number }>, portrait: boolean): void; layoutMoved: boolean; resetLayout(): void;
 }
 const Ctx = createContext<Store>(null as any);
 export const useStore = () => useContext(Ctx);
@@ -43,7 +45,15 @@ export function parseHash(): Route {
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [route, setRoute] = useState<Route>(parseHash);
   const [owner, setOwner] = useState(false);
-  const [graph, setGraph] = useState<GraphView | null>(null);
+  const [base, setGraph] = useState<GraphView | null>(null);
+  const [moved, setMoved] = useState<Record<string, Partial<{ x: number; y: number; px: number; py: number }>>>({});
+  const layoutMoved = Object.keys(moved).length > 0;
+  const graph = useMemo(() => (base && layoutMoved ? { ...base, nodes: base.nodes.map(n => (moved[n.id] ? { ...n, ...moved[n.id] } : n)) } : base), [base, moved, layoutMoved]);
+  const moveNodes = useCallback((positions: Record<string, { x: number; y: number }>, portrait: boolean) => setMoved(m => {
+    const next = { ...m };
+    for (const [id, p] of Object.entries(positions)) next[id] = { ...next[id], ...(portrait ? { px: p.x, py: p.y } : { x: p.x, y: p.y }) };
+    return next;
+  }), []);
   const [graphError, setGraphError] = useState<ApiError | null>(null);
   const [tick, setTick] = useState(0);
   const [filters, setF] = useState<Filters>({ q: '', depth: 2, colorBy: 'type' });
@@ -57,6 +67,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const value = useMemo<Store>(() => ({
     route, go: setRoute, owner, refreshSession, graph, graphError, reloadGraph: () => setTick(t => t + 1), dataTick: tick,
     filters, setFilters: f => setF(x => ({ ...x, ...f })),
-  }), [route, owner, refreshSession, graph, graphError, tick, filters]);
+    moveNodes, layoutMoved, resetLayout: () => setMoved({}),
+  }), [route, owner, refreshSession, graph, graphError, tick, filters, moveNodes, layoutMoved]);
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

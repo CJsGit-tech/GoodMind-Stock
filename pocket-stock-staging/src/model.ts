@@ -12,7 +12,7 @@ function place(ids: string[], edges: [string, string][], W: number, H: number) {
   let seed = 7; const rnd = () => ((seed = (seed * 1664525 + 1013904223) % 4294967296) / 4294967296);
   const idx: Record<string, number> = {}; ids.forEach((id, i) => (idx[id] = i));
   const pos = ids.map((_, i) => ({ x: W / 2 + Math.cos(i * 2.4) * (60 + rnd() * 180), y: H / 2 + Math.sin(i * 2.4) * (40 + rnd() * 120) }));
-  const k = Math.sqrt((W * H) / Math.max(ids.length, 1)) * 0.7, rounds = ids.length > 150 ? 120 : 500;
+  const k = Math.sqrt((W * H) / Math.max(ids.length, 1)) * 0.36, rounds = ids.length > 150 ? 120 : 500;
   for (let it = 0; it < rounds; it++) {
     const t = 14 * (1 - it / rounds) + 0.3, disp = pos.map(() => ({ x: 0, y: 0 }));
     for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) {
@@ -31,6 +31,9 @@ function place(ids: string[], edges: [string, string][], W: number, H: number) {
       p.y = Math.min(H - 50, Math.max(50, p.y + (disp[i].y / m) * Math.min(m, t)));
     });
   }
+  // The forces settle into a compact cluster. Scale it to the frame so the graph uses the space without piling nodes against the edges.
+  const xs = pos.map(p => p.x), ys = pos.map(p => p.y), x0 = Math.min(...xs), x1 = Math.max(...xs), y0 = Math.min(...ys), y1 = Math.max(...ys);
+  if (ids.length > 1) pos.forEach(p => { p.x = x1 > x0 ? 90 + ((p.x - x0) / (x1 - x0)) * (W - 180) : W / 2; p.y = y1 > y0 ? 84 + ((p.y - y0) / (y1 - y0)) * (H - 150) : H / 2; }); // the top band is left clear for the tools in the stage's top-right corner
   for (let it = 0; it < 200; it++) for (let i = 0; i < ids.length; i++) for (let j = i + 1; j < ids.length; j++) { // keep labels apart
     const dx = pos[i].x - pos[j].x, dy = (pos[i].y - pos[j].y) * 1.5, d = Math.hypot(dx, dy);
     if (d < 92 && d > 0.01) { const push = (92 - d) / 2; pos[i].x += (dx / d) * push; pos[j].x -= (dx / d) * push; pos[i].y += ((dy / d) * push) / 1.5; pos[j].y -= ((dy / d) * push) / 1.5; }

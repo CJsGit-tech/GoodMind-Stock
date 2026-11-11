@@ -3,13 +3,13 @@ import type { Decision, Detection, DraftSummary, DraftView } from '../../shared/
 import { decidedCount } from '../../shared/graph';
 import { LocalGraph } from '../Canvas';
 import { ApiError, post, useLoad, useStore } from '../store';
-import { Disclosure, Failed, Loading, NavLink } from '../ui';
+import { Disclosure, Failed, Loading, NavLink, useMedia } from '../ui';
 
 export function OwnerPage({ subject }: { subject: string }) {
   const s = useStore();
   const [id, mode] = subject.split('~');
   return (
-    <div className="wrap narrow owner">
+    <div className="wrap owner">
       {!s.owner ? <SignIn /> : !id ? <DraftList /> : <DraftReview id={id} text={mode === 'text'} />}
     </div>
   );
@@ -90,8 +90,16 @@ function DraftReview({ id, text }: { id: string; text: boolean }) {
   const [busy, setBusy] = useState(false);
   const [notice, setNotice] = useState('');
   const [outcome, setOutcome] = useState<Outcome>(null);
+  const [discarding, setDiscarding] = useState(false);
+  const side = useMedia('(min-width: 1100px)'); // with room to spare, the graph preview sits beside the list instead of behind a disclosure
   useEffect(() => { if (load.data) setDraft(load.data); }, [load.data]);
-  useEffect(() => { setDraft(null); setOutcome(null); setNotice(''); setOpen(null); }, [id]);
+  useEffect(() => { setDraft(null); setOutcome(null); setNotice(''); setOpen(null); setDiscarding(false); setMore(false); }, [id]);
+  useEffect(() => { // Escape closes the open row, unless a field inside it is being edited (the field's own Cancel handles that)
+    if (!open) return;
+    const key = (e: KeyboardEvent) => { if (e.key === 'Escape' && !(e.target instanceof HTMLInputElement)) setOpen(null); };
+    window.addEventListener('keydown', key);
+    return () => window.removeEventListener('keydown', key);
+  }, [open]);
 
   /** Runs one owner action. A stale or closed draft is reloaded and explained; a lost session returns to sign-in. */
   async function act<R>(fn: () => Promise<R>, then: (r: R) => void) {
@@ -128,12 +136,16 @@ function DraftReview({ id, text }: { id: string; text: boolean }) {
       {draft.paragraphs.map((p, i) => <p key={i} className="draft-p">{p.map((g, j) => g.d ? <span key={j} className={`hl ${draft.detections.find(x => x.id === g.d)?.decision ? 'done' : 'wait'}`}>{g.t}</span> : <span key={j}>{g.t}</span>)}</p>)}
     </>);
   const published = draft.status === 'published';
+  const preview = <LocalGraph own data={{ center: draft.preview.nodes[0]?.id, nodes: draft.preview.nodes, links: draft.preview.links }} label="What this draft would add to the graph" />;
+  const previewNote = <p className="muted small0">Dashed amber nodes and links are not public yet. They follow your choices in the list.</p>;
+  const aside = side && !published;
   return (
-    <>
+    <div className={aside ? 'review wide' : 'review'}>
+      <div className="review-main">
       {label}
       <h1 tabIndex={-1} className="page-h">{draft.title}</h1>
       <p className="progress" aria-live="polite"><b className={allDecided ? 'ok' : 'warn'}>{done} of {total} decided</b></p>
-      {notice ? <p className="warn" role="alert">{notice}</p> : null}
+      {notice ? <p className="warn notice" role="alert"><span>{notice}</span><button type="button" className="x" aria-label="Dismiss this message" onClick={() => setNotice('')}>×</button></p> : null}
       {outcome?.kind === 'recheck' ? (
         <div role="alert" className="callout">
           <p className="label warn">CHECKED AGAIN AT APPROVAL</p>
@@ -148,19 +160,15 @@ function DraftReview({ id, text }: { id: string; text: boolean }) {
         <div role="alert" className="callout">
           <p className="label warn">PUBLISH FAILED</p>
           <p>Publishing did not finish, so nothing was added to the graph and the book stays private. Your decisions are kept.</p>
-          <div className="actions"><button type="button" className="btn-text" disabled={busy} onClick={() => { setOutcome(null); approve(); }}>Retry publishing</button></div>
+          <div className="actions"><button type="button" className="btn-text" disabled={busy} onClick={() => { setOutcome(null); approve(); }}>Retry publishing</button><button type="button" className="btn-text muted-c" onClick={() => setOutcome(null)}>Not now</button></div>
         </div>) : null}
       {published ? (
         <div className="callout ok-c" role="status">
           <p className="ok strong">✓ Published{outcome?.kind === 'published' ? ` · ${outcome.newNodes} new node${outcome.newNodes === 1 ? '' : 's'}` : ''} · graph updated</p>
           <div className="actions">{draft.bookId ? <NavLink screen="article" subject={draft.bookId} className="btn-text">Open the book</NavLink> : null}<NavLink screen="graph" className="btn-text">See it in the graph</NavLink></div>
         </div>) : null}
-      {!published ? (
-        <Disclosure title="Preview in the graph">
-          <LocalGraph own data={{ center: draft.preview.nodes[0]?.id, nodes: draft.preview.nodes, links: draft.preview.links }} label="What this draft would add to the graph" />
-          <p className="muted small0">Dashed amber nodes and links are not public yet. They follow your choices below.</p>
-        </Disclosure>) : null}
-      <ul className="plain rows">{draft.detections.map(d => <li key={d.id}><Row d={d} all={draft.detections} attrs={draft.targetAttrs[d.id]} open={open === d.id} setOpen={v => setOpen(v ? d.id : null)} locked={published || busy} published={published} save={save} /></li>)}</ul>
+      {!published && !aside ? <Disclosure title="Preview in the graph">{preview}{previewNote}</Disclosure> : null}
+      <ul className="plain rows">{draft.detections.map(d => <li key={d.id}><Row d={d} all={draft.detections} attrs={draft.targetAttrs[d.id]} open={open === d.id} setOpen={v => setOpen(cur => (v ? d.id : cur === d.id ? null : cur))} locked={published || busy} published={published} save={save} /></li>)}</ul>
       {!published ? (
         <div className="foot-bar">
           <div className="foot-main">
@@ -168,14 +176,22 @@ function DraftReview({ id, text }: { id: string; text: boolean }) {
             <button type="button" className="btn primary" disabled={!allDecided || busy} aria-describedby={allDecided ? undefined : 'why-not'} onClick={() => approve()}>Approve &amp; publish</button>
             {!allDecided ? <span id="why-not" className="sr-only">Unavailable until every proposal is decided.</span> : null}
           </div>
-          <button type="button" className="btn-text plain-c" aria-expanded={more} aria-controls="more-actions" onClick={() => setMore(m => !m)}>More</button>
-          {more ? (
+          <button type="button" className="btn-text plain-c" aria-expanded={more} aria-controls="more-actions" onClick={() => { setMore(m => !m); setDiscarding(false); }}>More</button>
+          {more && !discarding ? (
             <div id="more-actions" className="more">
               <NavLink screen="review" subject={`${id}~text`} className="btn-text plain-c">Read the full draft text</NavLink>
-              <button type="button" className="btn-text warn-c" disabled={busy} onClick={() => act(() => post<DraftView>(`/api/owner/drafts/${id}/discard`, { version: draft.version }), d => { setDraft(d); s.reloadGraph(); })}>Discard draft</button>
+              <button type="button" className="btn-text warn-c" disabled={busy} onClick={() => setDiscarding(true)}>Discard draft</button>
+            </div>) : null}
+          {more && discarding ? (
+            <div id="more-actions" className="more confirm" role="group" aria-label="Discard this draft">
+              <span>Discard this draft? Your {done} decision{done === 1 ? '' : 's'} will be lost and this cannot be undone.</span>
+              <button type="button" className="btn-text warn-c" disabled={busy} onClick={() => act(() => post<DraftView>(`/api/owner/drafts/${id}/discard`, { version: draft.version }), d => { setDraft(d); s.reloadGraph(); })}>Yes, discard</button>
+              <button type="button" className="btn-text plain-c" autoFocus onClick={() => setDiscarding(false)}>Keep draft</button>
             </div>) : null}
         </div>) : null}
-    </>
+      </div>
+      {aside ? <aside className="review-side" aria-label="Preview in the graph"><p className="label">PREVIEW IN THE GRAPH</p>{preview}{previewNote}</aside> : null}
+    </div>
   );
 }
 
@@ -197,6 +213,7 @@ function Row({ d, all, attrs, open, setOpen, locked, published, save }: { d: Det
         <div className="row-open">
           {d.sentence ? <p className="muted"><span className="label">SOURCE</span> 「{d.sentence}」</p> : null}
           {d.note ? <p className="muted">{d.note}</p> : null}
+          {d.decision && !published ? <div className="actions"><button type="button" className="btn-text plain-c" disabled={locked} aria-label={`Undo the decision for ${term}`} onClick={() => save(d.id, { decision: null })}>Undo decision</button></div> : null}
           {d.decision || published ? null : (
             <div className="actions">
               {canRename ? <button type="button" className="btn-text plain-c" aria-label={`Rename ${term}`} onClick={() => { setName(term); setPanel(panel === 'rename' ? '' : 'rename'); }}>Rename</button> : null}
@@ -209,7 +226,7 @@ function Row({ d, all, attrs, open, setOpen, locked, published, save }: { d: Det
           {panel === 'rename' && !d.decision ? (
             <form className="inline-panel" onSubmit={e => { e.preventDefault(); const v = name.trim(); if (v) save(d.id, { rename: v }, () => setPanel('')); }}>
               <label htmlFor={`rn-${d.id}`}>Official name for the new node</label>
-              <input id={`rn-${d.id}`} className="field" value={name} onChange={e => setName(e.target.value)} maxLength={80} autoFocus />
+              <input id={`rn-${d.id}`} className="field" value={name} onChange={e => setName(e.target.value)} maxLength={80} autoFocus onKeyDown={e => { if (e.key === 'Escape') setPanel(''); }} />
               <div className="actions"><button type="submit" className="btn-text" disabled={locked || !name.trim()}>Save name</button><button type="button" className="btn-text plain-c" onClick={() => setPanel('')}>Cancel</button></div>
             </form>) : null}
           {panel === 'match' && !d.decision ? (

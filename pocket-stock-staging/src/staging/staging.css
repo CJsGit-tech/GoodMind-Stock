@@ -1,0 +1,20 @@
+/* Local staging tools. Loaded only with StagingTools.tsx, so none of this reaches a production build. */
+.stg { position: fixed; right: 16px; bottom: 16px; z-index: 200; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; font-size: 14px; }
+.stg-pill { min-height: 44px; padding: 0 14px; display: inline-flex; align-items: center; gap: 8px; border: 1px dashed #5b6b72; border-radius: 22px; background: rgba(18, 24, 28, .94); color: #c9d4d8; font-weight: 700; font-size: 13px; letter-spacing: .3px; cursor: pointer; }
+.stg-pill:hover, .stg-pill[aria-expanded="true"] { color: #fff; border-color: #8ea0a6; }
+.stg-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--warn); }
+.stg-role { color: var(--muted); font-weight: 400; padding-left: 8px; border-left: 1px solid #3a4a50; }
+.stg-panel { width: 340px; max-width: calc(100vw - 32px); max-height: min(72vh, 640px); overflow: auto; padding: 14px 16px 16px; background: #161f23; border: 1px dashed #5b6b72; border-radius: 12px; box-shadow: 0 18px 44px rgba(0, 0, 0, .6); }
+.stg-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; } .stg-head b { display: block; font-size: 16px; } .stg-head small { color: var(--muted); font-size: 12px; }
+.stg-x { width: 44px; height: 44px; margin: -10px -12px 0 0; background: none; border: 0; color: var(--muted); font-size: 24px; cursor: pointer; }
+.stg-note { margin: 10px 0 4px; padding: 8px 10px; border-left: 3px solid var(--warn); background: #11181b; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }
+.stg-panel h2 { margin: 14px 0 4px; color: var(--muted); font-size: 12px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; }
+.stg-panel ul { list-style: none; margin: 0; padding: 0; }
+.stg-row { width: 100%; min-height: 44px; padding: 6px 0; display: flex; flex-direction: column; align-items: flex-start; background: none; border: 0; color: var(--text); text-align: left; cursor: pointer; }
+.stg-row b { font-size: 15px; } .stg-row small { color: var(--muted); font-size: 12px; line-height: 1.4; } .stg-row:hover b { color: var(--mint); } .stg-row:disabled { opacity: .5; cursor: wait; }
+.stg-seg { display: flex; gap: 6px; } .stg-seg button { flex: 1; min-height: 44px; border-radius: 8px; border: 1px solid #2d3a40; background: none; color: var(--muted); font-weight: 700; font-size: 15px; cursor: pointer; }
+.stg-seg button[aria-pressed="true"] { background: var(--mint); border-color: var(--mint); color: #04201c; }
+.stg-reset { margin-top: 14px; min-height: 44px; padding: 0; background: none; border: 0; color: var(--warn); font-weight: 700; font-size: 14px; text-decoration: underline; cursor: pointer; }
+/* Stay clear of the approval bar on the draft review. */
+.shell:has(.review:not(.wide) .foot-bar) .stg { bottom: 112px; }
+@media (max-width: 699px) { .stg { right: 12px; bottom: 12px; } .stg-role { display: none; } }

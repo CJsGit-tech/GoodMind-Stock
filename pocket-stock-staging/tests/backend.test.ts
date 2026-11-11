@@ -45,7 +45,9 @@ before(async () => { await fresh(); });
 
 test('readers see the seeded graph and nothing from the waiting draft', async () => {
   const g = await graph();
-  assert.equal(g.nodes.length, 25); assert.equal(g.books.length, 7);
+  assert.equal(g.nodes.length, 50); assert.equal(g.books.length, 15);
+  const page = (await req('GET', '/api/books/b-cooling')).data;
+  assert.ok(page.book.sample && page.paragraphs.length === 3 && page.paragraphs[1].some((seg: any) => seg.n), 'a sample book reads with node links');
   assert.ok(!names(g).includes('外資買超'));
   const lib = (await req('GET', '/api/library')).data.books;
   assert.ok(!lib.some((b: any) => b.title === '外資買超台積電的觀察'));

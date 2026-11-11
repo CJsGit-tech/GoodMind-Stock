@@ -4,7 +4,7 @@
 import { db, error, json } from './sdk.ts';
 import type { RouterResponse } from './sdk.ts';
 import { handler } from '../backend/index.ts';
-import { T, meta, nodeId, rebuildSnapshot, resetCache } from '../backend/store.ts';
+import { T, failNextPublishOnce, meta, nodeId, rebuildSnapshot, resetCache } from '../backend/store.ts';
 import { seedIfEmpty } from '../backend/seed.ts';
 import type { DraftPackage } from '../shared/graph.ts';
 
@@ -45,7 +45,7 @@ export async function simulate(event: any, input: any): Promise<RouterResponse> 
       const approve = await call({ ...event, headers: {} }, 'POST', '/api/owner/drafts/any/approve', { version: 1 }, agent());
       return json({ listDrafts: drafts.statusCode, approve: approve.statusCode });
     }
-    case 'fail-next-publish': process.env.KG_FAIL_NEXT_PUBLISH = '1'; return json({ ok: true });
+    case 'fail-next-publish': failNextPublishOnce(); return json({ ok: true });
     case 'conflict': { // another publication adds a node with this official name after the agent's lookup
       const name = typeof input.name === 'string' && input.name.trim() ? input.name.trim() : '外資買超';
       const [added] = await db.tx.add(T.nodes, [{ id: nodeId(name), name, type: 'concept', aliases: [] }]);
@@ -57,7 +57,7 @@ export async function simulate(event: any, input: any): Promise<RouterResponse> 
         let nextToken: string | undefined;
         do { const page = await db.list(table, { limit: 500, nextToken }); if (page.items.length) await db.delete(table, page.items.map(i => i.id)); nextToken = page.nextToken; } while (nextToken);
       }
-      resetCache(); delete process.env.KG_FAIL_NEXT_PUBLISH; await seedIfEmpty();
+      resetCache(); await seedIfEmpty();
       return { ...json({ ok: true }), headers: { 'Content-Type': 'application/json; charset=utf-8', 'Set-Cookie': 'pocketstocks_owner=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0' } };
     }
     default: return error('Unknown simulation.', 400);

@@ -1,9 +1,9 @@
 // Graph storage, lookup, drafts and publishing. Every other backend file goes through here.
 // Records are read by chosen ID (db.get); nothing is found by scanning. Readers only ever see the snapshot.
-import { createHash } from 'node:crypto';
 import { db, storage } from '@appdeploy/sdk';
 import type { Book, BookPage, Decision, Detection, Draft, DraftPackage, DraftSummary, DraftView, GraphLink, GraphNode, LibraryItem, LocalGraph, LookupResult, NodePage, NodeType, PreviewGraph, SearchEntry, Seg, Snapshot, TextAttr } from '../shared/graph.ts';
 import { decidedCount } from '../shared/graph.ts';
+import { byteLength, sha256 } from './hash.ts';
 
 export const T = { nodes: 'kg_nodes', aliases: 'kg_aliases', links: 'kg_links', attrs: 'kg_attrs', books: 'kg_books', drafts: 'kg_drafts', meta: 'kg_meta', sessions: 'kg_owner_sessions' } as const;
 const NODE_TYPES: NodeType[] = ['company', 'etf', 'inst', 'concept'];
@@ -13,7 +13,7 @@ export class Refused extends Error { constructor(readonly status: number, messag
 
 // ---------- identity ----------
 export const norm = (name: string) => name.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
-const hash = (value: string) => createHash('sha256').update(value).digest('hex').slice(0, 20);
+const hash = (value: string) => sha256(value).slice(0, 20);
 /** A node's ID comes from its official name, so the same name can never become two nodes. */
 export const nodeId = (name: string) => 'n' + hash(norm(name));
 export const aliasId = (alias: string) => 'a' + hash(norm(alias));
@@ -35,7 +35,10 @@ export async function snapshot(): Promise<Snapshot> {
   return (cache = JSON.parse(file.content) as Snapshot);
 }
 const writeSnapshot = (s: Snapshot) => storage.write([{ path: snapshotPath(s.version), content: JSON.stringify(s), contentType: 'application/json' }]);
-export const resetCache = () => { cache = null; };
+export const resetCache = () => { cache = null; failNextPublish = false; };
+/** Test hook for local staging: the next publish stops after its files are written and before its transaction. Nothing in the app sets it. */
+let failNextPublish = false;
+export const failNextPublishOnce = () => { failNextPublish = true; };
 
 // ---------- lookup ----------
 const bigrams = (s: string) => { const t = norm(s).replace(/\s/g, ''); const out = new Set<string>(); for (let i = 0; i < t.length - 1; i++) out.add(t.slice(i, i + 2)); return out; };
@@ -94,7 +97,7 @@ export async function uploadDraft(input: unknown) {
     if (existing) return receipt(existing, true);
     const m = (await meta())!;
     const draft: Draft = { ...pkg, id, number: m.seq + 1, status: 'draft', version: 1, uploadedAt: Date.now(), detections };
-    if (Buffer.byteLength(JSON.stringify(draft)) > 200 * 1024) throw new Refused(413, 'Draft package is too large.');
+    if (byteLength(JSON.stringify(draft)) > 200 * 1024) throw new Refused(413, 'Draft package is too large.');
     try {
       await db.transact([db.tx.add(T.drafts, [draft as any]), db.tx.update(T.meta, [{ id: 'graph', record: { seq: m.seq + 1 }, if: { seq: m.seq } }], { patch: true })]);
       return receipt(draft, false);
@@ -250,7 +253,7 @@ export async function approve(id: string, version: number, useExisting: Record<s
   // Files first, on new versioned paths. Readers switch only when the transaction moves the version.
   await storage.write([{ path: `kg/books/${p.book.id}.json`, content: JSON.stringify(paragraphs), contentType: 'application/json' }]);
   await writeSnapshot(next);
-  if (process.env.KG_FAIL_NEXT_PUBLISH && process.env.POCKETSTOCKS_LOCAL_ORIGIN) { delete process.env.KG_FAIL_NEXT_PUBLISH; throw new Refused(500, 'Publishing did not finish.', { code: 'publish-failed' }); } // local staging test hook
+  if (failNextPublish) { failNextPublish = false; throw new Refused(500, 'Publishing did not finish.', { code: 'publish-failed' }); }
   try { await db.transact(ops as any); } catch (e: any) {
     if (e?.code === 'AppDatabaseTransactionTooLarge') throw new Refused(413, 'This draft is too large to publish in one step.', { code: 'publish-failed' });
     throw new Refused(e?.code === 'AppDatabaseConditionFailed' ? 409 : 500, 'Publishing did not finish.', { code: 'publish-failed' });

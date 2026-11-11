@@ -30,7 +30,7 @@ export function PageLink({ id, book, children, className }: { id: string; book?:
 export const Tag = ({ id, name }: { id: string; name: string }) => <NavLink screen="node" subject={id} className="tag">#{name}</NavLink>;
 
 const COVER = ['#1f4d4a', '#4a3a1f', '#2d3a5e', '#4a2d4a', '#3a4a2d', '#52352a', '#2a4a52', '#40402a'];
-/** Placeholder cover drawn from the title. Real covers are images in storage and are not part of local staging yet. */
+/** Placeholder cover drawn from the title. Real covers are images in storage and are not part of this version yet. */
 export function Cover({ id, title, className }: { id: string; title: string; className?: string }) {
   let h = 0; for (const c of id) h = (h * 31 + c.charCodeAt(0)) >>> 0;
   return (
@@ -76,8 +76,8 @@ const match = (e: SearchEntry, q: string) => {
   if (alias) return { e, via: alias };
   return e.text.toLowerCase().includes(q) ? { e, via: undefined } : null;
 };
-/** One search for nodes and books, over published names, aliases and text. */
-export function SearchField({ id }: { id: string }) {
+/** One search for nodes and books, over published names, aliases and text. A result opens its page, unless onPick takes it (the graph selects it instead). */
+export function SearchField({ id, onPick }: { id: string; onPick?: (e: SearchEntry) => void }) {
   const s = useStore();
   const [q, setQ] = useState('');
   const [focus, setFocus] = useState(false);
@@ -85,7 +85,7 @@ export function SearchField({ id }: { id: string }) {
   const term = q.trim().toLowerCase();
   const entries = data.data?.entries || [];
   const res = term ? entries.map(e => match(e, term)).filter(Boolean).slice(0, 12) as { e: SearchEntry; via?: string }[] : [];
-  const open = (e: SearchEntry) => { setQ(''); setFocus(false); s.go({ screen: e.kind === 'node' ? 'node' : 'article', subject: e.id }); };
+  const open = (e: SearchEntry) => { setQ(''); setFocus(false); (document.activeElement as HTMLElement | null)?.blur(); if (onPick) return onPick(e); s.go({ screen: e.kind === 'node' ? 'node' : 'article', subject: e.id }); };
   return (
     <div className="search" role="search">
       <label className="sr-only" htmlFor={id}>搜尋節點與研究書</label>
