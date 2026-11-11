@@ -1,19 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "types": [
-      "node"
-    ],
-    "noUnusedLocals": false,
-    "noUnusedParameters": false
-  },
-  "include": [
-    "local/server.ts",
-    "local/sdk.ts",
-    "local/database.ts",
-    "backend",
-    "shared",
-    "local/import-content.ts",
-    "local/calendar-sync.ts"
-  ]
+  "compilerOptions": { "types": ["node"], "noUnusedLocals": false, "noUnusedParameters": false },
+  "include": ["local", "backend", "shared", "tests"]
 }

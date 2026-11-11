@@ -66,9 +66,11 @@ export async function localReaderSession(event: any, method: string, body: any) 
   await db.tx.add('local_reader_sessions', [{ id: digest(token), user, expires: Date.now() + 86400000 }]);
   return { ...json({ user }), headers: { ...response.headers, 'Set-Cookie': `${readerCookie}=${token}; HttpOnly; SameSite=Strict; Path=/; Max-Age=86400` } };
 }
+// Local stand-in for AppDeploy secrets: values come from the local .env file only.
+const SECRET_NAMES = ['ADMIN_MASTER_SECRET', 'MASTER_USER', 'MASTER_PASSWORD', 'AGENT_KEY'];
 export const secrets = {
-  async listSecretNames() { return process.env.ADMIN_MASTER_SECRET ? ['ADMIN_MASTER_SECRET'] : []; },
-  async readSecret(name: string) { return name === 'ADMIN_MASTER_SECRET' ? process.env.ADMIN_MASTER_SECRET : undefined; },
+  async listSecretNames() { return SECRET_NAMES.filter(name => process.env[name]); },
+  async readSecret(name: string) { return SECRET_NAMES.includes(name) ? process.env[name] : undefined; },
 };
 function objectFile(path: string) {
   const root = resolve(dataRoot, 'storage');

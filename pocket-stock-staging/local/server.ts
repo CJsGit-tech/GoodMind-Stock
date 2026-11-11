@@ -1,6 +1,6 @@
 import { createServer } from 'node:http';
 import { randomBytes } from 'node:crypto';
-import { existsSync, writeFileSync, mkdirSync } from 'node:fs';
+import { appendFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 import { createServer as createViteServer, loadEnv } from 'vite';
@@ -15,15 +15,29 @@ process.env.POCKETSTOCKS_LOCAL_ORIGIN = `http://localhost:${port}`;
 // A parent shell may carry a cloud credential. Only accept the local file or a
 // deliberately namespaced override, never an inherited ADMIN_MASTER_SECRET.
 process.env.ADMIN_MASTER_SECRET = process.env.POCKETSTOCKS_LOCAL_ADMIN_SECRET || env.ADMIN_MASTER_SECRET || '';
-if (!process.env.ADMIN_MASTER_SECRET?.trim()) {
-  if (existsSync(resolve(root, '.env'))) throw Error('Set ADMIN_MASTER_SECRET in the local .env file before starting.');
-  process.env.ADMIN_MASTER_SECRET = randomBytes(32).toString('base64url');
-  writeFileSync(resolve(root, '.env'), `PORT=${port}\nADMIN_MASTER_SECRET=${process.env.ADMIN_MASTER_SECRET}\n`, { mode: 0o600 });
+// Local stand-ins for the AppDeploy secrets. Values are random, stay in the ignored .env file and are never logged.
+const envFile = resolve(root, '.env');
+const wanted: Record<string, () => string> = {
+  ADMIN_MASTER_SECRET: () => randomBytes(32).toString('base64url'), MASTER_USER: () => 'owner',
+  MASTER_PASSWORD: () => randomBytes(18).toString('base64url'), AGENT_KEY: () => randomBytes(32).toString('base64url'),
+};
+// Read the file itself: loadEnv also returns the parent shell's variables, which may be real cloud credentials.
+const fileEnv: Record<string, string> = Object.fromEntries((existsSync(envFile) ? readFileSync(envFile, 'utf8') : '').split('\n').map(line => line.match(/^([A-Z_]+)=(.*)$/)).filter(Boolean).map(m => [m![1], m![2]]));
+let added = '';
+for (const [name, make] of Object.entries(wanted)) {
+  const value = name === 'ADMIN_MASTER_SECRET' ? process.env.ADMIN_MASTER_SECRET : fileEnv[name];
+  if (value?.trim()) { process.env[name] = value; continue; }
+  process.env[name] = make(); added += `${name}=${process.env[name]}\n`;
+}
+if (added) {
+  if (existsSync(envFile)) appendFileSync(envFile, (readFileSync(envFile, 'utf8').endsWith('\n') ? '' : '\n') + added);
+  else writeFileSync(envFile, `PORT=${port}\n${added}`, { mode: 0o600 });
 }
 process.env.POCKETSTOCKS_DATA_DIR ||= env.POCKETSTOCKS_DATA_DIR || resolve(root, '.local');
 mkdirSync(process.env.POCKETSTOCKS_DATA_DIR, { recursive: true });
-const { localReaderSession, readSignedAsset, error, db } = await import('./sdk.ts');
+const { readSignedAsset, error, db } = await import('./sdk.ts');
 const { handler } = await import('../backend/index.ts');
+const { simulate } = await import('./simulate.ts');
 const origin = process.env.POCKETSTOCKS_LOCAL_ORIGIN;
 const server = createServer();
 const vite = await createViteServer({ root, server: { middlewareMode: true, hmr: { server }, fs: { deny: ['.env', '.env.*', '**/.git/**', '**/.local/**'] } } });
@@ -46,7 +60,7 @@ server.on('request', async (req, res) => {
       res.writeHead(200, { 'Content-Type': asset.contentType, 'Cache-Control': 'private, max-age=60', 'X-Content-Type-Options': 'nosniff' });
       return res.end(asset.bytes);
     }
-    if (!url.pathname.startsWith('/api/') && url.pathname !== '/__local/session') return vite.middlewares(req, res);
+    if (!url.pathname.startsWith('/api/') && url.pathname !== '/__local/simulate') return vite.middlewares(req, res);
     if (!['GET', 'HEAD'].includes(req.method || '') && req.headers.origin !== origin) return send(error('Cross-site request rejected.', 403));
     const chunks: Buffer[] = []; let length = 0;
     for await (const chunk of req) {
@@ -56,9 +70,10 @@ server.on('request', async (req, res) => {
     }
     const body = Buffer.concat(chunks).toString('utf8');
     const event = { headers: req.headers, rawPath: url.pathname, rawQueryString: url.search.slice(1), body, isBase64Encoded: false, requestContext: { http: { method: req.method, sourceIp: req.socket.remoteAddress } } };
-    if (url.pathname === '/__local/session') {
-      let input; try { input = body ? JSON.parse(body) : undefined; } catch { return send(error('Invalid JSON body.', 400)); }
-      return send(await localReaderSession(event, req.method!, input));
+    if (url.pathname === '/__local/simulate') {
+      if (req.method !== 'POST') return send(error('Method not allowed.', 405));
+      let input; try { input = body ? JSON.parse(body) : {}; } catch { return send(error('Invalid JSON body.', 400)); }
+      return send(await simulate(event, input));
     }
     send(await handler(event));
   } catch (caught) {
@@ -67,5 +82,5 @@ server.on('request', async (req, res) => {
   }
 });
 server.on('error', async caught => { console.error(caught.message); await vite.close(); db.close(); process.exitCode = 1; });
-server.listen(port, '127.0.0.1', () => console.log(`PocketStocks local staging: ${origin}\nAuthor secret: local .env file (value is not logged). Data: .local/`));
+server.listen(port, '127.0.0.1', () => console.log(`PocketStocksV2 local staging: ${origin}\nOwner and agent secrets: local .env file (values are not logged). Data: .local/`));
 for (const signal of ['SIGTERM', 'SIGINT'] as const) process.once(signal, async () => { await vite.close(); server.closeAllConnections(); server.close(() => { db.close(); process.exit(0); }); });
