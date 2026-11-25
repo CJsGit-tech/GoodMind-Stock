@@ -1,0 +1,42 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:aeolus"
+    ],
+    "from": "collaboration:adv-aeolus",
+    "id": "edge:035",
+    "predicate": "FOCUSES_ON_PRODUCT",
+    "to": "product:afe",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:mobisnet"
+    ],
+    "from": "collaboration:axiom-mobisnet",
+    "id": "edge:038",
+    "predicate": "FOCUSES_ON_PRODUCT",
+    "to": "product:aie",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+    ],
+    "from": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+    "id": "relation:b8957ca7-560a-436e-b4f0-b1e279e575cc",
+    "predicate": "FOCUSES_ON_PRODUCT",
+    "to": "entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+    ],
+    "from": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+    "id": "relation:e0835b5b-4a1c-48f3-b557-cbe78d0b978b",
+    "predicate": "FOCUSES_ON_PRODUCT",
+    "to": "entity:f9ee54d2-4841-463c-b776-9f21470830b8",
+    "verification_status": "officially_disclosed"
+  }
+]

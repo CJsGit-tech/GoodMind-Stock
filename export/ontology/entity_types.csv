@@ -1,0 +1,20 @@
+﻿name,parent,abstract,definition,node_count
+Company,,,"Distinct legal entity, public or private; subsidiaries are Companies",66
+CorporateGroup,,,Corporate umbrella that may contain multiple legal Companies,2
+OrganizationUnit,,,"Nonlegal company branch, division, or internal unit",0
+ProductFamily,,,Vendor-defined product series,0
+ProductCategory,,,Industry-wide product classification shared across vendors,2
+Product,Offering,,"Sellable product, hardware component, software offering or integrated solution",79
+Technology,,,Underlying hardware/software platform or capability,2
+Application,,,Specific functional use case,1
+Industry,,,Taxonomy of economic activities and end-markets,10
+MarketSegment,,,"Specific group of buyers sharing application and purchasing need, optionally by region",31
+SupplyRelationship,,,"Documented commercial supply relationship relating seller, buyer, product",10
+CustomerOpportunity,,,"Prospective customer opportunity, not a verified sale",0
+Collaboration,,,"Partnership, joint venture, MOU, integration or joint development",8
+CompetitionAssessment,,,Scoped competitive assessment of two products in a market,19
+Evidence,,,"Original filing, product page, announcement, contract, or independent source",67
+Claim,,,Traceable extracted assertion with verification status,0
+ETF,,,指數股票型基金或其他在交易所交易的基金。成分股資料有明確基準日與權重來源，不代表個人持倉。 / Exchange-traded funds. Constituent snapshots have an as-of date and a weight source; they do not represent personal holdings.,4
+Service,Offering,,"Sellable service such as foundry, testing, packaging subcontracting, design or system integration",2
+Offering,,True,Anything a company sells: a Product or a Service. Abstract parent class; relations that accept an Offering accept both.,0

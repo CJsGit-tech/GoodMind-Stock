@@ -1,0 +1,70 @@
+{
+  "唯讀": {
+    "zh-TW": "唯讀",
+    "en": "Read only"
+  },
+  "排序": {
+    "zh-TW": "排序",
+    "en": "Sort"
+  },
+  "工作區排序": {
+    "zh-TW": "工作區排序",
+    "en": "Workspace sort"
+  },
+  "名稱：升冪": {
+    "zh-TW": "名稱：升冪",
+    "en": "Name: ascending"
+  },
+  "名稱：降冪": {
+    "zh-TW": "名稱：降冪",
+    "en": "Name: descending"
+  },
+  "原始順序": {
+    "zh-TW": "原始順序",
+    "en": "Original order"
+  },
+  "查看 {name}": {
+    "zh-TW": "查看 {name}",
+    "en": "View {name}"
+  },
+  "查看資料": {
+    "zh-TW": "查看資料",
+    "en": "View details"
+  },
+  "資料清單": {
+    "zh-TW": "資料清單",
+    "en": "Records"
+  },
+  "編輯": {
+    "zh-TW": "編輯",
+    "en": "Edit"
+  },
+  "刪除": {
+    "zh-TW": "刪除",
+    "en": "Delete"
+  },
+  "資料規則": {
+    "zh-TW": "資料規則",
+    "en": "Data rules"
+  },
+  "關閉資料詳情": {
+    "zh-TW": "關閉資料詳情",
+    "en": "Close record details"
+  },
+  "來源證據": {
+    "zh-TW": "來源證據",
+    "en": "Evidence sources"
+  },
+  "開啟來源": {
+    "zh-TW": "開啟來源",
+    "en": "Open source"
+  },
+  "原始 JSON": {
+    "zh-TW": "原始 JSON",
+    "en": "Original JSON"
+  },
+  "關閉": {
+    "zh-TW": "關閉",
+    "en": "Close"
+  }
+}

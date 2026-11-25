@@ -1,0 +1,102 @@
+[
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "from": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+    "id": "relation:a6dd87c6-df8f-4729-9247-36788c9be1ed",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "from": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+    "id": "relation:8cbb3856-7d77-427c-9d2a-e3bc6534cdfd",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+    ],
+    "from": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+    "id": "relation:7b78dd23-c5ce-49b3-991d-d4ced0faf978",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "from": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+    "id": "relation:0e621807-bc98-412f-bc77-badadeb7fa5b",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+    ],
+    "from": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+    "id": "relation:358cc88a-b13c-4e09-bca8-b933ca2a1b60",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+    ],
+    "from": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+    "id": "relation:9195c509-f4fb-495e-ac59-9b141e80e37a",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+    ],
+    "from": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+    "id": "relation:053ceb87-7a92-4b7a-8cdb-463c7d551692",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+    "id": "relation:7114d10b-dd72-44d8-8b10-142971957617",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+    "id": "relation:72a508e5-4454-4685-ba82-1d7d385e1f63",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+    "id": "relation:f32eac67-3a55-45ee-a5f2-b97b4686e726",
+    "predicate": "HAS_SUPPLIER",
+    "to": "entity:77fdd193-85a4-4c91-882c-848c3b4ade5a",
+    "verification_status": "officially_disclosed"
+  }
+]

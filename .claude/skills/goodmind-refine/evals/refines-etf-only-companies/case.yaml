@@ -1,0 +1,4 @@
+schema_version: "1.1"
+name: refines-etf-only-companies
+expected_outcome: |
+  Each ready company has a company to product to market segment to industry chain backed by quoted public sources and checked by a separate verifier. data/db.json is unchanged and nothing is published.

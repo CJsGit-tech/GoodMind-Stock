@@ -1,0 +1,12 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:nexprod"
+    ],
+    "from": "company:nexcobot",
+    "id": "edge:023",
+    "predicate": "SERVES_INDUSTRY",
+    "to": "industry:robotics",
+    "verification_status": "officially_disclosed"
+  }
+]

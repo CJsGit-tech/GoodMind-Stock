@@ -1,0 +1,38 @@
+[
+  {
+    "from": "CustomerOpportunity",
+    "group": "opportunities",
+    "meaning": "Company seeking to sell",
+    "predicate": "PROSPECTIVE_SELLER",
+    "storage": "asserted",
+    "to": "Company",
+    "edge_count": 0
+  },
+  {
+    "from": "CustomerOpportunity",
+    "group": "opportunities",
+    "meaning": "Named prospective buyer; not a confirmed customer",
+    "predicate": "TARGET_CUSTOMER",
+    "storage": "asserted",
+    "to": "Company",
+    "edge_count": 0
+  },
+  {
+    "from": "CustomerOpportunity",
+    "group": "opportunities",
+    "meaning": "Product relevant to buyer opportunity",
+    "predicate": "PROPOSED_PRODUCT",
+    "storage": "asserted",
+    "to": "Offering",
+    "edge_count": 0
+  },
+  {
+    "from": "CustomerOpportunity",
+    "group": "opportunities",
+    "meaning": "Target use case for proposal or identified fit",
+    "predicate": "TARGET_APPLICATION",
+    "storage": "asserted",
+    "to": "Application",
+    "edge_count": 0
+  }
+]

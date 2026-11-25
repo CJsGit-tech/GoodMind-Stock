@@ -1,0 +1,1021 @@
+{
+ "source_folder": "/Users/chuang/Desktop/StockAnalysis/manga-layout-templates/2026-11-02-steel-construction-mix/research/",
+ "ops": [
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:ustv-20261102-scrap-steel-flat",
+    "type": "Evidence",
+    "name": "國際廢鋼走勢持平",
+    "attributes": {
+     "url": "https://news.ustv.com.tw/newsdetail/20261102A036",
+     "publisher": "非凡新聞",
+     "published_at": "2026-11-02"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-section-steel-product-page",
+    "type": "Evidence",
+    "name": "東和鋼鐵 型鋼產品介紹",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/product/intro/2",
+     "publisher": "東和鋼鐵",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-rebar-processing-product-page",
+    "type": "Evidence",
+    "name": "東和鋼鐵 鋼筋加工產品頁",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/product/detail/4",
+     "publisher": "東和鋼鐵",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-csr-client-service",
+    "type": "Evidence",
+    "name": "東和鋼鐵 CSR 客戶服務",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/CSR/econ_client_service.html",
+     "publisher": "東和鋼鐵",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-2024-tsmc-supplier-award",
+    "type": "Evidence",
+    "name": "東鋼鋼結構獲台積電供應商獎",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/about/newsdetail/2323",
+     "publisher": "東和鋼鐵",
+     "published_at": "2024-12-02"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-2026q2-consolidated-financials",
+    "type": "Evidence",
+    "name": "東鋼115Q2合併完稿財報",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/Files/papp/610/%E6%9D%B1%E9%8B%BC115Q2%E5%90%88%E4%BD%B5%E5%AE%8C%E7%A8%BF%E8%B2%A1%E5%A0%B1_%E9%9B%BB%E5%AD%90%E6%9B%B8.pdf",
+     "publisher": "東和鋼鐵",
+     "published_at": "2026-07-31"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-2025-consolidated-financials",
+    "type": "Evidence",
+    "name": "東和鋼鐵 114Q4 合併完稿財報",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/Files/papp/610/272980_114Q4_%E5%90%88%E4%BD%B5_%E5%AE%8C%E7%A8%BF%E8%B2%A1%E5%A0%B1_IMSv1-%E9%9B%BB%E5%AD%90%E6%9B%B8_IMSv1.pdf",
+     "publisher": "東和鋼鐵",
+     "published_at": "2026-02-26"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:tung-ho-2026-09-investor-conference",
+    "type": "Evidence",
+    "name": "20260916東和鋼鐵法說會中文版",
+    "attributes": {
+     "url": "https://www.tunghosteel.com/Files/papp/647/20260916%E6%9D%B1%E5%92%8C%E9%8B%BC%E9%90%B5%E6%B3%95%E8%AA%AA%E6%9C%83%E4%B8%AD%E6%96%87%E7%89%88.pdf",
+     "publisher": "東和鋼鐵",
+     "published_at": "2026-09-16"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "industry:steel",
+    "type": "Industry",
+    "name": "鋼鐵",
+    "attributes": {
+     "name_en": "Steel"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:construction-rebar",
+    "type": "MarketSegment",
+    "name": "建築鋼筋與鋼筋加工",
+    "attributes": {
+     "name_en": "Construction Rebar & Rebar Processing",
+     "buyer_type": "營造／鋼筋工程與經銷商",
+     "region": "TW"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:structural-steel-sections",
+    "type": "MarketSegment",
+    "name": "結構用型鋼",
+    "attributes": {
+     "name_en": "Structural Steel Sections (H-beams etc.)",
+     "buyer_type": "鋼構加工商與經銷商",
+     "region": "TW"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:steel-structure-fabrication",
+    "type": "MarketSegment",
+    "name": "鋼構加工與工程",
+    "attributes": {
+     "name_en": "Steel Structure Fabrication & Erection",
+     "buyer_type": "建廠業主與營造承攬商（含科技廠）",
+     "region": "TW"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:construction-rebar",
+    "to": "industry:steel",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:structural-steel-sections",
+    "to": "industry:steel",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:steel-structure-fabrication",
+    "to": "industry:steel",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:structural-steel-sections",
+    "to": "segment:steel-structure-fabrication",
+    "attributes": {
+     "note": "型鋼經切割、鑽孔、組立、焊接成梁柱／設備管架",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-section-steel-product-page",
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:tung-ho-steel",
+    "type": "Company",
+    "name": "東鋼",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Tung Ho Steel Enterprise",
+     "ticker": "2006",
+     "aliases": [
+      "東和鋼鐵",
+      "東和",
+      "Tung Ho Steel",
+      "2006"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials",
+      "evidence:tung-ho-2026-09-investor-conference",
+      "evidence:tung-ho-2025-consolidated-financials"
+     ],
+     "revenue_2026h1_twd_thousand": 29865731,
+     "revenue_2025h1_twd_thousand": 30174737,
+     "gross_profit_2026h1_twd_thousand": 4935741,
+     "gross_profit_2025h1_twd_thousand": 4431092,
+     "operating_cash_flow_2026h1_twd_thousand": 3663449,
+     "operating_cash_flow_2025h1_twd_thousand": 2960564,
+     "intersegment_revenue_eliminated_2026h1_twd_thousand": 4060767
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:tung-ho-steel-structure",
+    "type": "Company",
+    "name": "東鋼構",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Tung Ho Steel Structure",
+     "aliases": [
+      "東鋼鋼結構",
+      "東鋼構公司"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:tung-ho-construction",
+    "type": "Company",
+    "name": "東鋼營造",
+    "attributes": {
+     "country": "TW",
+     "aliases": [
+      "東鋼營造公司"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ],
+     "note": "合併財報鋼結構部門成員"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:feng-hsin-steel",
+    "type": "Company",
+    "name": "豐興",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Feng Hsin Steel",
+     "aliases": [
+      "豐興鋼鐵"
+     ],
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ],
+     "note": "研究僅見新聞列其鋼筋／廢鋼報價，未做全面研究"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:wei-chih-steel",
+    "type": "Company",
+    "name": "威致",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Wei Chih Steel",
+     "aliases": [
+      "威致鋼鐵"
+     ],
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ],
+     "note": "研究僅見新聞列其鋼筋報價，未做全面研究"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "IS_SUBSIDIARY_OF",
+    "from": "company:tung-ho-steel-structure",
+    "to": "company:tung-ho-steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "IS_SUBSIDIARY_OF",
+    "from": "company:tung-ho-construction",
+    "to": "company:tung-ho-steel",
+    "attributes": {
+     "note": "列入合併財報鋼結構部門",
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:tung-ho-steel",
+    "to": "industry:steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:tung-ho-steel-structure",
+    "to": "industry:steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:tung-ho-construction",
+    "to": "industry:steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:feng-hsin-steel",
+    "to": "industry:steel",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:wei-chih-steel",
+    "to": "industry:steel",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:tung-ho-rebar",
+    "type": "Product",
+    "name": "東鋼鋼筋",
+    "attributes": {
+     "kind": "material",
+     "name_en": "Tung Ho Rebar",
+     "revenue_2026h1_twd_thousand": 14110390,
+     "revenue_2025h1_twd_thousand": 15328857,
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:tung-ho-section-steel",
+    "type": "Product",
+    "name": "東鋼型鋼（H型鋼等）",
+    "attributes": {
+     "kind": "material",
+     "name_en": "Tung Ho Section Steel (H/I/channel/U)",
+     "revenue_2026h1_twd_thousand": 7410953,
+     "revenue_2025h1_twd_thousand": 7034444,
+     "note": "鋼胚熱軋成H/I/槽/U型鋼；自2012年起SN400YB取消材質加價，與SS400/A36同價（公司自述）",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-section-steel-product-page",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:tung-ho-steel-plate",
+    "type": "Product",
+    "name": "東鋼窄幅鋼板",
+    "attributes": {
+     "kind": "material",
+     "name_en": "Tung Ho Narrow Steel Plate",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:tung-ho-rebar-processing",
+    "type": "Service",
+    "name": "東鋼鋼筋加工",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Rebar Processing (cut-to-length, bending, friction welding, mesh)",
+     "note": "依施工圖定尺、彎曲、摩擦焊接、鋼筋網；按期間認列收入",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-rebar-processing-product-page",
+      "evidence:tung-ho-csr-client-service",
+      "evidence:tung-ho-2025-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:tung-ho-steel-structure-components",
+    "type": "Product",
+    "name": "東鋼構鋼結構組件",
+    "attributes": {
+     "kind": "component",
+     "name_en": "Steel Structure Components (H-type building members, pipe racks, BOX)",
+     "revenue_2026h1_twd_thousand": 7809849,
+     "revenue_2025h1_twd_thousand": 7055331,
+     "revenue_share_2026h1_pct": 26.15,
+     "revenue_share_2025h1_pct": 23.38,
+     "note": "型鋼機械加工、H型建築組件、一般廠房及設備管架、BOX線；收入為合併「鋼結構產品」分類",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:tung-ho-steel-structure-engineering",
+    "type": "Service",
+    "name": "東鋼鋼結構工程承攬",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Steel Structure Construction Contracting",
+     "revenue_2026h1_twd_thousand": 101489,
+     "note": "工程依已發生成本／估計總成本隨時間認列收入",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials",
+      "evidence:tung-ho-2025-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:feng-hsin-rebar",
+    "type": "Product",
+    "name": "豐興鋼筋",
+    "attributes": {
+     "kind": "material",
+     "name_en": "Feng Hsin Rebar",
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:wei-chih-rebar",
+    "type": "Product",
+    "name": "威致鋼筋",
+    "attributes": {
+     "kind": "material",
+     "name_en": "Wei Chih Rebar",
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "MANUFACTURES",
+    "from": "company:tung-ho-steel",
+    "to": "product:tung-ho-rebar",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials",
+      "evidence:tung-ho-rebar-processing-product-page"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "MANUFACTURES",
+    "from": "company:tung-ho-steel",
+    "to": "product:tung-ho-section-steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-section-steel-product-page",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "MANUFACTURES",
+    "from": "company:tung-ho-steel",
+    "to": "product:tung-ho-steel-plate",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:tung-ho-steel",
+    "to": "service:tung-ho-rebar-processing",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-rebar-processing-product-page",
+      "evidence:tung-ho-csr-client-service"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "MANUFACTURES",
+    "from": "company:tung-ho-steel-structure",
+    "to": "product:tung-ho-steel-structure-components",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:tung-ho-steel-structure",
+    "to": "service:tung-ho-steel-structure-engineering",
+    "attributes": {
+     "note": "鋼結構部門含東鋼構與東鋼營造；工程承攬未拆至個別公司",
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:tung-ho-construction",
+    "to": "service:tung-ho-steel-structure-engineering",
+    "attributes": {
+     "note": "鋼結構部門含東鋼構與東鋼營造；工程承攬未拆至個別公司",
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SELLS",
+    "from": "company:feng-hsin-steel",
+    "to": "product:feng-hsin-rebar",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SELLS",
+    "from": "company:wei-chih-steel",
+    "to": "product:wei-chih-rebar",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:tung-ho-rebar",
+    "to": "segment:construction-rebar",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-rebar-processing-product-page"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:tung-ho-rebar-processing",
+    "to": "segment:construction-rebar",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-rebar-processing-product-page"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:tung-ho-section-steel",
+    "to": "segment:structural-steel-sections",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-section-steel-product-page"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:tung-ho-steel-plate",
+    "to": "segment:structural-steel-sections",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:tung-ho-steel-structure-components",
+    "to": "segment:steel-structure-fabrication",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:tung-ho-steel-structure-engineering",
+    "to": "segment:steel-structure-fabrication",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:feng-hsin-rebar",
+    "to": "segment:construction-rebar",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:wei-chih-rebar",
+    "to": "segment:construction-rebar",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "supply:tung-ho-steel-structure-to-tsmc",
+    "type": "SupplyRelationship",
+    "name": "東鋼構供應台積電建廠鋼結構",
+    "attributes": {
+     "stage": "unspecified",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award",
+      "evidence:tung-ho-2026-09-investor-conference"
+     ],
+     "note": "2024-12-02東鋼構獲台積電供應商獎；僅證歷史建廠供應關係，不證2026新廠訂單、金額或單客利潤"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_SUPPLIER",
+    "from": "supply:tung-ho-steel-structure-to-tsmc",
+    "to": "company:tung-ho-steel-structure",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_BUYER",
+    "from": "supply:tung-ho-steel-structure-to-tsmc",
+    "to": "company:tsmc",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "from": "supply:tung-ho-steel-structure-to-tsmc",
+    "to": "product:tung-ho-steel-structure-components",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "supply:tung-ho-steel-plate-to-tung-ho-steel-structure",
+    "type": "SupplyRelationship",
+    "name": "東鋼供應東鋼構窄幅鋼板",
+    "attributes": {
+     "stage": "mass_production",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award",
+      "evidence:tung-ho-2026q2-consolidated-financials"
+     ],
+     "note": "BOX線使用母公司窄幅鋼板減少切割；集團內交易於合併沖銷（2026H1部門間收入4,060,767千元）"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_SUPPLIER",
+    "from": "supply:tung-ho-steel-plate-to-tung-ho-steel-structure",
+    "to": "company:tung-ho-steel",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_BUYER",
+    "from": "supply:tung-ho-steel-plate-to-tung-ho-steel-structure",
+    "to": "company:tung-ho-steel-structure",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "from": "supply:tung-ho-steel-plate-to-tung-ho-steel-structure",
+    "to": "product:tung-ho-steel-plate",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:tung-ho-2024-tsmc-supplier-award"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "competition:tung-ho-vs-feng-hsin-rebar",
+    "type": "CompetitionAssessment",
+    "name": "東鋼與豐興鋼筋競爭",
+    "attributes": {
+     "competition_type": "DIRECT",
+     "overlap_scope": "product_category",
+     "basis": [
+      "同列於非凡新聞鋼筋報價",
+      "研究判斷在鋼筋可能重疊，未做各自全面研究"
+     ],
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_A",
+    "from": "competition:tung-ho-vs-feng-hsin-rebar",
+    "to": "product:tung-ho-rebar",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_B",
+    "from": "competition:tung-ho-vs-feng-hsin-rebar",
+    "to": "product:feng-hsin-rebar",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "COMPETES_IN_SEGMENT",
+    "from": "competition:tung-ho-vs-feng-hsin-rebar",
+    "to": "segment:construction-rebar",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "competition:tung-ho-vs-wei-chih-rebar",
+    "type": "CompetitionAssessment",
+    "name": "東鋼與威致鋼筋競爭",
+    "attributes": {
+     "competition_type": "DIRECT",
+     "overlap_scope": "product_category",
+     "basis": [
+      "同列於非凡新聞鋼筋報價",
+      "研究判斷在鋼筋可能重疊，未做各自全面研究"
+     ],
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:ustv-20261102-scrap-steel-flat"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_A",
+    "from": "competition:tung-ho-vs-wei-chih-rebar",
+    "to": "product:tung-ho-rebar",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_B",
+    "from": "competition:tung-ho-vs-wei-chih-rebar",
+    "to": "product:wei-chih-rebar",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "COMPETES_IN_SEGMENT",
+    "from": "competition:tung-ho-vs-wei-chih-rebar",
+    "to": "segment:construction-rebar",
+    "attributes": {}
+   }
+  }
+ ]
+}

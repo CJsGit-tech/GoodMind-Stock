@@ -1,0 +1,93 @@
+﻿class,name,datatype,required,values,description
+Company,ticker,string,,,"Listing code, e.g. 6166."
+Company,exchange,string,,,"Listing venue, e.g. TWSE, TPEx, Emerging, or unlisted."
+Company,aliases,string[],,,Other names and spellings used for entity resolution.
+Company,website,url,,,Official website.
+Company,country,string,,,Country of incorporation.
+Company,verification_status,enum,,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+Company,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+Company,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Company,notes,text,,,Curator notes; scope limits and caveats.
+CorporateGroup,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+CorporateGroup,notes,text,,,Curator notes; scope limits and caveats.
+Product,kind,string,,,"Product form, e.g. system, module, component, software, or business_line (a company's activity in a segment when no named product is recorded)."
+Product,verification_status,enum,,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+Product,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+Product,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Product,notes,text,,,Curator notes; scope limits and caveats.
+MarketSegment,buyer_type,string,,,Who buys in this segment.
+MarketSegment,region,string,,,"Geographic scope, if any."
+MarketSegment,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+MarketSegment,notes,text,,,Curator notes; scope limits and caveats.
+SupplyRelationship,stage,enum,True,prospect|qualified|sampling|design_win|mass_production|ended|unspecified,"Commercial stage of the supply link; drives ""potential vs confirmed""."
+SupplyRelationship,offering_kind,enum,,product|service|unspecified,Whether a product or a service is supplied.
+SupplyRelationship,verification_status,enum,True,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+SupplyRelationship,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+SupplyRelationship,as_of,date,,,Date the assertion describes (point in time).
+SupplyRelationship,valid_from,date,,,Start of validity.
+SupplyRelationship,valid_to,date,,,End of validity (empty = still valid).
+SupplyRelationship,last_verified_at,date,,,When a curator last re-checked the evidence.
+SupplyRelationship,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+SupplyRelationship,notes,text,,,Curator notes; scope limits and caveats.
+CustomerOpportunity,stage,enum,True,identified|contacted|proposal|evaluation|won|lost|unspecified,Pipeline stage of a prospective sale (never a confirmed customer).
+CustomerOpportunity,verification_status,enum,True,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+CustomerOpportunity,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+CustomerOpportunity,as_of,date,,,Date the assertion describes (point in time).
+CustomerOpportunity,valid_from,date,,,Start of validity.
+CustomerOpportunity,valid_to,date,,,End of validity (empty = still valid).
+CustomerOpportunity,last_verified_at,date,,,When a curator last re-checked the evidence.
+CustomerOpportunity,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+CustomerOpportunity,notes,text,,,Curator notes; scope limits and caveats.
+Collaboration,collaboration_type,enum,True,joint_venture|mou|technical_integration|joint_development|strategic_partnership|investment|other|unspecified,Form of the collaboration.
+Collaboration,stage,enum,True,rumoured|announced|mou_signed|in_development|launched|ended|unspecified,Current stage of the collaboration.
+Collaboration,announced_at,date,,,Date of the public announcement.
+Collaboration,scope,text,,,"What the collaboration covers (products, markets, regions, exclusivity)."
+Collaboration,verification_status,enum,True,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+Collaboration,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+Collaboration,as_of,date,,,Date the assertion describes (point in time).
+Collaboration,valid_from,date,,,Start of validity.
+Collaboration,valid_to,date,,,End of validity (empty = still valid).
+Collaboration,last_verified_at,date,,,When a curator last re-checked the evidence.
+Collaboration,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Collaboration,notes,text,,,Curator notes; scope limits and caveats.
+CompetitionAssessment,competition_type,enum,True,DIRECT|INDIRECT,DIRECT = substitutable for the same buyer need; INDIRECT = alternative approach to the same outcome.
+CompetitionAssessment,overlap_scope,enum,True,market|product_category|application|unspecified,"Where the two offerings overlap: the whole market, one product category, or only one application."
+CompetitionAssessment,basis,string[],True,,Reasons supporting the assessment.
+CompetitionAssessment,commercial_competition_verified,boolean,,,True only if head-to-head bids or share data are documented.
+CompetitionAssessment,verification_status,enum,True,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+CompetitionAssessment,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+CompetitionAssessment,as_of,date,,,Date the assertion describes (point in time).
+CompetitionAssessment,valid_from,date,,,Start of validity.
+CompetitionAssessment,valid_to,date,,,End of validity (empty = still valid).
+CompetitionAssessment,last_verified_at,date,,,When a curator last re-checked the evidence.
+CompetitionAssessment,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+CompetitionAssessment,notes,text,,,Curator notes; scope limits and caveats.
+Evidence,url,url,True,,Source location.
+Evidence,source_type,string,,,"Filing, announcement, product page, news, analyst note…"
+Evidence,publisher,string,,,Who published the source.
+Evidence,source_published_at,date,,,Publication date of the source.
+Evidence,last_verified_at,date,,,When a curator last re-checked the evidence.
+Evidence,reverified_for_package,boolean,,,Whether the source was re-checked for this dataset.
+Evidence,date_method,enum,,page_metadata|url_path|page_text|record_note|manual,How source_published_at was obtained (page_text and record_note are lower confidence).
+Evidence,period_end,date,,,"Reporting period the source covers (annual/quarterly reports), when no publication date is known."
+Evidence,link_checked_at,date,,,When the URL was last fetched; the page existed as of this date.
+Evidence,link_status,string,,,Result of the last fetch (HTTP status or error).
+Evidence,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Evidence,notes,text,,,Curator notes; scope limits and caveats.
+ETF,ticker,string,,,Fund listing code.
+ETF,url,url,,,Fund holdings page.
+ETF,website,url,,,Issuer website.
+ETF,verification_status,enum,,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+ETF,as_of,date,,,Date the assertion describes (point in time).
+ETF,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+ETF,notes,text,,,Curator notes; scope limits and caveats.
+Service,kind,string,,,"Service form, e.g. foundry, testing, packaging, design, integration."
+Service,verification_status,enum,,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+Service,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+Service,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Service,notes,text,,,Curator notes; scope limits and caveats.
+Offering,kind,string,,,"Form of the offering, e.g. system, module, component, service, business_line."
+Offering,verification_status,enum,,officially_disclosed|corroborated|reported|analyst_inferred|hypothesis|disputed|rejected,How strongly the assertion is supported.
+Offering,evidence_ids,ref[],,,Evidence nodes supporting the assertion.
+Offering,localized_names,localized,,,"Display names per locale (zh-TW, en)."
+Offering,notes,text,,,Curator notes; scope limits and caveats.

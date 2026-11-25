@@ -1,0 +1,869 @@
+{
+ "source_folder": "/Users/chuang/Desktop/StockAnalysis/manga-layout-templates/2026-10-21-shipping-effective-capacity/research/",
+ "ops": [
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:maersk-2026-07-09-mecl-structural-changes",
+    "type": "Evidence",
+    "name": "Structural changes to MECL",
+    "attributes": {
+     "url": "https://www.maersk.com/news/articles/2026/07/09/structural-changes-to-mecl",
+     "publisher": "Maersk",
+     "published_at": "2026-07-09"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:maersk-2026-09-28-ae12-structural-change",
+    "type": "Evidence",
+    "name": "Structural change to AE12",
+    "attributes": {
+     "url": "https://www.maersk.com.cn/news/articles/2026/09/28/structural-change-to-ae12",
+     "publisher": "Maersk",
+     "published_at": "2026-09-28"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:maersk-2026-09-14-gemini-services-changes",
+    "type": "Evidence",
+    "name": "Structural changes to AE5, AE11, AE12 and ME2 Gemini services",
+    "attributes": {
+     "url": "https://www.maersk.com/news/articles/2026/09/14/structural-changes-ae5-ae11-ae12-me2-gemini-services",
+     "publisher": "Maersk",
+     "published_at": "2026-09-14"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:maersk-2026-10-19-me2-ae12-network-update",
+    "type": "Evidence",
+    "name": "Network update: ME2 and AE12 Jeddah and Colombo",
+    "attributes": {
+     "url": "https://www.maersk.com.cn/news/articles/2026/10/19/network-update-me2-ae12-jeddah-colombo",
+     "publisher": "Maersk",
+     "published_at": "2026-10-19"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:sca-2026-10-20-news",
+    "type": "Evidence",
+    "name": "Suez Canal Authority news 20-10-2026",
+    "attributes": {
+     "url": "https://www.suezcanal.gov.eg/English/MediaCenter/News/Pages/sca_20-10-2026.aspx",
+     "publisher": "Suez Canal Authority",
+     "published_at": "2026-10-20"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:bimco-2026-10-14-shipping-number-of-the-week",
+    "type": "Evidence",
+    "name": "BIMCO Shipping Number of the Week (2026-10-14)",
+    "attributes": {
+     "url": "https://www.bimco.org/news-insights/market-analysis/shipping-number-of-the-week/2026/1014-snow/",
+     "publisher": "BIMCO",
+     "published_at": "2026-10-14"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:unctad-rmt-2025-ch2",
+    "type": "Evidence",
+    "name": "Review of Maritime Transport 2025, Chapter 2",
+    "attributes": {
+     "url": "https://unctad.org/system/files/official-document/rmt2025ch2_en.pdf",
+     "publisher": "UNCTAD",
+     "published_at": "2025-09-24"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:nyk-2026-01-20-research",
+    "type": "Evidence",
+    "name": "NYK research presentation (2026-01-20)",
+    "attributes": {
+     "url": "https://www.nyk.com/english/ir/library/investors/2/__icsFiles/afieldfile/2026/01/30/20260120_research_en.pdf",
+     "publisher": "NYK",
+     "published_at": "2026-01-20"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:worldbank-2024-01-19-suez-rerouting",
+    "type": "Evidence",
+    "name": "Will prolonged rerouting of ships away from Suez trigger a new supply chain crisis?",
+    "attributes": {
+     "url": "https://blogs.worldbank.org/en/trade/will-prolonged-rerouting-ships-suez-trigger-new-supply-chain-crisis",
+     "publisher": "World Bank Blogs",
+     "published_at": "2024-01-19"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:ustv-2026-10-19-taiwan-carriers-suez-news",
+    "type": "Evidence",
+    "name": "非凡新聞轉載工商時報航運報導（2026-10-19）",
+    "attributes": {
+     "url": "https://news.ustv.com.tw/newsdetail/20261019A001011?pagefrom=companynews",
+     "publisher": "非凡新聞（工商時報授權）",
+     "published_at": "2026-10-19",
+     "needs_review": [
+      "name"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "industry:shipping",
+    "type": "Industry",
+    "name": "航運",
+    "attributes": {
+     "name_en": "Shipping"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:asia-europe-container-liner",
+    "type": "MarketSegment",
+    "name": "亞歐貨櫃班輪運輸",
+    "attributes": {
+     "name_en": "Asia–Europe Container Liner Shipping",
+     "buyer_type": "貨主與物流業者",
+     "region": "Asia–Europe (Suez / Cape of Good Hope)"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:india-middle-east-us-east-coast-container-liner",
+    "type": "MarketSegment",
+    "name": "印度/中東–美東貨櫃班輪運輸",
+    "attributes": {
+     "name_en": "India/Middle East–US East Coast Container Liner Shipping",
+     "buyer_type": "貨主與物流業者",
+     "region": "India / Middle East – US East Coast"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:suez-canal-transit",
+    "type": "MarketSegment",
+    "name": "蘇伊士運河通行",
+    "attributes": {
+     "name_en": "Suez Canal Transit",
+     "buyer_type": "航商",
+     "region": "Egypt"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:maersk",
+    "type": "Company",
+    "name": "快桅",
+    "attributes": {
+     "country": "DK",
+     "name_en": "A.P. Moller - Maersk",
+     "aliases": [
+      "Maersk",
+      "馬士基"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes",
+      "evidence:maersk-2026-09-28-ae12-structural-change"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:hapag-lloyd",
+    "type": "Company",
+    "name": "赫伯羅德",
+    "attributes": {
+     "country": "DE",
+     "name_en": "Hapag-Lloyd",
+     "aliases": [
+      "Hapag-Lloyd"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:suez-canal-authority",
+    "type": "Company",
+    "name": "蘇伊士運河管理局",
+    "attributes": {
+     "country": "EG",
+     "name_en": "Suez Canal Authority",
+     "aliases": [
+      "SCA"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:nyk",
+    "type": "Company",
+    "name": "日本郵船",
+    "attributes": {
+     "country": "JP",
+     "name_en": "NYK Line (Nippon Yusen Kaisha)",
+     "aliases": [
+      "NYK"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:nyk-2026-01-20-research"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:evergreen-marine",
+    "type": "Company",
+    "name": "長榮",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Evergreen Marine",
+     "aliases": [
+      "長榮海運",
+      "Evergreen"
+     ],
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-2026-10-19-taiwan-carriers-suez-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:yang-ming",
+    "type": "Company",
+    "name": "陽明",
+    "attributes": {
+     "country": "TW",
+     "name_en": "Yang Ming Marine Transport",
+     "aliases": [
+      "陽明海運",
+      "Yang Ming"
+     ],
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-2026-10-19-taiwan-carriers-suez-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:maersk-mecl",
+    "type": "Service",
+    "name": "MECL 印度/中東–美東航線",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Maersk MECL service",
+     "description": "Maersk 獨營；2026-07-09 宣布結構性改回紅海/蘇伊士，西向平均航程改善 7 天、東向 14 天（各方向，不可相加為 21 天），保留安全變化時退回好望角方案；已完成航行僅 Majestic Maersk 單船。",
+     "lifecycle_status": "announced",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:gemini-ae12",
+    "type": "Service",
+    "name": "AE12 亞歐航線（Gemini）",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Gemini AE12 service",
+     "description": "2026-09-28 公告改經蘇伊士：Umm Qarn 642W 預計 2026-10-27 自丹絨帕拉帕斯出發、648E 預計 2026-12-05 自阿爾赫西拉斯出發（ETD 計畫，非已過河）；10/19 另公告 Jeddah/Colombo 掛港計畫。",
+     "lifecycle_status": "announced",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-28-ae12-structural-change",
+      "evidence:maersk-2026-10-19-me2-ae12-network-update"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:gemini-ae5",
+    "type": "Service",
+    "name": "AE5 亞歐航線（Gemini）",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Gemini AE5 service",
+     "lifecycle_status": "announced",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:gemini-ae11",
+    "type": "Service",
+    "name": "AE11 亞歐航線（Gemini）",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Gemini AE11 service",
+     "lifecycle_status": "announced",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:gemini-me2",
+    "type": "Service",
+    "name": "ME2 航線（Gemini）",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Gemini ME2 service",
+     "lifecycle_status": "announced",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes",
+      "evidence:maersk-2026-10-19-me2-ae12-network-update"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:suez-canal-transit",
+    "type": "Service",
+    "name": "蘇伊士運河通行服務",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Suez Canal transit",
+     "description": "BIMCO（Clarksons 數據）：2026/10 前兩週每週通過蘇伊士貨櫃船名目容量 753k TEU，2023 同期 1,457k TEU（約 51.7%）；為通行船名目容量，非實載量或全球運力釋出。",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news",
+      "evidence:bimco-2026-10-14-shipping-number-of-the-week"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "collaboration:gemini-cooperation",
+    "type": "Collaboration",
+    "name": "Gemini 合作（快桅／赫伯羅德）",
+    "attributes": {
+     "name_en": "Gemini Cooperation",
+     "collaboration_type": "strategic_partnership",
+     "stage": "launched",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ],
+     "description": "AE5、AE11、AE12、ME2 為 Gemini 合作服務，2026-09-14 宣布由好望角改經蘇伊士（各線首航日期不同，保留安全條件）。"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "supply:sca-maersk-suez-transit",
+    "type": "SupplyRelationship",
+    "name": "蘇伊士運河管理局 → 快桅 運河通行",
+    "attributes": {
+     "stage": "unspecified",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ],
+     "description": "SCA 稱 2026/1–9 Maersk 相關船舶通行 276 艘次、淨噸位 23.3m tons（2025 同期 146 艘次、7m）；淨噸位非 TEU 或實貨。2027/3 全部服務回歸為期待，非保證。"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:asia-europe-container-liner",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:unctad-rmt-2025-ch2"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:india-middle-east-us-east-coast-container-liner",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:suez-canal-transit",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:suez-canal-transit",
+    "to": "segment:asia-europe-container-liner",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes",
+      "evidence:unctad-rmt-2025-ch2"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:maersk",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:hapag-lloyd",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:suez-canal-authority",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:nyk",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:nyk-2026-01-20-research"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:evergreen-marine",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-2026-10-19-taiwan-carriers-suez-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:yang-ming",
+    "to": "industry:shipping",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:ustv-2026-10-19-taiwan-carriers-suez-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:maersk",
+    "to": "service:maersk-mecl",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:maersk",
+    "to": "service:gemini-ae12",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes",
+      "evidence:maersk-2026-09-28-ae12-structural-change"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:hapag-lloyd",
+    "to": "service:gemini-ae12",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:maersk",
+    "to": "service:gemini-ae5",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:hapag-lloyd",
+    "to": "service:gemini-ae5",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:maersk",
+    "to": "service:gemini-ae11",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:hapag-lloyd",
+    "to": "service:gemini-ae11",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:maersk",
+    "to": "service:gemini-me2",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:hapag-lloyd",
+    "to": "service:gemini-me2",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:suez-canal-authority",
+    "to": "service:suez-canal-transit",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:maersk-mecl",
+    "to": "segment:india-middle-east-us-east-coast-container-liner",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-07-09-mecl-structural-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:gemini-ae12",
+    "to": "segment:asia-europe-container-liner",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:gemini-ae5",
+    "to": "segment:asia-europe-container-liner",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:gemini-ae11",
+    "to": "segment:asia-europe-container-liner",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:suez-canal-transit",
+    "to": "segment:suez-canal-transit",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_PARTICIPANT",
+    "from": "collaboration:gemini-cooperation",
+    "to": "company:maersk",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_PARTICIPANT",
+    "from": "collaboration:gemini-cooperation",
+    "to": "company:hapag-lloyd",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:maersk-2026-09-14-gemini-services-changes"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_SUPPLIER",
+    "from": "supply:sca-maersk-suez-transit",
+    "to": "company:suez-canal-authority",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_BUYER",
+    "from": "supply:sca-maersk-suez-transit",
+    "to": "company:maersk",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "FOR_SUPPLIED_SERVICE",
+    "from": "supply:sca-maersk-suez-transit",
+    "to": "service:suez-canal-transit",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:sca-2026-10-20-news"
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+  "name": "goodmind-galaxy",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k -n api,web -c magenta,cyan \"npm:dev:api\" \"npm:dev:web\"",
+    "dev:api": "tsx watch --env-file-if-exists=.env.local server/index.ts",
+    "dev:web": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "NODE_ENV=production tsx --env-file-if-exists=.env.local server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test:gqc": "tsx --test scripts/gqc.test.ts"
+  },
+  "dependencies": {
+    "@openai/agents": "^0.22.0",
+    "express": "^5.3.0",
+    "i18next": "^27.2.7",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-force-graph-2d": "^1.29.2",
+    "react-force-graph-3d": "^1.29.2",
+    "react-i18next": "^18.0.3",
+    "react-router-dom": "^7.18.6",
+    "three": "^0.187.0",
+    "three-spritetext": "^1.10.0",
+    "zod": "^4.3.6"
+  },
+  "overrides": {
+    "three-render-objects": "1.45.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/three": "^0.187.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "concurrently": "^10.0.7",
+    "tsx": "^4.23.15",
+    "typescript": "^5.7.0",
+    "vite": "^8.3.8"
+  }
+}

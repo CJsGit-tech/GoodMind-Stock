@@ -1,0 +1,318 @@
+[
+ {
+  "id": "foci-relfacon",
+  "url": "https://www.foci.com.tw/ReLFACon_news",
+  "publisher": "FOCI Fiber Optic Communications, Inc.",
+  "title": "FOCI releases advanced new CPO connector: ReLFACon",
+  "published_at": "2023-01-18",
+  "text_file": "sources/foci-relfacon.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "219f37091e0537b89f9d0c948033f0e95108654d7dd8165ace702fae62d711a4"
+  }
+ },
+ {
+  "id": "foci-sr4",
+  "url": "https://www.foci.com.tw/en-gb/100G_QSFP28_SR4",
+  "publisher": "FOCI",
+  "title": "100G QSFP28 SR4 Transceiver",
+  "text_file": "sources/foci-sr4.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "3424f397a9e3dadc95b29dd800cbb3c2519702dd8522037c33decfb964f3fb43"
+  }
+ },
+ {
+  "id": "cht-soc",
+  "url": "https://www.chtsecurity.com/service/m302",
+  "publisher": "中華資安國際",
+  "title": "資通安全威脅偵測管理SOC服務",
+  "text_file": "sources/cht-soc.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "a3031b07605a090fed63320897359388769d09003523f6da0cd5fd644c9f0226"
+  }
+ },
+ {
+  "id": "cht-mdr",
+  "url": "https://www.chtsecurity.com/service/m305",
+  "publisher": "中華資安國際",
+  "title": "MDR威脅偵測應變服務",
+  "text_file": "sources/cht-mdr.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "d1161312221e29ffe2bcc4e9b53f2212bd3baf1e0e4181f7d3508cfefaf5f525"
+  }
+ },
+ {
+  "id": "cht-faq",
+  "url": "https://www.chtsecurity.com/investor/question",
+  "publisher": "中華資安國際",
+  "title": "常見問題",
+  "text_file": "sources/cht-faq.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "73285e9a0c7e6c260b3cd04d5337e44837f049f8d864dece40e6b85b41cbf52a"
+  }
+ },
+ {
+  "id": "tuc-4hr",
+  "url": "https://www.tuc.com.tw/zh-tw/products-detail/id/48/index/5",
+  "publisher": "台燿",
+  "title": "ThunderClad 4HR",
+  "text_file": "sources/tuc-4hr.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "1c592c9a44fcaeeaf59c51d1b5099c088547a4399b5266c1accbdc1fdf4551bf"
+  }
+ },
+ {
+  "id": "tuc-flow",
+  "url": "https://www.tuc.com.tw/zh-tw/technology2",
+  "publisher": "台燿",
+  "title": "製造流程",
+  "text_file": "sources/tuc-flow.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "08242bf331c72833d39094bcb588370728ea17057ef4770506fca594b357ecf9"
+  }
+ },
+ {
+  "id": "tuc-masslam",
+  "url": "https://www.tuc.com.tw/zh-tw/products4",
+  "publisher": "台燿",
+  "title": "Mass Lamination Service",
+  "text_file": "sources/tuc-masslam.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "dd30cff240867e5805e4b60b859b0c75ce7919feea991a220dcacd86d4a261f9"
+  }
+ },
+ {
+  "id": "nanya-ddr5",
+  "url": "https://www.nanya.com/tw/Product/9034/NT5FF2048M8A3-Q5",
+  "publisher": "南亞科技",
+  "title": "NT5FF2048M8A3-Q5 原廠產品詳細頁",
+  "text_file": "sources/nanya-ddr5.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "554bbeb7b7dd12823354793ca0fa06ea4ddbe1590b93fd08d3067d6ea9fc6b7b"
+  }
+ },
+ {
+  "id": "nanya-service",
+  "url": "https://www.nanya.com/tw/About/125/%E5%AE%A2%E6%88%B6%E6%9C%8D%E5%8B%99%E6%94%BF%E7%AD%96",
+  "publisher": "南亞科技",
+  "title": "客戶服務政策",
+  "text_file": "sources/nanya-service.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "a67f26291aaec06b1952f9c17f3685621849e20bfbd9aeb6e80557a57a498050"
+  }
+ },
+ {
+  "id": "kemet-t528",
+  "url": "https://yageogroup.com/content/datasheet/asset/file/KEM_T2018_T528",
+  "publisher": "KEMET Electronics Corporation / YAGEO Group",
+  "title": "T528 Low ESL Polymer Electrolytic for CPU/GPU Decoupling",
+  "text_file": "sources/kemet-t528.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "pdf",
+   "sha256": "5f97f81bdb2bd3b2b64708c25996d3a524b78a2c546e92665812aa3134cb15cd"
+  }
+ },
+ {
+  "id": "eclat-q3",
+  "url": "https://eclatglobal.s3.amazonaws.com/uploads/2026/11/115%E5%B9%B4_%E5%84%92%E9%B4%BB_%E5%90%88%E4%BD%B5%E8%B2%A1%E5%8B%99%E5%A0%B1%E5%91%8A_Q3_zh.pdf",
+  "publisher": "儒鴻",
+  "title": "儒鴻2026第三季合併財報",
+  "text_file": "sources/eclat-q3.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "pdf",
+   "sha256": "ef1ac3b2062a867d81c2884f0fa2c34f40cc4741baf2f961c2e78434214dbf87"
+  }
+ },
+ {
+  "id": "eclat-ar",
+  "url": "https://eclatglobal.s3.amazonaws.com/uploads/2026/05/114%E5%B9%B4_%E5%84%92%E9%B4%BB_%E5%B9%B4%E5%A0%B1_zh.pdf",
+  "publisher": "儒鴻",
+  "title": "儒鴻114年度中文年報",
+  "text_file": "sources/eclat-ar.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "pdf",
+   "sha256": "ad771d936cebc3d4fe32b4d1524ada218a8b745a5bc543c7baf25bf5c8f13afc"
+  }
+ },
+ {
+  "id": "kinik-ar2025",
+  "url": "https://www.kinik.com.tw/upload/Investors/AnnualReport/AnnualReport-2025.pdf",
+  "publisher": "中國砂輪企業股份有限公司",
+  "title": "KINIK 2025 Annual Report",
+  "text_file": "sources/kinik-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "pdf",
+   "sha256": "da6c7f186f8a50e217b64f023f0bd692dcbf1ff58393a3f6122be26c7d912221"
+  },
+  "published_at": "2026-04-30"
+ },
+ {
+  "id": "kinik-ar2024",
+  "url": "https://www.kinik.com.tw/upload/Investors/AnnualReport/AnnualReport-2024.pdf",
+  "publisher": "中國砂輪企業股份有限公司",
+  "title": "KINIK 2024 Annual Report",
+  "text_file": "sources/kinik-ar2024.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "pdf",
+   "sha256": "73f87aeefcda78a58b5b06f7e6c97c66c521f020033a419fa2711dfc7a7f4421"
+  }
+ },
+ {
+  "id": "acter-services",
+  "url": "https://www.acter.com.tw/services",
+  "publisher": "聖暉工程科技股份有限公司",
+  "title": "服務項目",
+  "text_file": "sources/acter-services.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "d9cb1a5f85cbc67549d5728439c549bbafce6cf351e74ceebf6299a91972d52f"
+  }
+ },
+ {
+  "id": "acter-intro",
+  "url": "https://www.acter.com.tw/about/introduction",
+  "publisher": "聖暉工程科技股份有限公司",
+  "title": "公司簡介",
+  "text_file": "sources/acter-intro.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "download",
+   "kind": "html",
+   "sha256": "75a65510b18cb8c231cc65a0179cc50e031dd81253368083e86ff4ae483557bf"
+  }
+ },
+ {
+  "id": "szs-ar2025",
+  "url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=3376&year=115&mtype=F",
+  "publisher": "新日興股份有限公司",
+  "title": "新日興114年度股東會年報",
+  "text_file": "sources/szs-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "local copy",
+   "kind": "pdf",
+   "sha256": "9bb3b898d6515f9e43fc072f53178ba24f83f8f8d9b9460201aea0b6ced6687e",
+   "how": "PDF obtained from the MOPS e-document site (doc.twse.com.tw) listing at url: the listing issues a temporary PDF link, which was downloaded with curl and extracted by fetch_source.py --file"
+  }
+ },
+ {
+  "id": "fpcc-ar2025",
+  "url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=6505&year=115&mtype=F",
+  "publisher": "台塑石化股份有限公司",
+  "title": "台塑石化114年度股東會年報",
+  "text_file": "sources/fpcc-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "local copy",
+   "kind": "pdf",
+   "sha256": "d13f2fcf7c3dd52cf41bf62a23d6182ea6e58eb4204592030d6dfb964fe18d79",
+   "how": "PDF obtained from the MOPS e-document site (doc.twse.com.tw) listing at url: the listing issues a temporary PDF link, which was downloaded with curl and extracted by fetch_source.py --file"
+  },
+  "published_at": "2026-04-30"
+ },
+ {
+  "id": "acter-ar2025",
+  "url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=5536&year=115&mtype=F",
+  "publisher": "聖暉工程科技股份有限公司",
+  "title": "聖暉114年度股東會年報",
+  "text_file": "sources/acter-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "local copy",
+   "kind": "pdf",
+   "sha256": "bf1d855b20c086ea69b742cba1ac45f6ae06e5e5fdb0283093ccbdcd98520d89",
+   "how": "PDF obtained from the MOPS e-document site (doc.twse.com.tw) listing at url: the listing issues a temporary PDF link, which was downloaded with curl and extracted by fetch_source.py --file"
+  }
+ },
+ {
+  "id": "nanya-ar2025",
+  "url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=2408&year=115&mtype=F",
+  "publisher": "南亞科技股份有限公司",
+  "title": "南亞科技114年度股東會年報",
+  "text_file": "sources/nanya-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "local copy",
+   "kind": "pdf",
+   "sha256": "3a8d19f4e583551e9ec8dd1a8650d8176a0c65dd07d4dc0761f96f9467335616",
+   "how": "PDF obtained from the MOPS e-document site (doc.twse.com.tw) listing at url: the listing issues a temporary PDF link, which was downloaded with curl and extracted by fetch_source.py --file"
+  },
+  "published_at": "2026-04-23"
+ },
+ {
+  "id": "cht-ar2025",
+  "url": "https://doc.twse.com.tw/server-java/t57sb01?step=1&colorchg=1&co_id=7765&year=115&mtype=F",
+  "publisher": "中華資安國際股份有限公司",
+  "title": "中華資安國際114年度股東會年報",
+  "text_file": "sources/cht-ar2025.txt",
+  "public": true,
+  "captured": {
+   "on": "2026-11-25",
+   "from": "local copy",
+   "kind": "pdf",
+   "sha256": "5ca76a874ecb28d68197fe59ab09671a8b1c21e919f16ef65b1edc69ae8c9b2b"
+  }
+ }
+]

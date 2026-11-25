@@ -1,0 +1,971 @@
+[
+  {
+    "id": "company:adlink",
+    "name": "凌華 ADLINK",
+    "ticker": "6166",
+    "type": "Company",
+    "aliases": [
+      "凌華",
+      "ADLINK"
+    ]
+  },
+  {
+    "id": "company:nexcom",
+    "name": "新漢 NEXCOM",
+    "ticker": "8234",
+    "type": "Company",
+    "aliases": [
+      "新漢",
+      "NEXCOM"
+    ]
+  },
+  {
+    "id": "company:nexcobot",
+    "name": "NexCOBOT",
+    "ticker": null,
+    "type": "Company"
+  },
+  {
+    "id": "company:aaeon",
+    "name": "研揚 AAEON",
+    "ticker": "6579",
+    "type": "Company",
+    "aliases": [
+      "研揚",
+      "AAEON"
+    ]
+  },
+  {
+    "id": "company:axiomtek",
+    "name": "艾訊 Axiomtek",
+    "ticker": "3088",
+    "type": "Company",
+    "aliases": [
+      "艾訊",
+      "Axiomtek"
+    ]
+  },
+  {
+    "id": "company:advantech",
+    "name": "研華 Advantech",
+    "ticker": "2395",
+    "type": "Company",
+    "aliases": [
+      "研華",
+      "Advantech"
+    ]
+  },
+  {
+    "id": "company:innodisk",
+    "name": "宜鼎 Innodisk",
+    "ticker": "5289",
+    "type": "Company",
+    "aliases": [
+      "宜鼎",
+      "Innodisk"
+    ]
+  },
+  {
+    "id": "company:aetina",
+    "name": "安提 Aetina",
+    "ticker": null,
+    "type": "Company",
+    "aliases": [
+      "安提",
+      "Aetina"
+    ]
+  },
+  {
+    "id": "company:foxconn",
+    "name": "鴻海 Foxconn",
+    "ticker": "2317",
+    "type": "Company",
+    "aliases": [
+      "鴻海",
+      "Foxconn"
+    ]
+  },
+  {
+    "id": "company:farobot",
+    "name": "FARobot",
+    "ticker": null,
+    "type": "Company"
+  },
+  {
+    "id": "company:aeolus",
+    "name": "Aeolus Robotics",
+    "ticker": null,
+    "type": "Company",
+    "aliases": [
+      "Aeolus",
+      "Robotics"
+    ]
+  },
+  {
+    "id": "company:mobisnet",
+    "name": "MOBISNET",
+    "ticker": null,
+    "type": "Company"
+  },
+  {
+    "id": "company:deepx",
+    "name": "DEEPX",
+    "ticker": null,
+    "type": "Company"
+  },
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "id": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "localized_names": {
+      "en": "UMC",
+      "zh-TW": "聯電"
+    },
+    "name": "聯電",
+    "notes": "晶圓代工；官方列出封裝與測試委外夥伴。 / Semiconductor foundry; lists assembly and test subcontractors.",
+    "ticker": "2303",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "UMC"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "id": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+    "localized_names": {
+      "en": "Ardentec",
+      "zh-TW": "欣銓"
+    },
+    "name": "欣銓",
+    "notes": "依聯電官方名單，屬測試／封裝委外夥伴；未揭露特定製程。 / Listed by UMC as a test/package subcontractor; no specific process disclosed.",
+    "ticker": "3264",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Ardentec"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "id": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+    "localized_names": {
+      "en": "Powertech Technology",
+      "zh-TW": "力成"
+    },
+    "name": "力成",
+    "notes": "依聯電官方名單，屬測試／封裝委外夥伴；未揭露特定製程。 / Listed by UMC as a test/package subcontractor; no specific process disclosed.",
+    "ticker": "6239",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Powertech Technology"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+    ],
+    "id": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "localized_names": {
+      "en": "TSMC",
+      "zh-TW": "台積電"
+    },
+    "name": "台積電",
+    "notes": "專業晶圓代工與先進封裝。 / Dedicated semiconductor foundry and advanced packaging.",
+    "ticker": "2330",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "TSMC"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:3e42e29b-b319-419d-b197-d24806d2e8cd"
+    ],
+    "id": "entity:345e3fdc-2c9f-46ac-9216-450be965f90c",
+    "localized_names": {
+      "en": "Wafer Works",
+      "zh-TW": "合晶"
+    },
+    "name": "合晶",
+    "ticker": "6182",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Wafer Works"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:0d72ab51-6d44-49af-b4d4-e7893c2bb307"
+    ],
+    "id": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+    "localized_names": {
+      "en": "Allied Supreme",
+      "zh-TW": "上品"
+    },
+    "name": "上品",
+    "ticker": "4770",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Allied Supreme"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+    ],
+    "id": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+    "localized_names": {
+      "en": "G-TECH Optoelectronics",
+      "zh-TW": "正達"
+    },
+    "name": "正達",
+    "ticker": "3149",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "G-TECH Optoelectronics"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:c0d0038e-44c8-47ab-bbcb-f4ca91cde75b"
+    ],
+    "id": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+    "localized_names": {
+      "en": "WNC Corporation",
+      "zh-TW": "啟碁"
+    },
+    "name": "啟碁",
+    "ticker": "6285",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "WNC Corporation"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+    ],
+    "id": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "localized_names": {
+      "en": "LITEON Technology",
+      "zh-TW": "光寶科"
+    },
+    "name": "光寶科",
+    "ticker": "2301",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "LITEON Technology"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:45ba6d0c-a350-4962-b1b1-dbbe4fb663df"
+    ],
+    "id": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+    "localized_names": {
+      "en": "AUO",
+      "zh-TW": "友達"
+    },
+    "name": "友達",
+    "ticker": "2409",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "AUO"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+    ],
+    "id": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+    "localized_names": {
+      "en": "Taiwan Glass",
+      "zh-TW": "台玻"
+    },
+    "name": "台玻",
+    "ticker": "1802",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Taiwan Glass"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+    ],
+    "id": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "localized_names": {
+      "en": "Unimicron",
+      "zh-TW": "欣興"
+    },
+    "name": "欣興",
+    "ticker": "3037",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Unimicron"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+    ],
+    "id": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+    "localized_names": {
+      "en": "Compeq Manufacturing",
+      "zh-TW": "華通"
+    },
+    "name": "華通",
+    "ticker": "2313",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Compeq Manufacturing"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+    ],
+    "id": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+    "localized_names": {
+      "en": "Allied Circuit",
+      "zh-TW": "博智"
+    },
+    "name": "博智",
+    "ticker": "8155",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Allied Circuit"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+    ],
+    "id": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+    "localized_names": {
+      "en": "Chang Wah Technology",
+      "zh-TW": "長科"
+    },
+    "name": "長科",
+    "ticker": "6548",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Chang Wah Technology"
+    ]
+  },
+  {
+    "id": "entity:8ec827ea-7f4d-4e4e-a0a9-9b2475582ee5",
+    "localized_names": {
+      "en": "Quanta Cloud Technology",
+      "zh-TW": "雲達科技"
+    },
+    "name": "雲達科技",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Quanta Cloud Technology"
+    ]
+  },
+  {
+    "id": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+    "localized_names": {
+      "en": "NVIDIA",
+      "zh-TW": "輝達"
+    },
+    "name": "輝達",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "NVIDIA"
+    ]
+  },
+  {
+    "id": "entity:0b38e392-7ea8-447f-8106-ac374c248d2e",
+    "localized_names": {
+      "en": "Bull",
+      "zh-TW": "Bull"
+    },
+    "name": "Bull",
+    "type": "Company",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9418de44-14a9-4adc-8304-52450920cb64"
+    ],
+    "id": "entity:951c3066-af85-4108-adb8-cfaa5a63f481",
+    "localized_names": {
+      "en": "Samsung Electronics",
+      "zh-TW": "三星電子"
+    },
+    "name": "三星電子",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Samsung Electronics"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+    ],
+    "id": "entity:efd172fb-172f-4253-bf8d-6efb122852b5",
+    "localized_names": {
+      "en": "KYEC",
+      "zh-TW": "京元電"
+    },
+    "name": "京元電",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "KYEC"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+    ],
+    "id": "entity:e4974e27-a63e-4a75-9597-41698d2b7aa4",
+    "localized_names": {
+      "en": "GlobalWafers",
+      "zh-TW": "環球晶"
+    },
+    "name": "環球晶",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "GlobalWafers"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+    ],
+    "id": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+    "localized_names": {
+      "en": "AGC",
+      "zh-TW": "旭硝子"
+    },
+    "name": "旭硝子",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "AGC"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+    ],
+    "id": "entity:52b048d9-1e89-4942-ab39-0e1fab4cd9d4",
+    "localized_names": {
+      "en": "Advanced Semiconductor Engineering",
+      "zh-TW": "日月光半導體"
+    },
+    "name": "日月光半導體",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Advanced Semiconductor Engineering"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+    ],
+    "id": "entity:1a93251b-5988-4d23-b3ba-30a3dd9bffec",
+    "localized_names": {
+      "en": "Gold Circuit Electronics",
+      "zh-TW": "金像電"
+    },
+    "name": "金像電",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Gold Circuit Electronics"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+    ],
+    "id": "entity:0e6428bc-5ccf-4b5a-96bc-89f6c1c85dad",
+    "localized_names": {
+      "en": "SHINKO Electric Industries",
+      "zh-TW": "新光電氣"
+    },
+    "name": "新光電氣",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "SHINKO Electric Industries"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+    ],
+    "id": "entity:90aed267-2462-47e1-b29d-0a3a15826d6f",
+    "localized_names": {
+      "en": "Apple",
+      "zh-TW": "蘋果"
+    },
+    "name": "蘋果",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Apple"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "id": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+    "localized_names": {
+      "en": "Taiwan Autoglass",
+      "zh-TW": "台灣汽車玻璃"
+    },
+    "name": "台灣汽車玻璃",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Taiwan Autoglass"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "id": "entity:d63f4489-fa1c-4eb7-bfbc-a3f1930acfe5",
+    "localized_names": {
+      "en": "Toyota Motor",
+      "zh-TW": "豐田汽車"
+    },
+    "name": "豐田汽車",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Toyota Motor"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:5779701d-496b-4fd1-841f-d50c75b58a23"
+    ],
+    "id": "entity:d8d9c83f-9c2a-4d60-b090-a4c17a9503a0",
+    "localized_names": {
+      "en": "Giga Solution Tech",
+      "zh-TW": "全智科技"
+    },
+    "name": "全智科技",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Giga Solution Tech"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+    ],
+    "id": "entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38",
+    "localized_names": {
+      "en": "Tera Probe",
+      "zh-TW": "Tera Probe"
+    },
+    "name": "Tera Probe",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Tera",
+      "Probe"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+    ],
+    "id": "entity:082b2629-f187-4837-b03b-bfc661b64c96",
+    "localized_names": {
+      "en": "TeraPower Technology",
+      "zh-TW": "TeraPower"
+    },
+    "name": "TeraPower",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "TeraPower Technology"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "id": "entity:a7854805-94d7-48a5-a977-f9c782e0ee3d",
+    "localized_names": {
+      "en": "Japan Advanced Semiconductor Manufacturing",
+      "zh-TW": "JASM"
+    },
+    "name": "JASM",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Japan Advanced Semiconductor Manufacturing"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "id": "entity:f994a28f-b447-4abe-bda6-4e0431755dde",
+    "localized_names": {
+      "en": "TSMC Arizona",
+      "zh-TW": "台積電亞利桑那"
+    },
+    "name": "台積電亞利桑那",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "TSMC Arizona"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "id": "entity:c6bfb4b2-786a-49a5-b9dd-85009f5a9983",
+    "localized_names": {
+      "en": "European Semiconductor Manufacturing Company",
+      "zh-TW": "ESMC"
+    },
+    "name": "ESMC",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "European Semiconductor Manufacturing Company"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:6da2c9b9-4736-4717-b6ab-8e2872268f9a"
+    ],
+    "id": "entity:4eb1ad4f-2000-4c99-9d04-08376ad1cf50",
+    "localized_names": {
+      "en": "United Semiconductor Japan",
+      "zh-TW": "聯電日本半導體"
+    },
+    "name": "聯電日本半導體",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "United Semiconductor Japan"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:ff74d688-0b44-40c9-9ee5-2e9d629b4ded"
+    ],
+    "id": "entity:f7f9993d-b00d-494d-a323-00e354712a9d",
+    "localized_names": {
+      "en": "U-MEDIA",
+      "zh-TW": "宇智網通"
+    },
+    "name": "宇智網通",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "U-MEDIA"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:a2acdfc4-44da-4717-b09b-c8991232ce9b"
+    ],
+    "id": "entity:d50f7244-1f66-4566-92bc-b97bfff71553",
+    "localized_names": {
+      "en": "Chang Wah Electromaterials",
+      "zh-TW": "長華電材"
+    },
+    "name": "長華電材",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Chang Wah Electromaterials"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+    ],
+    "id": "entity:61a652fe-141a-48b4-8667-c42d9eebc54d",
+    "localized_names": {
+      "en": "Meiko Electronics",
+      "zh-TW": "名幸電子"
+    },
+    "name": "名幸電子",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Meiko Electronics"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:08ec7185-2973-48c8-bb21-f76f332a1acb"
+    ],
+    "id": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+    "localized_names": {
+      "en": "Foxtron Vehicle Technologies",
+      "zh-TW": "鴻華先進"
+    },
+    "name": "鴻華先進",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Foxtron Vehicle Technologies"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+    ],
+    "id": "entity:b80d770d-0830-4c2e-8896-4da2afaf40a6",
+    "localized_names": {
+      "en": "Mitsubishi Motors",
+      "zh-TW": "三菱汽車"
+    },
+    "name": "三菱汽車",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Mitsubishi Motors"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+    ],
+    "id": "entity:469f807a-2287-42ff-8def-b6596917149b",
+    "localized_names": {
+      "en": "Entegris",
+      "zh-TW": "英特格"
+    },
+    "name": "英特格",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Entegris"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:e5266bad-0945-43aa-8061-f535932597dd"
+    ],
+    "id": "entity:fa0f3a2b-5b20-4684-bd00-2a7160c220bd",
+    "localized_names": {
+      "en": "Accton",
+      "zh-TW": "智邦"
+    },
+    "name": "智邦",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Accton"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+    ],
+    "id": "entity:5b3816ce-859b-48bf-aa19-396a17409764",
+    "localized_names": {
+      "en": "Delta Electronics",
+      "zh-TW": "台達電"
+    },
+    "name": "台達電",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Delta Electronics"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+    ],
+    "id": "entity:9433864b-68a1-4ca6-a0e8-fbd11cb3e053",
+    "localized_names": {
+      "en": "Supermicro",
+      "zh-TW": "美超微"
+    },
+    "name": "美超微",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Supermicro"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+    ],
+    "id": "entity:610dd86b-1b3f-4bad-9748-fa0b1a927057",
+    "localized_names": {
+      "en": "Innolux",
+      "zh-TW": "群創"
+    },
+    "name": "群創",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Innolux"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+    ],
+    "id": "entity:45d7e771-1d72-4044-9d44-cbb4c74ed0a0",
+    "localized_names": {
+      "en": "Nittobo",
+      "zh-TW": "日東紡"
+    },
+    "name": "日東紡",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Nittobo"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:9a285313-2418-4d51-8014-dea8009e3740"
+    ],
+    "id": "entity:a2b9fc8a-3c46-4bbf-8cac-102a2d0ed4fa",
+    "localized_names": {
+      "en": "Kinsus",
+      "zh-TW": "景碩"
+    },
+    "name": "景碩",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Kinsus"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+    ],
+    "id": "entity:ce7fd3da-64d8-4d32-a97d-367e5eee1c8c",
+    "localized_names": {
+      "en": "SILITH Technology",
+      "zh-TW": "SILITH"
+    },
+    "name": "SILITH",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "SILITH Technology"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "id": "entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08",
+    "localized_names": {
+      "en": "Chemours",
+      "zh-TW": "科慕"
+    },
+    "name": "科慕",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Chemours"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "id": "entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9",
+    "localized_names": {
+      "en": "Daikin Industries",
+      "zh-TW": "大金工業"
+    },
+    "name": "大金工業",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Daikin Industries"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "id": "entity:77fdd193-85a4-4c91-882c-848c3b4ade5a",
+    "localized_names": {
+      "en": "3M",
+      "zh-TW": "3M"
+    },
+    "name": "3M",
+    "type": "Company",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:e985f81f-76fb-442e-b862-e61a4b9afe02"
+    ],
+    "id": "entity:5b298237-9614-419a-be1b-1c1e3ce918bd",
+    "localized_names": {
+      "en": "Silicon Works Technology",
+      "zh-TW": "睿晶科技"
+    },
+    "name": "睿晶科技",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "Silicon Works Technology"
+    ]
+  },
+  {
+    "evidence_ids": [
+      "entity:70e9bc81-a3cf-46de-b046-bcd2fb39e856"
+    ],
+    "id": "entity:f7b73356-73cb-4342-a8e4-1e8e1b6d045d",
+    "localized_names": {
+      "en": "WNC USA Corporation",
+      "zh-TW": "WNC 美國"
+    },
+    "name": "WNC 美國",
+    "type": "Company",
+    "verification_status": "officially_disclosed",
+    "aliases": [
+      "WNC USA Corporation",
+      "WNC",
+      "美國"
+    ]
+  }
+]

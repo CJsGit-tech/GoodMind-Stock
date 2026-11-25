@@ -1,0 +1,653 @@
+{
+ "source_folder": "/Users/chuang/Desktop/StockAnalysis/manga-layout-templates/2026-11-18-bank-liquidity-funding-cost/research/",
+ "ops": [
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:esun-fhc-2026q3-preliminary-presentation",
+    "type": "Evidence",
+    "name": "ESUN-FHC 2026Q3 Preliminary（玉山金控2026年第三季法說會簡報）",
+    "attributes": {
+     "url": "https://www.esunbank.com/zh-tw/-/media/ESUNFHC/Files/Investor-Relations/IR-events/Investor-Conference/2026/ESUN-FHC2026Q3-Preliminary",
+     "publisher": "玉山金控 E.SUN FHC",
+     "published_at": "2026-11-17",
+     "verification_status": "verified",
+     "note": "46-page issuer preliminary Q3 2026 deck; pp14/15/18/19/20 used"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:esun-bank-2026h1-risk-disclosure",
+    "type": "Evidence",
+    "name": "玉山銀行115年上半年風險管理資訊揭露（115mensurable）",
+    "attributes": {
+     "url": "https://www.esunbank.com/zh-tw/-/media/ESUNBANK/Files/about/Report/115mensurable.pdf",
+     "publisher": "玉山銀行 E.SUN Bank",
+     "needs_review": [
+      "published_at"
+     ],
+     "verification_status": "verified",
+     "note": "Publication day not displayed; pp94-98 LCR/NSFR tables, standalone quarter-end, not accountant reviewed"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fsc-lcr-standard",
+    "type": "Evidence",
+    "name": "FSC LCR standard（金管會銀行流動性覆蓋比率實施標準）",
+    "attributes": {
+     "url": "https://law.fsc.gov.tw/LawContent.aspx?id=GL001446",
+     "publisher": "金融監督管理委員會 FSC",
+     "published_at": "2014-12-29",
+     "verification_status": "verified"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fsc-lcr-calculation-method",
+    "type": "Evidence",
+    "name": "FSC LCR calculation method（金管會流動性覆蓋比率計算方法）",
+    "attributes": {
+     "url": "https://law.fsc.gov.tw/LawContent.aspx?id=GL002965",
+     "publisher": "金融監督管理委員會 FSC",
+     "published_at": "2020-07-02",
+     "verification_status": "verified"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fsc-lcr-calculation-annex",
+    "type": "Evidence",
+    "name": "FSC LCR full calculation annex",
+    "attributes": {
+     "url": "https://law.fsc.gov.tw/Download.ashx?FileID=19486&id=GL002965&type=LAW",
+     "publisher": "金融監督管理委員會 FSC",
+     "needs_review": [
+      "published_at"
+     ],
+     "verification_status": "verified",
+     "note": "Annex linked from GL002965 (parent methodology 2020-07-02); retrieved 2026-11-18"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fsc-retail-stable-deposits-annex",
+    "type": "Evidence",
+    "name": "FSC retail stable deposits annex",
+    "attributes": {
+     "url": "https://law.fsc.gov.tw/Download.ashx?FileID=19480&id=GL002965&type=LAW",
+     "publisher": "金融監督管理委員會 FSC",
+     "needs_review": [
+      "published_at"
+     ],
+     "verification_status": "verified",
+     "note": "3% factor applies only to insured and stable subset, not all retail"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fsc-operational-deposits-annex",
+    "type": "Evidence",
+    "name": "FSC operational deposits annex",
+    "attributes": {
+     "url": "https://law.fsc.gov.tw/Download.ashx?FileID=19481&id=GL002965&type=LAW",
+     "publisher": "金融監督管理委員會 FSC",
+     "needs_review": [
+      "published_at"
+     ],
+     "verification_status": "verified"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fdic-nim-short-term-rates-2021",
+    "type": "Evidence",
+    "name": "The Historic Relationship Between Bank Net Interest Margins and Short-Term Interest Rates",
+    "attributes": {
+     "url": "https://www.fdic.gov/system/files/2024-07/article1_7.pdf",
+     "publisher": "FDIC",
+     "needs_review": [
+      "published_at"
+     ],
+     "verification_status": "verified",
+     "note": "FDIC Quarterly 2021 Vol.15 No.2; general NIM definition, not E.SUN-specific"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "industry:banking",
+    "type": "Industry",
+    "name": "銀行",
+    "attributes": {
+     "name_en": "Banking"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:deposits-and-payments",
+    "type": "MarketSegment",
+    "name": "存款與支付服務",
+    "attributes": {
+     "name_en": "Deposits and Payment Services",
+     "buyer_type": "households and companies",
+     "region": "TW and overseas"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:corporate-and-household-lending",
+    "type": "MarketSegment",
+    "name": "企業與個人放款",
+    "attributes": {
+     "name_en": "Corporate and Household Lending",
+     "buyer_type": "corporates, SMEs and households",
+     "region": "TW and overseas"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:wealth-management",
+    "type": "MarketSegment",
+    "name": "財富管理",
+    "attributes": {
+     "name_en": "Wealth Management",
+     "buyer_type": "wealth-management customers",
+     "region": "TW"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:deposits-and-payments",
+    "to": "industry:banking",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:corporate-and-household-lending",
+    "to": "industry:banking",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:wealth-management",
+    "to": "industry:banking",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:esun-fhc",
+    "type": "Company",
+    "name": "玉山金控",
+    "attributes": {
+     "name_en": "E.SUN Financial Holding Company",
+     "aliases": [
+      "E.SUN FHC",
+      "玉山金",
+      "玉山金融控股"
+     ],
+     "country": "TW",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "note": "Holding group also includes securities/insurance-type businesses; holding profit is not bank margin"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:esun-bank",
+    "type": "Company",
+    "name": "玉山銀行",
+    "attributes": {
+     "name_en": "E.SUN Commercial Bank",
+     "aliases": [
+      "E.SUN Bank",
+      "玉山商業銀行"
+     ],
+     "country": "TW",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation",
+      "evidence:esun-bank-2026h1-risk-disclosure"
+     ],
+     "verification_status": "verified",
+     "bank_9m26_net_revenue_ntd_bn": 72.38,
+     "bank_9m26_net_interest_share_pct": 51.8,
+     "bank_9m26_net_fee_share_pct": 32.2,
+     "bank_9m26_other_share_pct": 16.0,
+     "bank_9m26_net_interest_income_ntd_mn": 37517,
+     "bank_9m25_net_interest_income_ntd_mn": 29426,
+     "deposits_2026_09_30_ntd_bn": 4171.9,
+     "loans_2026_09_30_ntd_bn": 2982.2,
+     "nim_2q26_pct": 1.31,
+     "nim_3q26_pct": 1.28,
+     "deposit_rate_2q26_pct": 1.58,
+     "deposit_rate_3q26_pct": 1.64,
+     "loan_rate_2q26_pct": 3.01,
+     "loan_rate_3q26_pct": 3.06,
+     "loan_deposit_spread_2q26_pct": 1.43,
+     "loan_deposit_spread_3q26_pct": 1.41,
+     "lcr_standalone_2026_03_31_pct": 123.91,
+     "lcr_standalone_2026_06_30_pct": 119.56,
+     "nsfr_standalone_2026_03_31_pct": 129.86,
+     "nsfr_standalone_2026_06_30_pct": 128.57,
+     "overseas_locations": 35,
+     "overseas_countries_regions": 11,
+     "overseas_share_of_bank_9m26_profit_pct": 25.7
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "IS_SUBSIDIARY_OF",
+    "from": "company:esun-bank",
+    "to": "company:esun-fhc",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:esun-bank",
+    "to": "industry:banking",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:esun-fhc",
+    "to": "industry:banking",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-deposits",
+    "type": "Service",
+    "name": "玉山銀行存款服務",
+    "attributes": {
+     "name_en": "E.SUN Bank deposits (NTD demand/time and FX)",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "ntd_demand_2026_09_ntd_bn": 1471.5,
+     "ntd_time_2026_09_ntd_bn": 1234.6,
+     "fx_2026_09_ntd_bn": 1465.8,
+     "note": "Sep 2026 consolidated balances, B3 p15"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-deposits",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-deposits",
+    "to": "segment:deposits-and-payments",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-payments",
+    "type": "Service",
+    "name": "玉山銀行支付與結算服務",
+    "attributes": {
+     "name_en": "E.SUN Bank payment and settlement services",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "note": "Issuer B7 operational-deposit row is zero at Mar/Jun 2026; do not infer no payment services"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-payments",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-payments",
+    "to": "segment:deposits-and-payments",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-corporate-lending",
+    "type": "Service",
+    "name": "玉山銀行企業放款",
+    "attributes": {
+     "name_en": "E.SUN Bank corporate loans",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "balance_2026_09_ntd_bn": 1496.4,
+     "note": "Bank standalone; SME loans are a subset"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-corporate-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-corporate-lending",
+    "to": "segment:corporate-and-household-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-sme-lending",
+    "type": "Service",
+    "name": "玉山銀行中小企業放款",
+    "attributes": {
+     "name_en": "E.SUN Bank SME loans",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "balance_2026_09_ntd_bn": 754.3,
+     "note": "Subset of corporate loans; do not add to total"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-sme-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-sme-lending",
+    "to": "segment:corporate-and-household-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-personal-lending",
+    "type": "Service",
+    "name": "玉山銀行個人放款",
+    "attributes": {
+     "name_en": "E.SUN Bank personal loans",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "balance_2026_09_ntd_bn": 1408.3,
+     "note": "Bank standalone"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-personal-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-personal-lending",
+    "to": "segment:corporate-and-household-lending",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-wealth-management",
+    "type": "Service",
+    "name": "玉山銀行財富管理",
+    "attributes": {
+     "name_en": "E.SUN Bank wealth management",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "note": "Generates fee income; bank 9M26 net fees NTD 23,319 mn"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-wealth-management",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-wealth-management",
+    "to": "segment:wealth-management",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:esun-bank-overseas-banking",
+    "type": "Service",
+    "name": "玉山銀行海外分支金融服務",
+    "attributes": {
+     "name_en": "E.SUN Bank overseas branch and subsidiary banking",
+     "kind": "other",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ],
+     "verification_status": "verified",
+     "note": "35 locations in 11 countries/regions incl. Osaka (opened Sep 4), Tokyo, Fukuoka, Kumamoto; customer-need link is inferred, not a superiority claim"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:esun-bank",
+    "to": "service:esun-bank-overseas-banking",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:esun-bank-overseas-banking",
+    "to": "segment:corporate-and-household-lending",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:esun-fhc-2026q3-preliminary-presentation"
+     ]
+    }
+   }
+  }
+ ]
+}

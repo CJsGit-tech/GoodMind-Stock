@@ -1,0 +1,399 @@
+[
+  {
+    "from": "market:robotic-edge-computing",
+    "id": "edge:024",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "to": "industry:robotics",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:14838d5c-d71b-4a93-ad50-bbb24a4af455|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:aebc5ef0-1610-433f-81aa-ba4640429ac8|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:95f353df-b7e4-4146-add6-d5b18710fced|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:216ed48e-a8ef-4c02-b951-b1b661f95450|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:fd2fa2d8-3623-4eba-831a-43a39cce752e|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3|industry:display-optics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+    "to": "industry:display-optics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to display.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef|industry:display-optics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+    "to": "industry:display-optics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to display.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:c3fac41c-7d5b-47db-b098-e47b1cd70153|industry:electronic-components",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "to": "industry:electronic-components",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to components.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:5440a310-a63e-451a-9acf-f2160b8c5a84|industry:electronic-components",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+    "to": "industry:electronic-components",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to components.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:038ebb8f-6ea4-4be2-87cd-95023305c264|industry:electronic-components",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+    "to": "industry:electronic-components",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to components.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad|industry:electronic-components",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "to": "industry:electronic-components",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to components.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:542ecd90-5a07-49f2-aecf-27ad181ee561|industry:ai-infrastructure",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "to": "industry:ai-infrastructure",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to aiInfra.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c|industry:ai-infrastructure",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+    "to": "industry:ai-infrastructure",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to aiInfra.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1|industry:ai-infrastructure",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "to": "industry:ai-infrastructure",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to aiInfra.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:industrial-edge-ai|industry:industrial-computing",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:industrial-edge-ai",
+    "to": "industry:industrial-computing",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to industrialComputing.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:amr|industry:robotics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:amr",
+    "to": "industry:robotics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to robotics.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:logic-foundry|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:logic-foundry",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:specialty-foundry|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:specialty-foundry",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:advanced-packaging|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:advanced-packaging",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:ai-chips-modules|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:ai-chips-modules",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:silicon-photonics|industry:semiconductors",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:silicon-photonics",
+    "to": "industry:semiconductors",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to semis.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:display-glass|industry:display-optics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:display-glass",
+    "to": "industry:display-optics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to display.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:microled-display|industry:display-optics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:microled-display",
+    "to": "industry:display-optics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to display.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:ai-servers|industry:ai-infrastructure",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:ai-servers",
+    "to": "industry:ai-infrastructure",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to aiInfra.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:automotive-glass|industry:automotive",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:automotive-glass",
+    "to": "industry:automotive",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to automotive.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:vehicles|industry:automotive",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:vehicles",
+    "to": "industry:automotive",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to automotive.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:consumer-devices|industry:consumer-electronics",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:consumer-devices",
+    "to": "industry:consumer-electronics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to consumer.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:fluoro-materials|industry:chemicals-materials",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:fluoro-materials",
+    "to": "industry:chemicals-materials",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to materials.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SEGMENT_OF_INDUSTRY:segment:wifi-networking|industry:networking",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:wifi-networking",
+    "to": "industry:networking",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Segment belongs to networking.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  }
+]

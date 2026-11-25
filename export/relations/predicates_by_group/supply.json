@@ -1,0 +1,69 @@
+[
+  {
+    "from": "SupplyRelationship",
+    "group": "supply",
+    "meaning": "Seller/provider in a verified or reported commercial link",
+    "predicate": "HAS_SUPPLIER",
+    "storage": "asserted",
+    "to": "Company",
+    "edge_count": 10
+  },
+  {
+    "from": "SupplyRelationship",
+    "group": "supply",
+    "meaning": "Immediate buyer or purchaser (not assumed ultimate end customer)",
+    "predicate": "HAS_BUYER",
+    "storage": "asserted",
+    "to": "Company",
+    "edge_count": 10
+  },
+  {
+    "from": "SupplyRelationship",
+    "group": "supply",
+    "meaning": "Exactly what was supplied or contracted",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "storage": "asserted",
+    "to": "Product",
+    "edge_count": 8
+  },
+  {
+    "from": "Company",
+    "group": "supply",
+    "meaning": "Read-model projection derived from eligible SupplyRelationship, product scoped",
+    "predicate": "SUPPLIES_TO",
+    "storage": "derived_only",
+    "to": "Company",
+    "inverse": "BUYS_FROM",
+    "derivedBy": "R-derive-supply",
+    "edge_count": 0
+  },
+  {
+    "from": "Company",
+    "group": "supply",
+    "meaning": "Multi-hop validated supply-chain path, not direct revenue relationship",
+    "predicate": "INDIRECT_SUPPLIER_OF",
+    "storage": "query_derived_only",
+    "to": "Company",
+    "derivedBy": "R-derive-supply-chain",
+    "edge_count": 0
+  },
+  {
+    "group": "supply",
+    "predicate": "FOR_SUPPLIED_SERVICE",
+    "from": "SupplyRelationship",
+    "to": "Service",
+    "storage": "asserted",
+    "meaning": "Service that was supplied or contracted",
+    "edge_count": 2
+  },
+  {
+    "group": "supply",
+    "predicate": "MAY_SUPPLY_TO",
+    "from": "Company",
+    "to": "Company",
+    "storage": "derived_only",
+    "meaning": "Read-model projection of a not-yet-confirmed supply link (prospect, qualified, sampling, or an open CustomerOpportunity)",
+    "derivedBy": "R-derive-supply",
+    "edge_count": 0
+  }
+]

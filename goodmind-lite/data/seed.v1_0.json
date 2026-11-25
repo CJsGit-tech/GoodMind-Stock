@@ -1,0 +1,5339 @@
+{
+  "as_of": "2026-11-18",
+  "dataset_id": "taiwan-physical-edge-ai-design-fixture",
+  "disclaimer": "Illustrative graph based on previously assembled example and inherited URLs; evidence was not independently re-verified for this ZIP. Competition assessments are analyst-inferred, not proof of market share or head-to-head bids. No confirmed real-world customer sales links included.",
+  "edgeTypes": [
+    {
+      "from": "Company",
+      "group": "corporate",
+      "meaning": "Company is affiliated with or included in a named group",
+      "predicate": "MEMBER_OF_GROUP",
+      "storage": "asserted",
+      "to": "CorporateGroup"
+    },
+    {
+      "from": "Company",
+      "group": "corporate",
+      "meaning": "Company contains branch, division, or business unit",
+      "predicate": "HAS_ORG_UNIT",
+      "storage": "asserted",
+      "to": "OrganizationUnit"
+    },
+    {
+      "from": "OrganizationUnit",
+      "group": "corporate",
+      "meaning": "Internal reporting hierarchy",
+      "predicate": "SUBUNIT_OF",
+      "storage": "asserted",
+      "to": "OrganizationUnit"
+    },
+    {
+      "from": "Company",
+      "group": "corporate",
+      "meaning": "Company has documented stake in legal entity; include percent, share_class, as_of",
+      "predicate": "OWNS_STAKE_IN",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "Company",
+      "group": "corporate",
+      "meaning": "Company has legal or effective control; not inferred solely from a minority stake",
+      "predicate": "CONTROLS",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "Company",
+      "group": "corporate",
+      "meaning": "Derived/declared parent-subsidiary relation",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "storage": "derived_or_asserted",
+      "to": "Company"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company commercially offers a product series",
+      "predicate": "OFFERS_FAMILY",
+      "storage": "asserted",
+      "to": "ProductFamily"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Specific model belongs to vendor-defined product series",
+      "predicate": "IN_FAMILY",
+      "storage": "asserted",
+      "to": "ProductFamily"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Product maps to standardized peer-comparison category",
+      "predicate": "IN_CATEGORY",
+      "storage": "asserted",
+      "to": "ProductCategory"
+    },
+    {
+      "from": "ProductCategory",
+      "group": "products",
+      "meaning": "Hierarchical product taxonomy",
+      "predicate": "SUBCATEGORY_OF",
+      "storage": "asserted",
+      "to": "ProductCategory"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company designs product or core design",
+      "predicate": "DESIGNS",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company physically manufactures product",
+      "predicate": "MANUFACTURES",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company sells product under its brand",
+      "predicate": "BRANDS",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company actively offers product commercially",
+      "predicate": "SELLS",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "products",
+      "meaning": "Company distributes product; not necessarily original manufacturer",
+      "predicate": "DISTRIBUTES",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Product is physically or logically incorporated into another product",
+      "predicate": "COMPONENT_OF",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Products are technically compatible; no sale implied",
+      "predicate": "COMPATIBLE_WITH",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Product implements stated technological platform or capability",
+      "predicate": "USES_TECHNOLOGY",
+      "storage": "asserted",
+      "to": "Technology"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Product suited or documented for use case",
+      "predicate": "SUPPORTS_APPLICATION",
+      "storage": "asserted",
+      "to": "Application"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Product marketed to buyer segment",
+      "predicate": "TARGETS_SEGMENT",
+      "storage": "asserted",
+      "to": "MarketSegment"
+    },
+    {
+      "from": "Product",
+      "group": "products",
+      "meaning": "Documented or assessed alternative solution to similar user need; directional/contextual",
+      "predicate": "CAN_SUBSTITUTE_FOR",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "industry",
+      "meaning": "Company industrial identity/core activity",
+      "predicate": "OPERATES_IN",
+      "storage": "asserted",
+      "to": "Industry"
+    },
+    {
+      "from": "Company",
+      "group": "industry",
+      "meaning": "Company actively targets or sells into end market; flag whether inferred",
+      "predicate": "SERVES_INDUSTRY",
+      "storage": "asserted_or_derived",
+      "to": "Industry"
+    },
+    {
+      "from": "Industry",
+      "group": "industry",
+      "meaning": "Industry taxonomy hierarchy",
+      "predicate": "SUBINDUSTRY_OF",
+      "storage": "asserted",
+      "to": "Industry"
+    },
+    {
+      "from": "Application",
+      "group": "industry",
+      "meaning": "Use case belongs to end-market industry",
+      "predicate": "APPLICATION_IN_INDUSTRY",
+      "storage": "asserted",
+      "to": "Industry"
+    },
+    {
+      "from": "MarketSegment",
+      "group": "industry",
+      "meaning": "Competitive buyer segment within industry",
+      "predicate": "SEGMENT_OF_INDUSTRY",
+      "storage": "asserted",
+      "to": "Industry"
+    },
+    {
+      "from": "MarketSegment",
+      "group": "industry",
+      "meaning": "Competitive segment addresses application",
+      "predicate": "SEGMENT_FOR_APPLICATION",
+      "storage": "asserted",
+      "to": "Application"
+    },
+    {
+      "from": "SupplyRelationship",
+      "group": "supply",
+      "meaning": "Seller/provider in a verified or reported commercial link",
+      "predicate": "HAS_SUPPLIER",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "SupplyRelationship",
+      "group": "supply",
+      "meaning": "Immediate buyer or purchaser (not assumed ultimate end customer)",
+      "predicate": "HAS_BUYER",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "SupplyRelationship",
+      "group": "supply",
+      "meaning": "Exactly what was supplied or contracted",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "supply",
+      "meaning": "Read-model projection derived from eligible SupplyRelationship, product scoped",
+      "predicate": "SUPPLIES_TO",
+      "storage": "derived_only",
+      "to": "Company"
+    },
+    {
+      "from": "Company",
+      "group": "supply",
+      "meaning": "Multi-hop validated supply-chain path, not direct revenue relationship",
+      "predicate": "INDIRECT_SUPPLIER_OF",
+      "storage": "query_derived_only",
+      "to": "Company"
+    },
+    {
+      "from": "CustomerOpportunity",
+      "group": "opportunities",
+      "meaning": "Company seeking to sell",
+      "predicate": "PROSPECTIVE_SELLER",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "CustomerOpportunity",
+      "group": "opportunities",
+      "meaning": "Named prospective buyer; not a confirmed customer",
+      "predicate": "TARGET_CUSTOMER",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "CustomerOpportunity",
+      "group": "opportunities",
+      "meaning": "Product relevant to buyer opportunity",
+      "predicate": "PROPOSED_PRODUCT",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "CustomerOpportunity",
+      "group": "opportunities",
+      "meaning": "Target use case for proposal or identified fit",
+      "predicate": "TARGET_APPLICATION",
+      "storage": "asserted",
+      "to": "Application"
+    },
+    {
+      "from": "Collaboration",
+      "group": "collaboration",
+      "meaning": "Legal organization participating in collaboration",
+      "predicate": "HAS_PARTICIPANT",
+      "storage": "asserted",
+      "to": "Company"
+    },
+    {
+      "from": "Collaboration",
+      "group": "collaboration",
+      "meaning": "Product developed or integrated during collaboration",
+      "predicate": "FOCUSES_ON_PRODUCT",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "Collaboration",
+      "group": "collaboration",
+      "meaning": "Technology addressed by collaboration",
+      "predicate": "FOCUSES_ON_TECHNOLOGY",
+      "storage": "asserted",
+      "to": "Technology"
+    },
+    {
+      "from": "Collaboration",
+      "group": "collaboration",
+      "meaning": "Market addressed by collaboration",
+      "predicate": "TARGETS_MARKET",
+      "storage": "asserted",
+      "to": "MarketSegment"
+    },
+    {
+      "from": "Company",
+      "group": "collaboration",
+      "meaning": "Company-level summary of distinct active collaboration record",
+      "predicate": "COLLABORATES_WITH",
+      "storage": "derived_only",
+      "to": "Company"
+    },
+    {
+      "from": "CompetitionAssessment",
+      "group": "competition",
+      "meaning": "One assessed competing product",
+      "predicate": "OFFERING_A",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "CompetitionAssessment",
+      "group": "competition",
+      "meaning": "Second assessed competing product",
+      "predicate": "OFFERING_B",
+      "storage": "asserted",
+      "to": "Product"
+    },
+    {
+      "from": "CompetitionAssessment",
+      "group": "competition",
+      "meaning": "Precisely scoped buyer market for comparison",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "storage": "asserted",
+      "to": "MarketSegment"
+    },
+    {
+      "from": "Product",
+      "group": "competition",
+      "meaning": "Same buyer need, use case, and substantially substitutable product category",
+      "predicate": "DIRECTLY_COMPETES_WITH",
+      "storage": "derived_only",
+      "to": "Product"
+    },
+    {
+      "from": "Product",
+      "group": "competition",
+      "meaning": "Alternative architecture/category addressing same outcome or buyer budget",
+      "predicate": "INDIRECTLY_COMPETES_WITH",
+      "storage": "derived_only",
+      "to": "Product"
+    },
+    {
+      "from": "Company",
+      "group": "competition",
+      "meaning": "Derived via direct product competition and selling/branding companies",
+      "predicate": "DIRECT_COMPETITOR_OF",
+      "storage": "derived_only",
+      "to": "Company"
+    },
+    {
+      "from": "Company",
+      "group": "competition",
+      "meaning": "Derived via indirect product competition and selling/branding companies",
+      "predicate": "INDIRECT_COMPETITOR_OF",
+      "storage": "derived_only",
+      "to": "Company"
+    },
+    {
+      "from": "Claim",
+      "group": "evidence",
+      "meaning": "Original evidence for assertion",
+      "predicate": "SUPPORTED_BY",
+      "storage": "asserted",
+      "to": "Evidence"
+    },
+    {
+      "from": "Claim",
+      "group": "evidence",
+      "meaning": "Claim supports a specific supplier/customer/product link",
+      "predicate": "ASSERTS_SUPPLY",
+      "storage": "asserted",
+      "to": "SupplyRelationship"
+    },
+    {
+      "from": "Claim",
+      "group": "evidence",
+      "meaning": "Claim supports a prospective customer rationale",
+      "predicate": "ASSERTS_OPPORTUNITY",
+      "storage": "asserted",
+      "to": "CustomerOpportunity"
+    },
+    {
+      "from": "Claim",
+      "group": "evidence",
+      "meaning": "Claim supports a collaboration assertion",
+      "predicate": "ASSERTS_COLLABORATION",
+      "storage": "asserted",
+      "to": "Collaboration"
+    },
+    {
+      "from": "Claim",
+      "group": "evidence",
+      "meaning": "Claim supports or qualifies a competitive assessment",
+      "predicate": "ASSERTS_COMPETITION",
+      "storage": "asserted",
+      "to": "CompetitionAssessment"
+    }
+  ],
+  "edges": [
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "company:adlink",
+      "id": "edge:001",
+      "predicate": "SELLS",
+      "to": "product:dlap",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "company:nexcobot",
+      "id": "edge:002",
+      "predicate": "SELLS",
+      "to": "product:mars",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aaeonprod"
+      ],
+      "from": "company:aaeon",
+      "id": "edge:003",
+      "predicate": "SELLS",
+      "to": "product:boxer",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:axiomprod"
+      ],
+      "from": "company:axiomtek",
+      "id": "edge:004",
+      "predicate": "SELLS",
+      "to": "product:aie",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "from": "company:advantech",
+      "id": "edge:005",
+      "predicate": "SELLS",
+      "to": "product:afe",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:apex"
+      ],
+      "from": "company:innodisk",
+      "id": "edge:006",
+      "predicate": "SELLS",
+      "to": "product:apex",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "product:dlap",
+      "id": "edge:007",
+      "predicate": "USES_TECHNOLOGY",
+      "to": "technology:thor",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "product:mars",
+      "id": "edge:008",
+      "predicate": "USES_TECHNOLOGY",
+      "to": "technology:thor",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aaeonprod"
+      ],
+      "from": "product:boxer",
+      "id": "edge:009",
+      "predicate": "USES_TECHNOLOGY",
+      "to": "technology:thor",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:axiomprod"
+      ],
+      "from": "product:aie",
+      "id": "edge:010",
+      "predicate": "USES_TECHNOLOGY",
+      "to": "technology:orin",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "from": "product:afe",
+      "id": "edge:011",
+      "predicate": "USES_TECHNOLOGY",
+      "to": "technology:orin",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "product:dlap",
+      "id": "edge:012",
+      "predicate": "IN_CATEGORY",
+      "to": "category:robotic-edge-controller",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "product:mars",
+      "id": "edge:013",
+      "predicate": "IN_CATEGORY",
+      "to": "category:robotic-edge-controller",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aaeonprod"
+      ],
+      "from": "product:boxer",
+      "id": "edge:014",
+      "predicate": "IN_CATEGORY",
+      "to": "category:industrial-edge-ai-computer",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:axiomprod"
+      ],
+      "from": "product:aie",
+      "id": "edge:015",
+      "predicate": "IN_CATEGORY",
+      "to": "category:industrial-edge-ai-computer",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "product:dlap",
+      "id": "edge:016",
+      "predicate": "SUPPORTS_APPLICATION",
+      "to": "application:robotics-control",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "product:dlap",
+      "id": "edge:017",
+      "predicate": "TARGETS_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "product:mars",
+      "id": "edge:018",
+      "predicate": "SUPPORTS_APPLICATION",
+      "to": "application:robotics-control",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "product:mars",
+      "id": "edge:019",
+      "predicate": "TARGETS_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aaeonprod"
+      ],
+      "from": "product:boxer",
+      "id": "edge:020",
+      "predicate": "SUPPORTS_APPLICATION",
+      "to": "application:robotics-control",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aaeonprod"
+      ],
+      "from": "product:boxer",
+      "id": "edge:021",
+      "predicate": "TARGETS_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod"
+      ],
+      "from": "company:adlink",
+      "id": "edge:022",
+      "predicate": "OPERATES_IN",
+      "to": "industry:industrial-computing",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexprod"
+      ],
+      "from": "company:nexcobot",
+      "id": "edge:023",
+      "predicate": "SERVES_INDUSTRY",
+      "to": "industry:robotics",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "from": "market:robotic-edge-computing",
+      "id": "edge:024",
+      "predicate": "SEGMENT_OF_INDUSTRY",
+      "to": "industry:robotics",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "from": "market:robotic-edge-computing",
+      "id": "edge:025",
+      "predicate": "SEGMENT_FOR_APPLICATION",
+      "to": "application:robotics-control",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:inno"
+      ],
+      "from": "company:innodisk",
+      "id": "edge:026",
+      "predicate": "MEMBER_OF_GROUP",
+      "to": "group:innodisk",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:inno"
+      ],
+      "from": "company:aetina",
+      "id": "edge:027",
+      "predicate": "MEMBER_OF_GROUP",
+      "to": "group:innodisk",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexgroup"
+      ],
+      "from": "company:nexcom",
+      "id": "edge:028",
+      "predicate": "MEMBER_OF_GROUP",
+      "to": "group:nexcom",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:nexgroup"
+      ],
+      "from": "company:nexcobot",
+      "id": "edge:029",
+      "predicate": "MEMBER_OF_GROUP",
+      "to": "group:nexcom",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:farobot"
+      ],
+      "from": "collaboration:adlink-foxconn",
+      "id": "edge:030",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:adlink",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:farobot"
+      ],
+      "from": "collaboration:adlink-foxconn",
+      "id": "edge:031",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:foxconn",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:farobot"
+      ],
+      "from": "collaboration:adlink-foxconn",
+      "id": "edge:032",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:farobot",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "from": "collaboration:adv-aeolus",
+      "id": "edge:033",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:advantech",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "from": "collaboration:adv-aeolus",
+      "id": "edge:034",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:aeolus",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "from": "collaboration:adv-aeolus",
+      "id": "edge:035",
+      "predicate": "FOCUSES_ON_PRODUCT",
+      "to": "product:afe",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:mobisnet"
+      ],
+      "from": "collaboration:axiom-mobisnet",
+      "id": "edge:036",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:axiomtek",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:mobisnet"
+      ],
+      "from": "collaboration:axiom-mobisnet",
+      "id": "edge:037",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:mobisnet",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:mobisnet"
+      ],
+      "from": "collaboration:axiom-mobisnet",
+      "id": "edge:038",
+      "predicate": "FOCUSES_ON_PRODUCT",
+      "to": "product:aie",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:deepx"
+      ],
+      "from": "collaboration:aaeon-deepx",
+      "id": "edge:039",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:aaeon",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:deepx"
+      ],
+      "from": "collaboration:aaeon-deepx",
+      "id": "edge:040",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:deepx",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:nexprod"
+      ],
+      "from": "competition:dlap-v-mars",
+      "id": "edge:041",
+      "predicate": "OFFERING_A",
+      "to": "product:dlap",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:nexprod"
+      ],
+      "from": "competition:dlap-v-mars",
+      "id": "edge:042",
+      "predicate": "OFFERING_B",
+      "to": "product:mars",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:nexprod"
+      ],
+      "from": "competition:dlap-v-mars",
+      "id": "edge:043",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:aaeonprod"
+      ],
+      "from": "competition:dlap-v-boxer",
+      "id": "edge:044",
+      "predicate": "OFFERING_A",
+      "to": "product:dlap",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:aaeonprod"
+      ],
+      "from": "competition:dlap-v-boxer",
+      "id": "edge:045",
+      "predicate": "OFFERING_B",
+      "to": "product:boxer",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:aaeonprod"
+      ],
+      "from": "competition:dlap-v-boxer",
+      "id": "edge:046",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+      "id": "relation:a6dd87c6-df8f-4729-9247-36788c9be1ed",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+      "id": "relation:e30b843d-300d-41d0-8706-f483cc51f89e",
+      "predicate": "HAS_BUYER",
+      "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+      "id": "relation:8cbb3856-7d77-427c-9d2a-e3bc6534cdfd",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+      "id": "relation:fbcf1bf2-7abb-45c5-b2a7-6ea40e67493a",
+      "predicate": "HAS_BUYER",
+      "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+      ],
+      "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "id": "relation:1a706e5f-96fc-4d30-b06e-0c3b43e29005",
+      "notes": "2025 年第 4 季進入量產。 / Entered volume production in Q4 2025.",
+      "predicate": "SELLS",
+      "to": "entity:6b074e46-60d4-4544-be93-77a51c482545",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+      ],
+      "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "id": "relation:7199b41c-e0e3-4de5-b3de-4375b75b60ef",
+      "notes": "商用先進封裝家族。 / Commercial advanced packaging family.",
+      "predicate": "SELLS",
+      "to": "entity:93b86a7b-09f2-46d6-8882-d5f78ff8e21d",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6"
+      ],
+      "from": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+      "id": "relation:86bcb7d6-a2f5-4bf3-b494-3b93c42cbe0d",
+      "notes": "封裝後成品測試服務。 / Post-package final testing service.",
+      "predicate": "SELLS",
+      "to": "entity:e8d8391c-3874-4779-a1d1-67599c854c2a",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899"
+      ],
+      "from": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+      "id": "relation:49aa1489-1f72-4523-8da7-2cf843b9fd33",
+      "notes": "以晶圓及 IC 測試服務能力為範圍。 / Limited to the disclosed wafer and IC test capability.",
+      "predicate": "SELLS",
+      "to": "entity:f5462c3a-2d2a-4068-a56e-779dab880c55",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:a32dc587-1f47-416f-ac1c-4c304c20c016"
+      ],
+      "from": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "id": "relation:aff2b54a-5876-4bb7-910f-67b781b858ae",
+      "notes": "電源管理 IC 適用的特色晶圓代工製程。 / Specialty foundry process for power-management ICs.",
+      "predicate": "SELLS",
+      "to": "entity:21f600bb-61b4-42ac-ae5d-538b496c1507",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3e42e29b-b319-419d-b197-d24806d2e8cd"
+      ],
+      "from": "entity:345e3fdc-2c9f-46ac-9216-450be965f90c",
+      "id": "relation:b13fac86-9897-494c-86ac-7dddc9538a72",
+      "notes": "年報列為矽晶圓產品。 / Listed in the annual report’s silicon wafer portfolio.",
+      "predicate": "SELLS",
+      "to": "entity:593b061c-21f0-4ac1-8133-b630b5263253",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:0d72ab51-6d44-49af-b4d4-e7893c2bb307"
+      ],
+      "from": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "id": "relation:f2db1c3a-73c9-4750-8ebc-5664d27918a1",
+      "notes": "高純度化學品儲存設備，未指涉特定晶圓廠客戶。 / High-purity chemical storage equipment; no specific foundry buyer asserted.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:b2d00d86-04dc-4e0b-b50e-1151cbe3ca3c",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "from": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+      "id": "relation:27899a20-d9d7-4209-96af-38dead0282cd",
+      "notes": "年報第 60、62 頁，車用智慧座艙應用。 / Annual report pp. 60, 62; automotive smart-cockpit applications.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:3a0e370b-3a83-4d33-b321-c9cbaec09d31",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c0d0038e-44c8-47ab-bbcb-f4ca91cde75b"
+      ],
+      "from": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+      "id": "relation:17ca6e76-dfc0-4ef9-88a3-a6ea9d03ead5",
+      "notes": "年報產品表與資料中心產品線；不把 2026 展示的 1.6 TbE 當成已出貨。 / Annual-report product line; does not establish shipments of 2026 1.6 TbE demos.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:51da97f7-0968-45ed-9aca-51582a14dd53",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45ba6d0c-a350-4962-b1b1-dbbe4fb663df"
+      ],
+      "from": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+      "id": "relation:5ffdb410-6d2f-4d13-b6d3-b11f09b5a8b0",
+      "notes": "2026 年 2 月公司法說列為量產；不推定所有透明顯示器專案皆已量產。 / Mass-production status as reported in February 2026; not asserted for every transparent display project.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:0991aaba-dcdc-4d9d-a8d0-3095317872b9",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+      ],
+      "from": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+      "id": "relation:acbe0662-a560-4838-b6e5-450e7ee5e3d3",
+      "notes": "資料列低介電與低熱膨脹產品；不將整個玻纖部門視為電子布收入。 / Lists low-Dk and low-CTE grades; the whole fiberglass segment is not electronic cloth revenue.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:73d6d222-7def-4168-85dc-8eca37f9ae79",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+      ],
+      "from": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+      "id": "relation:10ca8c91-fe2e-4360-bbd2-d358a3dffbf4",
+      "notes": "法說列泰國廠自 2025 年第 1 季量產；設計應用與產能不等於各客戶實際出貨。 / Thailand site entered production in Q1 2025; applications and capacity do not establish customer shipments.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:ce2fa4e5-6325-4a61-8f43-e4681c958220",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+      ],
+      "from": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+      "id": "relation:85653cde-cfec-4cda-9e94-00f995a2eddf",
+      "notes": "第 39 頁列伺服器、網路設備與工業電腦應用，未揭露客戶。 / Page 39 lists server, networking and industrial PC end uses, without naming buyers.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:b1d90863-7517-440a-a488-b710b6a993f6",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+      ],
+      "from": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+      "id": "relation:a7257ff9-710f-40a6-a3c2-df94677f43ef",
+      "notes": "含 QFN 系列；不把產品規格視為同規替代或同客戶認證。 / Includes QFN products; does not establish qualification or interchangeability.",
+      "predicate": "MANUFACTURES",
+      "to": "entity:e92998ff-edd3-4939-89f2-0f2ee07e0008",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0"
+      ],
+      "from": "company:adlink",
+      "id": "relation:313cd04a-136e-494c-acfa-e66664882017",
+      "notes": "2025-02-26 發表 AGX Orin 系統與 LIPS 合作，與現有 DLAP-711 為不同產品。 / February 26, 2025 AGX Orin system and LIPS collaboration; distinct from DLAP-711.",
+      "predicate": "SELLS",
+      "to": "entity:542811c8-4ca1-4fab-8536-6790add0c076",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "from": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+      "id": "relation:6983dc2b-e4fb-48b5-8550-22a48a245590",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "from": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+      "id": "relation:02cef285-35ec-4fb8-88e5-822d15a34922",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:8ec827ea-7f4d-4e4e-a0a9-9b2475582ee5",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "from": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+      "id": "relation:b8957ca7-560a-436e-b4f0-b1e279e575cc",
+      "predicate": "FOCUSES_ON_PRODUCT",
+      "to": "entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "from": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+      "id": "relation:36fe19a2-cc29-48f8-b906-23c9e64a0abf",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "from": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+      "id": "relation:7c610eb6-879e-4226-b9b9-717b0d17ffbb",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "from": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+      "id": "relation:e0835b5b-4a1c-48f3-b557-cbe78d0b978b",
+      "predicate": "FOCUSES_ON_PRODUCT",
+      "to": "entity:f9ee54d2-4841-463c-b776-9f21470830b8",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe"
+      ],
+      "from": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+      "id": "relation:b88b65a0-b4f1-4401-8e9b-7639badc4729",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "company:foxconn",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe"
+      ],
+      "from": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+      "id": "relation:a081a050-96da-4f0d-9ae3-086e4881ab32",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe"
+      ],
+      "from": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+      "id": "relation:3904daf9-d7d9-44b3-be36-2f6487c1e7d9",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:0b38e392-7ea8-447f-8106-ac374c248d2e",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:653afc52-0432-4379-8a3f-94e61207fae1"
+      ],
+      "from": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+      "id": "relation:8ac90f14-9f29-4ca0-a937-742ab2af8f50",
+      "notes": "自 2025-06-30 合併；並非宣稱 100% 持有。 / Consolidated from June 30, 2025; not wholly owned.",
+      "predicate": "CONTROLS",
+      "to": "company:adlink",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9418de44-14a9-4adc-8304-52450920cb64"
+      ],
+      "from": "entity:951c3066-af85-4108-adb8-cfaa5a63f481",
+      "id": "relation:83c1df71-0bd6-4f4c-b04f-db970ad8a5b6",
+      "notes": "三星公開提供 SF2 代工平台。 / Samsung makes its SF2 foundry platform available.",
+      "predicate": "SELLS",
+      "to": "entity:7bd9993f-3c51-4ce6-8d8d-81570c50c937",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+      "id": "relation:09c2488a-a7e5-4e1b-85de-e84e17426823",
+      "predicate": "OFFERING_A",
+      "to": "entity:6b074e46-60d4-4544-be93-77a51c482545",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+      "id": "relation:5e4e72b7-2139-4524-943f-f0425882996a",
+      "predicate": "OFFERING_B",
+      "to": "entity:7bd9993f-3c51-4ce6-8d8d-81570c50c937",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+      "id": "relation:df01b643-8145-4fb0-8978-ad2f674d570d",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+      "id": "relation:9342029f-f00f-4837-8eac-3e5ebc8e7aed",
+      "predicate": "OFFERING_A",
+      "to": "entity:542811c8-4ca1-4fab-8536-6790add0c076",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+      "id": "relation:870147d5-63be-4048-8b71-32eb0bddbd10",
+      "predicate": "OFFERING_B",
+      "to": "product:aie",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+      "id": "relation:fcaecd54-5515-4561-b955-b67367afec0b",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "market:robotic-edge-computing",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:95c8281c-113b-440e-92a2-306f9889f3b1"
+      ],
+      "from": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "id": "relation:18cb9f52-446a-43a3-bef1-4824bfa45fef",
+      "predicate": "SELLS",
+      "to": "entity:76db2cca-9b29-4803-be74-f39e39d6110f",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06"
+      ],
+      "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "id": "relation:33863609-60ef-4613-a8da-c37f1af951a2",
+      "predicate": "SELLS",
+      "to": "entity:1698890e-79ab-4ba2-93d6-0f065d234b83",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+      "id": "relation:a965b132-aab3-4419-b432-c75e56371881",
+      "predicate": "OFFERING_A",
+      "to": "entity:76db2cca-9b29-4803-be74-f39e39d6110f",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+      "id": "relation:99c551f9-15dc-4813-abdf-8a68dca15c81",
+      "predicate": "OFFERING_B",
+      "to": "entity:1698890e-79ab-4ba2-93d6-0f065d234b83",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+      "id": "relation:82b8da35-acd4-4633-945e-82fcf2ddcbe4",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+      ],
+      "from": "entity:efd172fb-172f-4253-bf8d-6efb122852b5",
+      "id": "relation:4160b685-64a5-49a8-98cf-7b05398ab75c",
+      "predicate": "SELLS",
+      "to": "entity:78497ffa-abc6-471c-8baf-c0707a008429",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+      "id": "relation:3194f58c-3bce-43bc-bf67-179a7aa6cddb",
+      "predicate": "OFFERING_A",
+      "to": "entity:f5462c3a-2d2a-4068-a56e-779dab880c55",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+      "id": "relation:407bd4a4-cde0-4a71-aa0c-2736ecb5a75f",
+      "predicate": "OFFERING_B",
+      "to": "entity:78497ffa-abc6-471c-8baf-c0707a008429",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+      "id": "relation:df361543-f27a-40b1-ad2a-20143e9684a1",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+      ],
+      "from": "entity:e4974e27-a63e-4a75-9597-41698d2b7aa4",
+      "id": "relation:a884fe90-46cc-4307-a9d4-062d7b106a7b",
+      "predicate": "SELLS",
+      "to": "entity:34f2303d-7359-4df0-8215-21122d7524d4",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+      "id": "relation:2b207e05-58e3-40cc-a843-dd938e695a44",
+      "predicate": "OFFERING_A",
+      "to": "entity:593b061c-21f0-4ac1-8133-b630b5263253",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+      "id": "relation:ddd4dfd0-bcd1-4eae-adda-adb6c403bed7",
+      "predicate": "OFFERING_B",
+      "to": "entity:34f2303d-7359-4df0-8215-21122d7524d4",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+      "id": "relation:66bde455-9e88-4aa2-8b84-4d641c754cbd",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+      ],
+      "from": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+      "id": "relation:47cd8c09-1145-469c-ab72-762eae936846",
+      "predicate": "SELLS",
+      "to": "entity:6eb4ce96-fa38-41df-b562-002f5408dcfe",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "from": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+      "id": "relation:528c0077-1ef1-4dcb-8c0f-c2aeeca7713e",
+      "notes": "年報揭露已量產供貨；未具名特定車廠。 / Annual report states serial supply, without naming automakers.",
+      "predicate": "SELLS",
+      "to": "entity:3a0e370b-3a83-4d33-b321-c9cbaec09d31",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+      "id": "relation:24975b30-c89d-49ed-a3cb-2c52c53cf777",
+      "predicate": "OFFERING_A",
+      "to": "entity:3a0e370b-3a83-4d33-b321-c9cbaec09d31",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+      "id": "relation:53a29bd0-e5a6-495f-8fd5-c2e3fa8dd01f",
+      "predicate": "OFFERING_B",
+      "to": "entity:6eb4ce96-fa38-41df-b562-002f5408dcfe",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+      "id": "relation:90f1f230-5945-4721-b776-79cf7a531f53",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+      ],
+      "from": "entity:52b048d9-1e89-4942-ab39-0e1fab4cd9d4",
+      "id": "relation:09423cfd-e6a8-4945-84f2-db24155d1f12",
+      "predicate": "SELLS",
+      "to": "entity:d7981291-983a-47be-8b1c-ac936cab8d6f",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+      "id": "relation:f0768e91-d1b8-49d7-9e16-c3e9cf596e45",
+      "predicate": "OFFERING_A",
+      "to": "entity:e8d8391c-3874-4779-a1d1-67599c854c2a",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+      "id": "relation:6a4a7989-0571-420d-af37-dc5a7f9a5fb3",
+      "predicate": "OFFERING_B",
+      "to": "entity:d7981291-983a-47be-8b1c-ac936cab8d6f",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+      "id": "relation:c57600ae-b1b8-42d5-adf2-0d6a6c390bb7",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+      ],
+      "from": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+      "id": "relation:d5164b31-78c2-417c-b136-d93a12e5fdaf",
+      "predicate": "SELLS",
+      "to": "entity:ce2fa4e5-6325-4a61-8f43-e4681c958220",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+      ],
+      "from": "entity:1a93251b-5988-4d23-b3ba-30a3dd9bffec",
+      "id": "relation:73b0b393-cc90-4a69-ad14-6b1f9b88926e",
+      "predicate": "SELLS",
+      "to": "entity:e57a52e1-2d46-4420-a927-ab5c04e1f06e",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+      "id": "relation:21482220-f217-4fe2-814b-edf5c1af4d42",
+      "predicate": "OFFERING_A",
+      "to": "entity:ce2fa4e5-6325-4a61-8f43-e4681c958220",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+      "id": "relation:0b930340-28ec-42d4-991d-f638a605640c",
+      "predicate": "OFFERING_B",
+      "to": "entity:e57a52e1-2d46-4420-a927-ab5c04e1f06e",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+      "id": "relation:2b725b1e-f75c-47c2-a985-bbf5f1263c0b",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+      ],
+      "from": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+      "id": "relation:6ecffe1f-dac2-4aab-9311-9286eac411f1",
+      "predicate": "SELLS",
+      "to": "entity:b1d90863-7517-440a-a488-b710b6a993f6",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+      "id": "relation:39e9df61-2801-437f-b4a0-2eebbe890caa",
+      "predicate": "OFFERING_A",
+      "to": "entity:b1d90863-7517-440a-a488-b710b6a993f6",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+      "id": "relation:1fd42905-a828-4ed6-9353-0239145aa7fe",
+      "predicate": "OFFERING_B",
+      "to": "entity:e57a52e1-2d46-4420-a927-ab5c04e1f06e",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+      "id": "relation:cb6ae5f6-017b-454c-afbb-60a61bfcdfdc",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+      ],
+      "from": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+      "id": "relation:f242c38e-f6be-4a23-a16d-d013dce0d364",
+      "predicate": "SELLS",
+      "to": "entity:e92998ff-edd3-4939-89f2-0f2ee07e0008",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+      ],
+      "from": "entity:0e6428bc-5ccf-4b5a-96bc-89f6c1c85dad",
+      "id": "relation:23f507f4-58b1-46ac-9a95-52922e218722",
+      "predicate": "SELLS",
+      "to": "entity:bf3e3d6f-a849-409f-ba0d-b930c315004e",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+      "id": "relation:5ea94911-30da-4fdb-8bb9-c7b3e21b9d0f",
+      "predicate": "OFFERING_A",
+      "to": "entity:e92998ff-edd3-4939-89f2-0f2ee07e0008",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+      "id": "relation:53e5d40d-b605-4f2d-b8c9-9e97ee1fb344",
+      "predicate": "OFFERING_B",
+      "to": "entity:bf3e3d6f-a849-409f-ba0d-b930c315004e",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+      "id": "relation:07c1536b-1b67-43bf-a46f-d5eee72e1947",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "from": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+      "id": "relation:966f3290-c6f6-4f0b-aa60-8f7d9c8834b8",
+      "notes": "年度資料列台玻持有台灣汽車玻璃 87%，子公司列名 Toyota 等原廠客戶；不視為台玻母公司直接供貨。 / Annual overview reports 87% ownership and names Toyota among the subsidiary’s OEM customers; not direct parent-company supply.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:5779701d-496b-4fd1-841f-d50c75b58a23"
+      ],
+      "from": "entity:d8d9c83f-9c2a-4d60-b090-a4c17a9503a0",
+      "id": "relation:ddac776b-6cc3-4dbc-8104-2efa64717b17",
+      "notes": "2025-09-24：欣銓正式稱全智科技為子公司。 / Ardentec identifies Giga Solution as its subsidiary.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+      ],
+      "from": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+      "id": "relation:9fb65740-9695-4efa-b81f-71903c813d36",
+      "notes": "截至 2025-12-31，力成直接 11.85%、間接 48.85% 表決權；Tera Probe 持 TeraPower 51.00% 表決權。 / Year-end 2025 voting interests: PTI 11.85% direct and 48.85% indirect; Tera Probe holds 51.00% of TeraPower.",
+      "predicate": "CONTROLS",
+      "to": "entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+      ],
+      "from": "entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38",
+      "id": "relation:020d41fe-8db5-4f7d-a4b7-ecb24f2bcfe0",
+      "notes": "2025 年底 51.00% 表決權。 / 51.00% voting rights at 2025 year-end.",
+      "predicate": "CONTROLS",
+      "to": "entity:082b2629-f187-4837-b03b-bfc661b64c96",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "from": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "id": "relation:7b78dd23-c5ce-49b3-991d-d4ced0faf978",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "from": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "id": "relation:82ba4325-8803-49ab-bf8f-0007fe4119c8",
+      "predicate": "HAS_BUYER",
+      "to": "entity:90aed267-2462-47e1-b29d-0a3a15826d6f",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "from": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "id": "relation:0e621807-bc98-412f-bc77-badadeb7fa5b",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "from": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "id": "relation:71f56160-fa1d-40ad-85bd-10dda6baf755",
+      "predicate": "HAS_BUYER",
+      "to": "entity:d63f4489-fa1c-4eb7-bfbc-a3f1930acfe5",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "from": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "id": "relation:358cc88a-b13c-4e09-bca8-b933ca2a1b60",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "from": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "id": "relation:53a16434-0c82-4c2e-bb5e-e1642b8332f9",
+      "predicate": "HAS_BUYER",
+      "to": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+      "id": "relation:b4e203d1-cb3c-40f0-8bcb-292ba310da1b",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "from": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+      "id": "relation:c500eaed-7ff6-486b-a54b-edc5f8e6f2e4",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "from": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "id": "relation:f480e78f-e558-45e7-a8f8-702144bc8b04",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:ccbb588b-fc6d-4b56-ac09-3882ebde0012",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "from": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "id": "relation:22a54d82-ef2b-4575-9a14-17184410240c",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:58ef8c4a-7bc5-4377-a1e7-ce38fd5691af",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "from": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "id": "relation:743f070e-1a4c-4b33-9ca5-f5bf8479dab5",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:326c412b-d165-4d5d-8050-b1d4cadcbb50",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "from": "entity:a7854805-94d7-48a5-a977-f9c782e0ee3d",
+      "id": "relation:61770c80-822c-4a1b-8056-6ab5875bfac2",
+      "notes": "截至 2026-09-30 直接持股 73%。 / 73% direct at September 30, 2026.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "from": "entity:f994a28f-b447-4abe-bda6-4e0431755dde",
+      "id": "relation:cb1acf23-6aa0-40e4-91f1-41ea8749ca75",
+      "notes": "截至 2026-09-30 直接持股 100%。 / 100% direct at September 30, 2026.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "from": "entity:c6bfb4b2-786a-49a5-b9dd-85009f5a9983",
+      "id": "relation:8941d40c-2f65-4d57-b625-9ba49022b250",
+      "notes": "截至 2026-09-30 直接持股 70%。 / 70% direct at September 30, 2026.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6da2c9b9-4736-4717-b6ab-8e2872268f9a"
+      ],
+      "from": "entity:4eb1ad4f-2000-4c99-9d04-08376ad1cf50",
+      "id": "relation:7a5bd4a0-688a-4402-b9d8-38a0ab91b56a",
+      "notes": "截至 2025-12-31，聯電直接持有 USJC 100%。 / UMC directly held 100% of USJC at year-end 2025.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:ff74d688-0b44-40c9-9ee5-2e9d629b4ded"
+      ],
+      "from": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+      "id": "relation:2b519f88-3aea-47fd-b0c4-59278c1a0751",
+      "notes": "Q3 2026 財報附註 29：持股 40.01%，6 月董事改選後取得實質控制。 / Note 29: 40.01% ownership; substantive control obtained after June board elections.",
+      "predicate": "CONTROLS",
+      "to": "entity:f7f9993d-b00d-494d-a323-00e354712a9d",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:a2acdfc4-44da-4717-b09b-c8991232ce9b"
+      ],
+      "from": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+      "id": "relation:e59c8752-a784-41f9-bde8-410cd26de909",
+      "notes": "公司確認母公司是長華電材。 / CWTC names Chang Wah Electromaterials as its parent.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:d50f7244-1f66-4566-92bc-b97bfff71553",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+      ],
+      "from": "entity:4546ae6a-8030-4352-99ae-a48163e4ffde",
+      "id": "relation:a375b6f3-ff4a-49e8-bfea-9a6a6b16ed0b",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+      ],
+      "from": "entity:4546ae6a-8030-4352-99ae-a48163e4ffde",
+      "id": "relation:0938d6f8-e594-4b4b-8e17-128ffdf98eaf",
+      "predicate": "HAS_PARTICIPANT",
+      "to": "entity:61a652fe-141a-48b4-8667-c42d9eebc54d",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:08ec7185-2973-48c8-bb21-f76f332a1acb"
+      ],
+      "from": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+      "id": "relation:2eb182af-b39d-42a8-8cac-ea214577bfbc",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "company:foxconn",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "from": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "id": "relation:9195c509-f4fb-495e-ac59-9b141e80e37a",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "from": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "id": "relation:6675f112-8b9b-4a6a-9872-3ff57ed46d76",
+      "predicate": "HAS_BUYER",
+      "to": "entity:b80d770d-0830-4c2e-8896-4da2afaf40a6",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "from": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "id": "relation:57918f2f-ac6a-48b9-960e-179f1f78915c",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:0dc4cfbd-3faa-4a0b-9124-ab7066a7a783",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2f5a00c8-2795-4085-886c-c35e9169cefe"
+      ],
+      "from": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "id": "relation:bdb7d24f-236a-4d13-b023-c4836025d061",
+      "predicate": "SELLS",
+      "to": "entity:d12bbedf-4e9a-4f9e-9c66-e3b347c0d005",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+      ],
+      "from": "entity:469f807a-2287-42ff-8def-b6596917149b",
+      "id": "relation:b71b926a-31f5-4c7a-be31-64520829d707",
+      "predicate": "SELLS",
+      "to": "entity:cfea18c2-3ba1-49d4-be3a-5761c6b1a080",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+      "id": "relation:9ce375b9-8f27-4913-8b37-2fcf072238b1",
+      "predicate": "OFFERING_A",
+      "to": "entity:d12bbedf-4e9a-4f9e-9c66-e3b347c0d005",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+      "id": "relation:f28e6d08-5965-4e60-aa66-7f40edf62771",
+      "predicate": "OFFERING_B",
+      "to": "entity:cfea18c2-3ba1-49d4-be3a-5761c6b1a080",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+      "id": "relation:f52dbdfc-163a-4560-a301-1e856b653e63",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b"
+      ],
+      "from": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+      "id": "relation:fef1f03e-e0ef-4ac1-9924-5641bdba006a",
+      "predicate": "SELLS",
+      "to": "entity:04dd10bd-d9e2-40dd-aa26-208c35c86a37",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+      "id": "relation:764d7b3a-0de4-45c0-a129-fb5d6aafbcda",
+      "predicate": "OFFERING_A",
+      "to": "entity:04dd10bd-d9e2-40dd-aa26-208c35c86a37",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+      "id": "relation:799788bb-738b-405d-b2b9-f01d2bcb9397",
+      "predicate": "OFFERING_B",
+      "to": "entity:fbe0ae9b-263a-42ab-99ac-bdf813ad4a22",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+      "id": "relation:91367362-4622-4b63-99ff-9cadfdb1a1ee",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+      "id": "relation:45655cc3-79a9-43b9-bc88-9077345a13c0",
+      "predicate": "OFFERING_A",
+      "to": "entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+      "id": "relation:ab410877-6f6a-4a6e-93f8-93c8dd1d32f7",
+      "predicate": "OFFERING_B",
+      "to": "entity:540786ca-d407-43fa-a2b3-f815682f73f7",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+      "id": "relation:d287d95f-a9a1-4487-a0cc-7214bef6176e",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+      ],
+      "from": "entity:9433864b-68a1-4ca6-a0e8-fbd11cb3e053",
+      "id": "relation:4ac1ca3c-0d52-4898-bcd3-c9338fb2155f",
+      "predicate": "SELLS",
+      "to": "entity:858e737a-2e98-4645-ac63-7778d7ee4a6f",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+      "id": "relation:9dc5d4b9-f426-49bd-ad31-029a461e146c",
+      "predicate": "OFFERING_A",
+      "to": "entity:3270c07f-d476-4e85-ae7a-75eccf3ca6c4",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+      "id": "relation:9b514764-6f08-453d-b336-592cf62aa401",
+      "predicate": "OFFERING_B",
+      "to": "entity:858e737a-2e98-4645-ac63-7778d7ee4a6f",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+      "id": "relation:1c0fa0a7-98ac-4b0e-81e1-51b7edd19e3d",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d457835-d679-4d23-8231-9aa548697838"
+      ],
+      "from": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+      "id": "relation:fc2433d9-d204-4ae6-ac75-5503fbbb5a93",
+      "predicate": "SELLS",
+      "to": "entity:d1feadd4-be90-4940-939e-3aeed7c81bf7",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+      ],
+      "from": "entity:610dd86b-1b3f-4bad-9748-fa0b1a927057",
+      "id": "relation:af1ad182-f15e-4346-b0bd-a3830c2e3726",
+      "predicate": "SELLS",
+      "to": "entity:60a9b5f3-25f2-4c98-9d1f-b628055ec3ef",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+      "id": "relation:68a46b31-43bf-461b-9c88-d12fef73d629",
+      "predicate": "OFFERING_A",
+      "to": "entity:d1feadd4-be90-4940-939e-3aeed7c81bf7",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+      "id": "relation:f2215997-9950-4fbc-9e50-827734a00f8a",
+      "predicate": "OFFERING_B",
+      "to": "entity:60a9b5f3-25f2-4c98-9d1f-b628055ec3ef",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+      "id": "relation:5ef8b778-f945-4c0e-a776-c3d6a249cdb3",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+      ],
+      "from": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+      "id": "relation:96825e17-1927-42ed-8adf-f35c546a2d12",
+      "predicate": "SELLS",
+      "to": "entity:73d6d222-7def-4168-85dc-8eca37f9ae79",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+      ],
+      "from": "entity:45d7e771-1d72-4044-9d44-cbb4c74ed0a0",
+      "id": "relation:66dfb7a1-a239-4ae4-9c10-47d106d9f6a5",
+      "predicate": "SELLS",
+      "to": "entity:c4bee7ed-b2b5-4423-aff0-dd9abeff4bee",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+      "id": "relation:c9556080-7b11-40c7-9a82-7a4a905192f5",
+      "predicate": "OFFERING_A",
+      "to": "entity:73d6d222-7def-4168-85dc-8eca37f9ae79",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+      "id": "relation:d58f5cff-e199-48fd-ab6b-78a2fa5fa3d6",
+      "predicate": "OFFERING_B",
+      "to": "entity:c4bee7ed-b2b5-4423-aff0-dd9abeff4bee",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+      "id": "relation:1d697f26-af78-4c31-a5f1-162aa6096a01",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:d37c8a74-258a-4034-9b73-100a92193d61"
+      ],
+      "from": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+      "id": "relation:a1c22ec8-2844-4c31-a8e9-4c298c813c33",
+      "predicate": "SELLS",
+      "to": "entity:05b5efec-23c1-4238-929b-6dd059c95baf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a285313-2418-4d51-8014-dea8009e3740"
+      ],
+      "from": "entity:a2b9fc8a-3c46-4bbf-8cac-102a2d0ed4fa",
+      "id": "relation:b62bf8c0-2721-4197-89a6-105dc9f98427",
+      "predicate": "SELLS",
+      "to": "entity:53c2ecf8-b20e-433c-9f06-7c0209139940",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+      "id": "relation:9d39003b-8cb1-4449-98b1-30453cddc8dc",
+      "predicate": "OFFERING_A",
+      "to": "entity:05b5efec-23c1-4238-929b-6dd059c95baf",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+      "id": "relation:b173e777-4f61-4112-a4dc-06222a5f54b7",
+      "predicate": "OFFERING_B",
+      "to": "entity:53c2ecf8-b20e-433c-9f06-7c0209139940",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [],
+      "from": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+      "id": "relation:3d5a3a15-1260-417e-9571-50c54c2feb6c",
+      "predicate": "COMPETES_IN_SEGMENT",
+      "to": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:e985f81f-76fb-442e-b862-e61a4b9afe02"
+      ],
+      "from": "entity:5b298237-9614-419a-be1b-1c1e3ce918bd",
+      "id": "relation:8f66f3e4-f57d-4d4e-8edc-7bdd1b843797",
+      "notes": "截至 2025-12-31 睿晶科技為 100% 子公司。 / Silicon Works Technology was wholly owned at FY2025 year-end.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:345e3fdc-2c9f-46ac-9216-450be965f90c",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:70e9bc81-a3cf-46de-b046-bcd2fb39e856"
+      ],
+      "from": "entity:f7b73356-73cb-4342-a8e4-1e8e1b6d045d",
+      "id": "relation:ccd1f46f-6b84-4abe-84a5-db0e30ab914e",
+      "notes": "截至 2025-12-31 直接持有 WNC USA 100%。 / Directly owned WNC USA 100% as of FY2025 year-end.",
+      "predicate": "IS_SUBSIDIARY_OF",
+      "to": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "from": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "id": "relation:053ceb87-7a92-4b7a-8cdb-463c7d551692",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "from": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "id": "relation:7ac5cfd7-0b9e-4d89-a420-256a8ba8fece",
+      "predicate": "HAS_BUYER",
+      "to": "entity:ce7fd3da-64d8-4d32-a97d-367e5eee1c8c",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "from": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "id": "relation:51a6de6c-b964-4e7b-ba7a-4283bf90f39d",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:891261dc-d960-44d5-a561-c1f7d2021f0f",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+      "id": "relation:7114d10b-dd72-44d8-8b10-142971957617",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+      "id": "relation:e59769d3-d64e-4c7f-b637-026a46d09238",
+      "predicate": "HAS_BUYER",
+      "to": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+      "id": "relation:f55a2c22-acbd-4090-951b-6aa53f7909a4",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+      "id": "relation:72a508e5-4454-4685-ba82-1d7d385e1f63",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+      "id": "relation:3fbbbdfc-9416-4fd8-adc4-70b20d4668e1",
+      "predicate": "HAS_BUYER",
+      "to": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+      "id": "relation:2fe533f8-985a-4f18-ac0f-64428ac2a705",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+      "id": "relation:f32eac67-3a55-45ee-a5f2-b97b4686e726",
+      "predicate": "HAS_SUPPLIER",
+      "to": "entity:77fdd193-85a4-4c91-882c-848c3b4ade5a",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+      "id": "relation:d5bc4e8a-18a1-4641-aa91-645c625af486",
+      "predicate": "HAS_BUYER",
+      "to": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "from": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+      "id": "relation:fa7d8ced-c955-4b9a-990d-48d66824c91b",
+      "predicate": "FOR_SUPPLIED_PRODUCT",
+      "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "verification_status": "officially_disclosed"
+    }
+  ],
+  "entityTypes": [
+    {
+      "definition": "Distinct legal entity, public or private; subsidiaries are Companies",
+      "name": "Company"
+    },
+    {
+      "definition": "Corporate umbrella that may contain multiple legal Companies",
+      "name": "CorporateGroup"
+    },
+    {
+      "definition": "Nonlegal company branch, division, or internal unit",
+      "name": "OrganizationUnit"
+    },
+    {
+      "definition": "Vendor-defined product series",
+      "name": "ProductFamily"
+    },
+    {
+      "definition": "Industry-wide product classification shared across vendors",
+      "name": "ProductCategory"
+    },
+    {
+      "definition": "Sellable product, hardware component, software offering or integrated solution",
+      "name": "Product"
+    },
+    {
+      "definition": "Underlying hardware/software platform or capability",
+      "name": "Technology"
+    },
+    {
+      "definition": "Specific functional use case",
+      "name": "Application"
+    },
+    {
+      "definition": "Taxonomy of economic activities and end-markets",
+      "name": "Industry"
+    },
+    {
+      "definition": "Specific group of buyers sharing application and purchasing need, optionally by region",
+      "name": "MarketSegment"
+    },
+    {
+      "definition": "Documented commercial supply relationship relating seller, buyer, product",
+      "name": "SupplyRelationship"
+    },
+    {
+      "definition": "Prospective customer opportunity, not a verified sale",
+      "name": "CustomerOpportunity"
+    },
+    {
+      "definition": "Partnership, joint venture, MOU, integration or joint development",
+      "name": "Collaboration"
+    },
+    {
+      "definition": "Scoped competitive assessment of two products in a market",
+      "name": "CompetitionAssessment"
+    },
+    {
+      "definition": "Original filing, product page, announcement, contract, or independent source",
+      "name": "Evidence"
+    },
+    {
+      "definition": "Traceable extracted assertion with verification status",
+      "name": "Claim"
+    },
+    {
+      "definition": "指數股票型基金或其他在交易所交易的基金。成分股資料有明確基準日與權重來源，不代表個人持倉。 / Exchange-traded funds. Constituent snapshots have an as-of date and a weight source; they do not represent personal holdings.",
+      "name": "ETF"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "evidence:adprod",
+      "name": "adprod public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.adlinktech.com/tw/News_26031609104283910"
+    },
+    {
+      "id": "evidence:nexprod",
+      "name": "nexprod public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.nexcom.com/news/detail/nexcom-to-launch-safety-centric-humanoid-robot-controller"
+    },
+    {
+      "id": "evidence:aaeonprod",
+      "name": "aaeonprod public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.aaeon.ai/en/news/detail/computex-2026"
+    },
+    {
+      "id": "evidence:aeolus",
+      "name": "aeolus public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.advantech.com/hi-in/resources/news/advantech-and-aeolus-robotics"
+    },
+    {
+      "id": "evidence:mobisnet",
+      "name": "mobisnet public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.axiomtek.com/whats-new/press-releases/axiomtek-and-mobisnet-showcase-seven-ai-powered-amrs-at-automation-taipei-2026"
+    },
+    {
+      "id": "evidence:inno",
+      "name": "inno public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.innodisk.com/en/group-intro/"
+    },
+    {
+      "id": "evidence:nexgroup",
+      "name": "nexgroup public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.nexcom.com/news/Detail/the-nexcom-group-rebranding-announcement-en"
+    },
+    {
+      "id": "evidence:deepx",
+      "name": "deepx public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://newsroom.deepx.ai/news/deepx-announces-global-physical-ai-mass-production-partnership-with-aaeon"
+    },
+    {
+      "id": "evidence:farobot",
+      "name": "farobot public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.farobottech.com/company"
+    },
+    {
+      "id": "evidence:axiomprod",
+      "name": "axiomprod public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.axiomtek.com.tw/products/systems-and-platforms/edge-ai-gpu-computing/"
+    },
+    {
+      "id": "evidence:apex",
+      "name": "apex public source",
+      "reverified_for_package": false,
+      "source_type": "company_announcement_or_product",
+      "type": "Evidence",
+      "url": "https://www.innodisk.com/en/news/innodisk-launches-apex-systems-accelerate-edge-ai"
+    },
+    {
+      "id": "company:adlink",
+      "name": "凌華 ADLINK",
+      "ticker": "6166",
+      "type": "Company"
+    },
+    {
+      "id": "company:nexcom",
+      "name": "新漢 NEXCOM",
+      "ticker": "8234",
+      "type": "Company"
+    },
+    {
+      "id": "company:nexcobot",
+      "name": "NexCOBOT",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "company:aaeon",
+      "name": "研揚 AAEON",
+      "ticker": "6579",
+      "type": "Company"
+    },
+    {
+      "id": "company:axiomtek",
+      "name": "艾訊 Axiomtek",
+      "ticker": "3088",
+      "type": "Company"
+    },
+    {
+      "id": "company:advantech",
+      "name": "研華 Advantech",
+      "ticker": "2395",
+      "type": "Company"
+    },
+    {
+      "id": "company:innodisk",
+      "name": "宜鼎 Innodisk",
+      "ticker": "5289",
+      "type": "Company"
+    },
+    {
+      "id": "company:aetina",
+      "name": "安提 Aetina",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "company:foxconn",
+      "name": "鴻海 Foxconn",
+      "ticker": "2317",
+      "type": "Company"
+    },
+    {
+      "id": "company:farobot",
+      "name": "FARobot",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "company:aeolus",
+      "name": "Aeolus Robotics",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "company:mobisnet",
+      "name": "MOBISNET",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "company:deepx",
+      "name": "DEEPX",
+      "ticker": null,
+      "type": "Company"
+    },
+    {
+      "id": "product:dlap",
+      "kind": "system",
+      "name": "DLAP-711",
+      "type": "Product"
+    },
+    {
+      "id": "product:mars",
+      "kind": "system",
+      "name": "MARS400 T10",
+      "type": "Product"
+    },
+    {
+      "id": "product:boxer",
+      "kind": "system",
+      "name": "BOXER-8741AI",
+      "type": "Product"
+    },
+    {
+      "id": "product:aie",
+      "kind": "system",
+      "name": "AIE510-ONX",
+      "type": "Product"
+    },
+    {
+      "id": "product:afe",
+      "kind": "system",
+      "name": "AFE-R750",
+      "type": "Product"
+    },
+    {
+      "id": "product:apex",
+      "kind": "system",
+      "name": "APEX Series",
+      "type": "Product"
+    },
+    {
+      "id": "technology:thor",
+      "name": "NVIDIA Jetson Thor",
+      "type": "Technology"
+    },
+    {
+      "id": "technology:orin",
+      "name": "NVIDIA Jetson Orin",
+      "type": "Technology"
+    },
+    {
+      "buyer_type": "robot_OEM_and_integrator",
+      "id": "market:robotic-edge-computing",
+      "name": "Robotic Edge Computing",
+      "type": "MarketSegment"
+    },
+    {
+      "id": "industry:industrial-computing",
+      "name": "Industrial Computing",
+      "type": "Industry"
+    },
+    {
+      "id": "industry:robotics",
+      "name": "Robotics & Automation",
+      "type": "Industry"
+    },
+    {
+      "id": "application:robotics-control",
+      "name": "Robotics Control",
+      "type": "Application"
+    },
+    {
+      "id": "category:robotic-edge-controller",
+      "name": "Robotic Edge Controller",
+      "type": "ProductCategory"
+    },
+    {
+      "id": "category:industrial-edge-ai-computer",
+      "name": "Industrial Edge AI Computer",
+      "type": "ProductCategory"
+    },
+    {
+      "id": "group:innodisk",
+      "name": "Innodisk Group",
+      "type": "CorporateGroup"
+    },
+    {
+      "id": "group:nexcom",
+      "name": "NEXCOM Group",
+      "type": "CorporateGroup"
+    },
+    {
+      "collaboration_type": "joint_venture",
+      "evidence_ids": [
+        "evidence:farobot"
+      ],
+      "id": "collaboration:adlink-foxconn",
+      "name": "FARobot joint-venture collaboration",
+      "status": "announced",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "collaboration_type": "technical_integration",
+      "evidence_ids": [
+        "evidence:aeolus"
+      ],
+      "id": "collaboration:adv-aeolus",
+      "name": "Advantech / Aeolus robotics solution",
+      "status": "announced",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "collaboration_type": "technical_integration",
+      "evidence_ids": [
+        "evidence:mobisnet"
+      ],
+      "id": "collaboration:axiom-mobisnet",
+      "name": "Axiomtek / MOBISNET AMR integration",
+      "status": "announced",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "collaboration_type": "mou",
+      "evidence_ids": [
+        "evidence:deepx"
+      ],
+      "id": "collaboration:aaeon-deepx",
+      "name": "AAEON / DEEPX cooperation",
+      "status": "announced",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "Overlapping robotics edge processing and control buyer applications",
+        "Both product descriptions target robotics controller deployments"
+      ],
+      "commercial_competition_verified": false,
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:nexprod"
+      ],
+      "id": "competition:dlap-v-mars",
+      "name": "dlap v mars",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "basis": [
+        "Robotics computer and general embedded AI box may compete as alternative subsystem architectures",
+        "Buyer-specific integration and motion-control requirements would determine substitutability"
+      ],
+      "commercial_competition_verified": false,
+      "competition_type": "INDIRECT",
+      "evidence_ids": [
+        "evidence:adprod",
+        "evidence:aaeonprod"
+      ],
+      "id": "competition:dlap-v-boxer",
+      "name": "dlap v boxer",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:34028485-970c-4e8d-9baa-61998c802dad",
+      "localized_names": {
+        "en": "UMC Packaging Services and Subcontractors",
+        "zh-TW": "聯電封裝服務與委外夥伴"
+      },
+      "name": "聯電封裝服務與委外夥伴",
+      "notes": "聯電官方頁面列出欣銓與力成為測試／封裝委外夥伴；未揭露特定製程、工作分配或訂單量。 / UMC names Ardentec and Powertech as test/package subcontractors; process-level allocation and order volumes are not disclosed. 查核／Accessed: 2026-11-20.",
+      "type": "Evidence",
+      "url": "https://www.umc.com/en/StaticPage/package_solution_development",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+      "localized_names": {
+        "en": "UMC",
+        "zh-TW": "聯電"
+      },
+      "name": "聯電",
+      "notes": "晶圓代工；官方列出封裝與測試委外夥伴。 / Semiconductor foundry; lists assembly and test subcontractors.",
+      "ticker": "2303",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+      "localized_names": {
+        "en": "Ardentec",
+        "zh-TW": "欣銓"
+      },
+      "name": "欣銓",
+      "notes": "依聯電官方名單，屬測試／封裝委外夥伴；未揭露特定製程。 / Listed by UMC as a test/package subcontractor; no specific process disclosed.",
+      "ticker": "3264",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+      "localized_names": {
+        "en": "Powertech Technology",
+        "zh-TW": "力成"
+      },
+      "name": "力成",
+      "notes": "依聯電官方名單，屬測試／封裝委外夥伴；未揭露特定製程。 / Listed by UMC as a test/package subcontractor; no specific process disclosed.",
+      "ticker": "6239",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+      "localized_names": {
+        "en": "Ardentec Subcontracting for UMC",
+        "zh-TW": "欣銓對聯電的委外服務"
+      },
+      "name": "欣銓對聯電的委外服務",
+      "notes": "聯電官網列名為測試／封裝委外夥伴，不指涉個別製程或訂單量。 / UMC names this company as a test/package subcontractor; no individual process or order volume is specified.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+      "localized_names": {
+        "en": "Powertech Subcontracting for UMC",
+        "zh-TW": "力成對聯電的委外服務"
+      },
+      "name": "力成對聯電的委外服務",
+      "notes": "聯電官網列名為測試／封裝委外夥伴，不指涉個別製程或訂單量。 / UMC names this company as a test/package subcontractor; no individual process or order volume is specified.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:25ccc685-daa1-42e0-aa66-51f414414498",
+      "localized_names": {
+        "en": "TSMC 2025 Annual Report",
+        "zh-TW": "台積電 2025 年報"
+      },
+      "name": "台積電 2025 年報",
+      "notes": "2025 年度。N2 於第四季進入量產；CoWoS 為先進封裝家族。 / FY2025. N2 entered volume production in Q4; CoWoS is an advanced packaging family.",
+      "type": "Evidence",
+      "url": "https://investor.tsmc.com/static/annualReports/2025/english/index.html",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6",
+      "localized_names": {
+        "en": "Powertech Final Test",
+        "zh-TW": "力成半導體成品測試"
+      },
+      "name": "力成半導體成品測試",
+      "notes": "可測試 DRAM、NOR、NAND、MCP、Logic；不是銷售這些晶片。 / Covers DRAM, NOR, NAND, MCP and logic; not sales of those chips.",
+      "type": "Evidence",
+      "url": "https://www.pti.com.tw/zh/service/service/final-test",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899",
+      "localized_names": {
+        "en": "Ardentec IC Test Services",
+        "zh-TW": "欣銓半導體測試服務"
+      },
+      "name": "欣銓半導體測試服務",
+      "notes": "測試服務涵蓋邏輯、混合訊號、類比與其他晶片。 / Test services cover logic, mixed-signal, analog and other ICs.",
+      "type": "Evidence",
+      "url": "https://web.ardentec.com/?m=17",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:a32dc587-1f47-416f-ac1c-4c304c20c016",
+      "localized_names": {
+        "en": "UMC Specialty Processes",
+        "zh-TW": "聯電特色製程"
+      },
+      "name": "聯電特色製程",
+      "notes": "電源管理 IC 用 BCD 特色製程。 / BCD specialty processes for power-management ICs.",
+      "type": "Evidence",
+      "url": "https://www.umc.com/en/Product/technologies/Index/specialty",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+      ],
+      "id": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+      "localized_names": {
+        "en": "TSMC",
+        "zh-TW": "台積電"
+      },
+      "name": "台積電",
+      "notes": "專業晶圓代工與先進封裝。 / Dedicated semiconductor foundry and advanced packaging.",
+      "ticker": "2330",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+      ],
+      "id": "entity:6b074e46-60d4-4544-be93-77a51c482545",
+      "localized_names": {
+        "en": "N2 Foundry Process",
+        "zh-TW": "N2 晶圓製程"
+      },
+      "name": "N2 晶圓製程",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+      ],
+      "id": "entity:93b86a7b-09f2-46d6-8882-d5f78ff8e21d",
+      "localized_names": {
+        "en": "CoWoS Advanced Packaging Service",
+        "zh-TW": "CoWoS 先進封裝服務"
+      },
+      "name": "CoWoS 先進封裝服務",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6"
+      ],
+      "id": "entity:e8d8391c-3874-4779-a1d1-67599c854c2a",
+      "localized_names": {
+        "en": "Powertech Semiconductor Final Test Service",
+        "zh-TW": "力成半導體成品測試服務"
+      },
+      "name": "力成半導體成品測試服務",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899"
+      ],
+      "id": "entity:f5462c3a-2d2a-4068-a56e-779dab880c55",
+      "localized_names": {
+        "en": "Ardentec Wafer Test Service",
+        "zh-TW": "欣銓晶圓測試服務"
+      },
+      "name": "欣銓晶圓測試服務",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:a32dc587-1f47-416f-ac1c-4c304c20c016"
+      ],
+      "id": "entity:21f600bb-61b4-42ac-ae5d-538b496c1507",
+      "localized_names": {
+        "en": "BCD Foundry Process",
+        "zh-TW": "BCD 晶圓代工製程"
+      },
+      "name": "BCD 晶圓代工製程",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:3e42e29b-b319-419d-b197-d24806d2e8cd",
+      "localized_names": {
+        "en": "Wafer Works 2025 Annual Report",
+        "zh-TW": "合晶 2025 年報"
+      },
+      "name": "合晶 2025 年報",
+      "notes": "年報列為矽晶圓產品。 / Listed in the annual report’s silicon wafer portfolio.",
+      "type": "Evidence",
+      "url": "https://www.waferworks.com/uploads/investor/financial_information/annual_reports/2025_annual_report_en.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3e42e29b-b319-419d-b197-d24806d2e8cd"
+      ],
+      "id": "entity:345e3fdc-2c9f-46ac-9216-450be965f90c",
+      "localized_names": {
+        "en": "Wafer Works",
+        "zh-TW": "合晶"
+      },
+      "name": "合晶",
+      "ticker": "6182",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3e42e29b-b319-419d-b197-d24806d2e8cd"
+      ],
+      "id": "entity:593b061c-21f0-4ac1-8133-b630b5263253",
+      "localized_names": {
+        "en": "Epitaxial Silicon Wafers",
+        "zh-TW": "磊晶矽晶圓"
+      },
+      "name": "磊晶矽晶圓",
+      "notes": "年報列為矽晶圓產品。 / Listed in the annual report’s silicon wafer portfolio.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:0d72ab51-6d44-49af-b4d4-e7893c2bb307",
+      "localized_names": {
+        "en": "Allied Supreme 2026 Product Showcase",
+        "zh-TW": "上品 2026 產品型錄"
+      },
+      "name": "上品 2026 產品型錄",
+      "notes": "高純度化學品儲存設備，未指涉特定晶圓廠客戶。 / High-purity chemical storage equipment; no specific foundry buyer asserted.",
+      "type": "Evidence",
+      "url": "https://tiww2026.alliedsupreme.com/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:0d72ab51-6d44-49af-b4d4-e7893c2bb307"
+      ],
+      "id": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+      "localized_names": {
+        "en": "Allied Supreme",
+        "zh-TW": "上品"
+      },
+      "name": "上品",
+      "ticker": "4770",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:0d72ab51-6d44-49af-b4d4-e7893c2bb307"
+      ],
+      "id": "entity:b2d00d86-04dc-4e0b-b50e-1151cbe3ca3c",
+      "localized_names": {
+        "en": "PFA High-Purity Storage Vessels",
+        "zh-TW": "PFA 高純度儲槽"
+      },
+      "name": "PFA 高純度儲槽",
+      "notes": "高純度化學品儲存設備，未指涉特定晶圓廠客戶。 / High-purity chemical storage equipment; no specific foundry buyer asserted.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917",
+      "localized_names": {
+        "en": "G-TECH 2025 Annual Report",
+        "zh-TW": "正達 2025 年報"
+      },
+      "name": "正達 2025 年報",
+      "notes": "年報第 60、62 頁，車用智慧座艙應用。 / Annual report pp. 60, 62; automotive smart-cockpit applications.",
+      "type": "Evidence",
+      "url": "https://www.gtoc.com.tw/upload/cominfo/202605121721370.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "id": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+      "localized_names": {
+        "en": "G-TECH Optoelectronics",
+        "zh-TW": "正達"
+      },
+      "name": "正達",
+      "ticker": "3149",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "id": "entity:3a0e370b-3a83-4d33-b321-c9cbaec09d31",
+      "localized_names": {
+        "en": "Multi-curved 3D Cover Glass",
+        "zh-TW": "多曲面 3D 蓋板玻璃"
+      },
+      "name": "多曲面 3D 蓋板玻璃",
+      "notes": "年報第 60、62 頁，車用智慧座艙應用。 / Annual report pp. 60, 62; automotive smart-cockpit applications.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:c0d0038e-44c8-47ab-bbcb-f4ca91cde75b",
+      "localized_names": {
+        "en": "WNC 2025 Annual Report",
+        "zh-TW": "啟碁 2025 年報"
+      },
+      "name": "啟碁 2025 年報",
+      "notes": "年報產品表與資料中心產品線；不把 2026 展示的 1.6 TbE 當成已出貨。 / Annual-report product line; does not establish shipments of 2026 1.6 TbE demos.",
+      "type": "Evidence",
+      "url": "https://www.wnc.com.tw/uploads/files/shares/annual-reports/2025_WNC_Annual_Report_TC.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c0d0038e-44c8-47ab-bbcb-f4ca91cde75b"
+      ],
+      "id": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+      "localized_names": {
+        "en": "WNC Corporation",
+        "zh-TW": "啟碁"
+      },
+      "name": "啟碁",
+      "ticker": "6285",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c0d0038e-44c8-47ab-bbcb-f4ca91cde75b"
+      ],
+      "id": "entity:51da97f7-0968-45ed-9aca-51582a14dd53",
+      "localized_names": {
+        "en": "High-speed Data Center Network Switches",
+        "zh-TW": "高速資料中心網路交換器"
+      },
+      "name": "高速資料中心網路交換器",
+      "notes": "年報產品表與資料中心產品線；不把 2026 展示的 1.6 TbE 當成已出貨。 / Annual-report product line; does not establish shipments of 2026 1.6 TbE demos.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba",
+      "localized_names": {
+        "en": "LITEON 2026 OCP Joint Showcase",
+        "zh-TW": "光寶 2026 OCP 共同展示"
+      },
+      "name": "光寶 2026 OCP 共同展示",
+      "notes": "與雲達共同展示機架級電源，支持 Vera Rubin NVL72；未證實量產出貨。 / Joint rack-power showcase with QCT supporting Vera Rubin NVL72; volume shipments not established.",
+      "type": "Evidence",
+      "url": "https://www.liteon.com/en/news/press-center/content/liteon-ocp-2026-qct",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "id": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+      "localized_names": {
+        "en": "LITEON Technology",
+        "zh-TW": "光寶科"
+      },
+      "name": "光寶科",
+      "ticker": "2301",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "id": "entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+      "localized_names": {
+        "en": "110 kW Rack Power Shelf",
+        "zh-TW": "110 kW 機架電源層架"
+      },
+      "name": "110 kW 機架電源層架",
+      "notes": "與雲達共同展示機架級電源，支持 Vera Rubin NVL72；未證實量產出貨。 / Joint rack-power showcase with QCT supporting Vera Rubin NVL72; volume shipments not established.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:45ba6d0c-a350-4962-b1b1-dbbe4fb663df",
+      "localized_names": {
+        "en": "AUO Q4 2025 Investor Presentation",
+        "zh-TW": "友達 2025 第四季法說"
+      },
+      "name": "友達 2025 第四季法說",
+      "notes": "2026 年 2 月公司法說列為量產；不推定所有透明顯示器專案皆已量產。 / Mass-production status as reported in February 2026; not asserted for every transparent display project.",
+      "type": "Evidence",
+      "url": "https://auo.com/upload/media/ir/Financial_Information/4Q25_Handout_English_20260210.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45ba6d0c-a350-4962-b1b1-dbbe4fb663df"
+      ],
+      "id": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+      "localized_names": {
+        "en": "AUO",
+        "zh-TW": "友達"
+      },
+      "name": "友達",
+      "ticker": "2409",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45ba6d0c-a350-4962-b1b1-dbbe4fb663df"
+      ],
+      "id": "entity:0991aaba-dcdc-4d9d-a8d0-3095317872b9",
+      "localized_names": {
+        "en": "Transparent Micro LED Display",
+        "zh-TW": "透明 Micro LED 顯示器"
+      },
+      "name": "透明 Micro LED 顯示器",
+      "notes": "2026 年 2 月公司法說列為量產；不推定所有透明顯示器專案皆已量產。 / Mass-production status as reported in February 2026; not asserted for every transparent display project.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18",
+      "localized_names": {
+        "en": "Taiwan Glass 2025 Annual Company Overview",
+        "zh-TW": "台玻 2025 年度資料"
+      },
+      "name": "台玻 2025 年度資料",
+      "notes": "資料列低介電與低熱膨脹產品；不將整個玻纖部門視為電子布收入。 / Lists low-Dk and low-CTE grades; the whole fiberglass segment is not electronic cloth revenue.",
+      "type": "Evidence",
+      "url": "https://www.taiwanglass.com/tc/pdf/TG2025ANNUAL.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+      ],
+      "id": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+      "localized_names": {
+        "en": "Taiwan Glass",
+        "zh-TW": "台玻"
+      },
+      "name": "台玻",
+      "ticker": "1802",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+      ],
+      "id": "entity:73d6d222-7def-4168-85dc-8eca37f9ae79",
+      "localized_names": {
+        "en": "Electronic-grade Fiberglass Fabric",
+        "zh-TW": "電子級玻璃纖維布"
+      },
+      "name": "電子級玻璃纖維布",
+      "notes": "資料列低介電與低熱膨脹產品；不將整個玻纖部門視為電子布收入。 / Lists low-Dk and low-CTE grades; the whole fiberglass segment is not electronic cloth revenue.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2",
+      "localized_names": {
+        "en": "NVIDIA Substrate Capacity Agreements",
+        "zh-TW": "NVIDIA 載板產能協議"
+      },
+      "name": "NVIDIA 載板產能協議",
+      "notes": "2026-10-21 公告確認產能預留協議，爬坡時點是計畫，不是出貨證據。 / Capacity reservation disclosed on October 21, 2026; planned ramp is not shipment evidence.",
+      "type": "Evidence",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-and-Supply-Chain-Partners-Expand-Capacity-to-Accelerate-AI-Infrastructure-Buildout/default.aspx",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "id": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+      "localized_names": {
+        "en": "Unimicron",
+        "zh-TW": "欣興"
+      },
+      "name": "欣興",
+      "ticker": "3037",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "id": "entity:f9ee54d2-4841-463c-b776-9f21470830b8",
+      "localized_names": {
+        "en": "KF Substrates",
+        "zh-TW": "KF 載板"
+      },
+      "name": "KF 載板",
+      "notes": "2026-10-21 公告確認產能預留協議，爬坡時點是計畫，不是出貨證據。 / Capacity reservation disclosed on October 21, 2026; planned ramp is not shipment evidence.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912",
+      "localized_names": {
+        "en": "Compeq 2026 Investor Presentation",
+        "zh-TW": "華通 2026 年法說簡報"
+      },
+      "name": "華通 2026 年法說簡報",
+      "notes": "法說列泰國廠自 2025 年第 1 季量產；設計應用與產能不等於各客戶實際出貨。 / Thailand site entered production in Q1 2025; applications and capacity do not establish customer shipments.",
+      "type": "Evidence",
+      "url": "https://www.compeq.com.tw/doc/conference/ad953d4c-a693-11f1-8e03-2200977aacff/20261021_090221_cn.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+      ],
+      "id": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+      "localized_names": {
+        "en": "Compeq Manufacturing",
+        "zh-TW": "華通"
+      },
+      "name": "華通",
+      "ticker": "2313",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+      ],
+      "id": "entity:ce2fa4e5-6325-4a61-8f43-e4681c958220",
+      "localized_names": {
+        "en": "Compeq High-layer-count PCB",
+        "zh-TW": "華通高層數印刷電路板"
+      },
+      "name": "華通高層數印刷電路板",
+      "notes": "法說列泰國廠自 2025 年第 1 季量產；設計應用與產能不等於各客戶實際出貨。 / Thailand site entered production in Q1 2025; applications and capacity do not establish customer shipments.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:f3fde760-400f-4355-851a-a5073ecb154f",
+      "localized_names": {
+        "en": "Allied Circuit 2024 Sustainability Report",
+        "zh-TW": "博智 2024 永續報告"
+      },
+      "name": "博智 2024 永續報告",
+      "notes": "第 39 頁列伺服器、網路設備與工業電腦應用，未揭露客戶。 / Page 39 lists server, networking and industrial PC end uses, without naming buyers.",
+      "type": "Evidence",
+      "url": "https://www.accl.com.tw/tw/uploads/filelist/1000/2/1755512834_a77096600022677.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+      ],
+      "id": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+      "localized_names": {
+        "en": "Allied Circuit",
+        "zh-TW": "博智"
+      },
+      "name": "博智",
+      "ticker": "8155",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+      ],
+      "id": "entity:b1d90863-7517-440a-a488-b710b6a993f6",
+      "localized_names": {
+        "en": "Allied Circuit Multilayer Rigid PCB",
+        "zh-TW": "博智多層硬式印刷電路板"
+      },
+      "name": "博智多層硬式印刷電路板",
+      "notes": "第 39 頁列伺服器、網路設備與工業電腦應用，未揭露客戶。 / Page 39 lists server, networking and industrial PC end uses, without naming buyers.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f",
+      "localized_names": {
+        "en": "CWTC Leadless IC Leadframe Catalog",
+        "zh-TW": "長科無引腳導線架型錄"
+      },
+      "name": "長科無引腳導線架型錄",
+      "notes": "含 QFN 系列；不把產品規格視為同規替代或同客戶認證。 / Includes QFN products; does not establish qualification or interchangeability.",
+      "type": "Evidence",
+      "url": "https://www.cwtcglobal.com/en/product/ic-non-lead-leadframe",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+      ],
+      "id": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+      "localized_names": {
+        "en": "Chang Wah Technology",
+        "zh-TW": "長科"
+      },
+      "name": "長科",
+      "ticker": "6548",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+      ],
+      "id": "entity:e92998ff-edd3-4939-89f2-0f2ee07e0008",
+      "localized_names": {
+        "en": "Leadless IC Leadframes",
+        "zh-TW": "無引腳 IC 導線架"
+      },
+      "name": "無引腳 IC 導線架",
+      "notes": "含 QFN 系列；不把產品規格視為同規替代或同客戶認證。 / Includes QFN products; does not establish qualification or interchangeability.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0",
+      "localized_names": {
+        "en": "ADLINK DLAP-411-Orin Announcement",
+        "zh-TW": "凌華 DLAP-411-Orin 發表"
+      },
+      "name": "凌華 DLAP-411-Orin 發表",
+      "notes": "2025-02-26 發表 AGX Orin 系統與 LIPS 合作，與現有 DLAP-711 為不同產品。 / February 26, 2025 AGX Orin system and LIPS collaboration; distinct from DLAP-711.",
+      "type": "Evidence",
+      "url": "https://www.adlinktech.com/en/News_25022517542896881.aspx",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0"
+      ],
+      "id": "entity:542811c8-4ca1-4fab-8536-6790add0c076",
+      "localized_names": {
+        "en": "DLAP-411-Orin",
+        "zh-TW": "DLAP-411-Orin"
+      },
+      "name": "DLAP-411-Orin",
+      "notes": "2025-02-26 發表 AGX Orin 系統與 LIPS 合作，與現有 DLAP-711 為不同產品。 / February 26, 2025 AGX Orin system and LIPS collaboration; distinct from DLAP-711.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:8f129cd0-d3c6-490c-a0bb-6e4d07718a31",
+      "localized_names": {
+        "en": "Foxconn GB300 Data Center Showcase",
+        "zh-TW": "鴻海 GB300 資料中心展示"
+      },
+      "name": "鴻海 GB300 資料中心展示",
+      "notes": "2025-08-14 展示液冷與電源整合；未證實該型號量產規模。 / August 14, 2025 showcase for cooling and power integration; not volume production evidence.",
+      "type": "Evidence",
+      "url": "https://www.honhai.com/en-us/press-center/press-releases/latest-news/1814",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:8f129cd0-d3c6-490c-a0bb-6e4d07718a31"
+      ],
+      "id": "entity:3270c07f-d476-4e85-ae7a-75eccf3ca6c4",
+      "localized_names": {
+        "en": "Foxconn GB300 NVL72 Liquid-cooled Rack",
+        "zh-TW": "鴻海 GB300 NVL72 液冷機架"
+      },
+      "name": "鴻海 GB300 NVL72 液冷機架",
+      "notes": "2025-08-14 展示液冷與電源整合；未證實該型號量產規模。 / August 14, 2025 showcase for cooling and power integration; not volume production evidence.",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe",
+      "localized_names": {
+        "en": "Foxconn European AI Rack Collaboration Announcement",
+        "zh-TW": "鴻海歐洲 AI 機架合作公告"
+      },
+      "name": "鴻海歐洲 AI 機架合作公告",
+      "notes": "2026-06-17 公告計畫在歐洲建造並由 Bull 推向市場，未確認交付。 / June 17, 2026 plan for European manufacturing and Bull commercialization; no deliveries confirmed.",
+      "type": "Evidence",
+      "url": "https://www.honhai.com/en-us/press-center/press-releases/latest-news/2069",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:653afc52-0432-4379-8a3f-94e61207fae1",
+      "localized_names": {
+        "en": "AUO Q3 2026 Results Release",
+        "zh-TW": "友達 2026 第三季財報公告"
+      },
+      "name": "友達 2026 第三季財報公告",
+      "notes": "友達取得凌華普通董事席次多數，自 2025-06-30 起將凌華納入合併報表，不代表完全持有。 / AUO gained a majority of ordinary director seats and consolidated ADLINK from June 30, 2025; not wholly owned.",
+      "type": "Evidence",
+      "url": "https://www.auo.com/en-global/New_Archive/detail/news_IR_20261029",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:8ec827ea-7f4d-4e4e-a0a9-9b2475582ee5",
+      "localized_names": {
+        "en": "Quanta Cloud Technology",
+        "zh-TW": "雲達科技"
+      },
+      "name": "雲達科技",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+      "localized_names": {
+        "en": "NVIDIA",
+        "zh-TW": "輝達"
+      },
+      "name": "輝達",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+      ],
+      "id": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+      "localized_names": {
+        "en": "LITEON–QCT Rack Power Collaboration",
+        "zh-TW": "光寶與雲達機架電源合作"
+      },
+      "name": "光寶與雲達機架電源合作",
+      "notes": "與雲達共同展示機架級電源，支持 Vera Rubin NVL72；未證實量產出貨。 / Joint rack-power showcase with QCT supporting Vera Rubin NVL72; volume shipments not established.",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+      ],
+      "id": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+      "localized_names": {
+        "en": "Unimicron–NVIDIA Substrate Capacity Agreement",
+        "zh-TW": "欣興與輝達載板產能協議"
+      },
+      "name": "欣興與輝達載板產能協議",
+      "notes": "2026-10-21 公告確認產能預留協議，爬坡時點是計畫，不是出貨證據。 / Capacity reservation disclosed on October 21, 2026; planned ramp is not shipment evidence.",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe"
+      ],
+      "id": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+      "localized_names": {
+        "en": "Foxconn, Bull and NVIDIA European AI Rack Collaboration",
+        "zh-TW": "鴻海、Bull 與輝達歐洲 AI 機架合作"
+      },
+      "name": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+      "notes": "2026-06-17 公告計畫在歐洲建造並由 Bull 推向市場，未確認交付。 / June 17, 2026 plan for European manufacturing and Bull commercialization; no deliveries confirmed.",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:0b38e392-7ea8-447f-8106-ac374c248d2e",
+      "localized_names": {
+        "en": "Bull",
+        "zh-TW": "Bull"
+      },
+      "name": "Bull",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:9418de44-14a9-4adc-8304-52450920cb64",
+      "localized_names": {
+        "en": "Samsung Foundry Advanced Logic Node Catalog",
+        "zh-TW": "三星晶圓代工先進製程型錄"
+      },
+      "name": "三星晶圓代工先進製程型錄",
+      "type": "Evidence",
+      "url": "https://semiconductor.samsung.com/foundry/process-technology/logic-node/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:cf261bec-1a2b-492c-ac7c-98602db79508",
+      "localized_names": {
+        "en": "Axiomtek AIE510-ONX Specifications",
+        "zh-TW": "艾訊 AIE510-ONX 規格"
+      },
+      "name": "艾訊 AIE510-ONX 規格",
+      "type": "Evidence",
+      "url": "https://www.axiomtek.com/products/aie510-onx",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9418de44-14a9-4adc-8304-52450920cb64"
+      ],
+      "id": "entity:951c3066-af85-4108-adb8-cfaa5a63f481",
+      "localized_names": {
+        "en": "Samsung Electronics",
+        "zh-TW": "三星電子"
+      },
+      "name": "三星電子",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9418de44-14a9-4adc-8304-52450920cb64"
+      ],
+      "id": "entity:7bd9993f-3c51-4ce6-8d8d-81570c50c937",
+      "localized_names": {
+        "en": "SF2 Foundry Process",
+        "zh-TW": "SF2 晶圓製程"
+      },
+      "name": "SF2 晶圓製程",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+      "localized_names": {
+        "en": "2 nm-class Advanced Foundry",
+        "zh-TW": "2 奈米級先進晶圓代工"
+      },
+      "name": "2 奈米級先進晶圓代工",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "兩家官方文件均描述 2 奈米級 GAA 代工；名目節點不代表相同效能、良率或設計生態。",
+        "Both vendors describe a 2 nm-class GAA foundry process; nominal nodes imply no parity in performance, yields or design ecosystem."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:25ccc685-daa1-42e0-aa66-51f414414498",
+        "entity:9418de44-14a9-4adc-8304-52450920cb64"
+      ],
+      "id": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+      "localized_names": {
+        "en": "N2 vs SF2 Advanced Foundry Assessment",
+        "zh-TW": "N2 與 SF2 的先進代工競爭評估"
+      },
+      "name": "N2 與 SF2 的先進代工競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "basis": [
+        "兩者均面向 AMR 邊緣推論；凌華用 AGX Orin，艾訊用 Orin NX，且相機介面不同。",
+        "Both target AMR edge inference; ADLINK uses AGX Orin and Axiomtek uses Orin NX, with differing camera interfaces."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0",
+        "entity:cf261bec-1a2b-492c-ac7c-98602db79508"
+      ],
+      "id": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+      "localized_names": {
+        "en": "ADLINK vs Axiomtek AMR Edge Computing Assessment",
+        "zh-TW": "凌華與艾訊 AMR 邊緣運算競爭評估"
+      },
+      "name": "凌華與艾訊 AMR 邊緣運算競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:95c8281c-113b-440e-92a2-306f9889f3b1",
+      "localized_names": {
+        "en": "UMC 22 nm Process Technology",
+        "zh-TW": "聯電 22 奈米製程技術"
+      },
+      "name": "聯電 22 奈米製程技術",
+      "type": "Evidence",
+      "url": "https://www.umc.com/en/Product/technologies/Detail/22nm",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06",
+      "localized_names": {
+        "en": "TSMC 22ULP Low-Power Platform",
+        "zh-TW": "台積電 22ULP 低功耗平台"
+      },
+      "name": "台積電 22ULP 低功耗平台",
+      "type": "Evidence",
+      "url": "https://www.tsmc.com/english/dedicatedFoundry/technology/platform_DCE_28HPC_22ULP",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:95c8281c-113b-440e-92a2-306f9889f3b1"
+      ],
+      "id": "entity:76db2cca-9b29-4803-be74-f39e39d6110f",
+      "localized_names": {
+        "en": "UMC 22 nm Process",
+        "zh-TW": "聯電 22 奈米製程"
+      },
+      "name": "聯電 22 奈米製程",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06"
+      ],
+      "id": "entity:1698890e-79ab-4ba2-93d6-0f065d234b83",
+      "localized_names": {
+        "en": "TSMC 22ULP Process",
+        "zh-TW": "台積電 22ULP 製程"
+      },
+      "name": "台積電 22ULP 製程",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+      "localized_names": {
+        "en": "22 nm-class Low-power Foundry",
+        "zh-TW": "22 奈米級低功耗代工"
+      },
+      "name": "22 奈米級低功耗代工",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "兩廠低功耗產品線都面向消費與連網晶片；製程平台、生態與資格不同。 / Both have low-power platforms for consumer and connected chips; platforms, ecosystem and qualification differ."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:95c8281c-113b-440e-92a2-306f9889f3b1",
+        "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06"
+      ],
+      "id": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+      "localized_names": {
+        "en": "UMC vs TSMC Low-power Foundry Assessment",
+        "zh-TW": "聯電與台積電低功耗代工競爭評估"
+      },
+      "name": "聯電與台積電低功耗代工競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:0615585c-1532-4f95-9e5b-428125ef4e4d",
+      "localized_names": {
+        "en": "KYEC Wafer Probing",
+        "zh-TW": "京元電晶圓針測服務"
+      },
+      "name": "京元電晶圓針測服務",
+      "type": "Evidence",
+      "url": "https://www.kyec.com.tw/en/Service/wafer-probing",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+      "localized_names": {
+        "en": "Logic and Mixed-Signal Wafer Test",
+        "zh-TW": "邏輯與混合訊號晶圓測試"
+      },
+      "name": "邏輯與混合訊號晶圓測試",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "兩者提供邏輯與混合訊號晶圓測試；未證實同一客戶、試產資格或對應溫域。 / Both offer logic and mixed-signal wafer test; no shared customers, qualifications or matching temperature ranges verified."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899",
+        "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+      ],
+      "id": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+      "localized_names": {
+        "en": "Ardentec vs KYEC Wafer Test Assessment",
+        "zh-TW": "欣銓與京元電晶圓測試競爭評估"
+      },
+      "name": "欣銓與京元電晶圓測試競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:619ef716-0931-4e88-80bc-1aea74e9014c",
+      "localized_names": {
+        "en": "GlobalWafers Product Portfolio",
+        "zh-TW": "環球晶產品型錄"
+      },
+      "name": "環球晶產品型錄",
+      "type": "Evidence",
+      "url": "https://www.gw-semi.com/products/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+      ],
+      "id": "entity:34f2303d-7359-4df0-8215-21122d7524d4",
+      "localized_names": {
+        "en": "GlobalWafers Epitaxial Silicon Wafers",
+        "zh-TW": "環球晶磊晶矽晶圓"
+      },
+      "name": "環球晶磊晶矽晶圓",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+      "localized_names": {
+        "en": "Silicon Epitaxial Wafer Materials",
+        "zh-TW": "矽磊晶晶圓材料"
+      },
+      "name": "矽磊晶晶圓材料",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "均提供客製矽磊晶晶圓，電力元件用途有重疊；不推定尺寸、摻雜或客戶認證一致。 / Both offer customized epitaxial wafers with power-device overlap; dimensions, doping and qualification may differ."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:3e42e29b-b319-419d-b197-d24806d2e8cd",
+        "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+      ],
+      "id": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+      "localized_names": {
+        "en": "Wafer Works vs GlobalWafers Epitaxial Wafer Assessment",
+        "zh-TW": "合晶與環球晶矽磊晶競爭評估"
+      },
+      "name": "合晶與環球晶矽磊晶競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143",
+      "localized_names": {
+        "en": "AGC Automotive Curved Cover Glass",
+        "zh-TW": "旭硝子車用曲面玻璃型錄"
+      },
+      "name": "旭硝子車用曲面玻璃型錄",
+      "type": "Evidence",
+      "url": "https://www.agc.com/en/hub/pr/coverglass.html",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+      ],
+      "id": "entity:6eb4ce96-fa38-41df-b562-002f5408dcfe",
+      "localized_names": {
+        "en": "AGC Curved Automotive Cover Glass",
+        "zh-TW": "旭硝子車用曲面蓋板玻璃"
+      },
+      "name": "旭硝子車用曲面蓋板玻璃",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+      "localized_names": {
+        "en": "Curved Automotive Display Cover Glass",
+        "zh-TW": "車載曲面顯示蓋板玻璃"
+      },
+      "name": "車載曲面顯示蓋板玻璃",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "比較車載曲面蓋板，不影響旭硝子在玻璃基板環節的上游身分；沒有同一車廠認證或競標證據。 / Scoped to curved automotive covers, separate from AGC’s upstream glass substrate supply. Shared automaker qualification or bids are not verified."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917",
+        "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+      ],
+      "id": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+      "localized_names": {
+        "en": "G-TECH vs AGC Automotive Cover Glass Assessment",
+        "zh-TW": "正達與旭硝子車載蓋板競爭評估"
+      },
+      "name": "正達與旭硝子車載蓋板競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "evidence_ids": [
+        "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+      ],
+      "id": "entity:efd172fb-172f-4253-bf8d-6efb122852b5",
+      "localized_names": {
+        "en": "KYEC",
+        "zh-TW": "京元電"
+      },
+      "name": "京元電",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+      ],
+      "id": "entity:78497ffa-abc6-471c-8baf-c0707a008429",
+      "localized_names": {
+        "en": "KYEC Wafer Probing Service",
+        "zh-TW": "京元電晶圓針測"
+      },
+      "name": "京元電晶圓針測",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+      ],
+      "id": "entity:e4974e27-a63e-4a75-9597-41698d2b7aa4",
+      "localized_names": {
+        "en": "GlobalWafers",
+        "zh-TW": "環球晶"
+      },
+      "name": "環球晶",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+      ],
+      "id": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+      "localized_names": {
+        "en": "AGC",
+        "zh-TW": "旭硝子"
+      },
+      "name": "旭硝子",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32",
+      "localized_names": {
+        "en": "ASE Test Services",
+        "zh-TW": "日月光測試服務型錄"
+      },
+      "name": "日月光測試服務型錄",
+      "type": "Evidence",
+      "url": "https://ase.aseglobal.com/ch/test-services/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+      ],
+      "id": "entity:52b048d9-1e89-4942-ab39-0e1fab4cd9d4",
+      "localized_names": {
+        "en": "Advanced Semiconductor Engineering",
+        "zh-TW": "日月光半導體"
+      },
+      "name": "日月光半導體",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+      ],
+      "id": "entity:d7981291-983a-47be-8b1c-ac936cab8d6f",
+      "localized_names": {
+        "en": "ASE IC Final Test",
+        "zh-TW": "日月光 IC 成品測試"
+      },
+      "name": "日月光 IC 成品測試",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+      "localized_names": {
+        "en": "Logic and Memory Final Test",
+        "zh-TW": "邏輯與記憶體成品測試"
+      },
+      "name": "邏輯與記憶體成品測試",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "兩者皆提供邏輯與記憶體成品測試；未證實同一客戶或資格。 / Both provide logic and memory final test; no shared qualification or customer is verified."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6",
+        "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+      ],
+      "id": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+      "localized_names": {
+        "en": "Powertech vs ASE Final Test Assessment",
+        "zh-TW": "力成與日月光成品測試競爭評估"
+      },
+      "name": "力成與日月光成品測試競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:3342b678-f22c-4875-93b1-eac64dc28e6c",
+      "localized_names": {
+        "en": "GCE Product Catalog",
+        "zh-TW": "金像電產品型錄"
+      },
+      "name": "金像電產品型錄",
+      "type": "Evidence",
+      "url": "https://www.gce.com.tw/en/product.html",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+      ],
+      "id": "entity:1a93251b-5988-4d23-b3ba-30a3dd9bffec",
+      "localized_names": {
+        "en": "Gold Circuit Electronics",
+        "zh-TW": "金像電"
+      },
+      "name": "金像電",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+      ],
+      "id": "entity:e57a52e1-2d46-4420-a927-ab5c04e1f06e",
+      "localized_names": {
+        "en": "GCE Server and Networking PCB",
+        "zh-TW": "金像電伺服器網通印刷電路板"
+      },
+      "name": "金像電伺服器網通印刷電路板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+      "localized_names": {
+        "en": "High-layer Server and Networking PCB",
+        "zh-TW": "伺服器與網通高層數電路板"
+      },
+      "name": "伺服器與網通高層數電路板",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "雙方有伺服器或網通高層數 PCB 能力，未證實同案競標或同客戶料號。 / Overlapping high-layer server/networking PCB capability, no shared bids or qualified SKU."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912",
+        "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+      ],
+      "id": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+      "localized_names": {
+        "en": "Compeq vs GCE Server PCB Assessment",
+        "zh-TW": "華通與金像電伺服器板競爭評估"
+      },
+      "name": "華通與金像電伺服器板競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "basis": [
+        "比較鎖定伺服器與網通的多層 PCB，不推定同一客戶、規格或認證。 / Scoped to multilayer server and networking boards, not shared customers or qualification."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:f3fde760-400f-4355-851a-a5073ecb154f",
+        "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+      ],
+      "id": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+      "localized_names": {
+        "en": "Allied Circuit vs GCE Server PCB Assessment",
+        "zh-TW": "博智與金像電伺服器板競爭評估"
+      },
+      "name": "博智與金像電伺服器板競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544",
+      "localized_names": {
+        "en": "SHINKO QFN Leadframe Catalog",
+        "zh-TW": "新光電氣 QFN 導線架型錄"
+      },
+      "name": "新光電氣 QFN 導線架型錄",
+      "type": "Evidence",
+      "url": "https://www.shinko.co.jp/english/product/package/leadframe/qfn.php",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+      ],
+      "id": "entity:0e6428bc-5ccf-4b5a-96bc-89f6c1c85dad",
+      "localized_names": {
+        "en": "SHINKO Electric Industries",
+        "zh-TW": "新光電氣"
+      },
+      "name": "新光電氣",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+      ],
+      "id": "entity:bf3e3d6f-a849-409f-ba0d-b930c315004e",
+      "localized_names": {
+        "en": "SHINKO QFN Leadframe",
+        "zh-TW": "新光電氣 QFN 導線架"
+      },
+      "name": "新光電氣 QFN 導線架",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+      "localized_names": {
+        "en": "QFN Leadframe",
+        "zh-TW": "QFN 導線架"
+      },
+      "name": "QFN 導線架",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "僅比較雙方型錄顯示的 QFN 導線架產品重疊；不推定適用於全部無引腳封裝。 / QFN overlap only, not all leadless packages or verified interchangeability."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f",
+        "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+      ],
+      "id": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+      "localized_names": {
+        "en": "CWTC vs SHINKO QFN Leadframe Assessment",
+        "zh-TW": "長科與新光電氣 QFN 導線架競爭評估"
+      },
+      "name": "長科與新光電氣 QFN 導線架競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5",
+      "localized_names": {
+        "en": "Apple US Investment and Arizona Foundry Announcement",
+        "zh-TW": "蘋果美國投資與亞利桑那代工公告"
+      },
+      "name": "蘋果美國投資與亞利桑那代工公告",
+      "notes": "2025-02-24：蘋果確認 Fab 21 晶片生產；只指此設施。 / Apple confirms chip production at Fab 21; facility-specific.",
+      "type": "Evidence",
+      "url": "https://www.apple.com/newsroom/2025/02/apple-will-spend-more-than-500-billion-usd-in-the-us-over-the-next-four-years/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:45e49e3d-a20f-4234-bd68-67903c8114c3",
+      "localized_names": {
+        "en": "Taiwan Glass Subsidiaries and Auto Glass Customers",
+        "zh-TW": "台玻子公司與汽車玻璃客戶"
+      },
+      "name": "台玻子公司與汽車玻璃客戶",
+      "notes": "年度資料列台玻持有台灣汽車玻璃 87%，子公司列名 Toyota 等原廠客戶；不視為台玻母公司直接供貨。 / Annual overview reports 87% ownership and names Toyota among the subsidiary’s OEM customers; not direct parent-company supply.",
+      "type": "Evidence",
+      "url": "https://www.taiwanglass.com/tc/pdf/TG2025ANNUAL.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:5779701d-496b-4fd1-841f-d50c75b58a23",
+      "localized_names": {
+        "en": "Ardentec Giga Solution Subsidiary Announcement",
+        "zh-TW": "欣銓全智科技子公司公告"
+      },
+      "name": "欣銓全智科技子公司公告",
+      "notes": "2025-09-24：欣銓正式稱全智科技為子公司。 / Ardentec identifies Giga Solution as its subsidiary.",
+      "type": "Evidence",
+      "url": "https://esg.ardentec.com/en-global/news/detail/20250918",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:faecfe35-cc69-4004-af7b-75414d046fc1",
+      "localized_names": {
+        "en": "Tera Probe FY2025 Securities Report",
+        "zh-TW": "Tera Probe FY2025 有價證券報告"
+      },
+      "name": "Tera Probe FY2025 有價證券報告",
+      "notes": "截至 2025-12-31，力成直接 11.85%、間接 48.85% 表決權；Tera Probe 持 TeraPower 51.00% 表決權。 / Year-end 2025 voting interests: PTI 11.85% direct and 48.85% indirect; Tera Probe holds 51.00% of TeraPower.",
+      "type": "Evidence",
+      "url": "https://www.teraprobe.com/cwp/wp-content/uploads/FY2025_securityreports.pdf#page=8",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "id": "entity:90aed267-2462-47e1-b29d-0a3a15826d6f",
+      "localized_names": {
+        "en": "Apple",
+        "zh-TW": "蘋果"
+      },
+      "name": "蘋果",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "id": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+      "localized_names": {
+        "en": "Taiwan Autoglass",
+        "zh-TW": "台灣汽車玻璃"
+      },
+      "name": "台灣汽車玻璃",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "id": "entity:d63f4489-fa1c-4eb7-bfbc-a3f1930acfe5",
+      "localized_names": {
+        "en": "Toyota Motor",
+        "zh-TW": "豐田汽車"
+      },
+      "name": "豐田汽車",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:5779701d-496b-4fd1-841f-d50c75b58a23"
+      ],
+      "id": "entity:d8d9c83f-9c2a-4d60-b090-a4c17a9503a0",
+      "localized_names": {
+        "en": "Giga Solution Tech",
+        "zh-TW": "全智科技"
+      },
+      "name": "全智科技",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+      ],
+      "id": "entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38",
+      "localized_names": {
+        "en": "Tera Probe",
+        "zh-TW": "Tera Probe"
+      },
+      "name": "Tera Probe",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+      ],
+      "id": "entity:082b2629-f187-4837-b03b-bfc661b64c96",
+      "localized_names": {
+        "en": "TeraPower Technology",
+        "zh-TW": "TeraPower"
+      },
+      "name": "TeraPower",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "id": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "localized_names": {
+        "en": "TSMC Arizona Fab 21 Foundry Supply to Apple",
+        "zh-TW": "台積電亞利桑那 Fab 21 對蘋果代工"
+      },
+      "name": "台積電亞利桑那 Fab 21 對蘋果代工",
+      "notes": "2025-02-24：蘋果確認 Fab 21 晶片生產；只指此設施。 / Apple confirms chip production at Fab 21; facility-specific.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "id": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "localized_names": {
+        "en": "Taiwan Autoglass Supply to Toyota",
+        "zh-TW": "台灣汽車玻璃對豐田供貨"
+      },
+      "name": "台灣汽車玻璃對豐田供貨",
+      "notes": "年度資料揭露原廠裝車及售後備品用途，未揭露現行合約或車型。 / Disclosed OEM installation and service-parts scope, not a current contract or named vehicle model.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "id": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "localized_names": {
+        "en": "AGC Glass Substrate Supply to G-TECH",
+        "zh-TW": "旭硝子對正達供應玻璃基板"
+      },
+      "name": "旭硝子對正達供應玻璃基板",
+      "notes": "正達 2025 年報第 69 頁列 AGC 為玻璃基板主要供應商；不與車載蓋板的競爭範圍混同。 / FY2025 p.69 names AGC as a principal glass substrate supplier, distinct from cover-glass competition.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:34028485-970c-4e8d-9baa-61998c802dad"
+      ],
+      "id": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+      "localized_names": {
+        "en": "Outsourced Semiconductor Assembly and Test Services",
+        "zh-TW": "半導體封裝與測試委外服務"
+      },
+      "name": "半導體封裝與測試委外服務",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+      ],
+      "id": "entity:ccbb588b-fc6d-4b56-ac09-3882ebde0012",
+      "localized_names": {
+        "en": "Arizona Fab 21 Foundry Chips",
+        "zh-TW": "亞利桑那 Fab 21 代工晶片"
+      },
+      "name": "亞利桑那 Fab 21 代工晶片",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+      ],
+      "id": "entity:58ef8c4a-7bc5-4377-a1e7-ce38fd5691af",
+      "localized_names": {
+        "en": "Automotive Glass",
+        "zh-TW": "汽車玻璃"
+      },
+      "name": "汽車玻璃",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+      ],
+      "id": "entity:326c412b-d165-4d5d-8050-b1d4cadcbb50",
+      "localized_names": {
+        "en": "Glass Substrates",
+        "zh-TW": "玻璃基板"
+      },
+      "name": "玻璃基板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:1dd5de14-3906-48da-86ad-78db6a908b6e",
+      "localized_names": {
+        "en": "TSMC Q3 2026 Consolidated Financial Statements",
+        "zh-TW": "台積電 2026 第三季合併財報"
+      },
+      "name": "台積電 2026 第三季合併財報",
+      "notes": "2026-09-30：JASM 73%，Arizona 100%，ESMC 70%。 / JASM 73%, Arizona 100%, and ESMC 70% as of September 30, 2026.",
+      "type": "Evidence",
+      "url": "https://investor.tsmc.com/sites/ir/financial-report/2026/TSMC%202026Q3%20Consolidated%20Financial%20Statements_E_0.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:6da2c9b9-4736-4717-b6ab-8e2872268f9a",
+      "localized_names": {
+        "en": "UMC FY2025 Form 20-F",
+        "zh-TW": "聯電 2025 年度 20-F"
+      },
+      "name": "聯電 2025 年度 20-F",
+      "notes": "截至 2025-12-31，聯電直接持有 USJC 100%。 / UMC directly held 100% of USJC at year-end 2025.",
+      "type": "Evidence",
+      "url": "https://www.sec.gov/Archives/edgar/data/1033767/000119312526193757/d91630d20f.htm",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:ff74d688-0b44-40c9-9ee5-2e9d629b4ded",
+      "localized_names": {
+        "en": "LITEON Q3 2026 Financial Statements",
+        "zh-TW": "光寶科第三季財報"
+      },
+      "name": "光寶科第三季財報",
+      "notes": "Q3 2026 財報附註 29：持股 40.01%，6 月董事改選後取得實質控制。 / Note 29: 40.01% ownership; substantive control obtained after June board elections.",
+      "type": "Evidence",
+      "url": "https://financialfilings.com/filings/ltc-2301/interim-quarterly-report/2026/75315884/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:a2acdfc4-44da-4717-b09b-c8991232ce9b",
+      "localized_names": {
+        "en": "CWTC Shareholder FAQ",
+        "zh-TW": "長科股東問答"
+      },
+      "name": "長科股東問答",
+      "notes": "公司確認母公司是長華電材。 / CWTC names Chang Wah Electromaterials as its parent.",
+      "type": "Evidence",
+      "url": "https://www.cwtcglobal.com/股東專欄/常見問題",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f",
+      "localized_names": {
+        "en": "Meiko–Allied Circuit Vietnam Joint Venture Announcement",
+        "zh-TW": "名幸與博智越南合資公告"
+      },
+      "name": "名幸與博智越南合資公告",
+      "notes": "2025-09-26 雙方簽訂高層板合資協議，不以合資公告推定量產。 / September 26, 2025 agreement for high-layer boards; not proof of volume production.",
+      "type": "Evidence",
+      "url": "https://www.meiko-elec.com/english/pdf/ir/news/2025/250926.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:08ec7185-2973-48c8-bb21-f76f332a1acb",
+      "localized_names": {
+        "en": "Hon Hai Foxtron Announcement",
+        "zh-TW": "鴻海鴻華先進公告"
+      },
+      "name": "鴻海鴻華先進公告",
+      "notes": "公司稱鴻華先進為子公司。 / Hon Hai describes Foxtron as a subsidiary.",
+      "type": "Evidence",
+      "url": "https://www.honhai.com/en-us/press-center/press-releases/latest-news/1588",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:4544f005-9efc-448b-b1dc-96dde3107dc4",
+      "localized_names": {
+        "en": "Mitsubishi ASX VR-e OEM Announcement",
+        "zh-TW": "三菱 ASX VR-e OEM 公告"
+      },
+      "name": "三菱 ASX VR-e OEM 公告",
+      "notes": "2026-08-17 三菱確認澳紐市場由鴻華先進提供 ASX VR-e OEM 車款，不等於已交車。 / Mitsubishi announces Foxtron OEM model for Australia and New Zealand; not confirmation of units delivered.",
+      "type": "Evidence",
+      "url": "https://www.mitsubishi-motors.com/en/newsroom/newsrelease/2026/20260817_2.html",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "id": "entity:a7854805-94d7-48a5-a977-f9c782e0ee3d",
+      "localized_names": {
+        "en": "Japan Advanced Semiconductor Manufacturing",
+        "zh-TW": "JASM"
+      },
+      "name": "JASM",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "id": "entity:f994a28f-b447-4abe-bda6-4e0431755dde",
+      "localized_names": {
+        "en": "TSMC Arizona",
+        "zh-TW": "台積電亞利桑那"
+      },
+      "name": "台積電亞利桑那",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+      ],
+      "id": "entity:c6bfb4b2-786a-49a5-b9dd-85009f5a9983",
+      "localized_names": {
+        "en": "European Semiconductor Manufacturing Company",
+        "zh-TW": "ESMC"
+      },
+      "name": "ESMC",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6da2c9b9-4736-4717-b6ab-8e2872268f9a"
+      ],
+      "id": "entity:4eb1ad4f-2000-4c99-9d04-08376ad1cf50",
+      "localized_names": {
+        "en": "United Semiconductor Japan",
+        "zh-TW": "聯電日本半導體"
+      },
+      "name": "聯電日本半導體",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:ff74d688-0b44-40c9-9ee5-2e9d629b4ded"
+      ],
+      "id": "entity:f7f9993d-b00d-494d-a323-00e354712a9d",
+      "localized_names": {
+        "en": "U-MEDIA",
+        "zh-TW": "宇智網通"
+      },
+      "name": "宇智網通",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:a2acdfc4-44da-4717-b09b-c8991232ce9b"
+      ],
+      "id": "entity:d50f7244-1f66-4566-92bc-b97bfff71553",
+      "localized_names": {
+        "en": "Chang Wah Electromaterials",
+        "zh-TW": "長華電材"
+      },
+      "name": "長華電材",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+      ],
+      "id": "entity:61a652fe-141a-48b4-8667-c42d9eebc54d",
+      "localized_names": {
+        "en": "Meiko Electronics",
+        "zh-TW": "名幸電子"
+      },
+      "name": "名幸電子",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:08ec7185-2973-48c8-bb21-f76f332a1acb"
+      ],
+      "id": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+      "localized_names": {
+        "en": "Foxtron Vehicle Technologies",
+        "zh-TW": "鴻華先進"
+      },
+      "name": "鴻華先進",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "id": "entity:b80d770d-0830-4c2e-8896-4da2afaf40a6",
+      "localized_names": {
+        "en": "Mitsubishi Motors",
+        "zh-TW": "三菱汽車"
+      },
+      "name": "三菱汽車",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+      ],
+      "id": "entity:4546ae6a-8030-4352-99ae-a48163e4ffde",
+      "localized_names": {
+        "en": "Allied Circuit–Meiko Vietnam Joint Venture",
+        "zh-TW": "博智與名幸越南合資"
+      },
+      "name": "博智與名幸越南合資",
+      "notes": "2025-09-26 雙方簽訂高層板合資協議，不以合資公告推定量產。 / September 26, 2025 agreement for high-layer boards; not proof of volume production.",
+      "type": "Collaboration",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "id": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "localized_names": {
+        "en": "Foxtron OEM Project for Mitsubishi ASX VR-e",
+        "zh-TW": "鴻華先進對三菱的 ASX VR-e OEM 專案"
+      },
+      "name": "鴻華先進對三菱的 ASX VR-e OEM 專案",
+      "notes": "2026-08-17 三菱確認澳紐市場由鴻華先進提供 ASX VR-e OEM 車款，不等於已交車。 / Mitsubishi announces Foxtron OEM model for Australia and New Zealand; not confirmation of units delivered.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+      ],
+      "id": "entity:0dc4cfbd-3faa-4a0b-9124-ab7066a7a783",
+      "localized_names": {
+        "en": "ASX VR-e",
+        "zh-TW": "ASX VR-e"
+      },
+      "name": "ASX VR-e",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:2f5a00c8-2795-4085-886c-c35e9169cefe",
+      "localized_names": {
+        "en": "Allied Supreme TEFPASS PFA Tubing Datasheet",
+        "zh-TW": "上品 TEFPASS PFA 管型錄"
+      },
+      "name": "上品 TEFPASS PFA 管型錄",
+      "type": "Evidence",
+      "url": "https://www.alliedsupreme.com/images/download/download-2/TEFPASS_PFA_Tube_and_Pipe-V2.1-2023-S.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc",
+      "localized_names": {
+        "en": "Entegris FluoroLine Datasheet",
+        "zh-TW": "Entegris FluoroLine 型錄"
+      },
+      "name": "Entegris FluoroLine 型錄",
+      "type": "Evidence",
+      "url": "https://www.entegris.com/content/dam/product-assets/fluorolineultrapurepfatubing/datasheet-fluorolineultrapurepfatubing-A4.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+      ],
+      "id": "entity:469f807a-2287-42ff-8def-b6596917149b",
+      "localized_names": {
+        "en": "Entegris",
+        "zh-TW": "英特格"
+      },
+      "name": "英特格",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:2f5a00c8-2795-4085-886c-c35e9169cefe"
+      ],
+      "id": "entity:d12bbedf-4e9a-4f9e-9c66-e3b347c0d005",
+      "localized_names": {
+        "en": "TEFPASS High-purity PFA Tubing",
+        "zh-TW": "TEFPASS 高純度 PFA 管"
+      },
+      "name": "TEFPASS 高純度 PFA 管",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+      ],
+      "id": "entity:cfea18c2-3ba1-49d4-be3a-5761c6b1a080",
+      "localized_names": {
+        "en": "FluoroLine Ultrapure PFA Tubing",
+        "zh-TW": "FluoroLine 高純度 PFA 管"
+      },
+      "name": "FluoroLine 高純度 PFA 管",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+      "localized_names": {
+        "en": "Semiconductor High-purity Chemical Tubing",
+        "zh-TW": "半導體高純度化學品輸送管"
+      },
+      "name": "半導體高純度化學品輸送管",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "重疊限於半導體高純度化學品使用的 PFA 管，不延伸至槽體，也未證實同一認證。 / Overlap in semiconductor high-purity PFA tubing, not tanks or shared qualification."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:2f5a00c8-2795-4085-886c-c35e9169cefe",
+        "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+      ],
+      "id": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+      "localized_names": {
+        "en": "Allied Supreme vs Entegris High-purity PFA Tubing",
+        "zh-TW": "上品與 Entegris 高純度 PFA 管競爭評估"
+      },
+      "name": "上品與 Entegris 高純度 PFA 管競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b",
+      "localized_names": {
+        "en": "WNC 400GbE Switch Catalog",
+        "zh-TW": "啟碁 400GbE 交換器型錄"
+      },
+      "name": "啟碁 400GbE 交換器型錄",
+      "type": "Evidence",
+      "url": "https://www.wnc.com.tw/en/network-access/network-infrastructure/32port-400gbe-data-center-switch",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:e5266bad-0945-43aa-8061-f535932597dd",
+      "localized_names": {
+        "en": "Edgecore AIS800-64D Catalog",
+        "zh-TW": "Edgecore AIS800-64D 型錄"
+      },
+      "name": "Edgecore AIS800-64D 型錄",
+      "type": "Evidence",
+      "url": "https://www.edge-core.com/product/ais800-64d/",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:e5266bad-0945-43aa-8061-f535932597dd"
+      ],
+      "id": "entity:fa0f3a2b-5b20-4684-bd00-2a7160c220bd",
+      "localized_names": {
+        "en": "Accton",
+        "zh-TW": "智邦"
+      },
+      "name": "智邦",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b"
+      ],
+      "id": "entity:04dd10bd-d9e2-40dd-aa26-208c35c86a37",
+      "localized_names": {
+        "en": "32-port 400GbE Data Center Switch",
+        "zh-TW": "32 埠 400GbE 資料中心交換器"
+      },
+      "name": "32 埠 400GbE 資料中心交換器",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:e5266bad-0945-43aa-8061-f535932597dd"
+      ],
+      "id": "entity:fbe0ae9b-263a-42ab-99ac-bdf813ad4a22",
+      "localized_names": {
+        "en": "AIS800-64D Switch",
+        "zh-TW": "AIS800-64D 交換器"
+      },
+      "name": "AIS800-64D 交換器",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+      "localized_names": {
+        "en": "AI Data Center Ethernet Switching",
+        "zh-TW": "AI 資料中心乙太網路交換器"
+      },
+      "name": "AI 資料中心乙太網路交換器",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "同屬資料中心高速乙太網路設備；400G 與 800G 並非同規替代，Edgecore 為智邦集團品牌。 / Same high-speed data center Ethernet segment, but 400G and 800G are not drop-in alternatives; Edgecore is an Accton group brand."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b",
+        "entity:e5266bad-0945-43aa-8061-f535932597dd"
+      ],
+      "id": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+      "localized_names": {
+        "en": "WNC vs Accton High-speed Switch Assessment",
+        "zh-TW": "啟碁與智邦高速交換器競爭評估"
+      },
+      "name": "啟碁與智邦高速交換器競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f",
+      "localized_names": {
+        "en": "Delta COMPUTEX 2026 Power Portfolio",
+        "zh-TW": "台達 COMPUTEX 2026 能源方案"
+      },
+      "name": "台達 COMPUTEX 2026 能源方案",
+      "type": "Evidence",
+      "url": "https://www.deltaww.com/en-US/landing/Computex-2026",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+      ],
+      "id": "entity:5b3816ce-859b-48bf-aa19-396a17409764",
+      "localized_names": {
+        "en": "Delta Electronics",
+        "zh-TW": "台達電"
+      },
+      "name": "台達電",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+      ],
+      "id": "entity:540786ca-d407-43fa-a2b3-f815682f73f7",
+      "localized_names": {
+        "en": "Delta 110 kW AC-DC Rack Power Shelf",
+        "zh-TW": "台達 110 kW AC-DC 機架電源層架"
+      },
+      "name": "台達 110 kW AC-DC 機架電源層架",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+      "localized_names": {
+        "en": "High-density AI Rack Power",
+        "zh-TW": "AI 機架高密度供電"
+      },
+      "name": "AI 機架高密度供電",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "兩者均展示面向 Vera Rubin 的 110 kW 機架供電方案。比較僅限產品定位，未確認相同設計、量產或採購。 / Both showcased 110 kW power shelves for the Vera Rubin ecosystem; no equivalent design, shipments or procurement established."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba",
+        "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+      ],
+      "id": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+      "localized_names": {
+        "en": "LITEON vs Delta Rack Power Assessment",
+        "zh-TW": "光寶與台達電機架電源競爭評估"
+      },
+      "name": "光寶與台達電機架電源競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561",
+      "localized_names": {
+        "en": "Supermicro GB300 NVL72 Shipment Announcement",
+        "zh-TW": "美超微 GB300 NVL72 出貨公告"
+      },
+      "name": "美超微 GB300 NVL72 出貨公告",
+      "type": "Evidence",
+      "url": "https://www.supermicro.com/en/pressreleases/supermicro-begins-volume-shipments-nvidia-blackwell-ultra-systems-and-rack-plug-and",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+      ],
+      "id": "entity:9433864b-68a1-4ca6-a0e8-fbd11cb3e053",
+      "localized_names": {
+        "en": "Supermicro",
+        "zh-TW": "美超微"
+      },
+      "name": "美超微",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+      ],
+      "id": "entity:858e737a-2e98-4645-ac63-7778d7ee4a6f",
+      "localized_names": {
+        "en": "Supermicro GB300 NVL72 Liquid-cooled Rack",
+        "zh-TW": "美超微 GB300 NVL72 液冷機架"
+      },
+      "name": "美超微 GB300 NVL72 液冷機架",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+      "localized_names": {
+        "en": "AI Liquid-cooled Rack Integration",
+        "zh-TW": "AI 液冷機架整合"
+      },
+      "name": "AI 液冷機架整合",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "同為 GB300 NVL72 液冷機架整合；美超微公告量產出貨，鴻海來源僅確認展示整合。 / GB300 NVL72 rack integration overlaps; Supermicro disclosed volume shipments, while the Foxconn source supports demonstration only."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:8f129cd0-d3c6-490c-a0bb-6e4d07718a31",
+        "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+      ],
+      "id": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+      "localized_names": {
+        "en": "Foxconn vs Supermicro Liquid-cooled Rack Assessment",
+        "zh-TW": "鴻海與美超微液冷機架競爭評估"
+      },
+      "name": "鴻海與美超微液冷機架競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:6d457835-d679-4d23-8231-9aa548697838",
+      "localized_names": {
+        "en": "AUO Product Overview",
+        "zh-TW": "友達產品總覽"
+      },
+      "name": "友達產品總覽",
+      "type": "Evidence",
+      "url": "https://www.auo.com/en-global/products/overview",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:f55c6d76-d707-4a3c-b864-94a488212617",
+      "localized_names": {
+        "en": "Innolux Company and Products",
+        "zh-TW": "群創公司與產品介紹"
+      },
+      "name": "群創公司與產品介紹",
+      "type": "Evidence",
+      "url": "https://hrrecruit.innolux.com/globalweb_s/en/about.html",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+      ],
+      "id": "entity:610dd86b-1b3f-4bad-9748-fa0b1a927057",
+      "localized_names": {
+        "en": "Innolux",
+        "zh-TW": "群創"
+      },
+      "name": "群創",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:6d457835-d679-4d23-8231-9aa548697838"
+      ],
+      "id": "entity:d1feadd4-be90-4940-939e-3aeed7c81bf7",
+      "localized_names": {
+        "en": "AUO Automotive Displays",
+        "zh-TW": "友達車用顯示面板"
+      },
+      "name": "友達車用顯示面板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+      ],
+      "id": "entity:60a9b5f3-25f2-4c98-9d1f-b628055ec3ef",
+      "localized_names": {
+        "en": "Innolux Automotive Displays",
+        "zh-TW": "群創車用顯示面板"
+      },
+      "name": "群創車用顯示面板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+      "localized_names": {
+        "en": "Automotive Display Panels",
+        "zh-TW": "車用顯示面板"
+      },
+      "name": "車用顯示面板",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "競爭範圍限車用顯示；不把車載 TFT-LCD 與透明 Micro LED 概念車當同規產品。 / Automotive display category only; TFT-LCD and concept transparent Micro LED are not equivalent."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:6d457835-d679-4d23-8231-9aa548697838",
+        "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+      ],
+      "id": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+      "localized_names": {
+        "en": "AUO vs Innolux Automotive Displays",
+        "zh-TW": "友達與群創車用顯示競爭評估"
+      },
+      "name": "友達與群創車用顯示競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:d4b62756-4b8d-43af-845e-7888f89891a3",
+      "localized_names": {
+        "en": "Nittobo 2026 Integrated Report",
+        "zh-TW": "日東紡 2026 整合報告"
+      },
+      "name": "日東紡 2026 整合報告",
+      "type": "Evidence",
+      "url": "https://www.nittobo.co.jp/eng/ir/pdf/Nittobo_Integrated-Report_2026.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+      ],
+      "id": "entity:45d7e771-1d72-4044-9d44-cbb4c74ed0a0",
+      "localized_names": {
+        "en": "Nittobo",
+        "zh-TW": "日東紡"
+      },
+      "name": "日東紡",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+      ],
+      "id": "entity:c4bee7ed-b2b5-4423-aff0-dd9abeff4bee",
+      "localized_names": {
+        "en": "Nittobo Low-Dk and Low-CTE Glass Fiber",
+        "zh-TW": "日東紡低介電與低熱膨脹玻纖"
+      },
+      "name": "日東紡低介電與低熱膨脹玻纖",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+      "localized_names": {
+        "en": "Electronic Glass Fiber for High-speed Boards",
+        "zh-TW": "高速電路板電子級玻纖"
+      },
+      "name": "高速電路板電子級玻纖",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "同有低介電或低熱膨脹材料用途；未證實所有規格或纖維布與紗線可替換。 / Low-Dk or low-CTE materials overlap in use; no blanket equivalence of fabric, yarn or grades."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18",
+        "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+      ],
+      "id": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+      "localized_names": {
+        "en": "Taiwan Glass vs Nittobo Electronic Fiberglass",
+        "zh-TW": "台玻與日東紡電子級玻纖競爭評估"
+      },
+      "name": "台玻與日東紡電子級玻纖競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:d37c8a74-258a-4034-9b73-100a92193d61",
+      "localized_names": {
+        "en": "TSMC 3DFabric Substrate Partners",
+        "zh-TW": "台積電 3DFabric 載板合作者"
+      },
+      "name": "台積電 3DFabric 載板合作者",
+      "type": "Evidence",
+      "url": "https://www.tsmc.com/chinese/dedicatedFoundry/oip/3dfabric_alliance",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:9a285313-2418-4d51-8014-dea8009e3740",
+      "localized_names": {
+        "en": "Kinsus IC Substrate Catalog",
+        "zh-TW": "景碩 IC 載板型錄"
+      },
+      "name": "景碩 IC 載板型錄",
+      "type": "Evidence",
+      "url": "https://www.kinsus.com.tw/en/product/products/products_overview",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a285313-2418-4d51-8014-dea8009e3740"
+      ],
+      "id": "entity:a2b9fc8a-3c46-4bbf-8cac-102a2d0ed4fa",
+      "localized_names": {
+        "en": "Kinsus",
+        "zh-TW": "景碩"
+      },
+      "name": "景碩",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:d37c8a74-258a-4034-9b73-100a92193d61"
+      ],
+      "id": "entity:05b5efec-23c1-4238-929b-6dd059c95baf",
+      "localized_names": {
+        "en": "Unimicron IC Substrates",
+        "zh-TW": "欣興 IC 載板"
+      },
+      "name": "欣興 IC 載板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:9a285313-2418-4d51-8014-dea8009e3740"
+      ],
+      "id": "entity:53c2ecf8-b20e-433c-9f06-7c0209139940",
+      "localized_names": {
+        "en": "Kinsus IC Substrates",
+        "zh-TW": "景碩 IC 載板"
+      },
+      "name": "景碩 IC 載板",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+      "localized_names": {
+        "en": "Semiconductor IC Substrates",
+        "zh-TW": "半導體 IC 載板"
+      },
+      "name": "半導體 IC 載板",
+      "type": "MarketSegment",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "basis": [
+        "雙方皆列為載板供應能力廠商，限共同產品類別；不推定 KF 產能、同一客戶或同一料號。 / Scoped to the IC-substrate product category, not shared KF capacity, customers or SKUs."
+      ],
+      "competition_type": "DIRECT",
+      "evidence_ids": [
+        "entity:d37c8a74-258a-4034-9b73-100a92193d61",
+        "entity:9a285313-2418-4d51-8014-dea8009e3740"
+      ],
+      "id": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+      "localized_names": {
+        "en": "Unimicron vs Kinsus IC Substrates",
+        "zh-TW": "欣興與景碩 IC 載板競爭評估"
+      },
+      "name": "欣興與景碩 IC 載板競爭評估",
+      "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+      "type": "CompetitionAssessment",
+      "verification_status": "analyst_inferred"
+    },
+    {
+      "id": "entity:7ad5508f-0234-4516-b9e4-3830f628f413",
+      "localized_names": {
+        "en": "UMC Silicon Photonics Volume Delivery Announcement",
+        "zh-TW": "聯電矽光子量產交付公告"
+      },
+      "name": "聯電矽光子量產交付公告",
+      "notes": "2026-07-14：聯電公告新加坡廠首批量產晶圓交付 SILITH；不等於所有矽光子平台均已量產。 / First volume wafer delivery from Singapore to SILITH; not all photonics platforms.",
+      "type": "Evidence",
+      "url": "https://www.umc.com/en/News/press_release/Content/technology_related/20260714",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e",
+      "localized_names": {
+        "en": "Allied Supreme FY2025 Annual Report",
+        "zh-TW": "上品 2025 年報"
+      },
+      "name": "上品 2025 年報",
+      "notes": "第 100 頁列 Chemours、Daikin、3M 為原料來源；不推定現行合約、品項或數量。 / P.100 names raw-material sources; no assertion of current contracts, specific grades or volumes.",
+      "type": "Evidence",
+      "url": "https://www.alliedsupreme.com/images/investor/AnnualReport/Annual_Report_2025_EN.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:e985f81f-76fb-442e-b862-e61a4b9afe02",
+      "localized_names": {
+        "en": "Wafer Works FY2025 Audited Financial Statements",
+        "zh-TW": "合晶 2025 年度查核財報"
+      },
+      "name": "合晶 2025 年度查核財報",
+      "notes": "截至 2025-12-31 睿晶科技為 100% 子公司。 / Silicon Works Technology was wholly owned at FY2025 year-end.",
+      "type": "Evidence",
+      "url": "https://www.waferworks.com/uploads/investor/financial_information/annual_reports/2025_q4_con.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:70e9bc81-a3cf-46de-b046-bcd2fb39e856",
+      "localized_names": {
+        "en": "WNC FY2025 Standalone Financial Statements",
+        "zh-TW": "啟碁 2025 年度個體財報"
+      },
+      "name": "啟碁 2025 年度個體財報",
+      "notes": "截至 2025-12-31 直接持有 WNC USA 100%。 / Directly owned WNC USA 100% as of FY2025 year-end.",
+      "type": "Evidence",
+      "url": "https://www.wnc.com.tw/uploads/files/shares/financial/WNC_2025_Q4_tc.pdf",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "id": "entity:ce7fd3da-64d8-4d32-a97d-367e5eee1c8c",
+      "localized_names": {
+        "en": "SILITH Technology",
+        "zh-TW": "SILITH"
+      },
+      "name": "SILITH",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08",
+      "localized_names": {
+        "en": "Chemours",
+        "zh-TW": "科慕"
+      },
+      "name": "科慕",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9",
+      "localized_names": {
+        "en": "Daikin Industries",
+        "zh-TW": "大金工業"
+      },
+      "name": "大金工業",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:77fdd193-85a4-4c91-882c-848c3b4ade5a",
+      "localized_names": {
+        "en": "3M",
+        "zh-TW": "3M"
+      },
+      "name": "3M",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:e985f81f-76fb-442e-b862-e61a4b9afe02"
+      ],
+      "id": "entity:5b298237-9614-419a-be1b-1c1e3ce918bd",
+      "localized_names": {
+        "en": "Silicon Works Technology",
+        "zh-TW": "睿晶科技"
+      },
+      "name": "睿晶科技",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:70e9bc81-a3cf-46de-b046-bcd2fb39e856"
+      ],
+      "id": "entity:f7b73356-73cb-4342-a8e4-1e8e1b6d045d",
+      "localized_names": {
+        "en": "WNC USA Corporation",
+        "zh-TW": "WNC 美國"
+      },
+      "name": "WNC 美國",
+      "type": "Company",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "id": "entity:891261dc-d960-44d5-a561-c1f7d2021f0f",
+      "localized_names": {
+        "en": "Silicon Photonics PIC Wafers",
+        "zh-TW": "矽光子積體電路晶圓"
+      },
+      "name": "矽光子積體電路晶圓",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "localized_names": {
+        "en": "Fluoromaterial Production Raw Materials",
+        "zh-TW": "氟素材料製程原料"
+      },
+      "name": "氟素材料製程原料",
+      "type": "Product",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+      ],
+      "id": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "localized_names": {
+        "en": "UMC Silicon Photonics Wafer Delivery to SILITH",
+        "zh-TW": "聯電對 SILITH 矽光子晶圓交付"
+      },
+      "name": "聯電對 SILITH 矽光子晶圓交付",
+      "notes": "2026-07-14：聯電公告新加坡廠首批量產晶圓交付 SILITH；不等於所有矽光子平台均已量產。 / First volume wafer delivery from Singapore to SILITH; not all photonics platforms.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+      "localized_names": {
+        "en": "Chemours Raw Materials Supply to Allied Supreme",
+        "zh-TW": "科慕對上品原料供應"
+      },
+      "name": "科慕對上品原料供應",
+      "notes": "第 100 頁列 Chemours、Daikin、3M 為原料來源；不推定現行合約、品項或數量。 / P.100 names raw-material sources; no assertion of current contracts, specific grades or volumes.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+      "localized_names": {
+        "en": "Daikin Raw Materials Supply to Allied Supreme",
+        "zh-TW": "大金工業對上品原料供應"
+      },
+      "name": "大金工業對上品原料供應",
+      "notes": "第 100 頁列 Chemours、Daikin、3M 為原料來源；不推定現行合約、品項或數量。 / P.100 names raw-material sources; no assertion of current contracts, specific grades or volumes.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "evidence_ids": [
+        "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+      ],
+      "id": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+      "localized_names": {
+        "en": "3M Raw Materials Supply to Allied Supreme",
+        "zh-TW": "3M對上品原料供應"
+      },
+      "name": "3M對上品原料供應",
+      "notes": "第 100 頁列 Chemours、Daikin、3M 為原料來源；不推定現行合約、品項或數量。 / P.100 names raw-material sources; no assertion of current contracts, specific grades or volumes.",
+      "type": "SupplyRelationship",
+      "verification_status": "officially_disclosed"
+    },
+    {
+      "id": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+      "localized_names": {
+        "en": "Yuanta/P-shares Taiwan Top 50 ETF",
+        "zh-TW": "元大台灣50"
+      },
+      "name": "元大台灣50",
+      "notes": "持股基準日 / As of 2026-11-20（台灣時間 / Taiwan time）。50 檔股票 / equities。權重依來源所列；不含現金與期貨 / Published weights; cash and futures excluded. 前十大 79.72%。投信持股頁列台積電 60.10%；另依股數、收盤價與基金淨資產估算，約占淨資產 59.13%，兩者口徑不同。 / Top 10: 79.72% on the reported basis. TSMC: 60.10% reported; approximately 59.13% of NAV using shares and closing price.\n\n股票名單 / Equity holdings：2330 台積電 60.10%；2454 聯發科 6.06%；2317 鴻海 3.15%；2308 台達電 2.13%；3711 日月光投控 1.86%；2891 中信金 1.48%；2881 富邦金 1.40%；1303 南亞 1.25%；2303 聯電 1.15%；2882 國泰金 1.14%；2383 台光電 1.00%；2887 台新新光金 0.98%；3017 奇鋐 0.87%；3037 欣興 0.87%；2885 元大金 0.84%；2382 廣達 0.82%；2884 玉山金 0.78%；2412 中華電 0.76%；2345 智邦 0.75%；2886 兆豐金 0.75%；2357 華碩 0.63%；2890 永豐金 0.60%；2883 凱基金 0.58%；2327 國巨 0.57%；3231 緯創 0.55%；2880 華南金 0.54%；3443 創意 0.53%；2892 第一金 0.52%；6669 緯穎 0.50%；1216 統一 0.46%；2301 光寶科 0.42%；2360 致茂 0.42%；2408 南亞科 0.42%；3008 大立光 0.42%；6446 藥華藥 0.42%；3653 健策 0.40%；2059 川湖 0.36%；5880 合庫金 0.35%；2344 華邦電 0.34%；2603 長榮 0.31%；2368 金像電 0.30%；4958 臻鼎-KY 0.30%；2395 研華 0.29%；3665 貿聯-KY 0.29%；2449 京元電子 0.22%；4904 遠傳 0.22%；3045 台灣大 0.21%；7769 鴻勁 0.20%；8046 南電 0.19%；6505 台塑化 0.11%。\n\n比較：0050／00881 約 67.81%，0050／00878 約 18.03%，00881／00878 約 15.01%。各基金股票部位各自換算為 100% 後，逐股取較低權重加總；不是淨資產重疊率。 / Overlap is the sum of smaller common weights after normalizing each equity sleeve to 100%; not a NAV overlap measure.",
+      "ticker": "0050",
+      "type": "ETF",
+      "url": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+      "verification_status": "corroborated",
+      "website": "https://www.yuantaetfs.com/product/detail/0050/ratio"
+    },
+    {
+      "id": "entity:7593c26a-e37e-41bf-be56-392fee12bebe",
+      "localized_names": {
+        "en": "Cathay MSCI Taiwan ESG Sustainability High Dividend Yield ETF",
+        "zh-TW": "國泰永續高股息"
+      },
+      "name": "國泰永續高股息",
+      "notes": "持股基準日 / As of 2026-11-20（台灣時間 / Taiwan time）。29 檔股票 / equities。權重依來源所列；不含現金與期貨 / Published weights; cash and futures excluded. 前十大 54.06%；最大持股中信金 11.45%。完整名單使用第三方持股快照，並非投信同日申贖清單。 / Top 10: 54.06%. Largest: CTBC Financial 11.45%. Third-party portfolio snapshot, not the issuer’s creation basket.\n\n股票名單 / Equity holdings：2891 中信金 11.45%；2382 廣達 8.19%；2882 國泰金 6.59%；2357 華碩 5.42%；2603 長榮 4.58%；2880 華南金 3.86%；2887 台新新光金 3.77%；2886 兆豐金 3.48%；2881 富邦金 3.40%；2379 瑞昱 3.32%；2412 中華電 3.26%；3045 台灣大 3.13%；2454 聯發科 3.11%；2303 聯電 2.86%；4904 遠傳 2.84%；1216 統一 2.68%；2885 元大金 2.56%；3034 聯詠 2.45%；5876 上海商銀 2.27%；3231 緯創 2.24%；2618 長榮航 2.21%；3711 日月光投控 2.20%；2301 光寶科 2.04%；2912 統一超 1.94%；5347 世界 1.92%；4958 臻鼎-KY 1.64%；2376 技嘉 1.60%；5871 中租-KY 1.46%；2356 英業達 1.36%。\n\n比較：0050／00881 約 67.81%，0050／00878 約 18.03%，00881／00878 約 15.01%。各基金股票部位各自換算為 100% 後，逐股取較低權重加總；不是淨資產重疊率。 / Overlap is the sum of smaller common weights after normalizing each equity sleeve to 100%; not a NAV overlap measure.",
+      "ticker": "00878",
+      "type": "ETF",
+      "url": "https://www.etfinfo.tw/etf/00878/holdings",
+      "verification_status": "corroborated",
+      "website": "https://www.cathaysite.com.tw/proj/SPOCathayETF/00878/"
+    },
+    {
+      "id": "entity:89407208-acc8-471a-a908-e655c58685a5",
+      "localized_names": {
+        "en": "Cathay Taiwan Technology Leader ETF",
+        "zh-TW": "國泰台灣科技龍頭"
+      },
+      "name": "國泰台灣科技龍頭",
+      "notes": "持股基準日 / As of 2026-11-20（台灣時間 / Taiwan time）。30 檔股票 / equities。權重依來源所列；不含現金與期貨 / Published weights; cash and futures excluded. 前十大 79.40%；最大持股台積電 46.79%。完整名單使用第三方持股快照，並非投信同日申贖清單。 / Top 10: 79.40%. Largest: TSMC 46.79%. Third-party portfolio snapshot, not the issuer’s creation basket.\n\n股票名單 / Equity holdings：2330 台積電 46.79%；2454 聯發科 10.44%；2317 鴻海 5.32%；2308 台達電 3.86%；2382 廣達 2.62%；3017 奇鋐 2.36%；2345 智邦 2.20%；2383 台光電 2.10%；2303 聯電 1.92%；3231 緯創 1.79%；3037 欣興 1.69%；2059 川湖 1.34%；2360 致茂 1.29%；2379 瑞昱 1.26%；3008 大立光 1.23%；6223 旺矽 1.16%；3045 台灣大 1.14%；4904 遠傳 1.03%；3034 聯詠 0.97%；2368 金像電 0.94%；3665 貿聯-KY 0.94%；4958 臻鼎-KY 0.93%；3044 健鼎 0.81%；2449 京元電子 0.72%；2313 華通 0.67%；6274 台燿 0.67%；6770 力積電 0.64%；3189 景碩 0.60%；8046 南電 0.59%；3081 聯亞 0.51%。\n\n比較：0050／00881 約 67.81%，0050／00878 約 18.03%，00881／00878 約 15.01%。各基金股票部位各自換算為 100% 後，逐股取較低權重加總；不是淨資產重疊率。 / Overlap is the sum of smaller common weights after normalizing each equity sleeve to 100%; not a NAV overlap measure.",
+      "ticker": "00881",
+      "type": "ETF",
+      "url": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+      "verification_status": "corroborated",
+      "website": "https://www.cathaysite.com.tw/ETF/detail/ECR"
+    },
+    {
+      "id": "entity:a505a51c-2c01-40cc-8bbc-7944ffa82703",
+      "localized_names": {
+        "en": "Taishin NYSE FactSet Japan Semiconductor ETF",
+        "zh-TW": "台新日本半導體"
+      },
+      "name": "台新日本半導體",
+      "notes": "持股基準日 / As of 2026-11-18。50 檔日本股票 / Japanese equities。權重依來源所列；不含現金與期貨 / Published weights; cash and futures excluded. 日本股票另列，未納入台股 ETF 同日重疊比較。第三方持股快照：前十大 81.69%，前三大 42.43%。 / Separate Japan equity snapshot from a third-party source; excluded from the Taiwan ETF overlap comparison. Top 10: 81.69%; top 3: 42.43%.\n\n日本交易所證券代號 / Japan Exchange security codes：6857 Advantest 16.50%；8035 Tokyo Electron 15.61%；285A Kioxia Holdings 10.32%；6723 Renesas Electronics 8.25%；6920 Lasertec 8.02%；6146 DISCO 7.16%；7735 SCREEN Holdings 5.16%；6525 Kokusai Electric 4.66%；6963 ROHM 3.52%；3436 SUMCO 2.49%；7729 1.79%；6770 ALPS ALPINE 1.31%；3132 1.30%；6728 1.21%；6871 1.15%；6526 1.14%；6323 1.11%；6590 0.64%；429A 0.52%；6315 0.51%；167A 0.50%；6941 0.48%；6707 0.42%；6055 0.40%；6875 0.38%；268A 0.37%；6947 0.29%；6855 0.29%；2760 0.25%；6613 0.25%；6235 0.24%；6929 0.23%；2737 0.22%；3445 0.21%；7433 0.20%；6227 0.18%；7717 0.14%；6266 0.13%；6387 0.13%；6264 0.12%；6627 0.10%；6677 0.07%；7725 0.07%；6927 0.05%；6616 0.05%；6730 0.04%；6832 0.04%；6928 0.04%；6337 0.04%；3321 0.03%。",
+      "ticker": "00951",
+      "type": "ETF",
+      "url": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00951.TW",
+      "verification_status": "reported",
+      "website": "https://www.tsit.com.tw/ETF/Home/ETFSeriesDetail/00951"
+    }
+  ],
+  "ontology_id": "tw-edge-ai-company-intelligence",
+  "ontology_version": "1.0.0"
+}

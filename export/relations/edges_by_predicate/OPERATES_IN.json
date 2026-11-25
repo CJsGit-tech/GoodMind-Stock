@@ -1,0 +1,12 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:adprod"
+    ],
+    "from": "company:adlink",
+    "id": "edge:022",
+    "predicate": "OPERATES_IN",
+    "to": "industry:industrial-computing",
+    "verification_status": "officially_disclosed"
+  }
+]

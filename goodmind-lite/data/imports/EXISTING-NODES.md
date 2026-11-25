@@ -1,0 +1,350 @@
+# Existing nodes you must REUSE (do not create duplicates). Use these ids in edges.
+
+_Generated from data/db.json on 2026-11-25 (1046 nodes)._
+
+## Industry
+- industry:industrial-computing — 工業電腦 (Industrial Computing)
+- industry:robotics — 機器人與自動化 (Robotics & Automation)
+- industry:semiconductors — 半導體 (Semiconductors)
+- industry:electronic-components — 電子零組件與材料 (Electronic Components)
+- industry:display-optics — 顯示與光學玻璃 (Display & Optics)
+- industry:ai-infrastructure — AI 資料中心基礎設施 (AI Data Center Infrastructure)
+- industry:automotive — 汽車 (Automotive)
+- industry:consumer-electronics — 消費電子 (Consumer Electronics)
+- industry:chemicals-materials — 化學材料 (Chemicals & Materials)
+- industry:networking — 網通設備 (Networking Equipment)
+- industry:biotech-pharma — 生技醫藥 (Biotech & Pharmaceuticals)
+- industry:shipping — 航運 (Shipping)
+- industry:banking — 銀行 (Banking)
+- industry:food-service — 餐飲 (Food Service & Restaurants)
+- industry:steel — 鋼鐵 (Steel)
+
+## MarketSegment
+- segment:robotic-edge-computing — 機器人邊緣運算 (Robotic Edge Computing)
+- segment:2-nm-class-advanced-foundry — 2 奈米級先進晶圓代工 (2 nm-class Advanced Foundry)
+- segment:22-nm-class-low-power-foundry — 22 奈米級低功耗代工 (22 nm-class Low-power Foundry)
+- segment:logic-and-mixed-signal-wafer-test — 邏輯與混合訊號晶圓測試 (Logic and Mixed-Signal Wafer Test)
+- segment:silicon-epitaxial-wafer-materials — 矽磊晶晶圓材料 (Silicon Epitaxial Wafer Materials)
+- segment:curved-automotive-display-cover-glass — 車載曲面顯示蓋板玻璃 (Curved Automotive Display Cover Glass)
+- segment:logic-and-memory-final-test — 邏輯與記憶體成品測試 (Logic and Memory Final Test)
+- segment:high-layer-server-and-networking-pcb — 伺服器與網通高層數電路板 (High-layer Server and Networking PCB)
+- segment:qfn-leadframe — QFN 導線架 (QFN Leadframe)
+- segment:semiconductor-high-purity-chemical-tubing — 半導體高純度化學品輸送管 (Semiconductor High-purity Chemical Tubing)
+- segment:ai-data-center-ethernet-switching — AI 資料中心乙太網路交換器 (AI Data Center Ethernet Switching)
+- segment:high-density-ai-rack-power — AI 機架高密度供電 (High-density AI Rack Power)
+- segment:ai-liquid-cooled-rack-integration — AI 液冷機架整合 (AI Liquid-cooled Rack Integration)
+- segment:automotive-display-panels — 車用顯示面板 (Automotive Display Panels)
+- segment:electronic-glass-fiber-for-high-speed-boards — 高速電路板電子級玻纖 (Electronic Glass Fiber for High-speed Boards)
+- segment:semiconductor-ic-substrates — 半導體 IC 載板 (Semiconductor IC Substrates)
+- segment:industrial-edge-ai — 工業邊緣 AI 電腦 (Industrial Edge AI Computing)
+- segment:amr — 自主移動機器人 AMR (Autonomous Mobile Robots)
+- segment:logic-foundry — 邏輯晶圓代工（其他節點與海外晶圓廠） (Logic Foundry (other nodes & overseas fabs))
+- segment:specialty-foundry — 特殊製程代工（BCD、矽光子） (Specialty Foundry (BCD, silicon photonics))
+- segment:advanced-packaging — 先進封裝 (Advanced Packaging)
+- segment:ai-chips-modules — AI 晶片與模組 (AI Chips & Modules)
+- segment:silicon-photonics — 矽光子元件 (Silicon Photonics Devices)
+- segment:display-glass — 顯示用玻璃基板 (Display Glass Substrates)
+- segment:microled-display — 透明與 Micro LED 顯示 (Transparent & Micro LED Displays)
+- segment:ai-servers — AI 伺服器與 HPC 系統 (AI Servers & HPC Systems)
+- segment:automotive-glass — 汽車玻璃 (Automotive Glass)
+- segment:vehicles — 整車與電動車 (Vehicles & EVs)
+- segment:consumer-devices — 消費電子品牌 (Consumer Device Brands)
+- segment:fluoro-materials — 氟素材料 (Fluoropolymer Materials)
+- segment:wifi-networking — 無線網通與 Wi-Fi 設備 (Wireless & Wi-Fi Equipment)
+- segment:essential-thrombocythemia-therapy — 原發性血小板過多症治療藥物 (Essential Thrombocythemia (ET) Therapeutics)
+- segment:polycythemia-vera-therapy — 真性紅血球增多症治療藥物 (Polycythemia Vera (PV) Therapeutics)
+- segment:us-specialty-drug-access — 美國特殊藥品通路與給付 (US Specialty Drug Distribution & Payer Access)
+- segment:asia-europe-container-liner — 亞歐貨櫃班輪運輸 (Asia–Europe Container Liner Shipping)
+- segment:india-middle-east-us-east-coast-container-liner — 印度/中東–美東貨櫃班輪運輸 (India/Middle East–US East Coast Container Liner Shipping)
+- segment:suez-canal-transit — 蘇伊士運河通行 (Suez Canal Transit)
+- segment:deposits-and-payments — 存款與支付服務 (Deposits and Payment Services)
+- segment:corporate-and-household-lending — 企業與個人放款 (Corporate and Household Lending)
+- segment:wealth-management — 財富管理 (Wealth Management)
+- segment:taiwan-quick-service-restaurants — 台灣速食餐飲 (Taiwan Quick-service Restaurants)
+- segment:taiwan-packaged-fresh-lettuce-retail — 台灣盒裝生菜零售 (Taiwan Packaged Fresh Lettuce Retail)
+- segment:farm-produce-and-food-testing-services — 農產供應與食品檢驗服務 (Farm Produce Supply and Food Testing Services)
+- segment:construction-rebar — 建築鋼筋與鋼筋加工 (Construction Rebar & Rebar Processing)
+- segment:structural-steel-sections — 結構用型鋼 (Structural Steel Sections (H-beams etc.))
+- segment:steel-structure-fabrication — 鋼構加工與工程 (Steel Structure Fabrication & Erection)
+- segment:sa-sportswear-odm — 運動成衣設計製造（ODM）
+- segment:sa-v3-low-cte-ic-substrate-glass-yarn — 低熱膨脹 IC 載板玻纖紗
+- segment:sa-v5-taiwan-enterprise-and-government-24-7-outsourced-soc-monitoring — 台灣企業與政府7x24 SOC委外監控服務
+
+## Company
+- company:adlink — 凌華 (ADLINK) · 6166
+- company:nexcom — 新漢 (NEXCOM) · 8234
+- company:nexcobot — NexCOBOT
+- company:aaeon — 研揚 (AAEON) · 6579
+- company:axiomtek — 艾訊 (Axiomtek) · 3088
+- company:advantech — 研華 (Advantech) · 2395
+- company:innodisk — 宜鼎 (Innodisk) · 5289
+- company:aetina — 安提 (Aetina)
+- company:foxconn — 鴻海 (Foxconn) · 2317
+- company:farobot — FARobot
+- company:aeolus-robotics — Aeolus Robotics
+- company:mobisnet — MOBISNET
+- company:deepx — DEEPX
+- company:umc — 聯電 (UMC) · 2303
+- company:ardentec — 欣銓 (Ardentec) · 3264
+- company:powertech — 力成 (Powertech Technology) · 6239
+- company:tsmc — 台積電 (TSMC) · 2330
+- company:wafer-works — 合晶 (Wafer Works) · 6182
+- company:allied-supreme — 上品 (Allied Supreme) · 4770
+- company:g-tech — 正達 (G-TECH Optoelectronics) · 3149
+- company:wnc — 啟碁 (WNC Corporation) · 6285
+- company:liteon — 光寶科 (LITEON Technology) · 2301
+- company:auo — 友達 (AUO) · 2409
+- company:taiwan-glass — 台玻 (Taiwan Glass) · 1802
+- company:unimicron — 欣興 (Unimicron) · 3037
+- company:compeq — 華通 (Compeq Manufacturing) · 2313
+- company:allied-circuit — 博智 (Allied Circuit) · 8155
+- company:chang-wah-technology — 長科 (Chang Wah Technology) · 6548
+- company:qct — 雲達科技 (Quanta Cloud Technology)
+- company:nvidia — 輝達 (NVIDIA) · NVDA
+- company:bull — Bull
+- company:samsung-electronics — 三星電子 (Samsung Electronics)
+- company:kyec — 京元電 (KYEC) · 2449
+- company:globalwafers — 環球晶 (GlobalWafers) · 6488
+- company:agc — 旭硝子 (AGC)
+- company:ase — 日月光半導體 (Advanced Semiconductor Engineering)
+- company:gce — 金像電 (Gold Circuit Electronics) · 2368
+- company:shinko — 新光電氣 (SHINKO Electric Industries)
+- company:apple — 蘋果 (Apple) · AAPL
+- company:taiwan-autoglass — 台灣汽車玻璃 (Taiwan Autoglass)
+- company:toyota — 豐田汽車 (Toyota Motor)
+- company:giga-solution — 全智科技 (Giga Solution Tech)
+- company:tera-probe — Tera Probe
+- company:terapower — TeraPower (TeraPower Technology)
+- company:jasm — 日本先進半導體製造 (Japan Advanced Semiconductor Manufacturing)
+- company:tsmc-arizona — 台積電亞利桑那 (TSMC Arizona)
+- company:esmc — 歐洲半導體製造 (European Semiconductor Manufacturing Company)
+- company:usjc — 聯電日本半導體 (United Semiconductor Japan)
+- company:u-media — 宇智網通 (U-MEDIA)
+- company:chang-wah-electromaterials — 長華電材 (Chang Wah Electromaterials) · 8070
+- company:meiko — 名幸電子 (Meiko Electronics)
+- company:foxtron — 鴻華先進 (Foxtron Vehicle Technologies)
+- company:mitsubishi-motors — 三菱汽車 (Mitsubishi Motors)
+- company:entegris — 英特格 (Entegris)
+- company:accton — 智邦 (Accton) · 2345
+- company:delta — 台達電 (Delta Electronics) · 2308
+- company:supermicro — 美超微 (Supermicro)
+- company:innolux — 群創 (Innolux) · 3481
+- company:nittobo — 日東紡 (Nittobo) · 3110
+- company:kinsus — 景碩 (Kinsus) · 3189
+- company:silith — SILITH (SILITH Technology)
+- company:chemours — 科慕 (Chemours)
+- company:daikin — 大金工業 (Daikin Industries)
+- company:3m — 3M
+- company:silicon-works — 睿晶科技 (Silicon Works Technology)
+- company:wnc-usa — 啟碁美國 (WNC USA Corporation)
+- company:pharmaessentia — 藥華藥 (PharmaEssentia) · 6446
+- company:pharmaessentia-usa — PharmaEssentia USA (PharmaEssentia USA Corp.)
+- company:biologics — Biologics (Biologics)
+- company:onco360 — Onco360 (Onco360)
+- company:wellmark — Wellmark (Wellmark)
+- company:magnolia-health-plan — Magnolia Health Plan (Magnolia Health Plan)
+- company:maersk — 快桅 (A.P. Moller - Maersk)
+- company:hapag-lloyd — 赫伯羅德 (Hapag-Lloyd)
+- company:suez-canal-authority — 蘇伊士運河管理局 (Suez Canal Authority)
+- company:nyk — 日本郵船 (NYK Line (Nippon Yusen Kaisha))
+- company:evergreen-marine — 長榮 (Evergreen Marine) · 2603
+- company:yang-ming — 陽明 (Yang Ming Marine Transport)
+- company:esun-fhc — 玉山金控 (E.SUN Financial Holding Company) · 2884
+- company:esun-bank — 玉山銀行 (E.SUN Commercial Bank)
+- company:an-shin-food-services — 安心 (An-Shin Food Services Co., Ltd. (Taiwan MOS Burger)) · 1259
+- company:yeshealth — YesHealth (YesHealth (iFarm))
+- company:costco-taiwan — 好市多 (Costco Taiwan)
+- company:president-chain-store — 統一超 (President Chain Store (7-ELEVEN Taiwan)) · 2912
+- company:tung-ho-steel — 東鋼 (Tung Ho Steel Enterprise) · 2006
+- company:tung-ho-steel-structure — 東鋼構 (Tung Ho Steel Structure)
+- company:tung-ho-construction — 東鋼營造
+- company:feng-hsin-steel — 豐興 (Feng Hsin Steel)
+- company:wei-chih-steel — 威致 (Wei Chih Steel)
+- company:acer-cyber-security — 安碁資訊 (Acer Cyber Security Inc.) · 6690
+- company:acer-edc — 宏碁雲架構服務 (Acer e-Enabling Data Center Inc.)
+- company:centera-photonics — 源傑科技 (Centera Photonics Inc.)
+- company:cht-security — 中華資安國際 (CHT Security Co., Ltd.) · 7765
+- company:cn-002938 — 鵬鼎控股 (Avary Holding (Shenzhen) Co., Ltd.) · 002938
+- company:eink-holdings — 元太 (E Ink Holdings Inc.) · 8069
+- company:fujifilm-imaging-systems — 富士影像系統 (FUJIFILM Imaging Systems Co., Ltd.)
+- company:google — Google (Google LLC)
+- company:hannstar — 彩晶 (HannStar Display Corporation) · 6116
+- company:inventec — 英業達 (Inventec) · 2356
+- company:lumentum-holdings — 魯門特姆 (Lumentum Holdings Inc.) · LITE
+- company:marvell — 邁威爾 (Marvell Technology, Inc.) · MRVL
+- company:nevis — 睿怡科技 (Nevis Co., Ltd.)
+- company:sa-ai-memory — 智成 (AI Memory)
+- company:sa-amkor-technology — 艾克爾 (Amkor Technology) · AMKR
+- company:sa-asd-specialty-healthcare — ASD Specialty Healthcare, LLC (ASD Specialty Healthcare, LLC)
+- company:sa-ayar-labs — Ayar Labs (Ayar Labs)
+- company:sa-biocare-inc — BioCare, Inc. (BioCare, Inc.)
+- company:sa-cohu-inc — Cohu (Cohu, Inc.) · COHU
+- company:sa-core-pacific-development — 鼎越開發 (Core Pacific Development Corporation)
+- company:sa-coreweave — CoreWeave (CoreWeave) · CRWV
+- company:sa-corning-incorporated — 康寧 (Corning Incorporated) · GLW
+- company:sa-forus-therapeutics-inc — FORUS Therapeutics (FORUS Therapeutics Inc.)
+- company:sa-inventec-electronics-thailand-co-ltd — 英業達泰國電子 (Inventec Electronics (Thailand) Co., Ltd.)
+- company:sa-kemet-electronics-corporation — KEMET Electronics Corporation (KEMET Electronics Corporation)
+- company:sa-micron-technology-inc — 美光 (Micron Technology, Inc.) · MU
+- company:sa-murata-manufacturing — 村田製作所 (Murata Manufacturing Co., Ltd.) · 6981
+- company:sa-v10-dowooinsys — Dowooinsys (Dowooinsys)
+- company:sa-v10-dowooinsys-vina — Dowooinsys Vina (DOWOOINSYS VINA COMPANY LIMITED)
+- company:sa-v10-infineon-technologies-ag — 英飛凌 (Infineon Technologies AG) · IFX
+- company:sa-v10-jarllytec — 兆利科技 (JARLLYTEC Co., Ltd.) · 3548
+- company:sa-v10-kioxia-corporation — 鎧俠營運公司 (Kioxia Corporation)
+- company:sa-v10-samsung-display-co-ltd — 三星顯示 (Samsung Display Co., Ltd.)
+- company:sa-v10-texas-instruments — 德州儀器 (Texas Instruments Incorporated) · TXN
+- company:sa-v11-ajinomoto — 味之素 (Ajinomoto Co., Inc.)
+- company:sa-v11-ajinomoto-fine-techno — 味之素Fine-Techno (Ajinomoto Fine-Techno Co., Inc.)
+- company:sa-v11-mks — MKS (MKS Inc.)
+- company:sa-v3-agy — AGY (AGY)
+- company:sa-v3-horng-terng-automation-co-ltd — 竑騰 (HORNG TERNG AUTOMATION CO., LTD.) · 7751
+- company:sa-v3-jps-composite-materials-llc — JPS Composite Materials (JPS Composite Materials LLC)
+- company:sa-v3-lam-research-corporation — 科林研發 (Lam Research Corporation) · LRCX
+- company:sa-v3-picojool-inc — PicoJool (PicoJool Inc.)
+- company:sa-v3-wistron-infocomm-mexico-s-a-de-c-v — Wistron InfoComm Mexico (Wistron InfoComm Mexico S.A. de C.V.)
+- company:sa-v4-eclat-cayman-islands-holdings — ECLAT CAYMAN ISLANDS HOLDINGS (ECLAT CAYMAN ISLANDS HOLDINGS)
+- company:sa-v4-eclat-fabrics-vietnam-co-ltd — ECLAT FABRICS (VIETNAM) CO., LTD. (ECLAT FABRICS (VIETNAM) CO., LTD.)
+- company:sa-v4-eclat-textile-co-ltd-vietnam — ECLAT TEXTILE CO., LTD. (VIETNAM) (ECLAT TEXTILE CO., LTD. (VIETNAM))
+- company:sa-v4-mos-food-services-inc — 日本摩斯食品服務 (MOS FOOD SERVICES, INC.)
+- company:sa-v5-china-petrochemical-development-corporation — 中石化 (China Petrochemical Development Corporation) · 1314
+- company:sa-v5-zig-sheng-industrial-co-ltd — 集盛 (Zig Sheng Industrial Co., Ltd.) · 1455
+- company:sa-v6-foci-fiber-optic-communications-inc — 上詮 (FOCI Fiber Optic Communications, Inc.) · 3363
+- company:sa-v6-synopsys-inc — 新思科技 (Synopsys, Inc.) · SNPS
+- company:sa-v7-globalwafers-b-v — GlobalWafers B.V. (GlobalWafers B.V.)
+- company:sa-v7-memc-electronic-materials-s-p-a — MEMC Electronic Materials S.p.A. (MEMC Electronic Materials S.p.A.)
+- company:sa-v9-daxin-materials-corporation — 達興材料 (Daxin Materials Corporation) · 5234
+- company:sa-v9-the-perryman-company — The Perryman Company (The Perryman Company)
+- company:sa-wiwynn-technology-service-malaysia-sdn-bhd — 緯穎馬來西亞 (Wiwynn Technology Service Malaysia SDN. BHD.)
+- company:spil — 矽品 (SPIL)
+- company:taiwan-secom — 中保科 (TAIWAN SECOM CO., LTD.) · 9917
+- company:taiwan-shin-kong-security — 新保 (TAIWAN SHIN KONG SECURITY CO., LTD.) · 9925
+- company:tw-1303 — 南亞 (NPC) · 1303
+- company:tw-1326 — 台化 (FCFC) · 1326
+- company:tw-1402 — 遠東新 (FENC) · 1402
+- company:tw-1476 — 儒鴻 (ECLAT) · 1476
+- company:tw-1560 — 中砂 (KINIK) · 1560
+- company:tw-1590 — 亞德客-KY (AIRTAC) · 1590
+- company:tw-1717 — 長興 (ETERNAL) · 1717
+- company:tw-1727 — 中華化 (CHCIW) · 1727
+- company:tw-1815 — 富喬 (FFG) · 1815
+- company:tw-2002 — 中鋼 (CSC) · 2002
+- company:tw-2049 — 上銀 (HIWIN) · 2049
+- company:tw-2059 — 川湖 (King Slide) · 2059
+- company:tw-2327 — 國巨 (YAGEO) · 2327
+- company:tw-2344 — 華邦電 (WEC) · 2344
+- company:tw-2357 — 華碩 (ASUSTEK) · 2357
+- company:tw-2360 — 致茂 (CHROMA) · 2360
+- company:tw-2376 — 技嘉 (GIGABYTE) · 2376
+- company:tw-2377 — 微星 (MSI) · 2377
+- company:tw-2379 — 瑞昱 (RT) · 2379
+- company:tw-2382 — 廣達 (QCI) · 2382
+- company:tw-2383 — 台光電 (EMC) · 2383
+- company:tw-2404 — 漢唐 (UIS) · 2404
+- company:tw-2408 — 南亞科 (NTC) · 2408
+- company:tw-2412 — 中華電 (CHT) · 2412
+- company:tw-2428 — 興勤 (THINKING) · 2428
+- company:tw-2454 — 聯發科 (MediaTek) · 2454
+- company:tw-2455 — 全新 (VPEC) · 2455
+- company:tw-2467 — 志聖 (C SUN) · 2467
+- company:tw-2476 — 鉅祥 (GS) · 2476
+- company:tw-2478 — 大毅 (TA-I) · 2478
+- company:tw-2481 — 強茂 (PANJIT) · 2481
+- company:tw-2486 — 一詮 (I-CHIUN) · 2486
+- company:tw-2637 — 慧洋-KY (WISDOM) · 2637
+- company:tw-2880 — 華南金 (HNFHC) · 2880
+- company:tw-2881 — 富邦金 (Fubon Financial) · 2881
+- company:tw-2882 — 國泰金 (CATHAY FHC) · 2882
+- company:tw-2883 — 凱基金 (KGI Financial) · 2883
+- company:tw-2885 — 元大金 (Yuanta Group) · 2885
+- company:tw-2886 — 兆豐金 (MEGA FHC) · 2886
+- company:tw-2887 — 台新新光金 (TS Holdings) · 2887
+- company:tw-2890 — 永豐金 (SINOPACHOLDINGS) · 2890
+- company:tw-2891 — 中信金 (CTBC HOLDING) · 2891
+- company:tw-2892 — 第一金 (FFHC) · 2892
+- company:tw-3008 — 大立光 (LARGAN) · 3008
+- company:tw-3017 — 奇鋐 (AVC) · 3017
+- company:tw-3026 — 禾伸堂 (HOLY STONE) · 3026
+- company:tw-3044 — 健鼎 (Tripod) · 3044
+- company:tw-3045 — 台灣大 (TWM) · 3045
+- company:tw-3081 — 聯亞 (LandMark) · 3081
+- company:tw-3090 — 日電貿 (NDB) · 3090
+- company:tw-3105 — 穩懋 (WIN) · 3105
+- company:tw-3167 — 大量 (TA LIANG) · 3167
+- company:tw-3211 — 順達 (Dynapack) · 3211
+- company:tw-3231 — 緯創 (Wistron) · 3231
+- company:tw-3265 — 台星科 (WST) · 3265
+- company:tw-3376 — 新日興 (SZS) · 3376
+- company:tw-3443 — 創意 (GUC) · 3443
+- company:tw-3450 — 聯鈞 (ELASER) · 3450
+- company:tw-3491 — 昇達科 (UMT) · 3491
+- company:tw-3529 — 力旺 (eMemory) · 3529
+- company:tw-3583 — 辛耘 (Scientech) · 3583
+- company:tw-3617 — 碩天 (CyberPower) · 3617
+- company:tw-3653 — 健策 (JENTECH) · 3653
+- company:tw-3661 — 世芯-KY (Alchip) · 3661
+- company:tw-3665 — 貿聯-KY (BHI (BizLink)) · 3665
+- company:tw-3711 — 日月光投控 (ASEH) · 3711
+- company:tw-4441 — 振大環球 (GGF) · 4441
+- company:tw-4551 — 智伸科 (GLOBAL PMX) · 4551
+- company:tw-4938 — 和碩 (Pegatron) · 4938
+- company:tw-4958 — 臻鼎-KY (ZDT) · 4958
+- company:tw-4979 — 華星光 (LuxNet) · 4979
+- company:tw-5274 — 信驊 (ASPEED) · 5274
+- company:tw-5347 — 世界先進 (VIS) · 5347
+- company:tw-5425 — 台半 (TSC) · 5425
+- company:tw-5483 — 中美晶 (SAS) · 5483
+- company:tw-5536 — 聖暉 (ACTER) · 5536
+- company:tw-6139 — 亞翔 (L & K) · 6139
+- company:tw-6146 — 耕興 (Sporton International Inc.) · 6146
+- company:tw-6147 — 頎邦 (CHIPBOND) · 6147
+- company:tw-6177 — 達麗 (DA-LI CO.,LTD.) · 6177
+- company:tw-6187 — 萬潤 (ALL RING) · 6187
+- company:tw-6191 — 精成科 (GBM) · 6191
+- company:tw-6196 — 帆宣 (MIC) · 6196
+- company:tw-6213 — 聯茂 (ITEQ) · 6213
+- company:tw-6214 — 精誠 (SYSTEX) · 6214
+- company:tw-6223 — 旺矽 (MPI) · 6223
+- company:tw-6271 — 同欣電 (THEIL) · 6271
+- company:tw-6274 — 台燿 (TUC) · 6274
+- company:tw-6278 — 台表科 (TSMT) · 6278
+- company:tw-6415 — 矽力-KY (Silergy) · 6415
+- company:tw-6442 — 光聖 (EZconn) · 6442
+- company:tw-6472 — 保瑞 (Bora) · 6472
+- company:tw-6505 — 台塑化 (FPCC) · 6505
+- company:tw-6510 — 精測 (CHPT) · 6510
+- company:tw-6515 — 穎崴 (WinWay) · 6515
+- company:tw-6531 — 愛普 (AP Memory) · 6531
+- company:tw-6584 — 南俊國際 (NAN JUEN) · 6584
+- company:tw-6640 — 均華 (GMM) · 6640
+- company:tw-6669 — 緯穎 (Wiwynn) · 6669
+- company:tw-6672 — 騰輝電子-KY (Ventec) · 6672
+- company:tw-6715 — 嘉基 (Lintes) · 6715
+- company:tw-6770 — 力積電 (PSMC) · 6770
+- company:tw-6805 — 富世達 (Fositek) · 6805
+- company:tw-7769 — 鴻勁 (HON) · 7769
+- company:tw-8021 — 尖點 (Topoint) · 8021
+- company:tw-8046 — 南電 (Nan Ya PCB) · 8046
+- company:tw-8150 — 南茂 (ChipMOS) · 8150
+- company:tw-8299 — 群聯 (Phison) · 8299
+- company:tw-8358 — 金居 (CO-TECH) · 8358
+- company:tw-8996 — 高力 (KAORI) · 8996
+
+## Technology
+- technology:thor — NVIDIA Jetson Thor 平台 (NVIDIA Jetson Thor)
+- technology:orin — NVIDIA Jetson Orin 平台 (NVIDIA Jetson Orin)
+
+## Application
+- application:robotics-control — 機器人控制 (Robotics Control)
+
+## ETF
+- etf:0050 — 元大台灣 50 (Yuanta/P-shares Taiwan Top 50 ETF) · 0050
+- etf:00878 — 國泰永續高股息 (Cathay MSCI Taiwan ESG Sustainability High Dividend Yield ETF) · 00878
+- etf:00881 — 國泰台灣科技龍頭 (Cathay Taiwan Technology Leader ETF) · 00881
+- etf:00951 — 台新日本半導體 (Taishin NYSE FactSet Japan Semiconductor ETF) · 00951
+- etf:00403a — 統一升級50 · 00403A
+- etf:00406a — 中信收益 · 00406A
+- etf:00981a — 統一增長 · 00981A
+- etf:00982a — 群益強棒 · 00982A
+- etf:00991a — 復華未來50 · 00991A
+- etf:00992a — 群益科技創新 · 00992A

@@ -1,0 +1,28 @@
+[
+  {
+    "id": "v2:CATEGORY_IN_SEGMENT:category:robotic-edge-controller|market:robotic-edge-computing",
+    "predicate": "CATEGORY_IN_SEGMENT",
+    "from": "category:robotic-edge-controller",
+    "to": "market:robotic-edge-computing",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Category placed in its segment.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:CATEGORY_IN_SEGMENT:category:industrial-edge-ai-computer|segment:industrial-edge-ai",
+    "predicate": "CATEGORY_IN_SEGMENT",
+    "from": "category:industrial-edge-ai-computer",
+    "to": "segment:industrial-edge-ai",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Category placed in its segment.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  }
+]

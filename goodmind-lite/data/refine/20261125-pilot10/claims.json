@@ -1,0 +1,366 @@
+[
+ {
+  "id": "k1",
+  "source": "kinik-ar2025",
+  "quote": "The Company’s main products items at the moment are grinding tools such as\ngrinding wheels, CMP diamond disks and reclaim wafers.",
+  "locator": "Business Scope 3, current products",
+  "statement": "中砂（年報所稱 The Company）現有產品含 CMP 鑽石碟與再生晶圓"
+ },
+ {
+  "id": "k2",
+  "source": "kinik-ar2025",
+  "quote": "CMP diamond disk                        29.51%                     29.5%\n                 Reclaim wafer                           50.17%                     46.22%",
+  "locator": "Business Scope 2, total sales of main products (2024, 2025)",
+  "statement": "CMP 鑽石碟與再生晶圓是中砂的銷售產品"
+ },
+ {
+  "id": "k3",
+  "source": "kinik-ar2025",
+  "quote": "鑽石碟製造商                                                  LED Diode",
+  "locator": "CMP diamond disk industry chain figure (Chinese label)",
+  "statement": "年報中文用語為鑽石碟"
+ },
+ {
+  "id": "k4",
+  "source": "kinik-ar2025",
+  "quote": "再生晶圓廠 wafer",
+  "locator": "Reclaim wafer industry chain figure (Chinese label)",
+  "statement": "年報中文用語為再生晶圓"
+ },
+ {
+  "id": "k5",
+  "source": "kinik-ar2025",
+  "quote": "CMP diamond disks are consumables in the wafer manufacturing process.\n They are used in the chemical mechanical grinding (CMP) process in semiconductor\n manufacturing",
+  "locator": "Demand for downstream products",
+  "statement": "CMP 鑽石碟是半導體製造 CMP 製程耗材"
+ },
+ {
+  "id": "k6",
+  "source": "kinik-ar2025",
+  "quote": "Reclaim wafers are not regenerated from defective products during the\n       Wafer       Reclaimed production of ICs, but monitor wafers and dummy wafers in the IC\n      Products Silicon Wafers manufacturing process.",
+  "locator": "Current products table, reclaimed silicon wafers",
+  "statement": "再生晶圓是 IC 製程中的監控片與擋片（表格欄位文字與說明交錯）"
+ },
+ {
+  "id": "k7",
+  "source": "kinik-ar2025",
+  "quote": "The downstream customers of reclaim wafers cover IDM, foundry and\n memory manufacturing",
+  "locator": "Demand for downstream products",
+  "statement": "再生晶圓下游客戶為 IDM、晶圓代工與記憶體製造"
+ },
+ {
+  "id": "k8",
+  "source": "kinik-ar2025",
+  "quote": "Kinik Company",
+  "locator": "cover",
+  "statement": "年報發行公司為 Kinik Company"
+ },
+ {
+  "id": "z1",
+  "source": "szs-ar2025",
+  "quote": "集團所營之主要業務為各類樞紐製件、MIM 製件(金屬射出成型）、車铣製\n      件及沖製彈簧製件等之研發、設計、生產及銷售",
+  "locator": "業務內容 3. 主要產品及服務項目",
+  "statement": "新日興集團研發、設計、生產及銷售各類樞紐製件"
+ },
+ {
+  "id": "z2",
+  "source": "szs-ar2025",
+  "quote": "主要應用於多種筆記型電腦、平板電腦鍵盤、LCD 液晶顯示器支架、\n  樞紐製件\n            數位攝影機、摺疊手機及電子資訊等 3C 產品及音訊配件之連結樞紐。",
+  "locator": "業務內容 主要產品類別表",
+  "statement": "樞紐製件用於筆電、平板鍵盤、顯示器支架、摺疊手機等 3C 產品"
+ },
+ {
+  "id": "z3",
+  "source": "szs-ar2025",
+  "quote": "本公司及子公司專注於筆記型電腦、液晶顯示器、手機及 3C 電子產品的樞\n         紐研發、製造與銷售",
+  "locator": "產業概況 1",
+  "statement": "新日興專注 3C 電子產品樞紐研發製造銷售"
+ },
+ {
+  "id": "z4",
+  "source": "szs-ar2025",
+  "quote": "已確實掌握電子零組件之生產\n           技術",
+  "locator": "產業概況 有利因素 (B)",
+  "statement": "新日興自述其生產技術屬電子零組件"
+ },
+ {
+  "id": "a1",
+  "source": "acter-ar2025",
+  "quote": "目前主要業務為承攬電子及生技醫藥等高科技產業無塵室及相關機電、製程\n     管線之設計與建造，尤以 TURN-KEY(總責任承包設計、施工、測試到驗證之系統\n     整體工程)為特長。",
+  "locator": "業務內容 3. 目前之產品(服務)項目",
+  "statement": "目前主要業務為承攬高科技產業無塵室及機電、製程管線設計與建造"
+ },
+ {
+  "id": "a2",
+  "source": "acter-services",
+  "quote": "聖暉的核心本業是工程系統整合服務",
+  "locator": "服務項目頁首",
+  "statement": "聖暉核心本業為工程系統整合服務"
+ },
+ {
+  "id": "a3",
+  "source": "acter-ar2025",
+  "quote": "無塵室與機電系統整合工程服務業介於工程業主與工程材料、設備、及工程\n   分包商間",
+  "locator": "產業上、中、下游之關聯性",
+  "statement": "無塵室與機電系統整合工程服務業是工程服務業"
+ },
+ {
+  "id": "a4",
+  "source": "acter-ar2025",
+  "quote": "提供客戶整廠機\n   電、無塵室統包工程承攬服務等工程服務",
+  "locator": "產業上、中、下游之關聯性",
+  "statement": "屬工程服務"
+ },
+ {
+  "id": "f1",
+  "source": "fpcc-ar2025",
+  "quote": "本公司目前主要商品及服務項目\n  (1)油品類產品（包含：輕油、汽油、柴油、航空燃油、燃料\n     油、液化石油氣等）之煉製與銷售",
+  "locator": "業務範圍 3(1)",
+  "statement": "台塑石化煉製並銷售汽油、柴油等油品"
+ },
+ {
+  "id": "f2",
+  "source": "fpcc-ar2025",
+  "quote": "(3)石化基本原料（包含：乙烯、丙烯、丁二烯等）之生產與\n     銷售",
+  "locator": "業務範圍 3(3)",
+  "statement": "台塑石化生產並銷售乙烯、丙烯、丁二烯等石化基本原料"
+ },
+ {
+  "id": "f3",
+  "source": "fpcc-ar2025",
+  "quote": "本公司「台塑石油」於 89 年 9 月正式上市後，國內石油煉製\n  業計有本公司及台灣中油兩家公司。",
+  "locator": "產業現況 油品產業",
+  "statement": "油品煉製屬石油煉製業"
+ },
+ {
+  "id": "f4",
+  "source": "fpcc-ar2025",
+  "quote": "石化產業概分為基本原料、中間原料及下游應用加工製品",
+  "locator": "產業上、中、下游之關聯性",
+  "statement": "基本原料是石化產業的一類"
+ },
+ {
+  "id": "f5",
+  "source": "fpcc-ar2025",
+  "quote": "上游基本原料有烯烴（Olefins）及芳香烴（Aromatics）兩大\n類，由石油提煉之輕油（Naphtha，又稱石油腦）加以高溫裂\n解或重組而成。",
+  "locator": "產業上、中、下游之關聯性",
+  "statement": "烯烴是石化上游基本原料"
+ },
+ {
+  "id": "f6",
+  "source": "fpcc-ar2025",
+  "quote": "C801010 基本化學工業。",
+  "locator": "業務範圍 1(3)",
+  "statement": "台塑石化所營業務含基本化學工業"
+ },
+ {
+  "id": "f7",
+  "source": "fpcc-ar2025",
+  "quote": "台塑石化股份有限公司",
+  "locator": "封面",
+  "statement": "本公司即台塑石化"
+ },
+ {
+  "id": "o1",
+  "source": "foci-relfacon",
+  "quote": "The ReLFAConTM product is to install the optical fiber array connector in the silicon photonics co-packaged optics (CPO) component to complete complex tasks such as high-speed transmission and high-performance computing",
+  "locator": "news body",
+  "statement": "ReLFACon 是裝在矽光子 CPO 元件中的光纖陣列連接器"
+ },
+ {
+  "id": "o2",
+  "source": "foci-relfacon",
+  "quote": "providing key optical components for the optical communication industry of high-speed transmission and computing.",
+  "locator": "president quote",
+  "statement": "ReLFACon 提供高速傳輸與運算之光通訊關鍵光學元件"
+ },
+ {
+  "id": "o3",
+  "source": "foci-sr4",
+  "quote": "The 100G QSFP28 SR Transceiver is a parallel 4 channels 100Gbps (4x25Gbps), pluggable optical module for 100G Ethernet and InfiniBand QDR, EDR Applications.",
+  "locator": "Product Description",
+  "statement": "此產品是供 100G 乙太網路與 InfiniBand 的可插拔光收發模組"
+ },
+ {
+  "id": "o4",
+  "source": "foci-sr4",
+  "quote": "It is a high-performance module for short-range data communication and interconnects applications",
+  "locator": "Product Description",
+  "statement": "用於短距資料通訊與互連"
+ },
+ {
+  "id": "h1",
+  "source": "cht-soc",
+  "quote": "資通安全威脅偵測管理服務，一般常稱之為SOC監控服務 (Security Operation Center)",
+  "locator": "服務簡介",
+  "statement": "此服務即 SOC 監控服務"
+ },
+ {
+  "id": "h2",
+  "source": "cht-soc",
+  "quote": "透過資安監控，讓企業與組織可以即時瞭解內外部資安威脅",
+  "locator": "服務簡介",
+  "statement": "服務對象為企業與組織"
+ },
+ {
+  "id": "h3",
+  "source": "cht-soc",
+  "quote": "透過 7x24 全時維運提供即時監看，追蹤分析與應變處理資安事件。",
+  "locator": "服務簡介",
+  "statement": "7x24 即時監看"
+ },
+ {
+  "id": "h4",
+  "source": "cht-soc",
+  "quote": "除提供委外SOC監控",
+  "locator": "優勢說明",
+  "statement": "提供委外 SOC 監控"
+ },
+ {
+  "id": "h5",
+  "source": "cht-soc",
+  "quote": "資通安全威脅偵測管理(SOC)服務共同供應契約",
+  "locator": "頁面選單 資安共同供應契約",
+  "statement": "SOC 服務列於政府採購共同供應契約"
+ },
+ {
+  "id": "h6",
+  "source": "cht-soc",
+  "quote": "是國內唯一整合SOC與MDR服務的資安公司。",
+  "locator": "優勢說明",
+  "statement": "中華資安國際自述為國內資安公司"
+ },
+ {
+  "id": "h7",
+  "source": "cht-mdr",
+  "quote": "中華資安國際MDR威脅偵測與應變服務(MDR，Managed Detection and Response)，簡稱MDR服務，採用了國際知名的端點偵測及應變機制(EDR，Endpoint Detection and Response)工具，並加上中華資安國際團隊提供的全託管偵測與應變服務。",
+  "locator": "服務簡介",
+  "statement": "MDR 服務是以 EDR 工具加全託管偵測與應變服務"
+ },
+ {
+  "id": "h8",
+  "source": "cht-mdr",
+  "quote": "本服務由經驗豐富的資訊安全專家親自操刀監控與調查",
+  "locator": "服務簡介",
+  "statement": "由資安專家監控調查"
+ },
+ {
+  "id": "h9",
+  "source": "cht-ar2025",
+  "quote": "本公司 SOC 服務的競爭優勢如下:",
+  "locator": "營運概況 資通安全威脅偵測管理(SOC)服務",
+  "statement": "以下段落描述本公司（中華資安國際）SOC 服務"
+ },
+ {
+  "id": "h10",
+  "source": "cht-ar2025",
+  "quote": "本服務已連續七年於政府的資安服務廠商\n      評鑑中獲得最高等級 A 級的成績，並獲得「Computex Best Choice Award 資\n      安獎」 ，於政府、金融、醫療、航空、電子、科技製造、船運、製造、電商\n      及關鍵基礎設施等產業有數百家客戶。",
+  "locator": "同上，競爭優勢第一點",
+  "statement": "SOC 服務在政府及多個民間產業有數百家客戶"
+ },
+ {
+  "id": "t1",
+  "source": "tuc-4hr",
+  "quote": "Extreme Low Loss and High Thermal Reliability Laminate and Prepreg\nCore: TU-943HR; Prepreg: TU-943P HR",
+  "locator": "ThunderClad 4HR 頁首",
+  "statement": "TU-943HR 為芯板（laminate）、TU-943P HR 為黏合片（prepreg）"
+ },
+ {
+  "id": "t2",
+  "source": "tuc-flow",
+  "quote": "銅箔基板 (Copper Clad Laminate，簡稱CCL) 為製造印刷電路板之關鍵性基礎材料。係利用絕緣紙、玻璃纖維布或其它纖維材料經樹脂含浸後所得之黏合片 (Prepreg，亦稱膠片) 與銅箔疊合，於高溫高壓下成形之積層板。",
+  "locator": "製造流程",
+  "statement": "銅箔基板與黏合片是印刷電路板基礎材料"
+ },
+ {
+  "id": "t3",
+  "source": "tuc-masslam",
+  "quote": "TUC uses cutting edge equipment to provide mass lamination service to global PCB manufacturers – from image transfer to automatic build-up to optical inspection.",
+  "locator": "Mass Lamination Service",
+  "statement": "台燿向 PCB 製造商提供多層壓合服務"
+ },
+ {
+  "id": "t4",
+  "source": "tuc-flow",
+  "quote": "持續提供全球印刷電路板業者更多方位的附加服務",
+  "locator": "多層壓合代工服務",
+  "statement": "多層壓合代工是提供給印刷電路板業者的服務"
+ },
+ {
+  "id": "t5",
+  "source": "tuc-flow",
+  "quote": "多層壓合代工服務\n台燿科技選用的尖端設備",
+  "locator": "多層壓合代工服務段落",
+  "statement": "此服務為多層壓合代工服務"
+ },
+ {
+  "id": "n1",
+  "source": "nanya-ddr5",
+  "quote": "Standard DRAM\nDDR5\nNT5FF2048M8A3-Q5",
+  "locator": "產品詳細頁",
+  "statement": "NT5FF2048M8A3-Q5 為標準型 DDR5 DRAM"
+ },
+ {
+  "id": "n2",
+  "source": "nanya-ar2025",
+  "quote": "目前本公司主要之商品項目為：\n         1. DRAM 晶片",
+  "locator": "業務範圍",
+  "statement": "南亞科主要商品為 DRAM 晶片"
+ },
+ {
+  "id": "n3",
+  "source": "nanya-ar2025",
+  "quote": "IC 產業(含 DRAM)依上、中、下游可依次分為 IC 電路設計、光罩\n   製作/晶圓材料、IC 製造、IC 封裝測試等產業體系",
+  "locator": "產業上、中、下游之關聯性",
+  "statement": "DRAM 屬 IC 產業"
+ },
+ {
+  "id": "n4",
+  "source": "nanya-ar2025",
+  "quote": "深耕半導體及 DRAM 產業逾 40 年",
+  "locator": "董事經歷",
+  "statement": "年報將 DRAM 與半導體產業並列"
+ },
+ {
+  "id": "m1",
+  "source": "kemet-t528",
+  "quote": "T528 Low ESL Polymer Electrolytic for CPU/GPU Decoupling",
+  "locator": "datasheet title",
+  "statement": "T528 為高分子電解電容"
+ },
+ {
+  "id": "m3",
+  "source": "kemet-t528",
+  "quote": "The KEMET Organic Capacitor (KO-CAP) is a solid",
+  "locator": "Overview",
+  "statement": "KO-CAP 是固態電容"
+ },
+ {
+  "id": "m4",
+  "source": "kemet-t528",
+  "quote": "Capacitor                 Case         Capacitance       Capacitance Rated Voltage Failure Rate/          Termination                        Packaging\n                Series                                                                                                          ESR Code\n     Class                   Size          Code (pF)         Tolerance      (VDC)        Design                 Finish                           (C-Spec)\n      T=         528 =          B        First two digits       M=          002 = 2         A=           T = 100% Matte Tin       E = ESR       Blank = 7\"\n   Tantalum     Low ESL",
+  "locator": "Ordering information 表頭與第一列",
+  "statement": "T528 的電容類別 T = Tantalum（鉭）"
+ },
+ {
+  "id": "m5",
+  "source": "kemet-t528",
+  "quote": "KEMET is a registered trademark of KEMET Electronics Corporation.",
+  "locator": "datasheet 末頁",
+  "statement": "KEMET 商標屬 KEMET Electronics Corporation"
+ },
+ {
+  "id": "e1",
+  "source": "eclat-q3",
+  "quote": "ECLAT  ECLAT TEXTILE CO., LTD. (VIETNAM)    設計、製造、加工及銷售服   100.00 %   100.00 %   100.00 %\n    CAYMAN (以下簡稱ECLAT TEXTILE (VN))             裝。",
+  "locator": "合併財報 合併個體表（業務性質欄）",
+  "statement": "ECLAT TEXTILE CO., LTD. (VIETNAM) 業務為設計、製造、加工及銷售服裝"
+ },
+ {
+  "id": "e2",
+  "source": "eclat-ar",
+  "quote": "台灣紡織產業（包括人纖、紡紗、織布、染整及製衣等完整龐大之生產體系）",
+  "locator": "產業概況 1",
+  "statement": "製衣屬紡織產業體系"
+ }
+]

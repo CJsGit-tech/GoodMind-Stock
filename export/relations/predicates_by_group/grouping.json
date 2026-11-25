@@ -1,0 +1,123 @@
+[
+  {
+    "from": "Offering",
+    "group": "grouping",
+    "meaning": "Product maps to standardized peer-comparison category",
+    "predicate": "IN_CATEGORY",
+    "storage": "asserted",
+    "to": "ProductCategory",
+    "edge_count": 7
+  },
+  {
+    "from": "ProductCategory",
+    "group": "grouping",
+    "meaning": "Hierarchical product taxonomy",
+    "predicate": "SUBCATEGORY_OF",
+    "storage": "asserted",
+    "to": "ProductCategory",
+    "edge_count": 0
+  },
+  {
+    "from": "Offering",
+    "group": "grouping",
+    "meaning": "Product suited or documented for use case",
+    "predicate": "SUPPORTS_APPLICATION",
+    "storage": "asserted",
+    "to": "Application",
+    "edge_count": 3
+  },
+  {
+    "from": "Offering",
+    "group": "grouping",
+    "meaning": "Product marketed to buyer segment",
+    "predicate": "TARGETS_SEGMENT",
+    "storage": "asserted",
+    "to": "MarketSegment",
+    "edge_count": 79
+  },
+  {
+    "from": "Company",
+    "group": "grouping",
+    "meaning": "Company industrial identity/core activity",
+    "predicate": "OPERATES_IN",
+    "storage": "asserted",
+    "to": "Industry",
+    "edge_count": 1
+  },
+  {
+    "from": "Company",
+    "group": "grouping",
+    "meaning": "Company actively targets or sells into end market; flag whether inferred",
+    "predicate": "SERVES_INDUSTRY",
+    "storage": "asserted_or_derived",
+    "to": "Industry",
+    "edge_count": 1
+  },
+  {
+    "from": "Industry",
+    "group": "grouping",
+    "meaning": "Industry taxonomy hierarchy",
+    "predicate": "SUBINDUSTRY_OF",
+    "storage": "asserted",
+    "to": "Industry",
+    "edge_count": 0
+  },
+  {
+    "from": "Application",
+    "group": "grouping",
+    "meaning": "Use case belongs to end-market industry",
+    "predicate": "APPLICATION_IN_INDUSTRY",
+    "storage": "asserted",
+    "to": "Industry",
+    "edge_count": 0
+  },
+  {
+    "from": "MarketSegment",
+    "group": "grouping",
+    "meaning": "Competitive buyer segment within industry",
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "storage": "asserted",
+    "to": "Industry",
+    "inverse": "HAS_SEGMENT",
+    "edge_count": 31
+  },
+  {
+    "from": "MarketSegment",
+    "group": "grouping",
+    "meaning": "Competitive segment addresses application",
+    "predicate": "SEGMENT_FOR_APPLICATION",
+    "storage": "asserted",
+    "to": "Application",
+    "edge_count": 1
+  },
+  {
+    "group": "grouping",
+    "predicate": "CATEGORY_IN_SEGMENT",
+    "from": "ProductCategory",
+    "to": "MarketSegment",
+    "storage": "asserted",
+    "meaning": "Product category belongs to a market segment (Industry > Segment > Category)",
+    "inverse": "HAS_CATEGORY",
+    "edge_count": 2
+  },
+  {
+    "group": "grouping",
+    "predicate": "ACTIVE_IN_SEGMENT",
+    "from": "Company",
+    "to": "MarketSegment",
+    "storage": "asserted_or_derived",
+    "meaning": "Company works in a market segment. Computed from its offerings; asserted only for business activity without a recorded offering",
+    "derivedBy": "R-derive-groups",
+    "edge_count": 0
+  },
+  {
+    "group": "grouping",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "MarketSegment",
+    "to": "MarketSegment",
+    "storage": "asserted",
+    "meaning": "Value chain: the upstream segment's output is an input of the downstream segment (e.g. IC substrates → AI chips)",
+    "inverse": "FED_BY_SEGMENT",
+    "edge_count": 36
+  }
+]

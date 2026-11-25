@@ -1,0 +1,1064 @@
+{
+ "source_folder": "/Users/chuang/Desktop/StockAnalysis/manga-layout-templates/2026-11-09-drug-approval-to-sales/research/",
+ "ops": [
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fda-oopd-ropeginterferon-et-2026",
+    "type": "Evidence",
+    "name": "FDA Orphan Drug Designations and Approvals: ropeginterferon alfa-2b-njft (essential thrombocythemia)",
+    "attributes": {
+     "url": "https://www.accessdata.fda.gov/scripts/opdlisting/oopd/detailedIndex.cfm?cfgridkey=424514",
+     "publisher": "U.S. FDA",
+     "published_at": "2026-08-28"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fda-approves-treatment-et-2026",
+    "type": "Evidence",
+    "name": "FDA approves treatment for essential thrombocythemia",
+    "attributes": {
+     "url": "https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-treatment-essential-thrombocythemia",
+     "publisher": "U.S. FDA",
+     "published_at": "2026-08-31"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fda-besremi-label-2026",
+    "type": "Evidence",
+    "name": "BESREMi (ropeginterferon alfa-2b-njft) prescribing information 761166s013",
+    "attributes": {
+     "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/761166s013lbl.pdf",
+     "publisher": "U.S. FDA",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-besremi-et-approval-2026",
+    "type": "Evidence",
+    "name": "FDA Approves PharmaEssentia's BESREMi (ropeginterferon alfa-2b-njft) for Adults with Essential Thrombocythemia, a Rare Blood Cancer",
+    "attributes": {
+     "url": "https://us.pharmaessentia.com/fda-approves-pharmaessentias-besremi-ropeginterferon-alfa-2b-njft-for-adults-with-essential-thrombocythemia-a-rare-blood-cancer/",
+     "publisher": "PharmaEssentia USA",
+     "published_at": "2026-08-31"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-besremi-pen-pv-2026",
+    "type": "Evidence",
+    "name": "PharmaEssentia Announces FDA Approval and U.S. Launch of BESREMi Pen (ropeginterferon alfa-2b-njft) for Polycythemia Vera",
+    "attributes": {
+     "url": "https://us.pharmaessentia.com/pharmaessentia-announces-fda-approval-and-u-s-launch-of-besremi-pen-ropeginterferon-alfa-2b-njft-for-polycythemia-vera/",
+     "publisher": "PharmaEssentia USA",
+     "published_at": "2026-06-26"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:fda-besremi-2021-chemistry-review",
+    "type": "Evidence",
+    "name": "BESREMi 761166Orig1s000 Chemistry Review",
+    "attributes": {
+     "url": "https://www.accessdata.fda.gov/drugsatfda_docs/nda/2021/761166Orig1s000ChemR.pdf",
+     "publisher": "U.S. FDA",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-2025-q3-financials",
+    "type": "Evidence",
+    "name": "PharmaEssentia consolidated financial statements for the nine months ended September 30, 2025",
+    "attributes": {
+     "url": "https://www.pharmaessentia.com/uploads/114_3_UPDATE_2934252bc9.pdf",
+     "publisher": "PharmaEssentia",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:moneydj-pharmaessentia-2026-10-revenue",
+    "type": "Evidence",
+    "name": "藥華藥 2026年10月合併營收（公告轉載）",
+    "attributes": {
+     "url": "https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=9694bcae-995e-4778-9ba5-2ff7dad8c891",
+     "publisher": "MoneyDJ",
+     "published_at": "2026-11-05"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:twse-openapi-monthly-revenue-2026-09",
+    "type": "Evidence",
+    "name": "TWSE OpenAPI t187ap05_L 上市公司每月營業收入彙總表（2026年9月）",
+    "attributes": {
+     "url": "https://openapi.twse.com.tw/v1/opendata/t187ap05_L",
+     "publisher": "臺灣證券交易所",
+     "published_at": "2026-10-17"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-2024-sustainability-report",
+    "type": "Evidence",
+    "name": "PharmaEssentia 2024 Corporate Sustainability Report",
+    "attributes": {
+     "url": "https://www.pharmaessentia.com/uploads/PEC_2024_CS_Report_EN_f05b2e7650.pdf",
+     "publisher": "PharmaEssentia",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-source-coordinating-delivery",
+    "type": "Evidence",
+    "name": "PharmaEssentia SOURCE: Coordinating Delivery",
+    "attributes": {
+     "url": "https://www.pharmaessentiasource.com/hcp/coordinating-delivery/",
+     "publisher": "PharmaEssentia USA",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:wellmark-besremi-policy-2026",
+    "type": "Evidence",
+    "name": "Besremi (ropeginterferon alfa-2b-njft) medical policy 05.04.50",
+    "attributes": {
+     "url": "https://digital-assets.wellmark.com/adobe/assets/urn%3Aaaid%3Aaem%3A0da48a92-2b8e-4612-8de1-6e0c7dd736da/original/as/Besremi.pdf",
+     "publisher": "Wellmark",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:magnolia-pharmacy-policies-dec-2026",
+    "type": "Evidence",
+    "name": "Effective December 1, 2026: Pharmacy and Biopharmacy Policies",
+    "attributes": {
+     "url": "https://www.magnoliahealthplan.com/providers/provider-news/effective-december-1--2026--pharmacy-and-biopharmacy-policies0.html",
+     "publisher": "Magnolia Health Plan",
+     "needs_review": [
+      "published_at"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:pharmaessentia-mpn-congress-2026",
+    "type": "Evidence",
+    "name": "PharmaEssentia to Present Data at 18th International Congress on Myeloproliferative Neoplasms Highlighting Unmet Need with Current Therapies and Real-World Use of BESREMi in Essential Thrombocythemia",
+    "attributes": {
+     "url": "https://us.pharmaessentia.com/pharmaessentia-to-present-data-at-18th-international-congress-on-myeloproliferative-neoplasms-highlighting-unmet-need-with-current-therapies-and-real-world-use-of-besremi-in-essential-thrombocyt/",
+     "publisher": "PharmaEssentia USA",
+     "published_at": "2026-10-19"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "evidence:nonfan-pharmaessentia-2026-10-sales",
+    "type": "Evidence",
+    "name": "藥華藥10月營收28.4億元 年增102%（非凡新聞）",
+    "attributes": {
+     "url": "https://news.ustv.com.tw/newsdetail/20261106A001014",
+     "publisher": "非凡新聞",
+     "published_at": "2026-11-06"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "industry:biotech-pharma",
+    "type": "Industry",
+    "name": "生技醫藥",
+    "attributes": {
+     "name_en": "Biotech & Pharmaceuticals"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:essential-thrombocythemia-therapy",
+    "type": "MarketSegment",
+    "name": "原發性血小板過多症治療藥物",
+    "attributes": {
+     "name_en": "Essential Thrombocythemia (ET) Therapeutics",
+     "buyer_type": "specialty prescribers, payers and specialty pharmacies",
+     "region": "US"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:polycythemia-vera-therapy",
+    "type": "MarketSegment",
+    "name": "真性紅血球增多症治療藥物",
+    "attributes": {
+     "name_en": "Polycythemia Vera (PV) Therapeutics",
+     "buyer_type": "specialty prescribers, payers and specialty pharmacies",
+     "region": "US"
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "segment:us-specialty-drug-access",
+    "type": "MarketSegment",
+    "name": "美國特殊藥品通路與給付",
+    "attributes": {
+     "name_en": "US Specialty Drug Distribution & Payer Access",
+     "buyer_type": "patients, health plans, prescribers",
+     "region": "US"
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:essential-thrombocythemia-therapy",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:polycythemia-vera-therapy",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SEGMENT_OF_INDUSTRY",
+    "from": "segment:us-specialty-drug-access",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:pharmaessentia",
+    "type": "Company",
+    "name": "藥華藥",
+    "attributes": {
+     "country": "TW",
+     "name_en": "PharmaEssentia",
+     "ticker": "6446",
+     "exchange": "TWSE",
+     "aliases": [
+      "PharmaEssentia Corporation",
+      "6446"
+     ],
+     "monthly_revenue_2026_10_twd_thousand": 2836628,
+     "monthly_revenue_2026_10_yoy_pct": 102.02,
+     "monthly_revenue_2026_09_twd_thousand": 2635360,
+     "revenue_note": "October 2026 figure from filing relays (not direct MOPS read); company attributes growth mainly to US subsidiary; no split by indication.",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:twse-openapi-monthly-revenue-2026-09",
+      "evidence:moneydj-pharmaessentia-2026-10-revenue"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:pharmaessentia-usa",
+    "type": "Company",
+    "name": "PharmaEssentia USA",
+    "attributes": {
+     "country": "US",
+     "name_en": "PharmaEssentia USA Corp.",
+     "name_zh_missing": true,
+     "aliases": [
+      "PharmaEssentia USA Corporation"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:twse-openapi-monthly-revenue-2026-09",
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:biologics",
+    "type": "Company",
+    "name": "Biologics",
+    "attributes": {
+     "country": "US",
+     "name_en": "Biologics",
+     "name_zh_missing": true,
+     "aliases": [
+      "Biologics specialty pharmacy"
+     ],
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:onco360",
+    "type": "Company",
+    "name": "Onco360",
+    "attributes": {
+     "country": "US",
+     "name_en": "Onco360",
+     "name_zh_missing": true,
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:wellmark",
+    "type": "Company",
+    "name": "Wellmark",
+    "attributes": {
+     "country": "US",
+     "name_en": "Wellmark",
+     "name_zh_missing": true,
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:wellmark-besremi-policy-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "company:magnolia-health-plan",
+    "type": "Company",
+    "name": "Magnolia Health Plan",
+    "attributes": {
+     "country": "US",
+     "name_en": "Magnolia Health Plan",
+     "name_zh_missing": true,
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:magnolia-pharmacy-policies-dec-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "IS_SUBSIDIARY_OF",
+    "from": "company:pharmaessentia-usa",
+    "to": "company:pharmaessentia",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:twse-openapi-monthly-revenue-2026-09"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:pharmaessentia",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:pharmaessentia-usa",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:biologics",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:onco360",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:wellmark",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:wellmark-besremi-policy-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OPERATES_IN",
+    "from": "company:magnolia-health-plan",
+    "to": "industry:biotech-pharma",
+    "attributes": {
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:magnolia-pharmacy-policies-dec-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:besremi",
+    "type": "Product",
+    "name": "BESREMi 長效干擾素注射劑",
+    "attributes": {
+     "kind": "other",
+     "name_en": "BESREMi (ropeginterferon alfa-2b-njft)",
+     "aliases": [
+      "ropeginterferon alfa-2b-njft",
+      "Ropeg"
+     ],
+     "us_pv_approval": "commercially available in US by 2021-12",
+     "us_et_approval_date": "2026-08-28",
+     "wac_usd_per_500mcg_syringe_package": 10421,
+     "wac_note": "Connecticut WAC disclosure as of 2026-05-15, before rebates/discounts; not net revenue",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:fda-oopd-ropeginterferon-et-2026",
+      "evidence:pharmaessentia-besremi-et-approval-2026",
+      "evidence:fda-besremi-label-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:besremi-pen",
+    "type": "Product",
+    "name": "BESREMi 預充填注射筆",
+    "attributes": {
+     "kind": "other",
+     "name_en": "BESREMi Pen",
+     "launch_announced": "2026-06-26 (adult PV)",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-pen-pv-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:anagrelide",
+    "type": "Product",
+    "name": "anagrelide 降血小板藥",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Anagrelide",
+     "note": "Active comparator in SURPASS ET; generic molecule, no seller named in research",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:fda-besremi-label-2026",
+      "evidence:fda-approves-treatment-et-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "product:hydroxyurea",
+    "type": "Product",
+    "name": "羥基脲（hydroxyurea）",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Hydroxyurea",
+     "note": "Reported as 94% of first-line ET therapy in a historical US analysis; no seller named in research",
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:pharmaessentia-mpn-congress-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:pharmaessentia-source",
+    "type": "Service",
+    "name": "PharmaEssentia SOURCE 病患用藥支援計畫",
+    "attributes": {
+     "kind": "other",
+     "name_en": "PharmaEssentia SOURCE patient access program",
+     "description_en": "Enrollment, access/reimbursement assistance, copay support and eligible free medicine; 5.7% of US injections distributed in 2024 were free via SOURCE",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery",
+      "evidence:pharmaessentia-2024-sustainability-report"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:specialty-pharmacy-fulfillment",
+    "type": "Service",
+    "name": "特殊藥局配送服務",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Specialty pharmacy fulfillment (direct-to-patient shipping)",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "service:health-plan-drug-coverage",
+    "type": "Service",
+    "name": "健康保險藥品給付",
+    "attributes": {
+     "kind": "other",
+     "name_en": "Health plan pharmacy/drug coverage",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:wellmark-besremi-policy-2026",
+      "evidence:magnolia-pharmacy-policies-dec-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "BRANDS",
+    "from": "company:pharmaessentia",
+    "to": "product:besremi",
+    "attributes": {
+     "note": "Drug IP held by PharmaEssentia",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "MANUFACTURES",
+    "from": "company:pharmaessentia",
+    "to": "product:besremi",
+    "attributes": {
+     "note": "Historical: Taichung drug-substance manufacturing/testing per 2021 FDA review; not proof of all current lot origins",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:fda-besremi-2021-chemistry-review"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SELLS",
+    "from": "company:pharmaessentia-usa",
+    "to": "product:besremi",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026",
+      "evidence:twse-openapi-monthly-revenue-2026-09"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "BRANDS",
+    "from": "company:pharmaessentia",
+    "to": "product:besremi-pen",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-pen-pv-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "SELLS",
+    "from": "company:pharmaessentia-usa",
+    "to": "product:besremi-pen",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-pen-pv-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:pharmaessentia-usa",
+    "to": "service:pharmaessentia-source",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:biologics",
+    "to": "service:specialty-pharmacy-fulfillment",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:onco360",
+    "to": "service:specialty-pharmacy-fulfillment",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:wellmark",
+    "to": "service:health-plan-drug-coverage",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:wellmark-besremi-policy-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERS_SERVICE",
+    "from": "company:magnolia-health-plan",
+    "to": "service:health-plan-drug-coverage",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:magnolia-pharmacy-policies-dec-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:besremi",
+    "to": "segment:essential-thrombocythemia-therapy",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:fda-oopd-ropeginterferon-et-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:besremi",
+    "to": "segment:polycythemia-vera-therapy",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-et-approval-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:besremi-pen",
+    "to": "segment:polycythemia-vera-therapy",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-besremi-pen-pv-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:anagrelide",
+    "to": "segment:essential-thrombocythemia-therapy",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:fda-approves-treatment-et-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "product:hydroxyurea",
+    "to": "segment:essential-thrombocythemia-therapy",
+    "attributes": {
+     "verification_status": "reported",
+     "evidence_ids": [
+      "evidence:pharmaessentia-mpn-congress-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:pharmaessentia-source",
+    "to": "segment:us-specialty-drug-access",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:specialty-pharmacy-fulfillment",
+    "to": "segment:us-specialty-drug-access",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "TARGETS_SEGMENT",
+    "from": "service:health-plan-drug-coverage",
+    "to": "segment:us-specialty-drug-access",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:wellmark-besremi-policy-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "competition:besremi-vs-anagrelide-et",
+    "type": "CompetitionAssessment",
+    "name": "BESREMi 與 anagrelide 於原發性血小板過多症",
+    "attributes": {
+     "competition_type": "DIRECT",
+     "overlap_scope": "product_category",
+     "basis": [
+      "SURPASS ET randomized head-to-head trial vs anagrelide in hydroxyurea-inadequate/intolerant adults",
+      "34/91 (37.4%) vs 3/83 (3.6%) durable response at months 9 and 12 (FDA label Table 7)",
+      "Label scope is wider than the trial population; no broad ranking claimed"
+     ],
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:fda-besremi-label-2026",
+      "evidence:fda-approves-treatment-et-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_A",
+    "from": "competition:besremi-vs-anagrelide-et",
+    "to": "product:besremi",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_B",
+    "from": "competition:besremi-vs-anagrelide-et",
+    "to": "product:anagrelide",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "COMPETES_IN_SEGMENT",
+    "from": "competition:besremi-vs-anagrelide-et",
+    "to": "segment:essential-thrombocythemia-therapy",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "competition:besremi-vs-hydroxyurea-et",
+    "type": "CompetitionAssessment",
+    "name": "BESREMi 與羥基脲於原發性血小板過多症",
+    "attributes": {
+     "competition_type": "INDIRECT",
+     "overlap_scope": "application",
+     "basis": [
+      "Hydroxyurea represented 94% of first-line ET therapy in a historical US analysis (company summary)",
+      "Practical existing alternative; patients can remain on existing treatment",
+      "Hydroxyurea was a prior therapy, not a randomized arm, in SURPASS ET"
+     ],
+     "verification_status": "inferred",
+     "evidence_ids": [
+      "evidence:pharmaessentia-mpn-congress-2026",
+      "evidence:fda-approves-treatment-et-2026"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_A",
+    "from": "competition:besremi-vs-hydroxyurea-et",
+    "to": "product:besremi",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "OFFERING_B",
+    "from": "competition:besremi-vs-hydroxyurea-et",
+    "to": "product:hydroxyurea",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "COMPETES_IN_SEGMENT",
+    "from": "competition:besremi-vs-hydroxyurea-et",
+    "to": "segment:essential-thrombocythemia-therapy",
+    "attributes": {}
+   }
+  },
+  {
+   "op": "createNode",
+   "node": {
+    "id": "collaboration:pharmaessentia-specialty-pharmacy-network",
+    "type": "Collaboration",
+    "name": "藥華藥 BESREMi 特殊藥局配送合作",
+    "attributes": {
+     "collaboration_type": "strategic_partnership",
+     "stage": "launched",
+     "description_en": "Biologics and Onco360 are named specialty-pharmacy fulfillment partners shipping BESREMi directly to patients via PharmaEssentia SOURCE; contract terms and economics undisclosed",
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_PARTICIPANT",
+    "from": "collaboration:pharmaessentia-specialty-pharmacy-network",
+    "to": "company:pharmaessentia-usa",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_PARTICIPANT",
+    "from": "collaboration:pharmaessentia-specialty-pharmacy-network",
+    "to": "company:biologics",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  },
+  {
+   "op": "createEdge",
+   "edge": {
+    "predicate": "HAS_PARTICIPANT",
+    "from": "collaboration:pharmaessentia-specialty-pharmacy-network",
+    "to": "company:onco360",
+    "attributes": {
+     "verification_status": "verified",
+     "evidence_ids": [
+      "evidence:pharmaessentia-source-coordinating-delivery"
+     ]
+    }
+   }
+  }
+ ]
+}

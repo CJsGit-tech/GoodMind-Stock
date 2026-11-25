@@ -1,0 +1,145 @@
+[
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "weight_pct": 60.1,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "2330 台積電 60.10% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:company:foxconn",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "company:foxconn",
+    "weight_pct": 3.15,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "2317 鴻海 3.15% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "weight_pct": 1.15,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "2303 聯電 1.15% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "weight_pct": 0.87,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "3037 欣興 0.87% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "weight_pct": 0.42,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "2301 光寶科 0.42% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47:company:advantech",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:e6b7bc23-c5d1-48c6-8f53-6e339d7cad47",
+    "to": "company:advantech",
+    "weight_pct": 0.29,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/etf/x/basic/basic0007b.xdjhtm?etfid=0050.tw",
+    "verification_status": "officially_disclosed",
+    "notes": "2395 研華 0.29% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:7593c26a-e37e-41bf-be56-392fee12bebe:entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:7593c26a-e37e-41bf-be56-392fee12bebe",
+    "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "weight_pct": 2.86,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.etfinfo.tw/etf/00878/holdings",
+    "verification_status": "reported",
+    "notes": "2303 聯電 2.86% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:7593c26a-e37e-41bf-be56-392fee12bebe:entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:7593c26a-e37e-41bf-be56-392fee12bebe",
+    "to": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "weight_pct": 2.04,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.etfinfo.tw/etf/00878/holdings",
+    "verification_status": "reported",
+    "notes": "2301 光寶科 2.04% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:89407208-acc8-471a-a908-e655c58685a5:entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:89407208-acc8-471a-a908-e655c58685a5",
+    "to": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "weight_pct": 46.79,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+    "verification_status": "reported",
+    "notes": "2330 台積電 46.79% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:89407208-acc8-471a-a908-e655c58685a5:company:foxconn",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:89407208-acc8-471a-a908-e655c58685a5",
+    "to": "company:foxconn",
+    "weight_pct": 5.32,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+    "verification_status": "reported",
+    "notes": "2317 鴻海 5.32% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:89407208-acc8-471a-a908-e655c58685a5:entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:89407208-acc8-471a-a908-e655c58685a5",
+    "to": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "weight_pct": 1.92,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+    "verification_status": "reported",
+    "notes": "2303 聯電 1.92% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:89407208-acc8-471a-a908-e655c58685a5:entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:89407208-acc8-471a-a908-e655c58685a5",
+    "to": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "weight_pct": 1.69,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+    "verification_status": "reported",
+    "notes": "3037 欣興 1.69% (from ETF holdings note)"
+  },
+  {
+    "id": "holding:entity:89407208-acc8-471a-a908-e655c58685a5:entity:41c1f350-7064-4918-ad42-310c1302988f",
+    "predicate": "HOLDS_CONSTITUENT",
+    "from": "entity:89407208-acc8-471a-a908-e655c58685a5",
+    "to": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+    "weight_pct": 0.67,
+    "as_of": "2026-11-20",
+    "weight_source": "https://www.moneydj.com/ETF/X/Basic/Basic0007B.xdjhtm?etfid=00881.TW",
+    "verification_status": "reported",
+    "notes": "2313 華通 0.67% (from ETF holdings note)"
+  }
+]

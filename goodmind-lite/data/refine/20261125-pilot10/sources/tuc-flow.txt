@@ -1,0 +1,116 @@
+﻿
+ 製造流程 - Taiwan Union Technology Corporation
+ 關於台燿
+關於台燿
+經營理念
+台燿事記
+最新訊息
+ 產品介紹
+ View Products by Property
+ High Frequency Laminate
+ Extreme Low Loss Laminate
+ Super Low Loss Laminate
+ Very Low Loss Laminate
+ Low Loss Laminates
+ Mid Loss Materials
+ Non-flow/ Mid-flow Prepregs
+ High Thermal Reliability Laminates
+ Standard Loss Materials
+ View Products by Applications
+ Radio Frequency (RF)
+ High Speed Digital (HSD)
+ High Density Interconnect (HDI)
+ Automotive
+ Substrate
+ Mass Lamination Service
+ 技術發展
+技術優勢
+製造流程
+品質管理
+實驗室
+ 公司治理
+功能性委員會
+內部稽核
+公司治理
+永續發展
+利害關係人專區
+環境、安全與健康促進
+投資人專區
+ 人才招募
+人才招募
+培育發展
+薪酬福利
+聯絡我們
+ 會員登入
+ Search 
+英
+繁
+簡
+技術發展
+製造流程
+製造流程
+製造流程
+銅箔基板 (Copper Clad Laminate，簡稱CCL) 為製造印刷電路板之關鍵性基礎材料。係利用絕緣紙、玻璃纖維布或其它纖維材料經樹脂含浸後所得之黏合片 (Prepreg，亦稱膠片) 與銅箔疊合，於高溫高壓下成形之積層板。
+黏合片/銅箔基板
+Related Products
+多層壓合代工服務
+台燿科技選用的尖端設備包括曝光機、AOI光學機、自動組合線、真空壓合機等，並結合銅箔基板製造專業與印刷電路板前段製程技術研究，專注發展阻抗控制、HDI及高層數預壓技術等能力，持續提供全球印刷電路板業者更多方位的附加服務，不僅可提昇PCB製造業者的產能彈性，並可分擔其整體成本以提升競爭力。自2004年起，台灣廠及江蘇常熟廠之合併多層壓合代工產能每月可供應超過2,400,000平方英呎。
+Related Products
+製程概述
+黏合片 (Prepreg，亦稱膠片)
+調膠與催化
+玻璃布導入
+含浸與上膠
+成膠包裝作業
+銅箔基板 (Copper Clad Laminate，簡稱CCL)
+疊置作業
+組合作業
+壓合作業
+解板與成檢作業
+多層壓合代工服務 (Mass Lamination Service)
+內層前處理作業
+內層自動壓膜作業
+內層自動曝光作業
+自動光學檢查 (AOI)
+黑化或棕化處理
+疊構作業
+組合作業
+壓合作業
+X-ray 破靶作業
+成型及磨邊作業
+鑽孔作業
+電鍍作業
+ TOP
+ 關於台燿
+關於台燿
+經營理念
+台燿事記
+最新訊息
+ 產品介紹
+View Products by Property
+View Products by Applications
+Mass Lamination Service
+ 技術發展
+技術優勢
+製造流程
+品質管理
+實驗室
+ 公司治理
+功能性委員會
+內部稽核
+公司治理
+永續發展
+利害關係人專區
+環境、安全與健康促進
+投資人專區
+ 人才招募
+人才招募
+培育發展
+薪酬福利
+聯絡我們
+© 2026 Taiwan Union Technology Corporation.
+ Privacy
+ Da-vinci 網頁設計
+ 本網站使用第三方 Cookie，以提供最佳導航體驗。繼續瀏覽本網站即表示您同意使用這些 Cookie。 
+ 接受
+ 了解更多

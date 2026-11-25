@@ -1,0 +1,47 @@
+[
+  {
+    "from": "Claim",
+    "group": "evidence",
+    "meaning": "Original evidence for assertion",
+    "predicate": "SUPPORTED_BY",
+    "storage": "asserted",
+    "to": "Evidence",
+    "edge_count": 0
+  },
+  {
+    "from": "Claim",
+    "group": "evidence",
+    "meaning": "Claim supports a specific supplier/customer/product link",
+    "predicate": "ASSERTS_SUPPLY",
+    "storage": "asserted",
+    "to": "SupplyRelationship",
+    "edge_count": 0
+  },
+  {
+    "from": "Claim",
+    "group": "evidence",
+    "meaning": "Claim supports a prospective customer rationale",
+    "predicate": "ASSERTS_OPPORTUNITY",
+    "storage": "asserted",
+    "to": "CustomerOpportunity",
+    "edge_count": 0
+  },
+  {
+    "from": "Claim",
+    "group": "evidence",
+    "meaning": "Claim supports a collaboration assertion",
+    "predicate": "ASSERTS_COLLABORATION",
+    "storage": "asserted",
+    "to": "Collaboration",
+    "edge_count": 0
+  },
+  {
+    "from": "Claim",
+    "group": "evidence",
+    "meaning": "Claim supports or qualifies a competitive assessment",
+    "predicate": "ASSERTS_COMPETITION",
+    "storage": "asserted",
+    "to": "CompetitionAssessment",
+    "edge_count": 0
+  }
+]

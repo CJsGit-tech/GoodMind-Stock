@@ -1,0 +1,23 @@
+[
+  {
+    "group": "suggested",
+    "predicate": "POSSIBLE_COMPETITOR",
+    "from": "Company",
+    "to": "Company",
+    "storage": "suggested_only",
+    "meaning": "Suggested by shared groups; becomes a CompetitionAssessment only when a curator accepts it",
+    "symmetric": true,
+    "derivedBy": "S-same-offering, S-same-category, S-same-segment, S-shared-technology",
+    "edge_count": 0
+  },
+  {
+    "group": "suggested",
+    "predicate": "POSSIBLE_SUPPLIER",
+    "from": "Company",
+    "to": "Company",
+    "storage": "suggested_only",
+    "meaning": "Suggested by technology or value-chain position; becomes a SupplyRelationship (stage prospect) only when accepted",
+    "derivedBy": "S-technology-provider, S-value-chain",
+    "edge_count": 0
+  }
+]

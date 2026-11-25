@@ -1,0 +1,160 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:adprod",
+      "evidence:nexprod"
+    ],
+    "from": "competition:dlap-v-mars",
+    "id": "edge:043",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "market:robotic-edge-computing",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [
+      "evidence:adprod",
+      "evidence:aaeonprod"
+    ],
+    "from": "competition:dlap-v-boxer",
+    "id": "edge:046",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "market:robotic-edge-computing",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+    "id": "relation:df01b643-8145-4fb0-8978-ad2f674d570d",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+    "id": "relation:fcaecd54-5515-4561-b955-b67367afec0b",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "market:robotic-edge-computing",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+    "id": "relation:82b8da35-acd4-4633-945e-82fcf2ddcbe4",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+    "id": "relation:df361543-f27a-40b1-ad2a-20143e9684a1",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+    "id": "relation:66bde455-9e88-4aa2-8b84-4d641c754cbd",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+    "id": "relation:90f1f230-5945-4721-b776-79cf7a531f53",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+    "id": "relation:c57600ae-b1b8-42d5-adf2-0d6a6c390bb7",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+    "id": "relation:2b725b1e-f75c-47c2-a985-bbf5f1263c0b",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+    "id": "relation:cb6ae5f6-017b-454c-afbb-60a61bfcdfdc",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+    "id": "relation:07c1536b-1b67-43bf-a46f-d5eee72e1947",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+    "id": "relation:f52dbdfc-163a-4560-a301-1e856b653e63",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+    "id": "relation:91367362-4622-4b63-99ff-9cadfdb1a1ee",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+    "id": "relation:d287d95f-a9a1-4487-a0cc-7214bef6176e",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+    "id": "relation:1c0fa0a7-98ac-4b0e-81e1-51b7edd19e3d",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+    "id": "relation:5ef8b778-f945-4c0e-a776-c3d6a249cdb3",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+    "id": "relation:1d697f26-af78-4c31-a5f1-162aa6096a01",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [],
+    "from": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+    "id": "relation:3d5a3a15-1260-417e-9571-50c54c2feb6c",
+    "predicate": "COMPETES_IN_SEGMENT",
+    "to": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "verification_status": "analyst_inferred"
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:inno"
+    ],
+    "from": "company:innodisk",
+    "id": "edge:026",
+    "predicate": "MEMBER_OF_GROUP",
+    "to": "group:innodisk",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:inno"
+    ],
+    "from": "company:aetina",
+    "id": "edge:027",
+    "predicate": "MEMBER_OF_GROUP",
+    "to": "group:innodisk",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:nexgroup"
+    ],
+    "from": "company:nexcom",
+    "id": "edge:028",
+    "predicate": "MEMBER_OF_GROUP",
+    "to": "group:nexcom",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:nexgroup"
+    ],
+    "from": "company:nexcobot",
+    "id": "edge:029",
+    "predicate": "MEMBER_OF_GROUP",
+    "to": "group:nexcom",
+    "verification_status": "officially_disclosed"
+  }
+]

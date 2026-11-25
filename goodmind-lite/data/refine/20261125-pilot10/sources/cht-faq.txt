@@ -1,0 +1,206 @@
+常見問題｜中華資安國際 CHT Security Co., Ltd. 
+ search 
+ 繁體中文 | English | 日本語 
+ 繁體中文English日本語 
+關於我們 
+公司簡介 
+認證與得獎
+訊息專區
+聯絡我們 
+ Cookie 政策 
+利害關係人專區
+ 利害關係人 
+ 客戶申訴處理政策 
+資安專業服務 
+資安檢測服務
+源碼檢測服務
+弱點掃描服務
+網頁個資掃描服務
+滲透測試服務
+資安健診服務
+社交工程演練服務
+AI應用系統安全檢測服務
+AI資安健診服務
+App檢測服務
+紅隊演練服務
+攻擊模擬演練服務
+電腦系統資訊安全評估
+IoT檢測
+無人機檢測服務
+DDoS攻防演練
+OT資安服務
+資安管理與顧問服務
+資通安全威脅偵測管理(SOC)服務
+資安事件處理與鑑識服務
+MDR威脅偵測應變服務
+網頁存活與異動監測服務
+PKI建置規劃
+ISMS/PIMS顧問輔導
+OT場域資安防護監測與應變服務
+數位風險防護與暗網情資監控服務
+雲端資安服務
+雲端資通安全威脅偵測管理(Cloud SOC)服務
+雲端資安健診服務
+資通安全弱點通報平台
+電子郵件警覺性測試服務
+資安服務共契專區
+資安共同供應契約
+資通安全威脅偵測管理(SOC)服務共同供應契約
+弱點檢測服務共同供應契約
+滲透測試服務共同供應契約
+資安健診服務共同供應契約
+社交工程演練服務共同供應契約
+產品與解決方案 
+產品與解決方案
+政府機關資安解決方案
+證券業資安解決方案
+製造業資安解決方案
+上市櫃公司資通安全管控指引解決方案
+資安防護產品
+網路及端點防護查看更多... 
+SecuTex 先進資安威脅防禦系統
+SecuTex ED
+Fortinet Fortigate
+Palo Alto Network NGFW
+CrowdStrike Endpoint Protection
+SentinelOne EDR Protection
+IMPERVA SecureSphere
+Sophos NGFW
+Gigamon 智慧型流量可視化分流平台
+PacketX GRISM 智慧型全功能網路可視化平台
+弱點檢測查看更多...
+資安眼HorusEyes
+Opentext Fortify WebInspect
+Tenable Security Center 弱點管理平台
+弱點管理平台 PRO
+Opentext Fortify SCA
+Rapid7 InsightAppSec 網頁應用安全測試系統
+存取管控查看更多...
+e-SOFT SIP內網資安部署管理系統 NAC++
+資安管理查看更多... 
+AI Archway
+CypherCom 端對端加密通訊系統
+瑞思資訊 RapixEngine
+Nutanix HCI超融合基礎架構 
+Nutanix HCI超融合基礎架構
+Secure Element 硬體安全元件
+Trellix Email Security
+Securebox檔案防護
+電子郵件警覺性測試系統
+備份備援查看更多... 
+Veeam
+Commvault
+網路及端點防護x
+SecuTex 先進資安威脅防禦系統
+SecuTex ED
+Fortinet Fortigate
+Palo Alto Network NGFW
+CrowdStrike Endpoint Protection
+SentinelOne EDR Protection
+IMPERVA SecureSphere 
+Sophos NGFW
+Gigamon 智慧型流量可視化分流平台 
+PacketX GRISM 智慧型全功能網路可視化平台
+弱點檢測x
+資安眼HorusEyes 
+Opentext Fortify WebInspect
+Tenable Security Center 弱點管理平台 
+弱點管理平台 PRO
+Opentext Fortify SCA
+Rapid7 InsightAppSec 網頁應用安全測試系統 
+存取管控x
+e-SOFT SIP內網資安部署管理系統 NAC++
+None 
+None 
+None 
+資安管理x
+AI Archway
+CypherCom 端對端加密通訊系統
+瑞思資訊 RapixEngine 
+Nutanix HCI超融合基礎架構 
+Secure Element 硬體安全元件
+Trellix Email Security 
+Securebox檔案防護
+電子郵件警覺性測試系統
+備份備援x
+Veeam 
+Commvault 
+None 
+None 
+None 
+上網資安 
+個人/家庭
+防駭守門員
+色情守門員
+上網時間管理
+HiNet 防毒防駭
+防詐隊長
+企業上網資安
+HiNet入侵防護服務
+HiNet DDoS防護服務
+HiNet先進網路防禦系統服務(ANDs)
+HiNet企業防駭守門員
+HiNet WAF服務
+HiNet DNS防駭悍將
+WAAP多合一網站應用與API防護服務 
+ 人才招募 
+ 投資人專區 
+財務資訊　　
+月營收
+季財報
+年報
+股東專欄　　
+股東會
+股利資訊
+主要股東
+法說會
+法說會　　
+公司治理　　
+組織架構
+董事會資訊
+功能性委員會
+高階績效與薪酬
+公司重要規章
+內部稽核
+誠信經營
+資訊安全與隱私保護
+重大訊息
+重大訊息　　 
+常見問題
+常見問題　　
+聯絡我們
+聯絡我們　　
+ ESG企業永續 
+環境保護
+ 環境管理政策 
+ 溫室氣體排放 
+ 能源管理 
+ 水資源管理 
+ 廢棄物管理 
+社會責任
+ 薪酬與福利 
+ 人權政策 
+ 責任投資 
+公司治理　　
+組織架構
+董事會資訊
+功能性委員會
+高階績效與薪酬
+公司重要規章
+內部稽核
+誠信經營
+資訊安全與隱私保護
+報告書下載
+永續報告書
+常見問題
+目前暫無資料
+公開資訊觀測站
+Market Observation Post System
+股價資訊
+Taiwan Stock Exchange
+(Stock Ticker:7765)
+本網站在你的電腦儲存 Cookie。這些 Cookie 用作收集你如何與本網站互動的資訊，並讓我們記得你。我們會將此資訊用作改善和自訂你的瀏覽體驗，並分析和量度本網站和其他媒體的訪客數據。若要進一步了解我們使用的 Cookie，請查看我們的《Cookie政策》。
+如果你拒絕，當你造訪本網站時，我們不會追蹤你的資訊。我們會在你的瀏覽器使用單個 Cookie，用作記得你偏好不被追蹤。
+本Cookie政策可能不定期更新，建議您定期查閱以了解最新變更。
+ 接受 
+ 拒絕

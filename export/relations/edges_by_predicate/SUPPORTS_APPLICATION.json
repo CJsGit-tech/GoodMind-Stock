@@ -1,0 +1,32 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:adprod"
+    ],
+    "from": "product:dlap",
+    "id": "edge:016",
+    "predicate": "SUPPORTS_APPLICATION",
+    "to": "application:robotics-control",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:nexprod"
+    ],
+    "from": "product:mars",
+    "id": "edge:018",
+    "predicate": "SUPPORTS_APPLICATION",
+    "to": "application:robotics-control",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:aaeonprod"
+    ],
+    "from": "product:boxer",
+    "id": "edge:020",
+    "predicate": "SUPPORTS_APPLICATION",
+    "to": "application:robotics-control",
+    "verification_status": "officially_disclosed"
+  }
+]

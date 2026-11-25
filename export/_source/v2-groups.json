@@ -1,0 +1,774 @@
+{
+  "version": "2.0.0",
+  "curated_at": "2026-11-22",
+  "method": "AI-assisted grouping from record names, notes, competition records and widely known company profiles. Every link carries a rationale and confidence; review the 'low' ones first.",
+  "industries": [
+    {
+      "key": "semis",
+      "id": "industry:semiconductors",
+      "zh": "半導體",
+      "en": "Semiconductors"
+    },
+    {
+      "key": "components",
+      "id": "industry:electronic-components",
+      "zh": "電子零組件與材料",
+      "en": "Electronic Components"
+    },
+    {
+      "key": "display",
+      "id": "industry:display-optics",
+      "zh": "顯示與光學玻璃",
+      "en": "Display & Optics"
+    },
+    {
+      "key": "aiInfra",
+      "id": "industry:ai-infrastructure",
+      "zh": "AI 資料中心基礎設施",
+      "en": "AI Data Center Infrastructure"
+    },
+    {
+      "key": "automotive",
+      "id": "industry:automotive",
+      "zh": "汽車",
+      "en": "Automotive"
+    },
+    {
+      "key": "consumer",
+      "id": "industry:consumer-electronics",
+      "zh": "消費電子",
+      "en": "Consumer Electronics"
+    },
+    {
+      "key": "materials",
+      "id": "industry:chemicals-materials",
+      "zh": "化學材料",
+      "en": "Chemicals & Materials"
+    },
+    {
+      "key": "networking",
+      "id": "industry:networking",
+      "zh": "網通設備",
+      "en": "Networking Equipment"
+    },
+    {
+      "key": "industrialComputing",
+      "id": "industry:industrial-computing",
+      "existing": true
+    },
+    {
+      "key": "robotics",
+      "id": "industry:robotics",
+      "existing": true
+    }
+  ],
+  "segments": [
+    {
+      "key": "seg2nm",
+      "id": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+      "industry": "semis"
+    },
+    {
+      "key": "seg22",
+      "id": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+      "industry": "semis"
+    },
+    {
+      "key": "waferTest",
+      "id": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+      "industry": "semis"
+    },
+    {
+      "key": "finalTest",
+      "id": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+      "industry": "semis"
+    },
+    {
+      "key": "epi",
+      "id": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+      "industry": "semis"
+    },
+    {
+      "key": "chemTube",
+      "id": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+      "industry": "semis"
+    },
+    {
+      "key": "coverGlass",
+      "id": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+      "industry": "display"
+    },
+    {
+      "key": "autoDisplay",
+      "id": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+      "industry": "display"
+    },
+    {
+      "key": "serverPcb",
+      "id": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+      "industry": "components"
+    },
+    {
+      "key": "qfn",
+      "id": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+      "industry": "components"
+    },
+    {
+      "key": "eglass",
+      "id": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+      "industry": "components"
+    },
+    {
+      "key": "substrate",
+      "id": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+      "industry": "components"
+    },
+    {
+      "key": "aiSwitch",
+      "id": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+      "industry": "aiInfra"
+    },
+    {
+      "key": "rackPower",
+      "id": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+      "industry": "aiInfra"
+    },
+    {
+      "key": "liquidRack",
+      "id": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+      "industry": "aiInfra"
+    },
+    {
+      "key": "roboticEdge",
+      "id": "market:robotic-edge-computing",
+      "industry": "robotics"
+    },
+    {
+      "key": "industrialEdgeAI",
+      "id": "segment:industrial-edge-ai",
+      "zh": "工業邊緣 AI 電腦",
+      "en": "Industrial Edge AI Computing",
+      "industry": "industrialComputing"
+    },
+    {
+      "key": "amr",
+      "id": "segment:amr",
+      "zh": "自主移動機器人 AMR",
+      "en": "Autonomous Mobile Robots",
+      "industry": "robotics"
+    },
+    {
+      "key": "logicFoundry",
+      "id": "segment:logic-foundry",
+      "zh": "邏輯晶圓代工（其他節點與海外晶圓廠）",
+      "en": "Logic Foundry (other nodes & overseas fabs)",
+      "industry": "semis"
+    },
+    {
+      "key": "specialtyFoundry",
+      "id": "segment:specialty-foundry",
+      "zh": "特殊製程代工（BCD、矽光子）",
+      "en": "Specialty Foundry (BCD, silicon photonics)",
+      "industry": "semis"
+    },
+    {
+      "key": "advancedPackaging",
+      "id": "segment:advanced-packaging",
+      "zh": "先進封裝",
+      "en": "Advanced Packaging",
+      "industry": "semis"
+    },
+    {
+      "key": "aiChips",
+      "id": "segment:ai-chips-modules",
+      "zh": "AI 晶片與模組",
+      "en": "AI Chips & Modules",
+      "industry": "semis"
+    },
+    {
+      "key": "siliconPhotonics",
+      "id": "segment:silicon-photonics",
+      "zh": "矽光子元件",
+      "en": "Silicon Photonics Devices",
+      "industry": "semis"
+    },
+    {
+      "key": "displayGlass",
+      "id": "segment:display-glass",
+      "zh": "顯示用玻璃基板",
+      "en": "Display Glass Substrates",
+      "industry": "display"
+    },
+    {
+      "key": "microled",
+      "id": "segment:microled-display",
+      "zh": "透明與 Micro LED 顯示",
+      "en": "Transparent & Micro LED Displays",
+      "industry": "display"
+    },
+    {
+      "key": "aiServers",
+      "id": "segment:ai-servers",
+      "zh": "AI 伺服器與 HPC 系統",
+      "en": "AI Servers & HPC Systems",
+      "industry": "aiInfra"
+    },
+    {
+      "key": "autoGlass",
+      "id": "segment:automotive-glass",
+      "zh": "汽車玻璃",
+      "en": "Automotive Glass",
+      "industry": "automotive"
+    },
+    {
+      "key": "vehicles",
+      "id": "segment:vehicles",
+      "zh": "整車與電動車",
+      "en": "Vehicles & EVs",
+      "industry": "automotive"
+    },
+    {
+      "key": "consumerDevices",
+      "id": "segment:consumer-devices",
+      "zh": "消費電子品牌",
+      "en": "Consumer Device Brands",
+      "industry": "consumer"
+    },
+    {
+      "key": "fluoroMaterials",
+      "id": "segment:fluoro-materials",
+      "zh": "氟素材料",
+      "en": "Fluoropolymer Materials",
+      "industry": "materials"
+    },
+    {
+      "key": "wifiNetworking",
+      "id": "segment:wifi-networking",
+      "zh": "無線網通與 Wi-Fi 設備",
+      "en": "Wireless & Wi-Fi Equipment",
+      "industry": "networking"
+    }
+  ],
+  "categories": [
+    {
+      "id": "category:robotic-edge-controller",
+      "segment": "roboticEdge"
+    },
+    {
+      "id": "category:industrial-edge-ai-computer",
+      "segment": "industrialEdgeAI"
+    }
+  ],
+  "value_chain": [
+    [
+      "epi",
+      "seg2nm"
+    ],
+    [
+      "epi",
+      "seg22"
+    ],
+    [
+      "epi",
+      "logicFoundry"
+    ],
+    [
+      "epi",
+      "specialtyFoundry"
+    ],
+    [
+      "fluoroMaterials",
+      "chemTube"
+    ],
+    [
+      "chemTube",
+      "logicFoundry"
+    ],
+    [
+      "waferTest",
+      "seg22"
+    ],
+    [
+      "finalTest",
+      "seg22"
+    ],
+    [
+      "waferTest",
+      "logicFoundry"
+    ],
+    [
+      "finalTest",
+      "logicFoundry"
+    ],
+    [
+      "eglass",
+      "serverPcb"
+    ],
+    [
+      "eglass",
+      "substrate"
+    ],
+    [
+      "substrate",
+      "aiChips"
+    ],
+    [
+      "substrate",
+      "advancedPackaging"
+    ],
+    [
+      "qfn",
+      "finalTest"
+    ],
+    [
+      "advancedPackaging",
+      "aiChips"
+    ],
+    [
+      "seg2nm",
+      "aiChips"
+    ],
+    [
+      "seg2nm",
+      "consumerDevices"
+    ],
+    [
+      "logicFoundry",
+      "consumerDevices"
+    ],
+    [
+      "specialtyFoundry",
+      "siliconPhotonics"
+    ],
+    [
+      "aiChips",
+      "aiServers"
+    ],
+    [
+      "aiChips",
+      "industrialEdgeAI"
+    ],
+    [
+      "aiChips",
+      "roboticEdge"
+    ],
+    [
+      "serverPcb",
+      "aiServers"
+    ],
+    [
+      "serverPcb",
+      "aiSwitch"
+    ],
+    [
+      "serverPcb",
+      "liquidRack"
+    ],
+    [
+      "rackPower",
+      "liquidRack"
+    ],
+    [
+      "rackPower",
+      "aiServers"
+    ],
+    [
+      "aiSwitch",
+      "liquidRack"
+    ],
+    [
+      "aiSwitch",
+      "aiServers"
+    ],
+    [
+      "industrialEdgeAI",
+      "amr"
+    ],
+    [
+      "roboticEdge",
+      "amr"
+    ],
+    [
+      "displayGlass",
+      "coverGlass"
+    ],
+    [
+      "coverGlass",
+      "vehicles"
+    ],
+    [
+      "autoDisplay",
+      "vehicles"
+    ],
+    [
+      "autoGlass",
+      "vehicles"
+    ]
+  ],
+  "technology_providers": [
+    {
+      "company": "輝達",
+      "technology": "technology:thor",
+      "rationale": "NVIDIA develops the Jetson Thor platform.",
+      "confidence": "high"
+    },
+    {
+      "company": "輝達",
+      "technology": "technology:orin",
+      "rationale": "NVIDIA develops the Jetson Orin platform.",
+      "confidence": "high"
+    }
+  ],
+  "offering_sellers": [
+    {
+      "offering": "110 kW 機架電源層架",
+      "company": "光寶科",
+      "rationale": "Offering A of 光寶與台達電機架電源競爭評估 and focus of 光寶與雲達機架電源合作.",
+      "confidence": "high"
+    },
+    {
+      "offering": "台達 110 kW AC-DC 機架電源層架",
+      "company": "台達電",
+      "rationale": "Named after Delta; offering B of the LITEON–Delta rack power assessment.",
+      "confidence": "high"
+    },
+    {
+      "offering": "鴻海 GB300 NVL72 液冷機架",
+      "company": "鴻海 Foxconn",
+      "rationale": "Named after Foxconn; offering A of the Foxconn–Supermicro assessment.",
+      "confidence": "high"
+    },
+    {
+      "offering": "AIS800-64D 交換器",
+      "company": "智邦",
+      "rationale": "Offering B of 啟碁與智邦高速交換器競爭評估 (the Accton side).",
+      "confidence": "high"
+    },
+    {
+      "offering": "KF 載板",
+      "company": "欣興",
+      "rationale": "Capacity reserved at Unimicron for NVIDIA (欣興與輝達載板產能協議), so the substrate is Unimicron's.",
+      "confidence": "medium"
+    }
+  ],
+  "split_by_supplier": [
+    "氟素材料製程原料",
+    "半導體封裝與測試委外服務"
+  ],
+  "offering_groups": [
+    {
+      "offering": "AFE-R750",
+      "category": "category:industrial-edge-ai-computer",
+      "rationale": "Jetson Orin edge AI system used in a robotics solution.",
+      "confidence": "medium"
+    },
+    {
+      "offering": "APEX Series",
+      "category": "category:industrial-edge-ai-computer",
+      "rationale": "Innodisk APEX is an edge AI server line.",
+      "confidence": "medium"
+    },
+    {
+      "offering": "DLAP-411-Orin",
+      "category": "category:robotic-edge-controller",
+      "technology": "technology:orin",
+      "rationale": "Notes: AGX Orin system for AMR edge computing.",
+      "confidence": "high"
+    },
+    {
+      "offering": "CoWoS 先進封裝服務",
+      "segments": [
+        "advancedPackaging"
+      ],
+      "rationale": "CoWoS is TSMC's advanced packaging service.",
+      "confidence": "high"
+    },
+    {
+      "offering": "BCD 晶圓代工製程",
+      "segments": [
+        "specialtyFoundry"
+      ],
+      "rationale": "BCD is a specialty foundry process.",
+      "confidence": "high"
+    },
+    {
+      "offering": "亞利桑那 Fab 21 代工晶片",
+      "segments": [
+        "logicFoundry"
+      ],
+      "rationale": "Logic wafers from TSMC's Arizona fab.",
+      "confidence": "high"
+    },
+    {
+      "offering": "矽光子積體電路晶圓",
+      "segments": [
+        "specialtyFoundry"
+      ],
+      "rationale": "Silicon photonics wafers are a specialty foundry process.",
+      "confidence": "high"
+    },
+    {
+      "offering": "半導體封裝與測試委外服務",
+      "segments": [
+        "finalTest"
+      ],
+      "rationale": "Assembly and test subcontracting service.",
+      "confidence": "high"
+    },
+    {
+      "offering": "PFA 高純度儲槽",
+      "segments": [
+        "chemTube"
+      ],
+      "rationale": "High-purity chemical storage, the same buyer need as PFA tubing.",
+      "confidence": "medium"
+    },
+    {
+      "offering": "氟素材料製程原料",
+      "segments": [
+        "fluoroMaterials"
+      ],
+      "rationale": "Fluoropolymer raw materials.",
+      "confidence": "high"
+    },
+    {
+      "offering": "KF 載板",
+      "segments": [
+        "substrate"
+      ],
+      "rationale": "An IC substrate product.",
+      "confidence": "high"
+    },
+    {
+      "offering": "高速資料中心網路交換器",
+      "segments": [
+        "aiSwitch"
+      ],
+      "rationale": "Data-center switch product line.",
+      "confidence": "high"
+    },
+    {
+      "offering": "透明 Micro LED 顯示器",
+      "segments": [
+        "microled"
+      ],
+      "rationale": "Transparent Micro LED display.",
+      "confidence": "high"
+    },
+    {
+      "offering": "玻璃基板",
+      "segments": [
+        "displayGlass"
+      ],
+      "rationale": "Glass substrate supplied to a cover-glass maker.",
+      "confidence": "high"
+    },
+    {
+      "offering": "汽車玻璃",
+      "segments": [
+        "autoGlass"
+      ],
+      "rationale": "Automotive glass.",
+      "confidence": "high"
+    },
+    {
+      "offering": "ASX VR-e",
+      "segments": [
+        "vehicles"
+      ],
+      "rationale": "A vehicle model built under an OEM project.",
+      "confidence": "high"
+    }
+  ],
+  "new_offerings": [
+    {
+      "id": "product:nvidia-jetson-thor-module",
+      "name": "Jetson Thor 模組",
+      "company": "輝達",
+      "segments": [
+        "aiChips"
+      ],
+      "technology": "technology:thor",
+      "kind": "module",
+      "rationale": "NVIDIA sells Jetson Thor modules that the edge systems above are built on.",
+      "confidence": "high"
+    },
+    {
+      "id": "product:nvidia-jetson-orin-module",
+      "name": "Jetson Orin 模組",
+      "company": "輝達",
+      "segments": [
+        "aiChips"
+      ],
+      "technology": "technology:orin",
+      "kind": "module",
+      "rationale": "NVIDIA sells Jetson Orin modules.",
+      "confidence": "high"
+    }
+  ],
+  "business_lines": [
+    {
+      "company": "新漢 NEXCOM",
+      "segment": "industrialEdgeAI",
+      "rationale": "Industrial computer maker; parent of NexCOBOT.",
+      "confidence": "medium"
+    },
+    {
+      "company": "安提 Aetina",
+      "segment": "industrialEdgeAI",
+      "rationale": "Edge AI systems maker in the Innodisk group.",
+      "confidence": "medium"
+    },
+    {
+      "company": "FARobot",
+      "segment": "amr",
+      "rationale": "Robotics joint venture with ADLINK and Foxconn.",
+      "confidence": "medium"
+    },
+    {
+      "company": "Aeolus Robotics",
+      "segment": "amr",
+      "rationale": "Robotics partner using Advantech AFE-R750.",
+      "confidence": "medium"
+    },
+    {
+      "company": "MOBISNET",
+      "segment": "amr",
+      "rationale": "AMR integration partner of Axiomtek.",
+      "confidence": "medium"
+    },
+    {
+      "company": "DEEPX",
+      "segment": "aiChips",
+      "rationale": "Edge AI processor company partnering with AAEON.",
+      "confidence": "medium"
+    },
+    {
+      "company": "雲達科技",
+      "segment": "aiServers",
+      "rationale": "Quanta's cloud server brand; rack power partner of LITEON.",
+      "confidence": "medium"
+    },
+    {
+      "company": "Bull",
+      "segment": "aiServers",
+      "rationale": "HPC and AI system builder in the Foxconn–NVIDIA Europe rack collaboration.",
+      "confidence": "medium"
+    },
+    {
+      "company": "蘋果",
+      "segment": "consumerDevices",
+      "rationale": "Consumer device brand; buyer of Fab 21 chips.",
+      "confidence": "high"
+    },
+    {
+      "company": "豐田汽車",
+      "segment": "vehicles",
+      "rationale": "Vehicle maker; buyer of automotive glass.",
+      "confidence": "high"
+    },
+    {
+      "company": "三菱汽車",
+      "segment": "vehicles",
+      "rationale": "Vehicle maker; buyer of the ASX VR-e OEM project.",
+      "confidence": "high"
+    },
+    {
+      "company": "鴻華先進",
+      "segment": "vehicles",
+      "rationale": "EV platform and OEM vehicle builder.",
+      "confidence": "high"
+    },
+    {
+      "company": "全智科技",
+      "segment": "waferTest",
+      "rationale": "Test subsidiary of Ardentec.",
+      "confidence": "low"
+    },
+    {
+      "company": "Tera Probe",
+      "segment": "waferTest",
+      "rationale": "Wafer-test company controlled by Powertech.",
+      "confidence": "medium"
+    },
+    {
+      "company": "TeraPower",
+      "segment": "waferTest",
+      "rationale": "Test affiliate controlled by Tera Probe.",
+      "confidence": "low"
+    },
+    {
+      "company": "JASM",
+      "segment": "logicFoundry",
+      "rationale": "TSMC-majority foundry fab in Japan.",
+      "confidence": "high"
+    },
+    {
+      "company": "台積電亞利桑那",
+      "segment": "logicFoundry",
+      "rationale": "TSMC's Arizona fab subsidiary.",
+      "confidence": "high"
+    },
+    {
+      "company": "ESMC",
+      "segment": "logicFoundry",
+      "rationale": "TSMC-led foundry fab in Germany.",
+      "confidence": "high"
+    },
+    {
+      "company": "聯電日本半導體",
+      "segment": "logicFoundry",
+      "rationale": "UMC's foundry fab in Japan.",
+      "confidence": "high"
+    },
+    {
+      "company": "宇智網通",
+      "segment": "wifiNetworking",
+      "rationale": "Wireless networking equipment maker controlled by LITEON.",
+      "confidence": "medium"
+    },
+    {
+      "company": "長華電材",
+      "segment": "qfn",
+      "rationale": "Lead-frame and packaging-material group, parent of Chang Wah Technology.",
+      "confidence": "medium"
+    },
+    {
+      "company": "名幸電子",
+      "segment": "serverPcb",
+      "rationale": "PCB maker; joint-venture partner of Allied Circuit.",
+      "confidence": "medium"
+    },
+    {
+      "company": "SILITH",
+      "segment": "siliconPhotonics",
+      "rationale": "Silicon photonics company receiving UMC wafers.",
+      "confidence": "medium"
+    },
+    {
+      "company": "睿晶科技",
+      "segment": "epi",
+      "rationale": "Silicon wafer subsidiary of Wafer Works.",
+      "confidence": "low"
+    },
+    {
+      "company": "WNC 美國",
+      "segment": "aiSwitch",
+      "rationale": "US arm of WNC.",
+      "confidence": "low"
+    },
+    {
+      "company": "宜鼎 Innodisk",
+      "segment": "industrialEdgeAI",
+      "skip_if_has_offering": true,
+      "rationale": "Industrial storage and edge AI.",
+      "confidence": "medium"
+    },
+    {
+      "company": "鴻海 Foxconn",
+      "segment": "aiServers",
+      "rationale": "Foxconn assembles AI servers and racks (GB300 NVL72 showcase; Foxconn–Bull–NVIDIA rack collaboration).",
+      "confidence": "high"
+    }
+  ]
+}

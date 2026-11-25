@@ -1,0 +1,465 @@
+{
+  "curated_at": "2026-11-22",
+  "curator": "Claude (assisted). Review before treating as verified.",
+  "method": "Each value is derived only from the record's own notes/basis text or its evidence page; nothing is taken from outside the graph.",
+  "decisions": [
+    {
+      "id": "entity:16ccb359-3f24-4216-8e3e-b52f4b426f23",
+      "label": "欣銓對聯電的委外服務",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "service"
+      },
+      "rationale": "UMC officially lists Ardentec as an active test/packaging subcontractor; volumes are not disclosed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:e796c10d-3c16-42a6-bb9e-beae7e9d72c3",
+      "label": "力成對聯電的委外服務",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "service"
+      },
+      "rationale": "UMC officially lists Powertech as an active test/packaging subcontractor; volumes are not disclosed.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "label": "台積電亞利桑那 Fab 21 對蘋果代工",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "service",
+        "as_of": "2025-02-24"
+      },
+      "rationale": "Apple confirmed chip production at Fab 21 (2025-02-24); facility-specific foundry service.",
+      "confidence": "high"
+    },
+    {
+      "id": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "label": "台灣汽車玻璃對豐田供貨",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "product"
+      },
+      "rationale": "Annual disclosure states OEM installation and service-parts supply; notes caution it is not a current contract, so treat as of the disclosure period.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "label": "旭硝子對正達供應玻璃基板",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "product",
+        "as_of": "2025-12-31"
+      },
+      "rationale": "FY2025 annual report p.69 names AGC as a principal glass-substrate supplier.",
+      "confidence": "high"
+    },
+    {
+      "id": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "label": "鴻華先進對三菱的 ASX VR-e OEM 專案",
+      "set": {
+        "stage": "design_win",
+        "offering_kind": "product",
+        "as_of": "2026-08-17"
+      },
+      "rationale": "Mitsubishi announced the Foxtron-built ASX VR-e OEM model (2026-08-17); notes say units delivered are not confirmed, so design win, not volume.",
+      "confidence": "high"
+    },
+    {
+      "id": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "label": "聯電對 SILITH 矽光子晶圓交付",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "service",
+        "as_of": "2026-07-14"
+      },
+      "rationale": "UMC announced first volume wafer delivery from Singapore to SILITH (2026-07-14); foundry service, scoped to this platform.",
+      "confidence": "high"
+    },
+    {
+      "id": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+      "label": "科慕對上品原料供應",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "product",
+        "as_of": "2025-12-31"
+      },
+      "rationale": "Annual report p.100 names this company as a raw-material source; notes say no current contract, grade or volume is asserted, so confirmed only as of the report period.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+      "label": "大金工業對上品原料供應",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "product",
+        "as_of": "2025-12-31"
+      },
+      "rationale": "Annual report p.100 names this company as a raw-material source; notes say no current contract, grade or volume is asserted, so confirmed only as of the report period.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+      "label": "3M對上品原料供應",
+      "set": {
+        "stage": "mass_production",
+        "offering_kind": "product",
+        "as_of": "2025-12-31"
+      },
+      "rationale": "Annual report p.100 names this company as a raw-material source; notes say no current contract, grade or volume is asserted, so confirmed only as of the report period.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+      "label": "光寶與雲達機架電源合作",
+      "set": {
+        "collaboration_type": "technical_integration",
+        "stage": "in_development",
+        "announced_at": "2026-10-16",
+        "scope": "Joint rack-power showcase supporting NVIDIA Vera Rubin NVL72; volume shipments not established."
+      },
+      "rationale": "Notes: joint showcase, volume shipments not established → demonstrated but not launched. Date from the LITEON press page.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+      "label": "欣興與輝達載板產能協議",
+      "set": {
+        "collaboration_type": "other",
+        "stage": "announced",
+        "announced_at": "2026-10-21",
+        "scope": "Substrate capacity reservation for NVIDIA; planned ramp timing is not shipment evidence."
+      },
+      "rationale": "Notes: capacity reservation disclosed 2026-10-21. It is closer to a supply agreement than a partnership; consider re-modelling as a SupplyRelationship at stage qualified.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+      "label": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+      "set": {
+        "collaboration_type": "strategic_partnership",
+        "stage": "announced",
+        "announced_at": "2026-06-17",
+        "scope": "Plan to manufacture AI racks in Europe with Bull commercializing; no deliveries confirmed."
+      },
+      "rationale": "Notes: 2026-06-17 plan announced, no deliveries confirmed.",
+      "confidence": "high"
+    },
+    {
+      "id": "entity:4546ae6a-8030-4352-99ae-a48163e4ffde",
+      "label": "博智與名幸越南合資",
+      "set": {
+        "collaboration_type": "joint_venture",
+        "stage": "mou_signed",
+        "announced_at": "2025-09-26",
+        "scope": "High-layer-count PCB joint venture in Vietnam; not proof of volume production."
+      },
+      "rationale": "Notes: JV agreement signed 2025-09-26; production not established.",
+      "confidence": "high"
+    },
+    {
+      "id": "collaboration:adlink-foxconn",
+      "label": "FARobot joint-venture collaboration",
+      "set": {
+        "scope": "ADLINK and Foxconn joint venture FARobot (robot fleet software)."
+      },
+      "rationale": "Scope from the record name and its FARobot company evidence.",
+      "confidence": "medium"
+    },
+    {
+      "id": "collaboration:adv-aeolus",
+      "label": "Advantech / Aeolus robotics solution",
+      "set": {
+        "announced_at": "2026-05-26",
+        "scope": "Robotics solution integration around Advantech AFE-R750."
+      },
+      "rationale": "Date from Advantech news metadata (2026-05-26); scope from FOCUSES_ON_PRODUCT.",
+      "confidence": "high"
+    },
+    {
+      "id": "collaboration:aaeon-deepx",
+      "label": "AAEON / DEEPX cooperation",
+      "set": {
+        "announced_at": "2026-06-09",
+        "scope": "Physical-AI mass-production partnership (DEEPX NPU with AAEON systems)."
+      },
+      "rationale": "Date from DEEPX newsroom metadata (2026-06-09).",
+      "confidence": "high"
+    },
+    {
+      "id": "collaboration:axiom-mobisnet",
+      "label": "Axiomtek / MOBISNET AMR integration",
+      "set": {
+        "scope": "AMR integration showcased at Automation Taipei 2026 around Axiomtek AIE510-ONX."
+      },
+      "rationale": "Scope from the evidence title and FOCUSES_ON_PRODUCT.",
+      "confidence": "medium"
+    },
+    {
+      "id": "competition:dlap-v-mars",
+      "label": "dlap v mars",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Both in the Robotic Edge Controller category for robotics controller deployments.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+      "label": "N2 與 SF2 的先進代工競爭評估",
+      "set": {
+        "overlap_scope": "market"
+      },
+      "rationale": "Both are 2 nm-class GAA foundry processes for the same leading-edge foundry market.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+      "label": "凌華與艾訊 AMR 邊緣運算競爭評估",
+      "set": {
+        "overlap_scope": "application"
+      },
+      "rationale": "Basis limits overlap to AMR edge inference; hardware platforms and camera interfaces differ.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+      "label": "聯電與台積電低功耗代工競爭評估",
+      "set": {
+        "overlap_scope": "market"
+      },
+      "rationale": "Both low-power 22 nm platforms for consumer/connected chips in the same foundry segment.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+      "label": "欣銓與京元電晶圓測試競爭評估",
+      "set": {
+        "overlap_scope": "market"
+      },
+      "rationale": "Both offer logic and mixed-signal wafer test, the full scoped segment.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+      "label": "合晶與環球晶矽磊晶競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Customized epitaxial wafers; overlap noted for power devices, specs may differ.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+      "label": "正達與旭硝子車載蓋板競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis scopes it to curved automotive cover glass only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+      "label": "力成與日月光成品測試競爭評估",
+      "set": {
+        "overlap_scope": "market"
+      },
+      "rationale": "Both provide logic and memory final test, the full scoped segment.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+      "label": "華通與金像電伺服器板競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Overlap in high-layer server/networking PCB capability only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+      "label": "博智與金像電伺服器板競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis scopes it to multilayer server and networking boards.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+      "label": "長科與新光電氣 QFN 導線架競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis: QFN lead frames only, not all leadless packages.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+      "label": "上品與 Entegris 高純度 PFA 管競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis: semiconductor high-purity PFA tubing only, not tanks.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+      "label": "啟碁與智邦高速交換器競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Same data-center Ethernet switch category, but 400G vs 800G are not drop-in alternatives.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+      "label": "光寶與台達電機架電源競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Both 110 kW rack power shelves for the Vera Rubin ecosystem; positioning only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+      "label": "鴻海與美超微液冷機架競爭評估",
+      "set": {
+        "overlap_scope": "market"
+      },
+      "rationale": "Same GB300 NVL72 liquid-cooled rack integration; Foxconn source shows demonstration only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+      "label": "友達與群創車用顯示競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis: automotive display category only.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+      "label": "台玻與日東紡電子級玻纖競爭評估",
+      "set": {
+        "overlap_scope": "application"
+      },
+      "rationale": "Basis: overlap is in low-Dk / low-CTE use, not blanket equivalence of grades.",
+      "confidence": "medium"
+    },
+    {
+      "id": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+      "label": "欣興與景碩 IC 載板競爭評估",
+      "set": {
+        "overlap_scope": "product_category"
+      },
+      "rationale": "Basis: scoped to the IC-substrate product category.",
+      "confidence": "medium"
+    },
+    {
+      "id": "competition:dlap-v-boxer",
+      "label": "dlap v boxer",
+      "set": {
+        "overlap_scope": "application"
+      },
+      "rationale": "Different categories (robotics controller vs general embedded AI box) that may substitute only for robotics control.",
+      "confidence": "medium"
+    }
+  ],
+  "links": [
+    {
+      "predicate": "COMPETES_IN_CATEGORY",
+      "from": "competition:dlap-v-mars",
+      "to": "category:robotic-edge-controller",
+      "rationale": "Both offerings are IN_CATEGORY Robotic Edge Controller."
+    },
+    {
+      "predicate": "COMPETES_ON_APPLICATION",
+      "from": "competition:dlap-v-boxer",
+      "to": "application:robotics-control",
+      "rationale": "Both offerings SUPPORT_APPLICATION Robotics Control."
+    }
+  ],
+  "roles": [
+    {
+      "edge": "relation:6983dc2b-e4fb-48b5-8550-22a48a245590",
+      "collaboration": "光寶與雲達機架電源合作",
+      "participant": "光寶科",
+      "role": "supplier"
+    },
+    {
+      "edge": "relation:02cef285-35ec-4fb8-88e5-822d15a34922",
+      "collaboration": "光寶與雲達機架電源合作",
+      "participant": "雲達科技",
+      "role": "integrator"
+    },
+    {
+      "edge": "relation:36fe19a2-cc29-48f8-b906-23c9e64a0abf",
+      "collaboration": "欣興與輝達載板產能協議",
+      "participant": "欣興",
+      "role": "supplier"
+    },
+    {
+      "edge": "relation:7c610eb6-879e-4226-b9b9-717b0d17ffbb",
+      "collaboration": "欣興與輝達載板產能協議",
+      "participant": "輝達",
+      "role": "customer"
+    },
+    {
+      "edge": "relation:b88b65a0-b4f1-4401-8e9b-7639badc4729",
+      "collaboration": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+      "participant": "鴻海 Foxconn",
+      "role": "supplier"
+    },
+    {
+      "edge": "relation:3904daf9-d7d9-44b3-be36-2f6487c1e7d9",
+      "collaboration": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+      "participant": "Bull",
+      "role": "partner"
+    },
+    {
+      "edge": "relation:a081a050-96da-4f0d-9ae3-086e4881ab32",
+      "collaboration": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+      "participant": "輝達",
+      "role": "partner"
+    },
+    {
+      "edge": "relation:a375b6f3-ff4a-49e8-bfea-9a6a6b16ed0b",
+      "collaboration": "博智與名幸越南合資",
+      "participant": "博智",
+      "role": "partner"
+    },
+    {
+      "edge": "relation:0938d6f8-e594-4b4b-8e17-128ffdf98eaf",
+      "collaboration": "博智與名幸越南合資",
+      "participant": "名幸電子",
+      "role": "partner"
+    },
+    {
+      "edge": "edge:030",
+      "collaboration": "FARobot joint-venture collaboration",
+      "participant": "凌華 ADLINK",
+      "role": "investor"
+    },
+    {
+      "edge": "edge:031",
+      "collaboration": "FARobot joint-venture collaboration",
+      "participant": "鴻海 Foxconn",
+      "role": "investor"
+    },
+    {
+      "edge": "edge:032",
+      "collaboration": "FARobot joint-venture collaboration",
+      "participant": "FARobot",
+      "role": "lead"
+    }
+  ],
+  "services": {
+    "convert_products_named": [
+      "半導體封裝與測試委外服務"
+    ],
+    "rationale": "Referenced only by supply records as a subcontracted test/packaging service."
+  }
+}

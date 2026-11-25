@@ -1,0 +1,812 @@
+{
+  "source_folder": "/Users/chuang/Desktop/StockAnalysis/manga-layout-templates/2026-11-16-mos-fresh-food-economics/research/",
+  "ops": [
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:mos-2026-09-21-investor-presentation",
+        "type": "Evidence",
+        "name": "安心食品 2026年9月21日法說會簡報",
+        "attributes": {
+          "url": "https://www.mos.com.tw/upload/FileDownload/20260921_172534_067.pdf",
+          "publisher": "安心食品服務",
+          "note": "pp4-5 identify 安心/Taiwan MOS; p11 2019 安心智慧農場; p22 food service alongside farm/testing services; p27 store optimization.",
+          "published_at": "2026-09-21"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:mos-2025-12-24-investor-presentation",
+        "type": "Evidence",
+        "name": "安心食品 2025年12月24日法說會簡報",
+        "attributes": {
+          "url": "https://www.mos.com.tw/upload/FileDownload/20251224_162308_044.pdf",
+          "publisher": "安心食品服務",
+          "note": "p16 farm and testing services expanding into supermarket/hotel channels.",
+          "published_at": "2025-12-24"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:mos-2026-h1-consolidated-financial-report",
+        "type": "Evidence",
+        "name": "安心食品 2026年第2季合併財務報告暨會計師核閱報告",
+        "attributes": {
+          "url": "https://www.mos.com.tw/upload/FinancialReport/2026%e5%b9%b4%e7%ac%ac2%e5%ad%a3-%e5%90%88%e4%bd%b5%e8%b2%a1%e5%8b%99%e5%a0%b1%e5%91%8a%e6%9a%a8%e6%9c%83%e8%a8%88%e5%b8%ab%e6%a0%b8%e9%96%b1%e5%a0%b1%e5%91%8a.pdf",
+          "publisher": "安心食品服務",
+          "note": "Issuer index lists it on Aug 14 (year per research context 2026); H1 2026 vs H1 2025, NTD thousand.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:mos-2022-annual-report",
+        "type": "Evidence",
+        "name": "安心食品 2022年年報",
+        "attributes": {
+          "url": "https://www.mos.com.tw/invest/download/stockholders/2022%E5%B9%B4%E5%A0%B1.pdf",
+          "publisher": "安心食品服務",
+          "note": "Agriculture department manages farm; farm established 2019 with monitored temperature/humidity/light/water; 2021 MOS蔬菜袋著走 and later 摩斯安心點 sold farm produce.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:mos-menu-lettuce-wrap-grilled-chicken-burger",
+        "type": "Evidence",
+        "name": "摘鮮綠烤雞起司堡｜摩斯漢堡",
+        "attributes": {
+          "url": "https://www.mos.com.tw/menu/set_detail.aspx?id=M000856",
+          "publisher": "摩斯漢堡（安心食品服務）",
+          "note": "Current undated product page read 2026-11-16; butterhead lettuce replaces the bun.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:nonfan-2026-11-16-mos-lettuce-retail",
+        "type": "Evidence",
+        "name": "非凡新聞：摩斯門市販售生菜等新動向（2026-11-16）",
+        "attributes": {
+          "url": "https://news.ustv.com.tw/newsdetail/20261116A042",
+          "publisher": "非凡新聞",
+          "note": "News lead on limited-store lettuce displays; first news date is not necessarily the start date.",
+          "published_at": "2026-11-16"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce",
+        "type": "Evidence",
+        "name": "不只賣漢堡 摩斯11家門市限量開賣無毒生菜",
+        "attributes": {
+          "url": "https://tw.news.yahoo.com/%E4%B8%8D%E5%8F%AA%E8%B3%A3%E6%BC%A2%E5%A0%A1-%E6%91%A9%E6%96%AF11%E5%AE%B6%E9%96%80%E5%B8%82%E9%99%90%E9%87%8F%E9%96%8B%E8%B3%A3%E7%84%A1%E6%AF%92%E7%94%9F%E8%8F%9C-075928149.html",
+          "publisher": "自由時報（Yahoo奇摩新聞轉載）",
+          "note": "Reporter quotes the issuer: 11 stores, limited trial before expansion assessment.",
+          "published_at": "2026-11-16"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:taiwanjobs-an-shin-farm-job",
+        "type": "Evidence",
+        "name": "安心食品 農場作業人員職缺（台灣就業通）",
+        "attributes": {
+          "url": "https://job.taiwanjobs.gov.tw/Internet/index/JobDetail.aspx?EMPLOYER_ID=41434&HIRE_ID=14430583&R2=11",
+          "publisher": "台灣就業通",
+          "note": "Employer lists sowing, nursery, transplanting, harvest, sorting/packing and cleaning work.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:costco-yeshealth-ifarm-mixed-lettuce-box",
+        "type": "Evidence",
+        "name": "YesHealth iFarm Mixed Lettuce Box 200 g X 4 Count",
+        "attributes": {
+          "url": "https://www.costco.com.tw/Food-Dining/Frozen-Fresh-Food/Chilled-Fresh-Food/YesHealth-iFarm-Mixed-Lettuce-Box-200-g-X-4-Count/p/960217",
+          "publisher": "Costco 好市多（台灣）",
+          "note": "Undated product page accessed 2026-11-16; supplier ships direct refrigerated.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:711go-lettuce-preorder",
+        "type": "Evidence",
+        "name": "7-ELEVEN 711go 萵苣 6×100g 預購商品頁",
+        "attributes": {
+          "url": "https://711go.7-11.com.tw/Product/279936",
+          "publisher": "統一超商 711go",
+          "note": "Online preorder lettuce 6x100g with refrigerated shipment.",
+          "needs_review": [
+            "published_at"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "industry:food-service",
+        "type": "Industry",
+        "name": "餐飲",
+        "attributes": {
+          "name_en": "Food Service & Restaurants",
+          "aliases": [
+            "餐飲業",
+            "Restaurants",
+            "Quick-service restaurants"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "segment:taiwan-quick-service-restaurants",
+        "type": "MarketSegment",
+        "name": "台灣速食餐飲",
+        "attributes": {
+          "name_en": "Taiwan Quick-service Restaurants",
+          "buyer_type": "consumer",
+          "region": "TW"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "type": "MarketSegment",
+        "name": "台灣盒裝生菜零售",
+        "attributes": {
+          "name_en": "Taiwan Packaged Fresh Lettuce Retail",
+          "buyer_type": "consumer",
+          "region": "TW"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "segment:farm-produce-and-food-testing-services",
+        "type": "MarketSegment",
+        "name": "農產供應與食品檢驗服務",
+        "attributes": {
+          "name_en": "Farm Produce Supply and Food Testing Services",
+          "buyer_type": "business",
+          "region": "TW"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SEGMENT_OF_INDUSTRY",
+        "from": "segment:taiwan-quick-service-restaurants",
+        "to": "industry:food-service",
+        "attributes": {
+          "verification_status": "inferred"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SEGMENT_OF_INDUSTRY",
+        "from": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "to": "industry:food-service",
+        "attributes": {
+          "verification_status": "inferred"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SEGMENT_OF_INDUSTRY",
+        "from": "segment:farm-produce-and-food-testing-services",
+        "to": "industry:food-service",
+        "attributes": {
+          "verification_status": "inferred"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "FEEDS_SEGMENT",
+        "from": "segment:farm-produce-and-food-testing-services",
+        "to": "segment:taiwan-quick-service-restaurants",
+        "attributes": {
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation",
+            "evidence:mos-2022-annual-report"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:an-shin-food-services",
+        "type": "Company",
+        "name": "安心",
+        "attributes": {
+          "country": "TW",
+          "name_en": "An-Shin Food Services Co., Ltd. (Taiwan MOS Burger)",
+          "ticker": "1259",
+          "exchange": "TPEx",
+          "aliases": [
+            "安心食品",
+            "安心食品服務",
+            "安心食品服務股份有限公司",
+            "台灣摩斯",
+            "摩斯漢堡",
+            "MOS Burger Taiwan",
+            "1259"
+          ],
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation",
+            "evidence:mos-2026-h1-consolidated-financial-report"
+          ],
+          "h1_2026_revenue_ntd_thousand": 3091195,
+          "h1_2026_gross_profit_ntd_thousand": 717423,
+          "h1_2026_operating_expenses_ntd_thousand": 711174,
+          "h1_2026_operating_profit_ntd_thousand": 6249,
+          "h1_2026_net_income_ntd_thousand": 65718,
+          "h1_2025_revenue_ntd_thousand": 2998322,
+          "h1_2025_operating_profit_ntd_thousand": -10500,
+          "financial_period_note": "Consolidated Jan-Jun 2026 vs Jan-Jun 2025; group figures, not farm or lettuce-box profit.",
+          "farm_note": "Operates own controlled-environment 安心智慧農場, established 2019."
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:yeshealth",
+        "type": "Company",
+        "name": "YesHealth",
+        "attributes": {
+          "country": "TW",
+          "name_zh_missing": true,
+          "name_en": "YesHealth (iFarm)",
+          "aliases": [
+            "YesHealth iFarm"
+          ],
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ],
+          "country_note": "Country inferred from Taiwan Costco listing; research does not state headquarters."
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:costco-taiwan",
+        "type": "Company",
+        "name": "好市多",
+        "attributes": {
+          "country": "TW",
+          "name_en": "Costco Taiwan",
+          "aliases": [
+            "Costco",
+            "好市多台灣"
+          ],
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:president-chain-store",
+        "type": "Company",
+        "name": "統一超",
+        "attributes": {
+          "country": "TW",
+          "name_en": "President Chain Store (7-ELEVEN Taiwan)",
+          "ticker": "2912",
+          "aliases": [
+            "統一超商",
+            "7-ELEVEN",
+            "711go",
+            "2912"
+          ],
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:711go-lettuce-preorder"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "service:mos-burger-restaurant-meals",
+        "type": "Service",
+        "name": "摩斯漢堡餐點",
+        "attributes": {
+          "kind": "other",
+          "name_en": "MOS Burger restaurant meals",
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation",
+            "evidence:mos-menu-lettuce-wrap-grilled-chicken-burger"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:mos-lettuce-wrap-grilled-chicken-cheese-burger",
+        "type": "Product",
+        "name": "摘鮮綠烤雞起司堡",
+        "attributes": {
+          "kind": "other",
+          "name_en": "MOS lettuce-wrap grilled chicken cheese burger",
+          "description": "Butterhead lettuce (奶油萵苣) replaces the bun around marinated grilled chicken; part of the 摘鮮綠 lettuce-wrap line.",
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-menu-lettuce-wrap-grilled-chicken-burger"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:mos-fresh-lettuce-box",
+        "type": "Product",
+        "name": "摩斯門市生菜盒",
+        "attributes": {
+          "kind": "other",
+          "name_en": "MOS in-store fresh lettuce box",
+          "description": "Raw lettuce boxes displayed in a limited number of MOS stores for home preparation. Reported via media: 11 stores initially, round box NT$109 promo NT$98, square box NT$198 promo NT$178 through Nov 30, limited trial before deciding on expansion.",
+          "verification_status": "reported",
+          "lifecycle_status": "announced",
+          "evidence_ids": [
+            "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce",
+            "evidence:nonfan-2026-11-16-mos-lettuce-retail"
+          ],
+          "needs_review": [
+            "shelf_life",
+            "ready_to_eat_status",
+            "launch_date"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "service:an-shin-farm-and-testing-services",
+        "type": "Service",
+        "name": "安心農場與檢驗服務",
+        "attributes": {
+          "kind": "other",
+          "name_en": "An-Shin farm and food testing services",
+          "description": "Farm and testing services developed alongside food service; earlier deck says expanding into supermarket/hotel channels. Media-quoted issuer statement: highest single-item farm capacity 7-8 tonnes/month, about half internal and half external (capacity, not output).",
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation",
+            "evidence:mos-2025-12-24-investor-presentation",
+            "evidence:mos-2022-annual-report",
+            "evidence:taiwanjobs-an-shin-farm-job"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "type": "Product",
+        "name": "YesHealth iFarm 綜合萵苣盒 200g×4",
+        "attributes": {
+          "kind": "other",
+          "name_en": "YesHealth iFarm Mixed Lettuce Box 200 g x 4",
+          "description": "Raw mixed lettuce shipped refrigerated direct from supplier; remove roots and lightly wash before eating.",
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:711go-lettuce-6x100g",
+        "type": "Product",
+        "name": "711go 預購萵苣 6×100g",
+        "attributes": {
+          "kind": "other",
+          "name_en": "711go online preorder lettuce 6 x 100 g",
+          "description": "Online preorder lettuce with refrigerated shipment and preparation/storage instructions; not necessarily on store shelves.",
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:711go-lettuce-preorder"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OPERATES_IN",
+        "from": "company:an-shin-food-services",
+        "to": "industry:food-service",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERS_SERVICE",
+        "from": "company:an-shin-food-services",
+        "to": "service:mos-burger-restaurant-meals",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:an-shin-food-services",
+        "to": "product:mos-lettuce-wrap-grilled-chicken-cheese-burger",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-menu-lettuce-wrap-grilled-chicken-burger"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:an-shin-food-services",
+        "to": "product:mos-fresh-lettuce-box",
+        "attributes": {
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce",
+            "evidence:nonfan-2026-11-16-mos-lettuce-retail"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERS_SERVICE",
+        "from": "company:an-shin-food-services",
+        "to": "service:an-shin-farm-and-testing-services",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation",
+            "evidence:mos-2025-12-24-investor-presentation"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "service:mos-burger-restaurant-meals",
+        "to": "segment:taiwan-quick-service-restaurants",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:mos-lettuce-wrap-grilled-chicken-cheese-burger",
+        "to": "segment:taiwan-quick-service-restaurants",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-menu-lettuce-wrap-grilled-chicken-burger"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:mos-fresh-lettuce-box",
+        "to": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "attributes": {
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "service:an-shin-farm-and-testing-services",
+        "to": "segment:farm-produce-and-food-testing-services",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:mos-2026-09-21-investor-presentation"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:costco-taiwan",
+        "to": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "BRANDS",
+        "from": "company:yeshealth",
+        "to": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "attributes": {
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:president-chain-store",
+        "to": "product:711go-lettuce-6x100g",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:711go-lettuce-preorder"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "to": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:711go-lettuce-6x100g",
+        "to": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "attributes": {
+          "verification_status": "verified",
+          "evidence_ids": [
+            "evidence:711go-lettuce-preorder"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "competition:mos-lettuce-box-vs-yeshealth-lettuce-box",
+        "type": "CompetitionAssessment",
+        "name": "摩斯生菜盒 vs YesHealth 綜合萵苣盒",
+        "attributes": {
+          "competition_type": "INDIRECT",
+          "overlap_scope": "product_category",
+          "basis": [
+            "Both are raw lettuce boxes sold to consumers for home preparation",
+            "Research treats Costco's YesHealth box as an actual raw-lettuce retail alternative with different pack size and delivery",
+            "No price, quality or variety comparison is claimed"
+          ],
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box",
+            "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_A",
+        "from": "competition:mos-lettuce-box-vs-yeshealth-lettuce-box",
+        "to": "product:mos-fresh-lettuce-box",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_B",
+        "from": "competition:mos-lettuce-box-vs-yeshealth-lettuce-box",
+        "to": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "COMPETES_IN_SEGMENT",
+        "from": "competition:mos-lettuce-box-vs-yeshealth-lettuce-box",
+        "to": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "competition:mos-lettuce-box-vs-711go-lettuce",
+        "type": "CompetitionAssessment",
+        "name": "摩斯生菜盒 vs 711go 預購萵苣",
+        "attributes": {
+          "competition_type": "INDIRECT",
+          "overlap_scope": "product_category",
+          "basis": [
+            "Both offer raw lettuce for home use",
+            "711go is an online preorder route with refrigerated shipment, a different channel from MOS in-store pickup",
+            "Research compares channel/occasion only, not financial ranking"
+          ],
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:711go-lettuce-preorder",
+            "evidence:liberty-yahoo-2026-11-16-mos-11-stores-lettuce"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_A",
+        "from": "competition:mos-lettuce-box-vs-711go-lettuce",
+        "to": "product:mos-fresh-lettuce-box",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_B",
+        "from": "competition:mos-lettuce-box-vs-711go-lettuce",
+        "to": "product:711go-lettuce-6x100g",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "COMPETES_IN_SEGMENT",
+        "from": "competition:mos-lettuce-box-vs-711go-lettuce",
+        "to": "segment:taiwan-packaged-fresh-lettuce-retail",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "supply:yeshealth-to-costco-taiwan-lettuce-box",
+        "type": "SupplyRelationship",
+        "name": "YesHealth 供應好市多綜合萵苣盒",
+        "attributes": {
+          "stage": "unspecified",
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:costco-yeshealth-ifarm-mixed-lettuce-box"
+          ],
+          "note": "Costco product page says the supplier ships direct refrigerated; contract terms not stated."
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_SUPPLIER",
+        "from": "supply:yeshealth-to-costco-taiwan-lettuce-box",
+        "to": "company:yeshealth",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_BUYER",
+        "from": "supply:yeshealth-to-costco-taiwan-lettuce-box",
+        "to": "company:costco-taiwan",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "FOR_SUPPLIED_PRODUCT",
+        "from": "supply:yeshealth-to-costco-taiwan-lettuce-box",
+        "to": "product:yeshealth-ifarm-mixed-lettuce-box",
+        "attributes": {}
+      }
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "group:innodisk",
+    "name": "Innodisk Group",
+    "type": "CorporateGroup"
+  },
+  {
+    "id": "group:nexcom",
+    "name": "NEXCOM Group",
+    "type": "CorporateGroup"
+  }
+]

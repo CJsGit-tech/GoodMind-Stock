@@ -1,0 +1,997 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:adprod"
+    ],
+    "from": "company:adlink",
+    "id": "edge:001",
+    "predicate": "SELLS",
+    "to": "product:dlap",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:nexprod"
+    ],
+    "from": "company:nexcobot",
+    "id": "edge:002",
+    "predicate": "SELLS",
+    "to": "product:mars",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:aaeonprod"
+    ],
+    "from": "company:aaeon",
+    "id": "edge:003",
+    "predicate": "SELLS",
+    "to": "product:boxer",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:axiomprod"
+    ],
+    "from": "company:axiomtek",
+    "id": "edge:004",
+    "predicate": "SELLS",
+    "to": "product:aie",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:aeolus"
+    ],
+    "from": "company:advantech",
+    "id": "edge:005",
+    "predicate": "SELLS",
+    "to": "product:afe",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "evidence:apex"
+    ],
+    "from": "company:innodisk",
+    "id": "edge:006",
+    "predicate": "SELLS",
+    "to": "product:apex",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+    ],
+    "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "id": "relation:1a706e5f-96fc-4d30-b06e-0c3b43e29005",
+    "notes": "2025 年第 4 季進入量產。 / Entered volume production in Q4 2025.",
+    "predicate": "SELLS",
+    "to": "entity:6b074e46-60d4-4544-be93-77a51c482545",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:25ccc685-daa1-42e0-aa66-51f414414498"
+    ],
+    "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "id": "relation:7199b41c-e0e3-4de5-b3de-4375b75b60ef",
+    "notes": "商用先進封裝家族。 / Commercial advanced packaging family.",
+    "predicate": "SELLS",
+    "to": "entity:93b86a7b-09f2-46d6-8882-d5f78ff8e21d",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6"
+    ],
+    "from": "entity:d73ef9f5-f365-4378-9778-4d09491b63c5",
+    "id": "relation:86bcb7d6-a2f5-4bf3-b494-3b93c42cbe0d",
+    "notes": "封裝後成品測試服務。 / Post-package final testing service.",
+    "predicate": "SELLS",
+    "to": "entity:e8d8391c-3874-4779-a1d1-67599c854c2a",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899"
+    ],
+    "from": "entity:36bc8be9-c219-488e-914b-fd24042a9777",
+    "id": "relation:49aa1489-1f72-4523-8da7-2cf843b9fd33",
+    "notes": "以晶圓及 IC 測試服務能力為範圍。 / Limited to the disclosed wafer and IC test capability.",
+    "predicate": "SELLS",
+    "to": "entity:f5462c3a-2d2a-4068-a56e-779dab880c55",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:a32dc587-1f47-416f-ac1c-4c304c20c016"
+    ],
+    "from": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "id": "relation:aff2b54a-5876-4bb7-910f-67b781b858ae",
+    "notes": "電源管理 IC 適用的特色晶圓代工製程。 / Specialty foundry process for power-management ICs.",
+    "predicate": "SELLS",
+    "to": "entity:21f600bb-61b4-42ac-ae5d-538b496c1507",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:3e42e29b-b319-419d-b197-d24806d2e8cd"
+    ],
+    "from": "entity:345e3fdc-2c9f-46ac-9216-450be965f90c",
+    "id": "relation:b13fac86-9897-494c-86ac-7dddc9538a72",
+    "notes": "年報列為矽晶圓產品。 / Listed in the annual report’s silicon wafer portfolio.",
+    "predicate": "SELLS",
+    "to": "entity:593b061c-21f0-4ac1-8133-b630b5263253",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0"
+    ],
+    "from": "company:adlink",
+    "id": "relation:313cd04a-136e-494c-acfa-e66664882017",
+    "notes": "2025-02-26 發表 AGX Orin 系統與 LIPS 合作，與現有 DLAP-711 為不同產品。 / February 26, 2025 AGX Orin system and LIPS collaboration; distinct from DLAP-711.",
+    "predicate": "SELLS",
+    "to": "entity:542811c8-4ca1-4fab-8536-6790add0c076",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9418de44-14a9-4adc-8304-52450920cb64"
+    ],
+    "from": "entity:951c3066-af85-4108-adb8-cfaa5a63f481",
+    "id": "relation:83c1df71-0bd6-4f4c-b04f-db970ad8a5b6",
+    "notes": "三星公開提供 SF2 代工平台。 / Samsung makes its SF2 foundry platform available.",
+    "predicate": "SELLS",
+    "to": "entity:7bd9993f-3c51-4ce6-8d8d-81570c50c937",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:95c8281c-113b-440e-92a2-306f9889f3b1"
+    ],
+    "from": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "id": "relation:18cb9f52-446a-43a3-bef1-4824bfa45fef",
+    "predicate": "SELLS",
+    "to": "entity:76db2cca-9b29-4803-be74-f39e39d6110f",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06"
+    ],
+    "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "id": "relation:33863609-60ef-4613-a8da-c37f1af951a2",
+    "predicate": "SELLS",
+    "to": "entity:1698890e-79ab-4ba2-93d6-0f065d234b83",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+    ],
+    "from": "entity:efd172fb-172f-4253-bf8d-6efb122852b5",
+    "id": "relation:4160b685-64a5-49a8-98cf-7b05398ab75c",
+    "predicate": "SELLS",
+    "to": "entity:78497ffa-abc6-471c-8baf-c0707a008429",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+    ],
+    "from": "entity:e4974e27-a63e-4a75-9597-41698d2b7aa4",
+    "id": "relation:a884fe90-46cc-4307-a9d4-062d7b106a7b",
+    "predicate": "SELLS",
+    "to": "entity:34f2303d-7359-4df0-8215-21122d7524d4",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+    ],
+    "from": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+    "id": "relation:47cd8c09-1145-469c-ab72-762eae936846",
+    "predicate": "SELLS",
+    "to": "entity:6eb4ce96-fa38-41df-b562-002f5408dcfe",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+    ],
+    "from": "entity:be5bfdab-94d1-40f0-8d51-2e8601f103dd",
+    "id": "relation:528c0077-1ef1-4dcb-8c0f-c2aeeca7713e",
+    "notes": "年報揭露已量產供貨；未具名特定車廠。 / Annual report states serial supply, without naming automakers.",
+    "predicate": "SELLS",
+    "to": "entity:3a0e370b-3a83-4d33-b321-c9cbaec09d31",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+    ],
+    "from": "entity:52b048d9-1e89-4942-ab39-0e1fab4cd9d4",
+    "id": "relation:09423cfd-e6a8-4945-84f2-db24155d1f12",
+    "predicate": "SELLS",
+    "to": "entity:d7981291-983a-47be-8b1c-ac936cab8d6f",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912"
+    ],
+    "from": "entity:41c1f350-7064-4918-ad42-310c1302988f",
+    "id": "relation:d5164b31-78c2-417c-b136-d93a12e5fdaf",
+    "predicate": "SELLS",
+    "to": "entity:ce2fa4e5-6325-4a61-8f43-e4681c958220",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+    ],
+    "from": "entity:1a93251b-5988-4d23-b3ba-30a3dd9bffec",
+    "id": "relation:73b0b393-cc90-4a69-ad14-6b1f9b88926e",
+    "predicate": "SELLS",
+    "to": "entity:e57a52e1-2d46-4420-a927-ab5c04e1f06e",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:f3fde760-400f-4355-851a-a5073ecb154f"
+    ],
+    "from": "entity:857f7869-a507-4f5f-a84b-f8c0a7542fec",
+    "id": "relation:6ecffe1f-dac2-4aab-9311-9286eac411f1",
+    "predicate": "SELLS",
+    "to": "entity:b1d90863-7517-440a-a488-b710b6a993f6",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f"
+    ],
+    "from": "entity:61b99ebc-915f-4597-8728-855089c5ac16",
+    "id": "relation:f242c38e-f6be-4a23-a16d-d013dce0d364",
+    "predicate": "SELLS",
+    "to": "entity:e92998ff-edd3-4939-89f2-0f2ee07e0008",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+    ],
+    "from": "entity:0e6428bc-5ccf-4b5a-96bc-89f6c1c85dad",
+    "id": "relation:23f507f4-58b1-46ac-9a95-52922e218722",
+    "predicate": "SELLS",
+    "to": "entity:bf3e3d6f-a849-409f-ba0d-b930c315004e",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:2f5a00c8-2795-4085-886c-c35e9169cefe"
+    ],
+    "from": "entity:7d5a3e33-7da3-4ec7-ae7c-55e730c2e5d8",
+    "id": "relation:bdb7d24f-236a-4d13-b023-c4836025d061",
+    "predicate": "SELLS",
+    "to": "entity:d12bbedf-4e9a-4f9e-9c66-e3b347c0d005",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+    ],
+    "from": "entity:469f807a-2287-42ff-8def-b6596917149b",
+    "id": "relation:b71b926a-31f5-4c7a-be31-64520829d707",
+    "predicate": "SELLS",
+    "to": "entity:cfea18c2-3ba1-49d4-be3a-5761c6b1a080",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b"
+    ],
+    "from": "entity:13b27b3d-90d9-44fb-bec4-aa4677204739",
+    "id": "relation:fef1f03e-e0ef-4ac1-9924-5641bdba006a",
+    "predicate": "SELLS",
+    "to": "entity:04dd10bd-d9e2-40dd-aa26-208c35c86a37",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+    ],
+    "from": "entity:9433864b-68a1-4ca6-a0e8-fbd11cb3e053",
+    "id": "relation:4ac1ca3c-0d52-4898-bcd3-c9338fb2155f",
+    "predicate": "SELLS",
+    "to": "entity:858e737a-2e98-4645-ac63-7778d7ee4a6f",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:6d457835-d679-4d23-8231-9aa548697838"
+    ],
+    "from": "entity:ef1e6628-d821-44ef-9baf-28e4466632a1",
+    "id": "relation:fc2433d9-d204-4ae6-ac75-5503fbbb5a93",
+    "predicate": "SELLS",
+    "to": "entity:d1feadd4-be90-4940-939e-3aeed7c81bf7",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+    ],
+    "from": "entity:610dd86b-1b3f-4bad-9748-fa0b1a927057",
+    "id": "relation:af1ad182-f15e-4346-b0bd-a3830c2e3726",
+    "predicate": "SELLS",
+    "to": "entity:60a9b5f3-25f2-4c98-9d1f-b628055ec3ef",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18"
+    ],
+    "from": "entity:6e7b4d48-29d2-4ccc-9c6b-5574dc9d6ed0",
+    "id": "relation:96825e17-1927-42ed-8adf-f35c546a2d12",
+    "predicate": "SELLS",
+    "to": "entity:73d6d222-7def-4168-85dc-8eca37f9ae79",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+    ],
+    "from": "entity:45d7e771-1d72-4044-9d44-cbb4c74ed0a0",
+    "id": "relation:66dfb7a1-a239-4ae4-9c10-47d106d9f6a5",
+    "predicate": "SELLS",
+    "to": "entity:c4bee7ed-b2b5-4423-aff0-dd9abeff4bee",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:d37c8a74-258a-4034-9b73-100a92193d61"
+    ],
+    "from": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "id": "relation:a1c22ec8-2844-4c31-a8e9-4c298c813c33",
+    "predicate": "SELLS",
+    "to": "entity:05b5efec-23c1-4238-929b-6dd059c95baf",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9a285313-2418-4d51-8014-dea8009e3740"
+    ],
+    "from": "entity:a2b9fc8a-3c46-4bbf-8cac-102a2d0ed4fa",
+    "id": "relation:b62bf8c0-2721-4197-89a6-105dc9f98427",
+    "predicate": "SELLS",
+    "to": "entity:53c2ecf8-b20e-433c-9f06-7c0209139940",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "id": "v2:SELLS:entity:20dcef76-314b-4601-8e28-d86793c34d51|entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+    "predicate": "SELLS",
+    "from": "entity:20dcef76-314b-4601-8e28-d86793c34d51",
+    "to": "entity:baada338-680b-4bb6-a3e9-6d418fd9f515",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+    ],
+    "curation": {
+      "method": "v2-seller",
+      "rationale": "Offering A of 光寶與台達電機架電源競爭評估 and focus of 光寶與雲達機架電源合作.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:5b3816ce-859b-48bf-aa19-396a17409764|entity:540786ca-d407-43fa-a2b3-f815682f73f7",
+    "predicate": "SELLS",
+    "from": "entity:5b3816ce-859b-48bf-aa19-396a17409764",
+    "to": "entity:540786ca-d407-43fa-a2b3-f815682f73f7",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+    ],
+    "curation": {
+      "method": "v2-seller",
+      "rationale": "Named after Delta; offering B of the LITEON–Delta rack power assessment.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:foxconn|entity:3270c07f-d476-4e85-ae7a-75eccf3ca6c4",
+    "predicate": "SELLS",
+    "from": "company:foxconn",
+    "to": "entity:3270c07f-d476-4e85-ae7a-75eccf3ca6c4",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:8f129cd0-d3c6-490c-a0bb-6e4d07718a31"
+    ],
+    "curation": {
+      "method": "v2-seller",
+      "rationale": "Named after Foxconn; offering A of the Foxconn–Supermicro assessment.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:fa0f3a2b-5b20-4684-bd00-2a7160c220bd|entity:fbe0ae9b-263a-42ab-99ac-bdf813ad4a22",
+    "predicate": "SELLS",
+    "from": "entity:fa0f3a2b-5b20-4684-bd00-2a7160c220bd",
+    "to": "entity:fbe0ae9b-263a-42ab-99ac-bdf813ad4a22",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:e5266bad-0945-43aa-8061-f535932597dd"
+    ],
+    "curation": {
+      "method": "v2-seller",
+      "rationale": "Offering B of 啟碁與智邦高速交換器競爭評估 (the Accton side).",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:5d19df3e-ec63-491e-b286-23901960e7da|entity:f9ee54d2-4841-463c-b776-9f21470830b8",
+    "predicate": "SELLS",
+    "from": "entity:5d19df3e-ec63-491e-b286-23901960e7da",
+    "to": "entity:f9ee54d2-4841-463c-b776-9f21470830b8",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+    ],
+    "curation": {
+      "method": "v2-seller",
+      "rationale": "Capacity reserved at Unimicron for NVIDIA (欣興與輝達載板產能協議), so the substrate is Unimicron's.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1|entity:ccbb588b-fc6d-4b56-ac09-3882ebde0012",
+    "predicate": "SELLS",
+    "from": "entity:1c572f97-0696-453d-b0a0-7a83c5e7e3d1",
+    "to": "entity:ccbb588b-fc6d-4b56-ac09-3882ebde0012",
+    "verification_status": "officially_disclosed",
+    "evidence_ids": [
+      "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+    ],
+    "curation": {
+      "method": "entailed",
+      "rationale": "The supplier in this supply record offers what it supplies.",
+      "confidence": "high",
+      "basis": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:8fc9e532-a709-4157-8781-a03f6b44203b|entity:58ef8c4a-7bc5-4377-a1e7-ce38fd5691af",
+    "predicate": "SELLS",
+    "from": "entity:8fc9e532-a709-4157-8781-a03f6b44203b",
+    "to": "entity:58ef8c4a-7bc5-4377-a1e7-ce38fd5691af",
+    "verification_status": "officially_disclosed",
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "curation": {
+      "method": "entailed",
+      "rationale": "The supplier in this supply record offers what it supplies.",
+      "confidence": "high",
+      "basis": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5|entity:326c412b-d165-4d5d-8050-b1d4cadcbb50",
+    "predicate": "SELLS",
+    "from": "entity:0c26bffa-15bc-400a-9f37-d4ea112f2fc5",
+    "to": "entity:326c412b-d165-4d5d-8050-b1d4cadcbb50",
+    "verification_status": "officially_disclosed",
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+    ],
+    "curation": {
+      "method": "entailed",
+      "rationale": "The supplier in this supply record offers what it supplies.",
+      "confidence": "high",
+      "basis": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:65bf6401-a6e6-461d-9164-84fd4be0f292|entity:0dc4cfbd-3faa-4a0b-9124-ab7066a7a783",
+    "predicate": "SELLS",
+    "from": "entity:65bf6401-a6e6-461d-9164-84fd4be0f292",
+    "to": "entity:0dc4cfbd-3faa-4a0b-9124-ab7066a7a783",
+    "verification_status": "officially_disclosed",
+    "evidence_ids": [
+      "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+    ],
+    "curation": {
+      "method": "entailed",
+      "rationale": "The supplier in this supply record offers what it supplies.",
+      "confidence": "high",
+      "basis": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:b1236908-e801-4cae-89ea-acd8d514c7d0|entity:891261dc-d960-44d5-a561-c1f7d2021f0f",
+    "predicate": "SELLS",
+    "from": "entity:b1236908-e801-4cae-89ea-acd8d514c7d0",
+    "to": "entity:891261dc-d960-44d5-a561-c1f7d2021f0f",
+    "verification_status": "officially_disclosed",
+    "evidence_ids": [
+      "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+    ],
+    "curation": {
+      "method": "entailed",
+      "rationale": "The supplier in this supply record offers what it supplies.",
+      "confidence": "high",
+      "basis": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08|entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:e50d3cec",
+    "predicate": "SELLS",
+    "from": "entity:e50d3cec-e759-4f57-9630-4ccaa1f1bd08",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:e50d3cec",
+    "verification_status": "reported",
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "curation": {
+      "method": "v2-split",
+      "rationale": "Seller of the split offering.",
+      "confidence": "high",
+      "basis": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9|entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:5b989afc",
+    "predicate": "SELLS",
+    "from": "entity:5b989afc-7090-4a60-a6ce-3ee7c7afe8b9",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:5b989afc",
+    "verification_status": "reported",
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "curation": {
+      "method": "v2-split",
+      "rationale": "Seller of the split offering.",
+      "confidence": "high",
+      "basis": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:77fdd193-85a4-4c91-882c-848c3b4ade5a|entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:77fdd193",
+    "predicate": "SELLS",
+    "from": "entity:77fdd193-85a4-4c91-882c-848c3b4ade5a",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:77fdd193",
+    "verification_status": "reported",
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "curation": {
+      "method": "v2-split",
+      "rationale": "Seller of the split offering.",
+      "confidence": "high",
+      "basis": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:79ab3ecc-9717-4275-8637-c0b1588b7f20|product:nvidia-jetson-thor-module",
+    "predicate": "SELLS",
+    "from": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+    "to": "product:nvidia-jetson-thor-module",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-offering",
+      "rationale": "NVIDIA sells Jetson Thor modules that the edge systems above are built on.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:79ab3ecc-9717-4275-8637-c0b1588b7f20|product:nvidia-jetson-orin-module",
+    "predicate": "SELLS",
+    "from": "entity:79ab3ecc-9717-4275-8637-c0b1588b7f20",
+    "to": "product:nvidia-jetson-orin-module",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-offering",
+      "rationale": "NVIDIA sells Jetson Orin modules.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:nexcom|offering:bl:nexcom:industrialEdgeAI",
+    "predicate": "SELLS",
+    "from": "company:nexcom",
+    "to": "offering:bl:nexcom:industrialEdgeAI",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Industrial computer maker; parent of NexCOBOT.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:aetina|offering:bl:aetina:industrialEdgeAI",
+    "predicate": "SELLS",
+    "from": "company:aetina",
+    "to": "offering:bl:aetina:industrialEdgeAI",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Edge AI systems maker in the Innodisk group.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:farobot|offering:bl:farobot:amr",
+    "predicate": "SELLS",
+    "from": "company:farobot",
+    "to": "offering:bl:farobot:amr",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Robotics joint venture with ADLINK and Foxconn.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:aeolus|offering:bl:aeolus:amr",
+    "predicate": "SELLS",
+    "from": "company:aeolus",
+    "to": "offering:bl:aeolus:amr",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Robotics partner using Advantech AFE-R750.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:mobisnet|offering:bl:mobisnet:amr",
+    "predicate": "SELLS",
+    "from": "company:mobisnet",
+    "to": "offering:bl:mobisnet:amr",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "AMR integration partner of Axiomtek.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:deepx|offering:bl:deepx:aiChips",
+    "predicate": "SELLS",
+    "from": "company:deepx",
+    "to": "offering:bl:deepx:aiChips",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Edge AI processor company partnering with AAEON.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:8ec827ea-7f4d-4e4e-a0a9-9b2475582ee5|offering:bl:8ec827ea-7f4:aiServers",
+    "predicate": "SELLS",
+    "from": "entity:8ec827ea-7f4d-4e4e-a0a9-9b2475582ee5",
+    "to": "offering:bl:8ec827ea-7f4:aiServers",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Quanta's cloud server brand; rack power partner of LITEON.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:0b38e392-7ea8-447f-8106-ac374c248d2e|offering:bl:0b38e392-7ea:aiServers",
+    "predicate": "SELLS",
+    "from": "entity:0b38e392-7ea8-447f-8106-ac374c248d2e",
+    "to": "offering:bl:0b38e392-7ea:aiServers",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "HPC and AI system builder in the Foxconn–NVIDIA Europe rack collaboration.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:90aed267-2462-47e1-b29d-0a3a15826d6f|offering:bl:90aed267-246:consumerDevices",
+    "predicate": "SELLS",
+    "from": "entity:90aed267-2462-47e1-b29d-0a3a15826d6f",
+    "to": "offering:bl:90aed267-246:consumerDevices",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Consumer device brand; buyer of Fab 21 chips.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:d63f4489-fa1c-4eb7-bfbc-a3f1930acfe5|offering:bl:d63f4489-fa1:vehicles",
+    "predicate": "SELLS",
+    "from": "entity:d63f4489-fa1c-4eb7-bfbc-a3f1930acfe5",
+    "to": "offering:bl:d63f4489-fa1:vehicles",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Vehicle maker; buyer of automotive glass.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:b80d770d-0830-4c2e-8896-4da2afaf40a6|offering:bl:b80d770d-083:vehicles",
+    "predicate": "SELLS",
+    "from": "entity:b80d770d-0830-4c2e-8896-4da2afaf40a6",
+    "to": "offering:bl:b80d770d-083:vehicles",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Vehicle maker; buyer of the ASX VR-e OEM project.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:d8d9c83f-9c2a-4d60-b090-a4c17a9503a0|offering:bl:d8d9c83f-9c2:waferTest",
+    "predicate": "SELLS",
+    "from": "entity:d8d9c83f-9c2a-4d60-b090-a4c17a9503a0",
+    "to": "offering:bl:d8d9c83f-9c2:waferTest",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:5779701d-496b-4fd1-841f-d50c75b58a23"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Test subsidiary of Ardentec.",
+      "confidence": "low",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38|offering:bl:f4dbaf16-960:waferTest",
+    "predicate": "SELLS",
+    "from": "entity:f4dbaf16-9606-4110-bcdf-0437d82e5c38",
+    "to": "offering:bl:f4dbaf16-960:waferTest",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Wafer-test company controlled by Powertech.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:082b2629-f187-4837-b03b-bfc661b64c96|offering:bl:082b2629-f18:waferTest",
+    "predicate": "SELLS",
+    "from": "entity:082b2629-f187-4837-b03b-bfc661b64c96",
+    "to": "offering:bl:082b2629-f18:waferTest",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:faecfe35-cc69-4004-af7b-75414d046fc1"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Test affiliate controlled by Tera Probe.",
+      "confidence": "low",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:a7854805-94d7-48a5-a977-f9c782e0ee3d|offering:bl:a7854805-94d:logicFoundry",
+    "predicate": "SELLS",
+    "from": "entity:a7854805-94d7-48a5-a977-f9c782e0ee3d",
+    "to": "offering:bl:a7854805-94d:logicFoundry",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "TSMC-majority foundry fab in Japan.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:f994a28f-b447-4abe-bda6-4e0431755dde|offering:bl:f994a28f-b44:logicFoundry",
+    "predicate": "SELLS",
+    "from": "entity:f994a28f-b447-4abe-bda6-4e0431755dde",
+    "to": "offering:bl:f994a28f-b44:logicFoundry",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "TSMC's Arizona fab subsidiary.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:c6bfb4b2-786a-49a5-b9dd-85009f5a9983|offering:bl:c6bfb4b2-786:logicFoundry",
+    "predicate": "SELLS",
+    "from": "entity:c6bfb4b2-786a-49a5-b9dd-85009f5a9983",
+    "to": "offering:bl:c6bfb4b2-786:logicFoundry",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:1dd5de14-3906-48da-86ad-78db6a908b6e"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "TSMC-led foundry fab in Germany.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:4eb1ad4f-2000-4c99-9d04-08376ad1cf50|offering:bl:4eb1ad4f-200:logicFoundry",
+    "predicate": "SELLS",
+    "from": "entity:4eb1ad4f-2000-4c99-9d04-08376ad1cf50",
+    "to": "offering:bl:4eb1ad4f-200:logicFoundry",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:6da2c9b9-4736-4717-b6ab-8e2872268f9a"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "UMC's foundry fab in Japan.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:f7f9993d-b00d-494d-a323-00e354712a9d|offering:bl:f7f9993d-b00:wifiNetworking",
+    "predicate": "SELLS",
+    "from": "entity:f7f9993d-b00d-494d-a323-00e354712a9d",
+    "to": "offering:bl:f7f9993d-b00:wifiNetworking",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:ff74d688-0b44-40c9-9ee5-2e9d629b4ded"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Wireless networking equipment maker controlled by LITEON.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:d50f7244-1f66-4566-92bc-b97bfff71553|offering:bl:d50f7244-1f6:qfn",
+    "predicate": "SELLS",
+    "from": "entity:d50f7244-1f66-4566-92bc-b97bfff71553",
+    "to": "offering:bl:d50f7244-1f6:qfn",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:a2acdfc4-44da-4717-b09b-c8991232ce9b"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Lead-frame and packaging-material group, parent of Chang Wah Technology.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:61a652fe-141a-48b4-8667-c42d9eebc54d|offering:bl:61a652fe-141:serverPcb",
+    "predicate": "SELLS",
+    "from": "entity:61a652fe-141a-48b4-8667-c42d9eebc54d",
+    "to": "offering:bl:61a652fe-141:serverPcb",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "PCB maker; joint-venture partner of Allied Circuit.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:ce7fd3da-64d8-4d32-a97d-367e5eee1c8c|offering:bl:ce7fd3da-64d:siliconPhotonics",
+    "predicate": "SELLS",
+    "from": "entity:ce7fd3da-64d8-4d32-a97d-367e5eee1c8c",
+    "to": "offering:bl:ce7fd3da-64d:siliconPhotonics",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Silicon photonics company receiving UMC wafers.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:5b298237-9614-419a-be1b-1c1e3ce918bd|offering:bl:5b298237-961:epi",
+    "predicate": "SELLS",
+    "from": "entity:5b298237-9614-419a-be1b-1c1e3ce918bd",
+    "to": "offering:bl:5b298237-961:epi",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:e985f81f-76fb-442e-b862-e61a4b9afe02"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Silicon wafer subsidiary of Wafer Works.",
+      "confidence": "low",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:entity:f7b73356-73cb-4342-a8e4-1e8e1b6d045d|offering:bl:f7b73356-73c:aiSwitch",
+    "predicate": "SELLS",
+    "from": "entity:f7b73356-73cb-4342-a8e4-1e8e1b6d045d",
+    "to": "offering:bl:f7b73356-73c:aiSwitch",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:70e9bc81-a3cf-46de-b046-bcd2fb39e856"
+    ],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "US arm of WNC.",
+      "confidence": "low",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:SELLS:company:foxconn|offering:bl:foxconn:aiServers",
+    "predicate": "SELLS",
+    "from": "company:foxconn",
+    "to": "offering:bl:foxconn:aiServers",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-business-line",
+      "rationale": "Foxconn assembles AI servers and racks (GB300 NVL72 showcase; Foxconn–Bull–NVIDIA rack collaboration).",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  }
+]

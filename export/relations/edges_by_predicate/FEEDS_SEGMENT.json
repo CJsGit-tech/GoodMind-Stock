@@ -1,0 +1,470 @@
+[
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:fd2fa2d8-3623-4eba-831a-43a39cce752e|entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "to": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "epi output is an input of seg2nm.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:fd2fa2d8-3623-4eba-831a-43a39cce752e|entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "to": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "epi output is an input of seg22.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:fd2fa2d8-3623-4eba-831a-43a39cce752e|segment:logic-foundry",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "to": "segment:logic-foundry",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "epi output is an input of logicFoundry.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:fd2fa2d8-3623-4eba-831a-43a39cce752e|segment:specialty-foundry",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:fd2fa2d8-3623-4eba-831a-43a39cce752e",
+    "to": "segment:specialty-foundry",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "epi output is an input of specialtyFoundry.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:fluoro-materials|entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:fluoro-materials",
+    "to": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "fluoroMaterials output is an input of chemTube.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5|segment:logic-foundry",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:91f8cd61-a9f0-40f4-8a4e-43b79efbd9a5",
+    "to": "segment:logic-foundry",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "chemTube output is an input of logicFoundry.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:95f353df-b7e4-4146-add6-d5b18710fced|entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+    "to": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "waferTest output is an input of seg22.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:216ed48e-a8ef-4c02-b951-b1b661f95450|entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "to": "entity:aebc5ef0-1610-433f-81aa-ba4640429ac8",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "finalTest output is an input of seg22.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:95f353df-b7e4-4146-add6-d5b18710fced|segment:logic-foundry",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:95f353df-b7e4-4146-add6-d5b18710fced",
+    "to": "segment:logic-foundry",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "waferTest output is an input of logicFoundry.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:216ed48e-a8ef-4c02-b951-b1b661f95450|segment:logic-foundry",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "to": "segment:logic-foundry",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "finalTest output is an input of logicFoundry.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:038ebb8f-6ea4-4be2-87cd-95023305c264|entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+    "to": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "eglass output is an input of serverPcb.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:038ebb8f-6ea4-4be2-87cd-95023305c264|entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:038ebb8f-6ea4-4be2-87cd-95023305c264",
+    "to": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "eglass output is an input of substrate.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad|segment:ai-chips-modules",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "to": "segment:ai-chips-modules",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "substrate output is an input of aiChips.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad|segment:advanced-packaging",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:4f61ac77-a797-4e9a-b3d1-2839e0a660ad",
+    "to": "segment:advanced-packaging",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "substrate output is an input of advancedPackaging.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:5440a310-a63e-451a-9acf-f2160b8c5a84|entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:5440a310-a63e-451a-9acf-f2160b8c5a84",
+    "to": "entity:216ed48e-a8ef-4c02-b951-b1b661f95450",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "qfn output is an input of finalTest.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:advanced-packaging|segment:ai-chips-modules",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:advanced-packaging",
+    "to": "segment:ai-chips-modules",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "advancedPackaging output is an input of aiChips.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:14838d5c-d71b-4a93-ad50-bbb24a4af455|segment:ai-chips-modules",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "to": "segment:ai-chips-modules",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "seg2nm output is an input of aiChips.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:14838d5c-d71b-4a93-ad50-bbb24a4af455|segment:consumer-devices",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:14838d5c-d71b-4a93-ad50-bbb24a4af455",
+    "to": "segment:consumer-devices",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "seg2nm output is an input of consumerDevices.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:logic-foundry|segment:consumer-devices",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:logic-foundry",
+    "to": "segment:consumer-devices",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "logicFoundry output is an input of consumerDevices.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:specialty-foundry|segment:silicon-photonics",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:specialty-foundry",
+    "to": "segment:silicon-photonics",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "specialtyFoundry output is an input of siliconPhotonics.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:ai-chips-modules|segment:ai-servers",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:ai-chips-modules",
+    "to": "segment:ai-servers",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "aiChips output is an input of aiServers.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:ai-chips-modules|segment:industrial-edge-ai",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:ai-chips-modules",
+    "to": "segment:industrial-edge-ai",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "aiChips output is an input of industrialEdgeAI.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:ai-chips-modules|market:robotic-edge-computing",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:ai-chips-modules",
+    "to": "market:robotic-edge-computing",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "aiChips output is an input of roboticEdge.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:c3fac41c-7d5b-47db-b098-e47b1cd70153|segment:ai-servers",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "to": "segment:ai-servers",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "serverPcb output is an input of aiServers.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:c3fac41c-7d5b-47db-b098-e47b1cd70153|entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "to": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "serverPcb output is an input of aiSwitch.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:c3fac41c-7d5b-47db-b098-e47b1cd70153|entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:c3fac41c-7d5b-47db-b098-e47b1cd70153",
+    "to": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "serverPcb output is an input of liquidRack.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c|entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+    "to": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "rackPower output is an input of liquidRack.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c|segment:ai-servers",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:65eeda0a-07cb-4c20-8ad7-b6137bc3d91c",
+    "to": "segment:ai-servers",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "rackPower output is an input of aiServers.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:542ecd90-5a07-49f2-aecf-27ad181ee561|entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "to": "entity:a1fb5f6a-1cc5-4b70-b875-2f7d8fea46c1",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "aiSwitch output is an input of liquidRack.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:542ecd90-5a07-49f2-aecf-27ad181ee561|segment:ai-servers",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:542ecd90-5a07-49f2-aecf-27ad181ee561",
+    "to": "segment:ai-servers",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "aiSwitch output is an input of aiServers.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:industrial-edge-ai|segment:amr",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:industrial-edge-ai",
+    "to": "segment:amr",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "industrialEdgeAI output is an input of amr.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:market:robotic-edge-computing|segment:amr",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "market:robotic-edge-computing",
+    "to": "segment:amr",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "roboticEdge output is an input of amr.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:display-glass|entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:display-glass",
+    "to": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "displayGlass output is an input of coverGlass.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3|segment:vehicles",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:c5ef0847-d0c2-4feb-ac98-00c8904492a3",
+    "to": "segment:vehicles",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "coverGlass output is an input of vehicles.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef|segment:vehicles",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "entity:54626d7b-7d70-4850-a2e9-0c17abe0bfef",
+    "to": "segment:vehicles",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "autoDisplay output is an input of vehicles.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:FEEDS_SEGMENT:segment:automotive-glass|segment:vehicles",
+    "predicate": "FEEDS_SEGMENT",
+    "from": "segment:automotive-glass",
+    "to": "segment:vehicles",
+    "verification_status": "analyst_inferred",
+    "curation": {
+      "method": "v2-value-chain",
+      "rationale": "autoGlass output is an input of vehicles.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  }
+]

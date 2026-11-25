@@ -1,0 +1,86 @@
+[
+  {
+    "evidence_ids": [
+      "evidence:adprod"
+    ],
+    "from": "product:dlap",
+    "id": "edge:012",
+    "predicate": "IN_CATEGORY",
+    "to": "category:robotic-edge-controller",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [
+      "evidence:nexprod"
+    ],
+    "from": "product:mars",
+    "id": "edge:013",
+    "predicate": "IN_CATEGORY",
+    "to": "category:robotic-edge-controller",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [
+      "evidence:aaeonprod"
+    ],
+    "from": "product:boxer",
+    "id": "edge:014",
+    "predicate": "IN_CATEGORY",
+    "to": "category:industrial-edge-ai-computer",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "evidence_ids": [
+      "evidence:axiomprod"
+    ],
+    "from": "product:aie",
+    "id": "edge:015",
+    "predicate": "IN_CATEGORY",
+    "to": "category:industrial-edge-ai-computer",
+    "verification_status": "analyst_inferred"
+  },
+  {
+    "id": "v2:IN_CATEGORY:product:afe|category:industrial-edge-ai-computer",
+    "predicate": "IN_CATEGORY",
+    "from": "product:afe",
+    "to": "category:industrial-edge-ai-computer",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Jetson Orin edge AI system used in a robotics solution.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:IN_CATEGORY:product:apex|category:industrial-edge-ai-computer",
+    "predicate": "IN_CATEGORY",
+    "from": "product:apex",
+    "to": "category:industrial-edge-ai-computer",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [],
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Innodisk APEX is an edge AI server line.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "id": "v2:IN_CATEGORY:entity:542811c8-4ca1-4fab-8536-6790add0c076|category:robotic-edge-controller",
+    "predicate": "IN_CATEGORY",
+    "from": "entity:542811c8-4ca1-4fab-8536-6790add0c076",
+    "to": "category:robotic-edge-controller",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0"
+    ],
+    "curation": {
+      "method": "v2-grouping",
+      "rationale": "Notes: AGX Orin system for AMR edge computing.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "id": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced:36bc8be9",
+    "localized_names": {
+      "en": "Outsourced Semiconductor Assembly and Test Services",
+      "zh-TW": "半導體封裝與測試委外服務"
+    },
+    "name": "欣銓 半導體封裝與測試委外服務",
+    "type": "Service",
+    "verification_status": "officially_disclosed",
+    "kind": "testing_and_packaging",
+    "split_from": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+    "curation": {
+      "method": "v2-split",
+      "rationale": "One offering per company, so competition between suppliers can be recorded.",
+      "confidence": "high",
+      "basis": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "evidence_ids": [
+      "entity:34028485-970c-4e8d-9baa-61998c802dad"
+    ],
+    "id": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced:d73ef9f5",
+    "localized_names": {
+      "en": "Outsourced Semiconductor Assembly and Test Services",
+      "zh-TW": "半導體封裝與測試委外服務"
+    },
+    "name": "力成 半導體封裝與測試委外服務",
+    "type": "Service",
+    "verification_status": "officially_disclosed",
+    "kind": "testing_and_packaging",
+    "split_from": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+    "curation": {
+      "method": "v2-split",
+      "rationale": "One offering per company, so competition between suppliers can be recorded.",
+      "confidence": "high",
+      "basis": "entity:2505ccfd-e29c-4a8b-af08-f5011ac11ced",
+      "at": "2026-11-22"
+    }
+  }
+]

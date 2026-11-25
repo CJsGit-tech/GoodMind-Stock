@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Find companies by a condition in the research assistant",
+    "sanity": true,
+    "viewport": "desktop",
+    "covers": [
+      "graph load via GET /api/graph",
+      "guided browsing in the research assistant",
+      "company search by condition",
+      "applied-filter chips",
+      "3D graph rendering"
+    ],
+    "description": "Verifies the graph loads and a guided condition search filters it to the matching companies.",
+    "steps": [
+      "Open the app",
+      "In the research assistant click 用條件找公司",
+      "Click 技術",
+      "Click NVIDIA Jetson Orin 平台"
+    ],
+    "expected": "The assistant replies that 4 companies match and shows buttons for 輝達, 凌華, 研華 and 艾訊; a chip reading 技術：NVIDIA Jetson Orin 平台 appears at the top of the assistant."
+  },
+  {
+    "name": "Inspect a company found by ticker",
+    "viewport": "desktop",
+    "covers": [
+      "search by ticker and alias",
+      "company details panel",
+      "relations grouped by kind",
+      "sources list"
+    ],
+    "description": "Verifies identity resolution by ticker and the details panel content.",
+    "steps": [
+      "Type 2330 in the search box at the top",
+      "Choose 台積電 from the results"
+    ],
+    "expected": "A details panel titled 台積電 with the English name TSMC shows 股票代號 2330, 國家 台灣, a 關係 section that includes N2 晶圓製程, and a 來源 section."
+  },
+  {
+    "name": "Read the data guide",
+    "viewport": "desktop",
+    "covers": [
+      "data guide page",
+      "node type schema table",
+      "available relations search",
+      "search structure table",
+      "methodology"
+    ],
+    "description": "Verifies the public data guide lists the schema, relations, search structure and methodology.",
+    "steps": [
+      "Open the app",
+      "Click 資料說明 in the top bar",
+      "In the 可用關係 section type 供應 in the search box"
+    ],
+    "expected": "The page shows the headings 節點類型, 可用關係, 搜尋結構 and 方法; the node type table includes 公司 with the required field 國家; after typing 供應 the relations table still lists 供應給 and no longer lists 屬於集團."
+  },
+  {
+    "name": "Admin workspace rejects a wrong sign-in",
+    "viewport": "mobile",
+    "covers": [
+      "admin sign-in via POST /api/admin/login",
+      "admin status via GET /api/admin/status",
+      "wrong-credentials guardrail",
+      "workspace hidden from anonymous visitors"
+    ],
+    "description": "Verifies the admin workspace asks for a sign-in and refuses wrong credentials without showing maintenance tools.",
+    "steps": [
+      "Open the app at the path /workspace",
+      "Type wrong-user in 帳號 and wrong-password-123 in 密碼",
+      "Click 登入"
+    ],
+    "expected": "The message 帳號或密碼不正確。 is shown, the 管理員登入 form is still visible, and no 建立關係 or 待審核的建議 section appears."
+  }
+]

@@ -1,0 +1,568 @@
+[
+  {
+    "basis": [
+      "Overlapping robotics edge processing and control buyer applications",
+      "Both product descriptions target robotics controller deployments"
+    ],
+    "commercial_competition_verified": false,
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "evidence:adprod",
+      "evidence:nexprod"
+    ],
+    "id": "competition:dlap-v-mars",
+    "name": "dlap v mars",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both in the Robotic Edge Controller category for robotics controller deployments.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "Robotics computer and general embedded AI box may compete as alternative subsystem architectures",
+      "Buyer-specific integration and motion-control requirements would determine substitutability"
+    ],
+    "commercial_competition_verified": false,
+    "competition_type": "INDIRECT",
+    "evidence_ids": [
+      "evidence:adprod",
+      "evidence:aaeonprod"
+    ],
+    "id": "competition:dlap-v-boxer",
+    "name": "dlap v boxer",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "application",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Different categories (robotics controller vs general embedded AI box) that may substitute only for robotics control.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩家官方文件均描述 2 奈米級 GAA 代工；名目節點不代表相同效能、良率或設計生態。",
+      "Both vendors describe a 2 nm-class GAA foundry process; nominal nodes imply no parity in performance, yields or design ecosystem."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:25ccc685-daa1-42e0-aa66-51f414414498",
+      "entity:9418de44-14a9-4adc-8304-52450920cb64"
+    ],
+    "id": "entity:12fbe755-d6a5-43c0-a234-b7ac7bd77564",
+    "localized_names": {
+      "en": "N2 vs SF2 Advanced Foundry Assessment",
+      "zh-TW": "N2 與 SF2 的先進代工競爭評估"
+    },
+    "name": "N2 與 SF2 的先進代工競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "market",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both are 2 nm-class GAA foundry processes for the same leading-edge foundry market.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩者均面向 AMR 邊緣推論；凌華用 AGX Orin，艾訊用 Orin NX，且相機介面不同。",
+      "Both target AMR edge inference; ADLINK uses AGX Orin and Axiomtek uses Orin NX, with differing camera interfaces."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:499b18bf-8daa-47d4-a78e-9ddecf3464d0",
+      "entity:cf261bec-1a2b-492c-ac7c-98602db79508"
+    ],
+    "id": "entity:775abca9-a345-4887-acb3-bdd1b7872796",
+    "localized_names": {
+      "en": "ADLINK vs Axiomtek AMR Edge Computing Assessment",
+      "zh-TW": "凌華與艾訊 AMR 邊緣運算競爭評估"
+    },
+    "name": "凌華與艾訊 AMR 邊緣運算競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "application",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis limits overlap to AMR edge inference; hardware platforms and camera interfaces differ.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩廠低功耗產品線都面向消費與連網晶片；製程平台、生態與資格不同。 / Both have low-power platforms for consumer and connected chips; platforms, ecosystem and qualification differ."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:95c8281c-113b-440e-92a2-306f9889f3b1",
+      "entity:6a8d6b79-52b0-407f-a9ce-842e33ddfc06"
+    ],
+    "id": "entity:64d1609c-c558-4f95-990d-b144ddf46773",
+    "localized_names": {
+      "en": "UMC vs TSMC Low-power Foundry Assessment",
+      "zh-TW": "聯電與台積電低功耗代工競爭評估"
+    },
+    "name": "聯電與台積電低功耗代工競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "market",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both low-power 22 nm platforms for consumer/connected chips in the same foundry segment.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩者提供邏輯與混合訊號晶圓測試；未證實同一客戶、試產資格或對應溫域。 / Both offer logic and mixed-signal wafer test; no shared customers, qualifications or matching temperature ranges verified."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:f7fed9e5-27bd-49fa-8ebc-ca65ec81a899",
+      "entity:0615585c-1532-4f95-9e5b-428125ef4e4d"
+    ],
+    "id": "entity:162b7ac7-1593-499d-ab4b-e52c1b5cc45f",
+    "localized_names": {
+      "en": "Ardentec vs KYEC Wafer Test Assessment",
+      "zh-TW": "欣銓與京元電晶圓測試競爭評估"
+    },
+    "name": "欣銓與京元電晶圓測試競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "market",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both offer logic and mixed-signal wafer test, the full scoped segment.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "均提供客製矽磊晶晶圓，電力元件用途有重疊；不推定尺寸、摻雜或客戶認證一致。 / Both offer customized epitaxial wafers with power-device overlap; dimensions, doping and qualification may differ."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:3e42e29b-b319-419d-b197-d24806d2e8cd",
+      "entity:619ef716-0931-4e88-80bc-1aea74e9014c"
+    ],
+    "id": "entity:00e1cf37-59c5-4dd3-8733-f5d31a4e851b",
+    "localized_names": {
+      "en": "Wafer Works vs GlobalWafers Epitaxial Wafer Assessment",
+      "zh-TW": "合晶與環球晶矽磊晶競爭評估"
+    },
+    "name": "合晶與環球晶矽磊晶競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Customized epitaxial wafers; overlap noted for power devices, specs may differ.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "比較車載曲面蓋板，不影響旭硝子在玻璃基板環節的上游身分；沒有同一車廠認證或競標證據。 / Scoped to curved automotive covers, separate from AGC’s upstream glass substrate supply. Shared automaker qualification or bids are not verified."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917",
+      "entity:8f1ec1b8-9833-4cc5-93d5-593a85349143"
+    ],
+    "id": "entity:db55f666-1b80-48d8-8764-1562823e2c34",
+    "localized_names": {
+      "en": "G-TECH vs AGC Automotive Cover Glass Assessment",
+      "zh-TW": "正達與旭硝子車載蓋板競爭評估"
+    },
+    "name": "正達與旭硝子車載蓋板競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis scopes it to curved automotive cover glass only.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩者皆提供邏輯與記憶體成品測試；未證實同一客戶或資格。 / Both provide logic and memory final test; no shared qualification or customer is verified."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:2b542dab-40ba-4298-9ccc-b2340b4ccff6",
+      "entity:6995e4db-ab11-4d98-9bf2-643f8714eb32"
+    ],
+    "id": "entity:67e818d6-d450-4b9c-851c-1dfb5aeb7c98",
+    "localized_names": {
+      "en": "Powertech vs ASE Final Test Assessment",
+      "zh-TW": "力成與日月光成品測試競爭評估"
+    },
+    "name": "力成與日月光成品測試競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "market",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both provide logic and memory final test, the full scoped segment.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "雙方有伺服器或網通高層數 PCB 能力，未證實同案競標或同客戶料號。 / Overlapping high-layer server/networking PCB capability, no shared bids or qualified SKU."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:dcab9549-9daf-4c8f-9889-4ea8e8db5912",
+      "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+    ],
+    "id": "entity:21cd9f0b-3abd-432a-a8ab-7e2716cde4dd",
+    "localized_names": {
+      "en": "Compeq vs GCE Server PCB Assessment",
+      "zh-TW": "華通與金像電伺服器板競爭評估"
+    },
+    "name": "華通與金像電伺服器板競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Overlap in high-layer server/networking PCB capability only.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "比較鎖定伺服器與網通的多層 PCB，不推定同一客戶、規格或認證。 / Scoped to multilayer server and networking boards, not shared customers or qualification."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:f3fde760-400f-4355-851a-a5073ecb154f",
+      "entity:3342b678-f22c-4875-93b1-eac64dc28e6c"
+    ],
+    "id": "entity:79df1618-bb1b-4f00-8932-fd6fa4257bc5",
+    "localized_names": {
+      "en": "Allied Circuit vs GCE Server PCB Assessment",
+      "zh-TW": "博智與金像電伺服器板競爭評估"
+    },
+    "name": "博智與金像電伺服器板競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis scopes it to multilayer server and networking boards.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "僅比較雙方型錄顯示的 QFN 導線架產品重疊；不推定適用於全部無引腳封裝。 / QFN overlap only, not all leadless packages or verified interchangeability."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:6d1a7acf-3ea8-4a9e-9700-69a53756433f",
+      "entity:c4b4ca32-b431-4bf6-bf6d-6a60d29a2544"
+    ],
+    "id": "entity:8e3b6524-9425-4e3c-8f1e-0666bf034fa2",
+    "localized_names": {
+      "en": "CWTC vs SHINKO QFN Leadframe Assessment",
+      "zh-TW": "長科與新光電氣 QFN 導線架競爭評估"
+    },
+    "name": "長科與新光電氣 QFN 導線架競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis: QFN lead frames only, not all leadless packages.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "重疊限於半導體高純度化學品使用的 PFA 管，不延伸至槽體，也未證實同一認證。 / Overlap in semiconductor high-purity PFA tubing, not tanks or shared qualification."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:2f5a00c8-2795-4085-886c-c35e9169cefe",
+      "entity:58ac168c-e128-495c-9ed9-cd2aefeafabc"
+    ],
+    "id": "entity:171f8ebd-a4db-4451-98f2-d42adf2707a8",
+    "localized_names": {
+      "en": "Allied Supreme vs Entegris High-purity PFA Tubing",
+      "zh-TW": "上品與 Entegris 高純度 PFA 管競爭評估"
+    },
+    "name": "上品與 Entegris 高純度 PFA 管競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis: semiconductor high-purity PFA tubing only, not tanks.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "同屬資料中心高速乙太網路設備；400G 與 800G 並非同規替代，Edgecore 為智邦集團品牌。 / Same high-speed data center Ethernet segment, but 400G and 800G are not drop-in alternatives; Edgecore is an Accton group brand."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:e89c9720-5d2a-4c18-b8c9-ee77ff81c52b",
+      "entity:e5266bad-0945-43aa-8061-f535932597dd"
+    ],
+    "id": "entity:4a16b957-9ecf-4cae-a74c-4c618416ed01",
+    "localized_names": {
+      "en": "WNC vs Accton High-speed Switch Assessment",
+      "zh-TW": "啟碁與智邦高速交換器競爭評估"
+    },
+    "name": "啟碁與智邦高速交換器競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Same data-center Ethernet switch category, but 400G vs 800G are not drop-in alternatives.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "兩者均展示面向 Vera Rubin 的 110 kW 機架供電方案。比較僅限產品定位，未確認相同設計、量產或採購。 / Both showcased 110 kW power shelves for the Vera Rubin ecosystem; no equivalent design, shipments or procurement established."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba",
+      "entity:02df2ba7-dfe9-4125-bb76-c51096ad8a1f"
+    ],
+    "id": "entity:846ca990-f8d4-4e84-84a3-29971dfcbab9",
+    "localized_names": {
+      "en": "LITEON vs Delta Rack Power Assessment",
+      "zh-TW": "光寶與台達電機架電源競爭評估"
+    },
+    "name": "光寶與台達電機架電源競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Both 110 kW rack power shelves for the Vera Rubin ecosystem; positioning only.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "同為 GB300 NVL72 液冷機架整合；美超微公告量產出貨，鴻海來源僅確認展示整合。 / GB300 NVL72 rack integration overlaps; Supermicro disclosed volume shipments, while the Foxconn source supports demonstration only."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:8f129cd0-d3c6-490c-a0bb-6e4d07718a31",
+      "entity:eae6c048-da5e-42ab-9bc4-2089aa99d561"
+    ],
+    "id": "entity:dae6b5be-323b-4b7e-a828-02c4c38792c9",
+    "localized_names": {
+      "en": "Foxconn vs Supermicro Liquid-cooled Rack Assessment",
+      "zh-TW": "鴻海與美超微液冷機架競爭評估"
+    },
+    "name": "鴻海與美超微液冷機架競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "market",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Same GB300 NVL72 liquid-cooled rack integration; Foxconn source shows demonstration only.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "競爭範圍限車用顯示；不把車載 TFT-LCD 與透明 Micro LED 概念車當同規產品。 / Automotive display category only; TFT-LCD and concept transparent Micro LED are not equivalent."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:6d457835-d679-4d23-8231-9aa548697838",
+      "entity:f55c6d76-d707-4a3c-b864-94a488212617"
+    ],
+    "id": "entity:2af7b400-f6c4-4680-aaa6-20fef37f5a6a",
+    "localized_names": {
+      "en": "AUO vs Innolux Automotive Displays",
+      "zh-TW": "友達與群創車用顯示競爭評估"
+    },
+    "name": "友達與群創車用顯示競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis: automotive display category only.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "同有低介電或低熱膨脹材料用途；未證實所有規格或纖維布與紗線可替換。 / Low-Dk or low-CTE materials overlap in use; no blanket equivalence of fabric, yarn or grades."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:afbdf2dc-7dc4-40a8-8205-6215a5a7cc18",
+      "entity:d4b62756-4b8d-43af-845e-7888f89891a3"
+    ],
+    "id": "entity:5f1a39a1-2b16-4ee1-a5c4-9510a559e4e3",
+    "localized_names": {
+      "en": "Taiwan Glass vs Nittobo Electronic Fiberglass",
+      "zh-TW": "台玻與日東紡電子級玻纖競爭評估"
+    },
+    "name": "台玻與日東紡電子級玻纖競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "application",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis: overlap is in low-Dk / low-CTE use, not blanket equivalence of grades.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "basis": [
+      "雙方皆列為載板供應能力廠商，限共同產品類別；不推定 KF 產能、同一客戶或同一料號。 / Scoped to the IC-substrate product category, not shared KF capacity, customers or SKUs."
+    ],
+    "competition_type": "DIRECT",
+    "evidence_ids": [
+      "entity:d37c8a74-258a-4034-9b73-100a92193d61",
+      "entity:9a285313-2418-4d51-8014-dea8009e3740"
+    ],
+    "id": "entity:af955aa2-5aff-4aba-9cbc-b7ae9492c9ff",
+    "localized_names": {
+      "en": "Unimicron vs Kinsus IC Substrates",
+      "zh-TW": "欣興與景碩 IC 載板競爭評估"
+    },
+    "name": "欣興與景碩 IC 載板競爭評估",
+    "notes": "此評估只比較事先定義的產品市場；未證實同一客戶、競標或可直接替換。 / Scoped product-market assessment; no verified shared customer, bid or drop-in interchangeability.",
+    "type": "CompetitionAssessment",
+    "verification_status": "analyst_inferred",
+    "overlap_scope": "product_category",
+    "curation": {
+      "fields": [
+        "overlap_scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Basis: scoped to the IC-substrate product category.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  }
+]

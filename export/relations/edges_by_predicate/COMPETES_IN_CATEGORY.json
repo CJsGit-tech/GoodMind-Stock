@@ -1,0 +1,14 @@
+[
+  {
+    "id": "curated:COMPETES_IN_CATEGORY:competition:dlap-v-mars",
+    "predicate": "COMPETES_IN_CATEGORY",
+    "from": "competition:dlap-v-mars",
+    "to": "category:robotic-edge-controller",
+    "verification_status": "analyst_inferred",
+    "evidence_ids": [
+      "evidence:adprod",
+      "evidence:nexprod"
+    ],
+    "notes": "Both offerings are IN_CATEGORY Robotic Edge Controller."
+  }
+]

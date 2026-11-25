@@ -1,0 +1,82 @@
+[
+  {
+    "evidence_ids": [
+      "entity:2ca293f6-6c7f-4f04-af94-ab7a91215be5"
+    ],
+    "from": "entity:ac870ac9-76a3-40d7-811b-5f2fc2371e25",
+    "id": "relation:f480e78f-e558-45e7-a8f8-702144bc8b04",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:ccbb588b-fc6d-4b56-ac09-3882ebde0012",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:45e49e3d-a20f-4234-bd68-67903c8114c3"
+    ],
+    "from": "entity:10f5512a-b7ec-4432-85ff-ff62f8cc36ae",
+    "id": "relation:22a54d82-ef2b-4575-9a14-17184410240c",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:58ef8c4a-7bc5-4377-a1e7-ce38fd5691af",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:9a9bc0e3-1deb-474f-b0d5-186353ce0917"
+    ],
+    "from": "entity:c68f72b1-1e9e-4d20-a130-3fc9023ac8e2",
+    "id": "relation:743f070e-1a4c-4b33-9ca5-f5bf8479dab5",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:326c412b-d165-4d5d-8050-b1d4cadcbb50",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:4544f005-9efc-448b-b1dc-96dde3107dc4"
+    ],
+    "from": "entity:6bcb8a91-a191-4173-913b-5bcdeae13c5c",
+    "id": "relation:57918f2f-ac6a-48b9-960e-179f1f78915c",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:0dc4cfbd-3faa-4a0b-9124-ab7066a7a783",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:7ad5508f-0234-4516-b9e4-3830f628f413"
+    ],
+    "from": "entity:311106cd-5572-44ef-b017-39bbad30ad78",
+    "id": "relation:51a6de6c-b964-4e7b-ba7a-4283bf90f39d",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:891261dc-d960-44d5-a561-c1f7d2021f0f",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:0d2ed86e-7c48-4baa-a1a7-67553da2936f",
+    "id": "relation:f55a2c22-acbd-4090-951b-6aa53f7909a4:split",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:e50d3cec",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:68e60d66-b084-47c9-9c4d-c4d06213e416",
+    "id": "relation:2fe533f8-985a-4f18-ac0f-64428ac2a705:split",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:5b989afc",
+    "verification_status": "officially_disclosed"
+  },
+  {
+    "evidence_ids": [
+      "entity:b21a3a78-7398-4779-bd03-b0e81f93fa0e"
+    ],
+    "from": "entity:298ab998-cb86-44bf-ad4e-08abfca92c47",
+    "id": "relation:fa7d8ced-c955-4b9a-990d-48d66824c91b:split",
+    "predicate": "FOR_SUPPLIED_PRODUCT",
+    "to": "entity:6442218b-4fb0-4204-8fbd-d24603ec0b51:77fdd193",
+    "verification_status": "officially_disclosed"
+  }
+]

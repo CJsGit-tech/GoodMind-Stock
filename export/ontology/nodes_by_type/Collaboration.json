@@ -1,0 +1,218 @@
+[
+  {
+    "collaboration_type": "joint_venture",
+    "evidence_ids": [
+      "evidence:farobot"
+    ],
+    "id": "collaboration:adlink-foxconn",
+    "name": "FARobot joint-venture collaboration",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "scope": "ADLINK and Foxconn joint venture FARobot (robot fleet software).",
+    "curation": {
+      "fields": [
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Scope from the record name and its FARobot company evidence.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "collaboration_type": "technical_integration",
+    "evidence_ids": [
+      "evidence:aeolus"
+    ],
+    "id": "collaboration:adv-aeolus",
+    "name": "Advantech / Aeolus robotics solution",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "announced_at": "2026-05-26",
+    "scope": "Robotics solution integration around Advantech AFE-R750.",
+    "curation": {
+      "fields": [
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Date from Advantech news metadata (2026-05-26); scope from FOCUSES_ON_PRODUCT.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "collaboration_type": "technical_integration",
+    "evidence_ids": [
+      "evidence:mobisnet"
+    ],
+    "id": "collaboration:axiom-mobisnet",
+    "name": "Axiomtek / MOBISNET AMR integration",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "scope": "AMR integration showcased at Automation Taipei 2026 around Axiomtek AIE510-ONX.",
+    "curation": {
+      "fields": [
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Scope from the evidence title and FOCUSES_ON_PRODUCT.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "collaboration_type": "mou",
+    "evidence_ids": [
+      "evidence:deepx"
+    ],
+    "id": "collaboration:aaeon-deepx",
+    "name": "AAEON / DEEPX cooperation",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "announced_at": "2026-06-09",
+    "scope": "Physical-AI mass-production partnership (DEEPX NPU with AAEON systems).",
+    "curation": {
+      "fields": [
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Date from DEEPX newsroom metadata (2026-06-09).",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "evidence_ids": [
+      "entity:d2fe3dcc-9c3a-40bb-89fe-4674475ff7ba"
+    ],
+    "id": "entity:09aa4468-47bd-43bc-a340-2ff1fc2c71da",
+    "localized_names": {
+      "en": "LITEON–QCT Rack Power Collaboration",
+      "zh-TW": "光寶與雲達機架電源合作"
+    },
+    "name": "光寶與雲達機架電源合作",
+    "notes": "與雲達共同展示機架級電源，支持 Vera Rubin NVL72；未證實量產出貨。 / Joint rack-power showcase with QCT supporting Vera Rubin NVL72; volume shipments not established.",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "in_development",
+    "collaboration_type": "technical_integration",
+    "announced_at": "2026-10-16",
+    "scope": "Joint rack-power showcase supporting NVIDIA Vera Rubin NVL72; volume shipments not established.",
+    "curation": {
+      "fields": [
+        "collaboration_type",
+        "stage",
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Notes: joint showcase, volume shipments not established → demonstrated but not launched. Date from the LITEON press page.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "evidence_ids": [
+      "entity:cd7c2937-a13d-4e2a-bc68-02be0dbd25c2"
+    ],
+    "id": "entity:9282e245-2450-4550-ad19-2594e1d86aa1",
+    "localized_names": {
+      "en": "Unimicron–NVIDIA Substrate Capacity Agreement",
+      "zh-TW": "欣興與輝達載板產能協議"
+    },
+    "name": "欣興與輝達載板產能協議",
+    "notes": "2026-10-21 公告確認產能預留協議，爬坡時點是計畫，不是出貨證據。 / Capacity reservation disclosed on October 21, 2026; planned ramp is not shipment evidence.",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "collaboration_type": "other",
+    "announced_at": "2026-10-21",
+    "scope": "Substrate capacity reservation for NVIDIA; planned ramp timing is not shipment evidence.",
+    "curation": {
+      "fields": [
+        "collaboration_type",
+        "stage",
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Notes: capacity reservation disclosed 2026-10-21. It is closer to a supply agreement than a partnership; consider re-modelling as a SupplyRelationship at stage qualified.",
+      "confidence": "medium",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "evidence_ids": [
+      "entity:59c8f8da-ea67-4129-97cb-6eaa163cc5fe"
+    ],
+    "id": "entity:a89b4736-2c35-4535-a2a4-cd5f63220733",
+    "localized_names": {
+      "en": "Foxconn, Bull and NVIDIA European AI Rack Collaboration",
+      "zh-TW": "鴻海、Bull 與輝達歐洲 AI 機架合作"
+    },
+    "name": "鴻海、Bull 與輝達歐洲 AI 機架合作",
+    "notes": "2026-06-17 公告計畫在歐洲建造並由 Bull 推向市場，未確認交付。 / June 17, 2026 plan for European manufacturing and Bull commercialization; no deliveries confirmed.",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "announced",
+    "collaboration_type": "strategic_partnership",
+    "announced_at": "2026-06-17",
+    "scope": "Plan to manufacture AI racks in Europe with Bull commercializing; no deliveries confirmed.",
+    "curation": {
+      "fields": [
+        "collaboration_type",
+        "stage",
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Notes: 2026-06-17 plan announced, no deliveries confirmed.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  },
+  {
+    "evidence_ids": [
+      "entity:68e70296-f369-4f5c-b14e-3e703cb3f79f"
+    ],
+    "id": "entity:4546ae6a-8030-4352-99ae-a48163e4ffde",
+    "localized_names": {
+      "en": "Allied Circuit–Meiko Vietnam Joint Venture",
+      "zh-TW": "博智與名幸越南合資"
+    },
+    "name": "博智與名幸越南合資",
+    "notes": "2025-09-26 雙方簽訂高層板合資協議，不以合資公告推定量產。 / September 26, 2025 agreement for high-layer boards; not proof of volume production.",
+    "type": "Collaboration",
+    "verification_status": "officially_disclosed",
+    "stage": "mou_signed",
+    "collaboration_type": "joint_venture",
+    "announced_at": "2025-09-26",
+    "scope": "High-layer-count PCB joint venture in Vietnam; not proof of volume production.",
+    "curation": {
+      "fields": [
+        "collaboration_type",
+        "stage",
+        "announced_at",
+        "scope"
+      ],
+      "method": "assisted",
+      "basis": "record notes / basis text / evidence page",
+      "rationale": "Notes: JV agreement signed 2025-09-26; production not established.",
+      "confidence": "high",
+      "at": "2026-11-22"
+    }
+  }
+]

@@ -1,0 +1,70 @@
+[
+  {
+    "from": "Company",
+    "group": "corporate",
+    "meaning": "Company is affiliated with or included in a named group",
+    "predicate": "MEMBER_OF_GROUP",
+    "storage": "asserted",
+    "to": "CorporateGroup",
+    "inverse": "HAS_MEMBER",
+    "edge_count": 4
+  },
+  {
+    "from": "Company",
+    "group": "corporate",
+    "meaning": "Company contains branch, division, or business unit",
+    "predicate": "HAS_ORG_UNIT",
+    "storage": "asserted",
+    "to": "OrganizationUnit",
+    "edge_count": 0
+  },
+  {
+    "from": "OrganizationUnit",
+    "group": "corporate",
+    "meaning": "Internal reporting hierarchy",
+    "predicate": "SUBUNIT_OF",
+    "storage": "asserted",
+    "to": "OrganizationUnit",
+    "edge_count": 0
+  },
+  {
+    "from": "Company",
+    "group": "corporate",
+    "meaning": "Company has documented stake in legal entity; include percent, share_class, as_of",
+    "predicate": "OWNS_STAKE_IN",
+    "storage": "asserted",
+    "to": "Company",
+    "properties": [
+      {
+        "name": "percent",
+        "datatype": "number",
+        "description": "Ownership percent."
+      },
+      {
+        "name": "as_of",
+        "datatype": "date",
+        "description": "Snapshot date."
+      }
+    ],
+    "edge_count": 0
+  },
+  {
+    "from": "Company",
+    "group": "corporate",
+    "meaning": "Company has legal or effective control; not inferred solely from a minority stake",
+    "predicate": "CONTROLS",
+    "storage": "asserted",
+    "to": "Company",
+    "edge_count": 4
+  },
+  {
+    "from": "Company",
+    "group": "corporate",
+    "meaning": "Derived/declared parent-subsidiary relation",
+    "predicate": "IS_SUBSIDIARY_OF",
+    "storage": "derived_or_asserted",
+    "to": "Company",
+    "inverse": "HAS_SUBSIDIARY",
+    "edge_count": 10
+  }
+]

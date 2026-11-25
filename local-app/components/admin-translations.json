@@ -1,0 +1,150 @@
+{
+  "管理者登入": {
+    "zh-TW": "管理者登入",
+    "en": "Administrator sign-in"
+  },
+  "管理者專用": {
+    "zh-TW": "管理者專用",
+    "en": "ADMINISTRATION"
+  },
+  "登入工作區": {
+    "zh-TW": "登入工作區",
+    "en": "Sign in to your workspace"
+  },
+  "使用管理帳號安全管理圖譜與資料。": {
+    "zh-TW": "使用管理帳號安全管理圖譜與資料。",
+    "en": "Manage your graph and records with your administrator account."
+  },
+  "帳號": {
+    "zh-TW": "帳號",
+    "en": "Username"
+  },
+  "密碼": {
+    "zh-TW": "密碼",
+    "en": "Password"
+  },
+  "登入": {
+    "zh-TW": "登入",
+    "en": "Sign in"
+  },
+  "正在登入…": {
+    "zh-TW": "正在登入…",
+    "en": "Signing in…"
+  },
+  "返回知識圖譜": {
+    "zh-TW": "返回知識圖譜",
+    "en": "Back to the graph"
+  },
+  "登入已失效，請重新登入。": {
+    "zh-TW": "登入已失效，請重新登入。",
+    "en": "Your session has expired. Please sign in again."
+  },
+  "嘗試次數過多，請稍後再試。": {
+    "zh-TW": "嘗試次數過多，請稍後再試。",
+    "en": "Too many attempts. Please try again in 15 minutes."
+  },
+  "帳號或密碼不正確。": {
+    "zh-TW": "帳號或密碼不正確。",
+    "en": "The username or password is incorrect."
+  },
+  "暫時無法登入，請稍後重試。": {
+    "zh-TW": "暫時無法登入，請稍後重試。",
+    "en": "Sign-in is temporarily unavailable. Please retry."
+  },
+  "暫時無法登出，請重試。": {
+    "zh-TW": "暫時無法登出，請重試。",
+    "en": "Sign-out could not be confirmed. Please retry."
+  },
+  "暫時無法載入資料，請稍後重試。": {
+    "zh-TW": "暫時無法載入資料，請稍後重試。",
+    "en": "Data could not be loaded. Please retry."
+  },
+  "資料已在其他視窗更新，請重新載入後再編輯。": {
+    "zh-TW": "資料已在其他視窗更新，請重新載入後再編輯。",
+    "en": "This data changed in another window. Reload before editing again."
+  },
+  "儲存未完成，請保留內容並重試。": {
+    "zh-TW": "儲存未完成，請保留內容並重試。",
+    "en": "Your changes could not be saved. Keep your draft and retry."
+  },
+  "探索公司、產品、產業與證據之間的脈絡。": {
+    "zh-TW": "探索公司、產品、產業與證據之間的脈絡。",
+    "en": "Explore connections between companies, products, industries and evidence."
+  },
+  "示範資料僅供探索；競爭關係是分析推論，不代表已確認的商業往來。": {
+    "zh-TW": "示範資料僅供探索；競爭關係是分析推論，不代表已確認的商業往來。",
+    "en": "Sample data is for exploration. Competition is an analytical inference, not a confirmed commercial relationship."
+  },
+  "公開發布": {
+    "zh-TW": "公開發布",
+    "en": "Public publishing"
+  },
+  "管理草稿": {
+    "zh-TW": "管理草稿",
+    "en": "Administrator draft"
+  },
+  "儲存草稿後，即可發布至公開圖譜。": {
+    "zh-TW": "儲存草稿後，即可發布至公開圖譜。",
+    "en": "Save your draft before publishing to the public graph."
+  },
+  "有尚未公開的變更。儲存不會自動發布。": {
+    "zh-TW": "有尚未公開的變更。儲存不會自動發布。",
+    "en": "You have unpublished changes. Saving does not publish them."
+  },
+  "公開圖譜已是最新儲存版本。": {
+    "zh-TW": "公開圖譜已是最新儲存版本。",
+    "en": "The public graph matches your latest saved draft."
+  },
+  "發布至公開圖譜": {
+    "zh-TW": "發布至公開圖譜",
+    "en": "Publish to public graph"
+  },
+  "確認公開這份圖譜？": {
+    "zh-TW": "確認公開這份圖譜？",
+    "en": "Publish this graph publicly?"
+  },
+  "這會將目前已儲存的管理草稿完整發布給所有訪客，包括其中的名稱、關係、備註與來源。請先確認沒有私人或敏感資料。": {
+    "zh-TW": "這會將目前已儲存的管理草稿完整發布給所有訪客，包括其中的名稱、關係、備註與來源。請先確認沒有私人或敏感資料。",
+    "en": "This will publish the entire saved administrator draft to all visitors, including names, relationships, notes and sources. Check that it contains no private or sensitive information."
+  },
+  "尚未儲存的編輯不會發布。舊有個人工作區資料不會自動搬移或公開。": {
+    "zh-TW": "尚未儲存的編輯不會發布。舊有個人工作區資料不會自動搬移或公開。",
+    "en": "Unsaved edits are not included. Legacy personal workspace data is never automatically moved or published."
+  },
+  "確認發布": {
+    "zh-TW": "確認發布",
+    "en": "Confirm publication"
+  },
+  "發布中…": {
+    "zh-TW": "發布中…",
+    "en": "Publishing…"
+  },
+  "發布未完成，請重試。": {
+    "zh-TW": "發布未完成，請重試。",
+    "en": "Publication could not be confirmed. Please retry."
+  },
+  "已發布，所有訪客都能看到這次更新。": {
+    "zh-TW": "已發布，所有訪客都能看到這次更新。",
+    "en": "Published. All visitors can now see this update."
+  },
+  "草稿已變更，請重新載入並確認內容後再發布。": {
+    "zh-TW": "草稿已變更，請重新載入並確認內容後再發布。",
+    "en": "The draft has changed. Reload and review it before publishing."
+  },
+  "公開圖譜": {
+    "zh-TW": "公開圖譜",
+    "en": "Public graph"
+  },
+  "管理者發布的圖譜": {
+    "zh-TW": "管理者發布的圖譜",
+    "en": "Administrator-published graph"
+  },
+  "資料由管理者發布，請依來源與驗證狀態判讀。": {
+    "zh-TW": "資料由管理者發布，請依來源與驗證狀態判讀。",
+    "en": "Published by the administrator. Interpret each record using its sources and verification status."
+  },
+  "公開圖譜來自管理者確認發布的版本。關係是否經過查證，請查看各項資料的來源與驗證狀態。": {
+    "zh-TW": "公開圖譜來自管理者確認發布的版本。關係是否經過查證，請查看各項資料的來源與驗證狀態。",
+    "en": "This is the version explicitly published by the administrator. Consult each record’s sources and verification status to assess its claims."
+  }
+}
