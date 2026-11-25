@@ -1,4 +1,0 @@
-schema_version: "1.1"
-name: imports-one-research-folder
-expected_outcome: |
-  The run produces ops.json, held.json, report.md and manifest.json. Existing companies are reused rather than recreated, and every ready record has a quote found in a saved source.

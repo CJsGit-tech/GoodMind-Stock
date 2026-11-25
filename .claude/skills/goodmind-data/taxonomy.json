@@ -1,0 +1,11 @@
+{
+  "note": "Your shared list of industries and market segments. package.ts holds any new Industry or MarketSegment that is not under \"approved\" (same id and name). Only you approve: ask the skill to propose entries, review them, then add them under \"approved\".",
+  "approved": {
+    "industries": [],
+    "segments": []
+  },
+  "proposed": {
+    "industries": [],
+    "segments": []
+  }
+}

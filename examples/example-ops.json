@@ -1,0 +1,443 @@
+{
+  "note": "虛構範例：公司、產品與來源網址都是假的，只用來示範匯入格式。 Fictional example: companies, products and source URLs are invented to demonstrate the import format.",
+  "ops": [
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:cg-annual",
+        "type": "Evidence",
+        "name": "晨光精密 2024 年報（虛構範例）",
+        "attributes": {
+          "url": "https://example.com/chenguang-annual-report",
+          "publisher": "晨光精密",
+          "published_at": "2025-03-15"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:bc-news",
+        "type": "Evidence",
+        "name": "北辰半導體供貨公告（虛構範例）",
+        "attributes": {
+          "url": "https://example.com/beichen-supply-notice",
+          "publisher": "北辰半導體",
+          "published_at": "2025-03-15"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "evidence:ys-release",
+        "type": "Evidence",
+        "name": "雲杉機器人合作新聞稿（虛構範例）",
+        "attributes": {
+          "url": "https://example.com/yunshan-press-release",
+          "publisher": "雲杉機器人",
+          "published_at": "2025-03-15"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:chenguang",
+        "type": "Company",
+        "name": "晨光精密",
+        "attributes": {
+          "country": "TW",
+          "name_en": "Chenguang Precision (fictional)",
+          "fictional": true,
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:beichen",
+        "type": "Company",
+        "name": "北辰半導體",
+        "attributes": {
+          "country": "TW",
+          "name_en": "Beichen Semiconductor (fictional)",
+          "fictional": true,
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "company:yunshan",
+        "type": "Company",
+        "name": "雲杉機器人",
+        "attributes": {
+          "country": "TW",
+          "name_en": "Yunshan Robotics (fictional)",
+          "fictional": true,
+          "evidence_ids": [
+            "evidence:ys-release"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "industry:industrial-automation",
+        "type": "Industry",
+        "name": "工業自動化（範例）",
+        "attributes": {
+          "name_en": "Industrial Automation (example)"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "segment:edge-computer",
+        "type": "MarketSegment",
+        "name": "工業邊緣運算電腦（範例）",
+        "attributes": {
+          "name_en": "Industrial edge computers (example)"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SEGMENT_OF_INDUSTRY",
+        "from": "segment:edge-computer",
+        "to": "industry:industrial-automation",
+        "attributes": {}
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:cg-200",
+        "type": "Product",
+        "name": "CG-200 邊緣運算電腦",
+        "attributes": {
+          "kind": "system",
+          "name_en": "CG-200 Edge Computer (fictional)"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:ys-ax10",
+        "type": "Product",
+        "name": "AX-10 邊緣控制器",
+        "attributes": {
+          "kind": "system",
+          "name_en": "AX-10 Edge Controller (fictional)"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "product:bc-n1",
+        "type": "Product",
+        "name": "北辰 N1 運算模組",
+        "attributes": {
+          "kind": "module",
+          "name_en": "Beichen N1 Module (fictional)"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:chenguang",
+        "to": "product:cg-200",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:yunshan",
+        "to": "product:ys-ax10",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:ys-release"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "SELLS",
+        "from": "company:beichen",
+        "to": "product:bc-n1",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:cg-200",
+        "to": "segment:edge-computer",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:ys-ax10",
+        "to": "segment:edge-computer",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:ys-release"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "TARGETS_SEGMENT",
+        "from": "product:bc-n1",
+        "to": "segment:edge-computer",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OPERATES_IN",
+        "from": "company:chenguang",
+        "to": "industry:industrial-automation",
+        "attributes": {
+          "verification_status": "reported"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OPERATES_IN",
+        "from": "company:yunshan",
+        "to": "industry:industrial-automation",
+        "attributes": {
+          "verification_status": "reported"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OPERATES_IN",
+        "from": "company:beichen",
+        "to": "industry:industrial-automation",
+        "attributes": {
+          "verification_status": "reported"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "supply:beichen-chenguang-n1",
+        "type": "SupplyRelationship",
+        "name": "北辰半導體供應晨光精密・運算模組",
+        "attributes": {
+          "stage": "mass_production",
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_SUPPLIER",
+        "from": "supply:beichen-chenguang-n1",
+        "to": "company:beichen",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_BUYER",
+        "from": "supply:beichen-chenguang-n1",
+        "to": "company:chenguang",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "FOR_SUPPLIED_PRODUCT",
+        "from": "supply:beichen-chenguang-n1",
+        "to": "product:bc-n1",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:bc-news"
+          ],
+          "verification_status": "verified"
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "competition:cg200-ax10",
+        "type": "CompetitionAssessment",
+        "name": "CG-200 對 AX-10",
+        "attributes": {
+          "competition_type": "DIRECT",
+          "overlap_scope": "market",
+          "basis": [
+            "同一市場區隔",
+            "客戶需求相近"
+          ],
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:cg-annual",
+            "evidence:ys-release"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_A",
+        "from": "competition:cg200-ax10",
+        "to": "product:cg-200",
+        "attributes": {
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "OFFERING_B",
+        "from": "competition:cg200-ax10",
+        "to": "product:ys-ax10",
+        "attributes": {
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "COMPETES_IN_SEGMENT",
+        "from": "competition:cg200-ax10",
+        "to": "segment:edge-computer",
+        "attributes": {
+          "verification_status": "inferred",
+          "evidence_ids": [
+            "evidence:cg-annual"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createNode",
+      "node": {
+        "id": "collaboration:chenguang-yunshan",
+        "type": "Collaboration",
+        "name": "晨光精密與雲杉機器人合作",
+        "attributes": {
+          "collaboration_type": "mou",
+          "stage": "mou_signed",
+          "verification_status": "reported",
+          "evidence_ids": [
+            "evidence:ys-release"
+          ]
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_PARTICIPANT",
+        "from": "collaboration:chenguang-yunshan",
+        "to": "company:chenguang",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:ys-release"
+          ],
+          "verification_status": "reported"
+        }
+      }
+    },
+    {
+      "op": "createEdge",
+      "edge": {
+        "predicate": "HAS_PARTICIPANT",
+        "from": "collaboration:chenguang-yunshan",
+        "to": "company:yunshan",
+        "attributes": {
+          "evidence_ids": [
+            "evidence:ys-release"
+          ],
+          "verification_status": "reported"
+        }
+      }
+    }
+  ]
+}

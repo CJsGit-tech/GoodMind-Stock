@@ -1,9 +1,0 @@
-[
-  {
-    "from": "market:robotic-edge-computing",
-    "id": "edge:025",
-    "predicate": "SEGMENT_FOR_APPLICATION",
-    "to": "application:robotics-control",
-    "verification_status": "analyst_inferred"
-  }
-]

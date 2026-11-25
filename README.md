@@ -1,23 +1,17 @@
 # 股脈 GoodMind
 
-**[繁體中文](#繁體中文) ｜ [English](#english)**
+**繁體中文** ｜ [English](README.en.md)
 
-| 連結 Links | URL |
+股脈是一個產業知識圖譜：把公司、商品、市場，以及它們之間的供應、合作、競爭關係和資料來源，整理成可查詢的圖譜。這個儲存庫提供研究方法、本體論規格，以及可以在你自己電腦上匯入資料的本機版本。**儲存庫不含研究資料**；只附一組虛構範例。
+
+| 連結 | 網址 |
 |---|---|
-| 正式網站 Production site | https://good-mind-mxn7j5.v2.appdeploy.ai/ |
-| 資料說明與方法 Data guide & methodology | https://good-mind-mxn7j5.v2.appdeploy.ai/#/docs |
+| 正式網站 | https://good-mind-mxn7j5.v2.appdeploy.ai/ |
+| 資料說明與方法 | https://good-mind-mxn7j5.v2.appdeploy.ai/#/docs |
 
----
+## 研究方法
 
-## 繁體中文
-
-股脈是一個產業知識圖譜研究平台：把公司、商品、市場與它們之間的供應、合作、競爭關係，連同資料來源整理成可查詢的圖譜。介面以繁體中文為主。
-
-### 研究本體論與方法速覽
-
-目前使用本體論 **4.0**（定義檔：[`goodmind-lite/lib/registry.v4.json`](goodmind-lite/lib/registry.v4.json)）。正式網站的資料說明頁列出 26 種可使用的節點類型（定義檔另含 1 種抽象的「商品」類型）與 81 種關係。部分類型與關係已定義，但還沒有資料。
-
-#### 資料分層
+本體論版本 **4.0**：26 種可使用的節點類型（另有 1 種抽象的「商品」類型）與 81 種關係，其中 71 種可以匯入，10 種由系統算出或僅作建議。
 
 | 層次 | 主要節點類型 | 回答的問題 |
 |---|---|---|
@@ -27,142 +21,87 @@
 | 來源 | 證據、主張 | 這件事是誰說的？ |
 | 延伸 | 產業鏈階段、製程能力、工廠、終端需求、趨勢主題、事件、主題提及、ETF | 產業鏈位置、趨勢與持股 |
 
-常見的研究路徑是：**公司 → 產品或服務 → 市場區隔 → 產業**。
+常見的研究路徑：**公司 → 產品或服務 → 市場區隔 → 產業**。
 
-#### 核心原則
+**原則**
 
-1. **中文為主。** `name` 使用繁體中文；英文與原文名稱、別名、股票代號放在 `attributes`。找不到可靠的中文名稱時保留原文並標記 `name_zh_missing`，不自行翻譯或杜撰。
-2. **屬性有彈性。** 節點與關係都有 `attributes`（自由的 JSON key-value，key 用 `snake_case`），各類型另有必填欄位。
-3. **規則即資料。** 節點類型、關係方向與必填欄位都登記在定義檔中。
-4. **單一寫入關卡。** 寫入前檢查類型、方向、必填欄位、重複公司與基數限制；整批通過才寫入，否則退回並說明原因。
-5. **事實要有來源。** 研究目標是每個事實都能追到證據。寫入關卡會對指定的類型與關係要求必填來源；舊資料中仍有缺漏，列在 `needs_review` 或品質檢查中。
+1. **中文為主。** 名稱使用繁體中文，英文與別名放在屬性。沒有可靠的中文名稱時保留原文，不自行翻譯。
+2. **事實要有來源。** 供應、合作、競爭等紀錄一定要附證據；其他事實也建議附上。
+3. **可靠度與階段分開。** 已公告的合作備忘錄可以是「已驗證」，但不代表已有營收。
+4. **事實、推算、建議分開。** 供應、合作、競爭先記成紀錄，公司之間的關係由紀錄推算；同市場或同技術只產生建議，不當成事實。
+5. **單一寫入關卡。** 每批資料依本體論檢查，全部通過才寫入。
+6. **寧可少而正確。** 查不到的資料列為暫緩或缺漏，不猜測。
 
-#### 可靠度與目前階段分開記錄
+**研究流程：** 保存來源 → 逐條擷取附原文引句的主張 → 依本體論草擬 → 比對重複 → 補缺口 → 機械檢查與獨立查核 → 打包 → 匯入。
 
-- **可靠度** `verification_status`：已驗證 `verified`、有報導 `reported`、推論 `inferred`、建議 `suggested`、有爭議 `disputed`
-- **目前階段** `lifecycle_status`：已公告、進行中、已完成、已失效
+**查詢：** 可用條件找公司，以「全部符合／任一符合／排除」組合。查詢只走登記過的路徑，相同的條件與資料得到相同結果；缺資料標示為「未知」。
 
-例如：已公告的合作備忘錄可以是「已驗證」，但不代表已經產生營收。互相矛盾的來源會保留並標示為有爭議。
+## 本機啟動
 
-#### 事實、推算與建議
-
-- 供應、合作、競爭先記成一筆**關係紀錄**（附階段、可靠度與證據）。
-- 公司之間的「供應給」「合作夥伴」「直接競爭者」等由紀錄**推算**，不能手動建立。
-- 同市場或同技術只會產生**建議**（虛線顯示）。經人工接受後，才會建立標示為「推論」的紀錄。
-
-#### 研究流程
-
-新資料以專案內的 [`goodmind-refine`](.claude/skills/goodmind-refine/SKILL.md) 流程處理（較早匯入的資料不一定走過全部步驟）：
-
-1. 盤點輸入資料並保存來源
-2. 逐條擷取主張，附原文引句與出處
-3. 依本體論草擬寫入內容
-4. 比對既有節點，處理重複
-5. 補足重要缺口
-6. 機械檢查，再由未參與擷取的代理獨立查核
-7. 打包：通過的紀錄可上傳；未通過的列為暫緩，並說明原因與解決方式
-
-原則是寧可少而正確。這個流程只產生檔案；匯入與發布需另行確認。
-
-#### 查詢方式（GQC）
-
-可用條件找公司，並以「全部符合／任一符合／排除」組合。查詢只走登記過的路徑；相同的條件與資料會得到相同結果。每家公司只出現一次並列出符合的路徑與來源；缺資料標示為「未知」，不當成「沒有」。
-
-> 圖譜僅供研究參考，不是投資建議。使用前請查核原始來源。
-
----
-
-## English
-
-GoodMind (股脈) is a research platform built on an industry knowledge graph. It organizes companies, offerings, markets, and the supply, collaboration and competition links between them, together with their sources. The interface is mainly in Traditional Chinese.
-
-### Research ontology and methodology: quick overview
-
-The current ontology is **4.0** (registry: [`goodmind-lite/lib/registry.v4.json`](goodmind-lite/lib/registry.v4.json)). The live data guide lists 26 usable node types (the registry also has 1 abstract "offering" type) and 81 relation types. Some types and relations are defined but have no data yet.
-
-#### Layers
-
-| Layer | Main node types | Question answered |
-|---|---|---|
-| Actors and offerings | Company, Corporate Group, Organization Unit, Product, Service, Business Line | Who does business, and what do they sell? |
-| Classification | Industry, Market Segment, Product Category, Technology, Application | Which market is it in, and what technology does it use? |
-| Relationship records | Supply Relationship, Customer Opportunity, Collaboration, Competition Assessment | What happened between companies? |
-| Sources | Evidence, Claim | Who says so? |
-| Extensions | Value Chain Stage, Capability, Facility, End Market, Topic, Event, Topic Mention, ETF | Value-chain position, trends and holdings |
-
-The usual research chain is **company → product or service → market segment → industry**.
-
-#### Core principles
-
-1. **Chinese first.** `name` is in Traditional Chinese. English and original names, aliases and tickers go in `attributes`. Without a reliable Chinese name, keep the original and set `name_zh_missing`; never invent or translate one.
-2. **Flexible attributes.** Nodes and relations carry `attributes`: free JSON key-value pairs with `snake_case` keys. Each type also has its own required fields.
-3. **Rules as data.** Node types, relation directions and required fields are declared in the registry.
-4. **One write gate.** Every write is checked for types, direction, required fields, duplicate companies and cardinality. A batch is saved only if all of it passes; otherwise it is rejected with reasons.
-5. **Facts need sources.** The research goal is that every fact traces to evidence. The write gate requires sources for specified types and relations. Older data still has gaps, listed under `needs_review` or by the quality checks.
-
-#### Reliability and stage are recorded separately
-
-- **Reliability** `verification_status`: `verified`, `reported`, `inferred`, `suggested`, `disputed`
-- **Stage** `lifecycle_status`: `announced`, `active`, `completed`, `expired`
-
-For example, an announced MOU can be verified without implying any revenue. Conflicting sources are kept and marked as disputed.
-
-#### Facts, derived links and suggestions
-
-- Supply, collaboration and competition are first stored as **relationship records**, with stage, reliability and evidence.
-- Company-to-company links such as "supplies to", "collaborates with" and "direct competitor" are **derived** from those records and cannot be created by hand.
-- A shared market or technology only produces a **suggestion** (drawn as a dotted line). A record marked as inferred is created only after a person accepts it.
-
-#### Research pipeline
-
-New data goes through the project's [`goodmind-refine`](.claude/skills/goodmind-refine/SKILL.md) workflow (earlier imports did not necessarily pass every step):
-
-1. Inventory the inputs and save the sources
-2. Extract one claim per fact, with a verbatim quote and its location
-3. Draft write operations that follow the ontology
-4. Match against existing nodes and resolve duplicates
-5. Fill the gaps that matter
-6. Run mechanical checks, then have a separate agent that did not do the extraction verify
-7. Package: passing records are ready to upload; the rest are held, with the reason and what would unblock them
-
-A smaller batch that is right is better than a full one built on guesses. The workflow only produces files; importing and publishing need separate approval.
-
-#### Querying (GQC)
-
-Find companies by combining conditions with all / any / not. Queries follow only registered paths, so the same conditions on the same data give the same results. Each company appears once, with its matching paths and sources. Missing data is reported as "unknown", not treated as "no".
-
-> The graph is for research only and is not investment advice. Check the original sources before relying on it.
-
----
-
-## 專案結構與本機執行 Repository and local setup
-
-| 路徑 Path | 說明 Description |
-|---|---|
-| `goodmind-lite/` | 主要應用程式 Main app (React + Vite, Express API); [details](goodmind-lite/README.md) |
-| `goodmind-lite/docs/` | [資料匯入與部署指南 Data import and deployment guide](goodmind-lite/docs/DATA-IMPORT-AND-APPDEPLOY.md) |
-| `deploy-goodmind/` | 由建置腳本產生的 AppDeploy 版本 AppDeploy bundle generated by `goodmind-lite/deploy/build_appdeploy.py` |
-| `local-app/` | 早期的 Next.js 本機版本 Earlier local Next.js copy |
-| `export/` | 早期的本體論與關係匯出 Earlier ontology and relation exports |
-| `.claude/skills/goodmind-refine/` | 研究資料整理流程 Research data workflow |
+需要 [Node.js](https://nodejs.org/) 22.12 以上版本與 npm。
 
 ```bash
-cd goodmind-lite
 npm install
-cp .env.local.example .env.local
 npm run dev
 ```
 
-開啟 Open http://localhost:3100
+開啟 http://localhost:3100 。第一次啟動時圖譜是空的。伺服器只接受本機連線的 API 請求。
 
-**資料版本 Data versions:** 2026-11-25 檢視時，正式網站顯示 443 個節點與 553 條關係。儲存庫中的本機資料 (`goodmind-lite/data/seed.json`) 較新，尚未等同於正式網站。
-As checked on 2026-11-25, the live site showed 443 nodes and 553 relations. The local data in this repository (`goodmind-lite/data/seed.json`) is newer and does not match the live site.
+## 匯入自己的資料
 
-### 早期本機版本 Earlier local app
+先用虛構範例試一次：
 
 ```bash
-cd local-app && npm install && npm run dev
+npm run check -- examples/example-ops.json
 ```
 
-開啟 Open http://localhost:3000/good-mind 。管理登入為本機模擬用的預設值 `admin` / `goodmind-local`（見 `.env.local.example`）；AI 功能以本機模擬執行，不需要 API 金鑰。
-The admin sign-in is a local placeholder, `admin` / `goodmind-local` (see `.env.local.example`). AI features are simulated locally and need no API key.
+```bash
+npm run import -- examples/example-ops.json
+```
+
+重新整理網頁就能看到範例節點。換成自己的資料前先清空：
+
+```bash
+npm run reset
+```
+
+接著依 [資料格式與匯入規格](docs/DATA-SPEC.md) 準備 JSON 檔，先 `check` 再 `import`。你的資料存在本機的 `data/db.json`，不會被 git 追蹤。
+
+## 用 skill 清理與擷取資料
+
+儲存庫附有 [`goodmind-data`](.claude/skills/goodmind-data/SKILL.md) skill。在 [Claude Code](https://claude.com/claude-code) 中開啟本儲存庫，描述你的需求，例如：
+
+> 用 goodmind-data 把 `~/my-research` 資料夾整理成圖譜資料，通過檢查後匯入我的本機。
+
+它會保存來源、擷取附引句的主張、依本體論草擬、比對重複、交給獨立代理查核，最後只打包通過的紀錄。**匯入前會先向你報告並徵求同意。**
+
+- 需要 Python 3；讀取 PDF 需要 `pdftotext`。
+- 新的產業與市場區隔要先經你核准（清單在 [`taxonomy.json`](.claude/skills/goodmind-data/taxonomy.json)，起始為空）。
+- 使用 AI 工具時，你提供的資料會依該工具的條款處理。查核結果仍可能出錯，重要資料請自行覆核。
+
+## 文件
+
+| 文件 | 內容 |
+|---|---|
+| [資料格式與匯入規格](docs/DATA-SPEC.md) | 檔案格式、命名、關係紀錄、匯入檢查 |
+| [本體論參考](docs/ONTOLOGY.md) | 所有節點類型、屬性、關係與規則 |
+| [`lib/registry.v4.json`](lib/registry.v4.json) | 本體論定義檔 |
+
+## 專案結構
+
+| 路徑 | 說明 |
+|---|---|
+| `src/` | 前端介面與圖譜（React、Vite） |
+| `server/` | 本機唯讀 API（Express） |
+| `lib/` | 本體論、寫入關卡、查詢與推算規則 |
+| `scripts/` | 檢查、匯入、清空、產生文件與測試 |
+| `examples/` | 虛構範例資料 |
+
+```bash
+npm run typecheck
+npm test
+```
+
+## 聲明
+
+圖譜僅供研究參考，不是投資建議。使用任何資料前請查核原始來源。
